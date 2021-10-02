@@ -17,8 +17,9 @@ const VolumePrice = ({ product, products }) => {
   return (
     <>
       <Card.Text>
-        {!price || product.price.length === 1 ? product.price[0] : price}
-        грн
+        {!price || product.price.length === 1
+          ? `${product.price[0]} грн`
+          : `${price} грн`}
       </Card.Text>
       <div className="d-flex ">
         {product.volume.map((item, index) => (

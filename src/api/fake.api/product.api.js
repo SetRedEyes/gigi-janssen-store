@@ -58,6 +58,86 @@ const products = [
     volume: [volume[120], volume[250]],
     photo:
       "https://images.unsplash.com/photo-1633085650319-b9efc57dcf07?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1887&q=80"
+  },
+  {
+    _id: "6",
+    name: "GIGI Acnon Spotless Skin Refresher",
+    rusName: "Очищающий тоник",
+    category: categories.acnon,
+    price: [1400],
+    volume: [volume[120]],
+    photo:
+      "https://images.unsplash.com/photo-1633085650319-b9efc57dcf07?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1887&q=80"
+  },
+  {
+    _id: "7",
+    name: "GIGI Oxygen Prime Advanced Moisturizer SPF-15",
+    rusName: "Увлажняющий крем SPF-15",
+    category: categories.oxygenPrime,
+    price: [2000],
+    volume: [volume[50]],
+    photo:
+      "https://images.unsplash.com/photo-1633085650319-b9efc57dcf07?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1887&q=80"
+  },
+  {
+    _id: "8",
+    name: "GIGI Ester C Moisturizer Cream SPF-20",
+    rusName: "Дневной увлажняющий крем SPF-20",
+    category: categories.esterC,
+    price: [1000, 2000],
+    volume: [volume[50], volume[200]],
+    photo:
+      "https://images.unsplash.com/photo-1633085650319-b9efc57dcf07?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1887&q=80"
+  },
+  {
+    _id: "9",
+    name: "GIGI New Age Active Serum",
+    rusName: "Активная сыворотка",
+    category: categories.newAge,
+    price: [2900],
+    volume: [volume[120]],
+    photo:
+      "https://images.unsplash.com/photo-1633085650319-b9efc57dcf07?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1887&q=80"
+  },
+  {
+    _id: "10",
+    name: "GIGI Sea Weed Toner",
+    rusName: "Тонер",
+    category: categories.recovery,
+    price: [850],
+    volume: [volume[250]],
+    photo:
+      "https://images.unsplash.com/photo-1633085650319-b9efc57dcf07?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1887&q=80"
+  },
+  {
+    _id: "11",
+    name: "GIGI Sea Weed Soapless Soap",
+    rusName: "Непенящееся мыло",
+    category: categories.seaWeed,
+    price: [850, 1600],
+    volume: [volume[120], volume[250]],
+    photo:
+      "https://images.unsplash.com/photo-1633085650319-b9efc57dcf07?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1887&q=80"
+  },
+  {
+    _id: "12",
+    name: "GIGI Recovery Skin Clear Cleanser",
+    rusName: "Очищающий гель",
+    category: categories.recovery,
+    price: [850, 1600],
+    volume: [volume[120], volume[250]],
+    photo:
+      "https://images.unsplash.com/photo-1633085650319-b9efc57dcf07?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1887&q=80"
+  },
+  {
+    _id: "13",
+    name: "GIGI Recovery Skin Clear Cleanser",
+    rusName: "Очищающий гель",
+    category: categories.recovery,
+    price: [850, 1600],
+    volume: [volume[120], volume[250]],
+    photo:
+      "https://images.unsplash.com/photo-1633085650319-b9efc57dcf07?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1887&q=80"
   }
 ]
 

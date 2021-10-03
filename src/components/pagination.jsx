@@ -25,9 +25,8 @@ const PagesPagination = ({
     </Pagination.Item>
   ))
 
-  console.log(pages)
   return (
-    <Pagination className="d-flex justify-content-center mt-3 ms-5">
+    <Pagination className="d-flex justify-content-center ms-5">
       {items}
     </Pagination>
   )

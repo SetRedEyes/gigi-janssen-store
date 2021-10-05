@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { paginate } from "../utils/paginate"
-import { Row, Col, Container } from "react-bootstrap"
+import { Row, Col, Container, Spinner } from "react-bootstrap"
 import api from "../api"
 import Product from "./product"
 import PagesPagination from "./pagination"
@@ -53,7 +53,12 @@ const Products = () => {
                 onItemSelect={handleCategorySelect}
               />
             </Col>
-            <Product products={productCrop} />
+
+            <Col>
+              <Row>
+                <Product products={productCrop} />
+              </Row>
+            </Col>
           </Row>
         )}
 
@@ -70,7 +75,12 @@ const Products = () => {
       </Container>
     )
   } else {
-    return <h1>Loading...</h1>
+    return (
+      <Container className="d-flex justify-content-center mt-4">
+        <Spinner animation="border" variant="primary" />
+        <span className="mt-1 ms-2">Загрузка</span>
+      </Container>
+    )
   }
 }
 

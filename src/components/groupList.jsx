@@ -1,26 +1,33 @@
 import React from "react"
 import { ListGroup } from "react-bootstrap"
 import PropTypes from "prop-types"
+import { Link } from "react-router-dom"
 
 const GroupList = ({
   items,
   valueProperty,
   contentProperty,
   onItemSelect,
-  selectedItem
+  selectedItem,
+  pathProperty
 }) => {
-  if (!Array.isArray(items)) {
+  if (!Array.isArray(items[0])) {
     return (
       <ListGroup>
         {Object.keys(items).map((item) => (
-          <ListGroup.Item
-            active={items[item] === selectedItem}
+          <Link
+            className="text-decoration-none"
             key={items[item][valueProperty]}
-            onClick={() => onItemSelect(items[item])}
-            role="button"
+            to={`/${items[item][pathProperty]}/category/${items[item][valueProperty]}`}
           >
-            {items[item][contentProperty]}
-          </ListGroup.Item>
+            <ListGroup.Item
+              active={items[item] === selectedItem}
+              onClick={() => onItemSelect(items[item])}
+              role="button"
+            >
+              {items[item][contentProperty]}
+            </ListGroup.Item>
+          </Link>
         ))}
       </ListGroup>
     )
@@ -29,8 +36,8 @@ const GroupList = ({
     <ListGroup>
       {items.map((item) => (
         <ListGroup.Item
-          active={item === selectedItem}
           key={item[valueProperty]}
+          active={item === selectedItem}
           onClick={() => onItemSelect(item)}
           role="button"
         >
@@ -43,12 +50,14 @@ const GroupList = ({
 
 GroupList.defaultProps = {
   valueProperty: "_id",
-  contentProperty: "name"
+  contentProperty: "name",
+  pathProperty: "companyId"
 }
 GroupList.propTypes = {
   items: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
   valueProperty: PropTypes.string.isRequired,
   contentProperty: PropTypes.string.isRequired,
+  pathProperty: PropTypes.string.isRequired,
   onItemSelect: PropTypes.func,
   selectedItem: PropTypes.object
 }

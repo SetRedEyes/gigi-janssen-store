@@ -3,7 +3,6 @@ import "./App.css"
 import { Switch, Route, Redirect } from "react-router-dom"
 import NavBar from "./components/navBar"
 import { authRoutes, publicRoutes } from "./routes"
-import { SHOP_ROUTE } from "./utils/consts"
 const App = () => {
   const isAuth = false
 
@@ -19,7 +18,7 @@ const App = () => {
         {publicRoutes.map(({ path, component }) => (
           <Route key={path} path={path} component={component} exact />
         ))}
-        <Redirect to={SHOP_ROUTE} />
+        <Redirect to={"/"} />
       </Switch>
     </div>
   )

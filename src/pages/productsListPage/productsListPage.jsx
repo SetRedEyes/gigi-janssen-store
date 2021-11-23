@@ -1,30 +1,39 @@
 import React, { useEffect, useState } from "react"
-import { paginate } from "../utils/paginate"
+import { paginate } from "../../utils/paginate"
 import { Row, Col, Container, Spinner } from "react-bootstrap"
-import api from "../api"
-import Product from "./product"
-import PagesPagination from "./pagination"
-import GroupList from "./groupList"
+import api from "../../api"
+import PagesPagination from "../../components/pagination"
+import GroupList from "../../components/groupList"
+import ProductsListCard from "../../ui/productsListCard"
+import PropTypes from "prop-types"
+import { useLocation } from "react-router-dom"
 
-const Products = () => {
+const ProductsListPage = ({ companyId }) => {
+  const location = useLocation()
   const [products, setProducts] = useState()
   const [currentPage, setCurrentPage] = useState(1)
   const [categories, setCategories] = useState()
   const [selectedCat, setSelectedCat] = useState()
+  useEffect(() => {
+    api.categories.getByCompany(companyId).then((data) => setCategories(data))
+  }, [currentPage])
 
   useEffect(() => {
     api.products.fetchAll().then((data) => setProducts(data))
   }, [])
 
   useEffect(() => {
-    api.categories.fetchAll().then((data) => setCategories(data))
-  }, [currentPage])
-
-  useEffect(() => {
     setCurrentPage(1)
   }, [selectedCat])
 
-  const pageSize = 6
+  useEffect(() => {
+    if (location.state) {
+      const { selectedCatProp } = location.state
+      setSelectedCat(selectedCatProp)
+    }
+  }, [])
+
+  const pageSize = 9
   const handlePageChange = (pageIndex) => {
     setCurrentPage(pageIndex)
   }
@@ -35,9 +44,10 @@ const Products = () => {
 
   if (products) {
     const filteredProducts = selectedCat
-      ? products.filter(
-          (product) => JSON.stringify(product.category) === JSON.stringify(selectedCat)
-        )
+      ? products.filter((product) => {
+          console.log("selectedCat", selectedCat)
+          return JSON.stringify(product.category) === JSON.stringify(selectedCat)
+        })
       : products
     const count = filteredProducts.length
 
@@ -56,32 +66,33 @@ const Products = () => {
 
             <Col>
               <Row>
-                <Product products={productCrop} />
+                <ProductsListCard products={productCrop} />
+              </Row>
+              <Row className="mt-5">
+                <PagesPagination
+                  itemsCount={count}
+                  pageSize={pageSize}
+                  currentPage={currentPage}
+                  onPageChange={handlePageChange}
+                />
               </Row>
             </Col>
           </Row>
         )}
-
-        <Row className="mt-3 ms-5">
-          <Col md={12} className="ms-3">
-            <PagesPagination
-              itemsCount={count}
-              pageSize={pageSize}
-              currentPage={currentPage}
-              onPageChange={handlePageChange}
-            />
-          </Col>
-        </Row>
       </Container>
     )
   } else {
     return (
       <Container className="d-flex justify-content-center mt-4">
-        <Spinner animation="border" variant="primary" />
+        <Spinner animation="border" variant="info" />
         <span className="mt-1 ms-2">Загрузка</span>
       </Container>
     )
   }
 }
 
-export default Products
+ProductsListPage.propTypes = {
+  companyId: PropTypes.string
+}
+
+export default ProductsListPage

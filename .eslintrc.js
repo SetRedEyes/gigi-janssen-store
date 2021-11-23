@@ -13,7 +13,12 @@ module.exports = {
   },
   plugins: ["react"],
   rules: {
-    "space-before-function-paren": ["error", { anonymous: "always", named: "never" }],
+    "space-before-function-paren": [
+      "error",
+      { anonymous: "always", named: "never" }
+    ],
+    "multiline-ternary": ["off"],
+
     semi: ["error", "never"],
     quotes: ["error", "double", { allowTemplateLiterals: true }],
     indent: "off"

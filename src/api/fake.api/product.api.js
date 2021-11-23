@@ -5,15 +5,17 @@ const volume = {
   100: { _id: "100", name: 100 },
   120: { _id: "120", name: 120 },
   200: { _id: "200", name: 200 },
-  250: { _id: "250", name: 250 }
+  250: { _id: "250", name: 250 },
+  500: { _id: "500", name: 500 }
 }
 
 const products = [
   {
     _id: "1",
-    name: "GIGI Acnon Smoothing Facial Cleanser ",
+    companyId: "gigi",
+    name: "Acnon Smoothing Facial Cleanser ",
     rusName: "Успокаивающий гель для умывания",
-    category: categories.acnon,
+    category: categories.gigi.acnon,
     price: [800, 1500],
     volume: [volume[50], volume[250]],
     photo:
@@ -21,9 +23,10 @@ const products = [
   },
   {
     _id: "2",
-    name: "GIGI New Age Comfort Day Cream SPF-15",
+    companyId: "gigi",
+    name: "New Age Comfort Day Cream SPF-15",
     rusName: "Дневной крем SPF-15",
-    category: categories.newAge,
+    category: categories.gigi.newAge,
     price: [900],
     volume: [volume[100]],
     photo:
@@ -31,9 +34,10 @@ const products = [
   },
   {
     _id: "3",
-    name: "GIGI Ester C Mild Cleanser",
+    companyId: "gigi",
+    name: "Ester C Mild Cleanser",
     rusName: "Нежный гель для умывания",
-    category: categories.esterC,
+    category: categories.gigi.esterC,
     price: [1300, 2000],
     volume: [volume[120], volume[200]],
     photo:
@@ -41,9 +45,10 @@ const products = [
   },
   {
     _id: "4",
-    name: "GIGI Oxygen Prime Refreshing Cleansing Gel",
+    companyId: "gigi",
+    name: "Oxygen Prime Refreshing Cleansing Gel",
     rusName: "Освежающий очищающий гель",
-    category: categories.oxygenPrime,
+    category: categories.gigi.oxygenPrime,
     price: [1150],
     volume: [volume[200]],
     photo:
@@ -51,9 +56,10 @@ const products = [
   },
   {
     _id: "5",
-    name: "GIGI Recovery Skin Clear Cleanser",
+    companyId: "gigi",
+    name: "Recovery Skin Clear Cleanser",
     rusName: "Очищающий гель",
-    category: categories.recovery,
+    category: categories.gigi.recovery,
     price: [850, 1600],
     volume: [volume[120], volume[250]],
     photo:
@@ -61,9 +67,10 @@ const products = [
   },
   {
     _id: "6",
-    name: "GIGI Acnon Spotless Skin Refresher",
+    companyId: "gigi",
+    name: " Acnon Spotless Skin Refresher",
     rusName: "Очищающий тоник",
-    category: categories.acnon,
+    category: categories.gigi.acnon,
     price: [1400],
     volume: [volume[120]],
     photo:
@@ -71,9 +78,10 @@ const products = [
   },
   {
     _id: "7",
-    name: "GIGI Oxygen Prime Advanced Moisturizer SPF-15",
+    companyId: "gigi",
+    name: "Oxygen Prime Advanced Moisturizer SPF-15",
     rusName: "Увлажняющий крем SPF-15",
-    category: categories.oxygenPrime,
+    category: categories.gigi.oxygenPrime,
     price: [2000],
     volume: [volume[50]],
     photo:
@@ -81,9 +89,10 @@ const products = [
   },
   {
     _id: "8",
-    name: "GIGI Ester C Moisturizer Cream SPF-20",
+    companyId: "gigi",
+    name: "Ester C Moisturizer Cream SPF-20",
     rusName: "Дневной увлажняющий крем SPF-20",
-    category: categories.esterC,
+    category: categories.gigi.esterC,
     price: [1000, 2000],
     volume: [volume[50], volume[200]],
     photo:
@@ -91,9 +100,10 @@ const products = [
   },
   {
     _id: "9",
-    name: "GIGI New Age Active Serum",
+    companyId: "gigi",
+    name: "New Age Active Serum",
     rusName: "Активная сыворотка",
-    category: categories.newAge,
+    category: categories.gigi.newAge,
     price: [2900],
     volume: [volume[120]],
     photo:
@@ -101,9 +111,10 @@ const products = [
   },
   {
     _id: "10",
-    name: "GIGI Sea Weed Toner",
+    companyId: "gigi",
+    name: "Sea Weed Toner",
     rusName: "Тонер",
-    category: categories.recovery,
+    category: categories.gigi.recovery,
     price: [850],
     volume: [volume[250]],
     photo:
@@ -111,9 +122,10 @@ const products = [
   },
   {
     _id: "11",
-    name: "GIGI Sea Weed Soapless Soap",
+    companyId: "gigi",
+    name: "Sea Weed Soapless Soap",
     rusName: "Непенящееся мыло",
-    category: categories.seaWeed,
+    category: categories.gigi.seaWeed,
     price: [850, 1600],
     volume: [volume[120], volume[250]],
     photo:
@@ -121,9 +133,10 @@ const products = [
   },
   {
     _id: "12",
-    name: "GIGI Recovery Skin Clear Cleanser",
+    companyId: "gigi",
+    name: "Recovery Skin Clear Cleanser",
     rusName: "Очищающий гель",
-    category: categories.recovery,
+    category: categories.gigi.recovery,
     price: [850, 1600],
     volume: [volume[120], volume[250]],
     photo:
@@ -131,11 +144,78 @@ const products = [
   },
   {
     _id: "13",
-    name: "GIGI Recovery Skin Clear Cleanser",
+    companyId: "gigi",
+    name: "Recovery Skin Clear Cleanser",
     rusName: "Очищающий гель",
-    category: categories.recovery,
+    category: categories.gigi.recovery,
     price: [850, 1600],
     volume: [volume[120], volume[250]],
+    photo:
+      "https://images.unsplash.com/photo-1633085650319-b9efc57dcf07?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1887&q=80"
+  },
+  {
+    _id: "14",
+    companyId: "janssen",
+    name: "Mature Skin Luxury Oil Cleanser",
+    rusName: "Очищающее масло для лица",
+    category: categories.janssen.matureSkin,
+    price: [750],
+    volume: [volume[100]],
+    photo:
+      "https://images.unsplash.com/photo-1633085650319-b9efc57dcf07?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1887&q=80"
+  },
+  {
+    _id: "15",
+    companyId: "janssen",
+    name: "Dry Skin Mild Creamy Cleanser",
+    rusName: "Очищающее молочко",
+    category: categories.janssen.drySkin,
+    price: [650, 1050],
+    volume: [volume[200], volume[500]],
+    photo:
+      "https://images.unsplash.com/photo-1633085650319-b9efc57dcf07?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1887&q=80"
+  },
+  {
+    _id: "16",
+    companyId: "janssen",
+    name: "Platinum Care Day Cream",
+    rusName: "Дневной крем реструктурирующий",
+    category: categories.janssen.platinumCare,
+    price: [1900, 2150],
+    volume: [volume[50], volume[100]],
+    photo:
+      "https://images.unsplash.com/photo-1633085650319-b9efc57dcf07?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1887&q=80"
+  },
+  {
+    _id: "17",
+    companyId: "janssen",
+    name: "Demanding Skin Brightening Face Cleanser",
+    rusName: "Осветляющая очищающая эмульсия ",
+    category: categories.janssen.demandingSkin,
+    price: [650, 1100],
+    volume: [volume[200], volume[500]],
+    photo:
+      "https://images.unsplash.com/photo-1633085650319-b9efc57dcf07?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1887&q=80"
+  },
+  {
+    _id: "18",
+    companyId: "janssen",
+    name: "Combination Skin Gentle Cleansing Powder",
+    rusName: "Очищающая пудраа",
+    category: categories.janssen.combinationSkin,
+    price: [650],
+    volume: [volume[100]],
+    photo:
+      "https://images.unsplash.com/photo-1633085650319-b9efc57dcf07?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1887&q=80"
+  },
+  {
+    _id: "19",
+    companyId: "janssen",
+    name: "Oily Skin Clarifying Cleansing Gel",
+    rusName: "Очищающий гель",
+    category: categories.janssen.oilySkin,
+    price: [650, 1150],
+    volume: [volume[200], volume[500]],
     photo:
       "https://images.unsplash.com/photo-1633085650319-b9efc57dcf07?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1887&q=80"
   }

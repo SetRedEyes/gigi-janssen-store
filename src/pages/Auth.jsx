@@ -1,6 +1,5 @@
 import React from "react"
 import { Button, Card, Container, Form, NavLink, Row } from "react-bootstrap"
-import { REGISTRATION_ROUTE } from "../utils/consts"
 
 const Auth = () => {
   return (
@@ -17,7 +16,7 @@ const Auth = () => {
           <Row style={{ width: "86%" }} className=" flex-nowrap mt-3 ">
             <div>
               Нет аккаунта?
-              <NavLink className="d-inline ps-1 " to={REGISTRATION_ROUTE}>
+              <NavLink className="d-inline ps-1 " to={"/registration"}>
                 Зарегистрируйся!
               </NavLink>
             </div>

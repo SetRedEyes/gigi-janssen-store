@@ -3,12 +3,7 @@ import { Pagination } from "react-bootstrap"
 import PropTypes from "prop-types"
 import _ from "lodash"
 
-const PagesPagination = ({
-  itemsCount,
-  pageSize,
-  onPageChange,
-  currentPage
-}) => {
+const PagesPagination = ({ itemsCount, pageSize, onPageChange, currentPage }) => {
   const pageCount = Math.ceil(itemsCount / pageSize)
 
   if (pageCount === 1) return null
@@ -25,11 +20,7 @@ const PagesPagination = ({
     </Pagination.Item>
   ))
 
-  return (
-    <Pagination className="d-flex justify-content-center ms-5">
-      {items}
-    </Pagination>
-  )
+  return <Pagination className="d-flex justify-content-center">{items}</Pagination>
 }
 PagesPagination.propTypes = {
   itemsCount: PropTypes.number.isRequired,

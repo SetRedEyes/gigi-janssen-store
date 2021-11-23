@@ -19,17 +19,12 @@ const VolumePrice = ({ product, products }) => {
 
   return (
     <>
-      <Card.Text>
-        {!price || product.price.length === 1
-          ? `${product.price[0]} грн`
-          : `${price} грн`}
-      </Card.Text>
-      <div className="d-flex ">
+      <div className="d-flex justify-content-between mt-3">
         {product.volume.map((item, index) => (
           <Button
             key={item._id}
-            variant="outline-primary"
-            className={`me-3 text-nowrap ${
+            variant="light"
+            className={`text-nowrap ${
               (activeBtn === 0 && index === 0) || (activeBtn === 1 && index === 1)
                 ? "enableFocus"
                 : "disableFocus"
@@ -40,10 +35,14 @@ const VolumePrice = ({ product, products }) => {
             {`${item.name} мл`}
           </Button>
         ))}
-
-        <Button className="ms-auto p-2" variant="primary">
-          Купить
-        </Button>
+      </div>
+      <div className="d-flex align-items-end justify-content-between mt-4">
+        <Card.Title>
+          {!price || product.price.length === 1
+            ? `${product.price[0]} грн`
+            : `${price} грн`}
+        </Card.Title>
+        <Button className="buyBtn">Купить</Button>
       </div>
     </>
   )

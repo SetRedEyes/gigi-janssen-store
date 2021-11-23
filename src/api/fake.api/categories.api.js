@@ -1,21 +1,91 @@
 export const categoriesObject = {
-  acnon: { _id: "1", name: "Acnon - Линия для лечения акне" },
-  newAge: { _id: "2", name: "Ester C - Серия для осветления кожи" },
-  esterC: {
-    _id: "3",
-    name: "New Age - Линия с фитоэстрогенами для возрастной кожи"
+  gigi: {
+    acnon: {
+      _id: "acnon",
+      name: "Acnon - Линия для лечения акне",
+      companyId: "gigi",
+      photo:
+        "https://images.unsplash.com/photo-1633085650319-b9efc57dcf07?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1887&q=80"
+    },
+    esterC: {
+      _id: "esterC",
+      name: "Ester C - Серия для осветления кожи",
+      companyId: "gigi",
+      photo:
+        "https://images.unsplash.com/photo-1633085650319-b9efc57dcf07?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1887&q=80"
+    },
+    newAge: {
+      _id: "newAge",
+      name: "New Age - Линия с фитоэстрогенами для возрастной кожи",
+      companyId: "gigi",
+      photo:
+        "https://images.unsplash.com/photo-1633085650319-b9efc57dcf07?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1887&q=80"
+    },
+    oxygenPrime: {
+      _id: "oxygenPrime",
+      name: "Oxygen Prime - Кислородная линия для ревитализации и ремоделирования кожи",
+      companyId: "gigi",
+      photo:
+        "https://images.unsplash.com/photo-1633085650319-b9efc57dcf07?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1887&q=80"
+    },
+    seaWeed: {
+      _id: "seaWeed",
+      name: "Recovery - Парамедицинская линия на основе растительных стволовых клеток",
+      companyId: "gigi",
+      photo:
+        "https://images.unsplash.com/photo-1633085650319-b9efc57dcf07?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1887&q=80"
+    },
+    recovery: {
+      _id: "recovery",
+      name: "Sea Weed - Морские водоросли для комбинированной и жирной кожи",
+      companyId: "gigi",
+      photo:
+        "https://images.unsplash.com/photo-1633085650319-b9efc57dcf07?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1887&q=80"
+    }
   },
-  oxygenPrime: {
-    _id: "4",
-    name: "Oxygen Prime - Кислородная линия для ревитализации и ремоделирования кожи"
-  },
-  seaWeed: {
-    _id: "5",
-    name: "Recovery - Парамедицинская линия на основе растительных стволовых клеток"
-  },
-  recovery: {
-    _id: "6",
-    name: "Sea Weed - Морские водоросли для комбинированной и жирной кожи"
+  janssen: {
+    matureSkin: {
+      _id: "matureSkin",
+      name: "Mature Skin - Антивозрастная серия с мощными активными компонентами",
+      companyId: "janssen",
+      photo:
+        "https://images.unsplash.com/photo-1633085650319-b9efc57dcf07?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1887&q=80"
+    },
+    platinumCare: {
+      _id: "platinumCare",
+      name: "Platinum Care - Линия на основе пептидов и коллоидной платины",
+      companyId: "janssen",
+      photo:
+        "https://images.unsplash.com/photo-1633085650319-b9efc57dcf07?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1887&q=80"
+    },
+    drySkin: {
+      _id: "drySkin",
+      name: "Dry Skin - Для сухой кожи",
+      companyId: "janssen",
+      photo:
+        "https://images.unsplash.com/photo-1633085650319-b9efc57dcf07?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1887&q=80"
+    },
+    demandingSkin: {
+      _id: "demandingSkin",
+      name: "Для требовательной кожи",
+      companyId: "janssen",
+      photo:
+        "https://images.unsplash.com/photo-1633085650319-b9efc57dcf07?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1887&q=80"
+    },
+    combinationSkin: {
+      _id: "combinationSkin",
+      name: "Combination Skin - Для комбинированной кожи",
+      companyId: "janssen",
+      photo:
+        "https://images.unsplash.com/photo-1633085650319-b9efc57dcf07?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1887&q=80"
+    },
+    oilySkin: {
+      _id: "oilySkin",
+      name: "Oily Skin - Для жирной кожи",
+      companyId: "janssen",
+      photo:
+        "https://images.unsplash.com/photo-1633085650319-b9efc57dcf07?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1887&q=80"
+    }
   }
 }
 
@@ -43,10 +113,18 @@ export const categories = [
 const fetchAll = () =>
   new Promise((resolve) => {
     window.setTimeout(function () {
-      resolve(categories)
+      resolve(categoriesObject)
     }, 2000)
   })
 
+const getByCompany = (key) =>
+  new Promise((resolve) => {
+    window.setTimeout(function () {
+      resolve(categoriesObject[key])
+    }, 1000)
+  })
+
 export default {
-  fetchAll
+  fetchAll,
+  getByCompany
 }

@@ -57,3 +57,11 @@
   background-color: #21c1cf;
   border-color: #21c1cf;
 }
+
+.list-group-item.active:hover {
+  color: #fff;
+}
+
+.list-group-item:hover {
+  color: #21c1cf;
+}

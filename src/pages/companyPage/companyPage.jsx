@@ -18,6 +18,7 @@ const CompanyPage = () => {
   }, [])
 
   const handleCategorySelect = (item) => {
+    localStorage.setItem("selectedCat", JSON.stringify(item))
     setSelectedCat(item)
   }
   if (companies) {

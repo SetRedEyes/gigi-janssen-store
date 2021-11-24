@@ -30,6 +30,9 @@ const ProductsListPage = ({ companyId }) => {
     if (location.state) {
       const { selectedCatProp } = location.state
       setSelectedCat(selectedCatProp)
+    } else {
+      const selectedCat = JSON.parse(localStorage.getItem("selectedCat"))
+      setSelectedCat(selectedCat)
     }
   }, [])
 
@@ -39,13 +42,13 @@ const ProductsListPage = ({ companyId }) => {
   }
 
   const handleCategorySelect = (item) => {
+    localStorage.setItem("selectedCat", JSON.stringify(item))
     setSelectedCat(item)
   }
 
   if (products) {
     const filteredProducts = selectedCat
       ? products.filter((product) => {
-          console.log("selectedCat", selectedCat)
           return JSON.stringify(product.category) === JSON.stringify(selectedCat)
         })
       : products
@@ -53,7 +56,7 @@ const ProductsListPage = ({ companyId }) => {
 
     const productCrop = paginate(filteredProducts, currentPage, pageSize)
     return (
-      <Container>
+      <Container fluid>
         {categories && (
           <Row className="mt-2 me-5">
             <Col md={3} className="mt-5">
@@ -64,7 +67,7 @@ const ProductsListPage = ({ companyId }) => {
               />
             </Col>
 
-            <Col>
+            <Col md={8} className="ms-5">
               <Row>
                 <ProductsListCard products={productCrop} />
               </Row>

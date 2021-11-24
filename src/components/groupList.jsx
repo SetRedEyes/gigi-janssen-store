@@ -11,6 +11,7 @@ const GroupList = ({
   selectedItem,
   pathProperty
 }) => {
+  console.log(selectedItem)
   if (!Array.isArray(items[0])) {
     return (
       <ListGroup>
@@ -21,7 +22,7 @@ const GroupList = ({
             to={`/${items[item][pathProperty]}/category/${items[item][valueProperty]}`}
           >
             <ListGroup.Item
-              active={items[item] === selectedItem}
+              active={JSON.stringify(items[item]) === JSON.stringify(selectedItem)}
               onClick={() => onItemSelect(items[item])}
               role="button"
             >
@@ -35,14 +36,20 @@ const GroupList = ({
   return (
     <ListGroup>
       {items.map((item) => (
-        <ListGroup.Item
+        <Link
+          className="text-decoration-none"
           key={item[valueProperty]}
-          active={item === selectedItem}
-          onClick={() => onItemSelect(item)}
-          role="button"
+          to={`/${item[pathProperty]}/category/${item[valueProperty]}`}
         >
-          {item[contentProperty]}
-        </ListGroup.Item>
+          <ListGroup.Item
+            key={item[valueProperty]}
+            active={JSON.stringify(item) === JSON.stringify(selectedItem)}
+            onClick={() => onItemSelect(item)}
+            role="button"
+          >
+            {item[contentProperty]}
+          </ListGroup.Item>
+        </Link>
       ))}
     </ListGroup>
   )

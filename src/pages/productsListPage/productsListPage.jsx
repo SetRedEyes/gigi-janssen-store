@@ -30,9 +30,6 @@ const ProductsListPage = ({ companyId }) => {
     if (location.state) {
       const { selectedCatProp } = location.state
       setSelectedCat(selectedCatProp)
-    } else {
-      const selectedCat = JSON.parse(localStorage.getItem("selectedCat"))
-      setSelectedCat(selectedCat)
     }
   }, [])
 
@@ -42,7 +39,6 @@ const ProductsListPage = ({ companyId }) => {
   }
 
   const handleCategorySelect = (item) => {
-    localStorage.setItem("selectedCat", JSON.stringify(item))
     setSelectedCat(item)
   }
 

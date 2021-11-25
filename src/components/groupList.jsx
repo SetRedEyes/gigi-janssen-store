@@ -19,7 +19,12 @@ const GroupList = ({
           <Link
             className="text-decoration-none"
             key={items[item][valueProperty]}
-            to={`/${items[item][pathProperty]}/category/${items[item][valueProperty]}`}
+            to={{
+              pathname: `/${items[item][pathProperty]}/category/${items[item][valueProperty]}`,
+              state: {
+                selectedCatProp: items[item]
+              }
+            }}
           >
             <ListGroup.Item
               active={JSON.stringify(items[item]) === JSON.stringify(selectedItem)}

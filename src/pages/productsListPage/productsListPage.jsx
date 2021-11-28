@@ -14,6 +14,7 @@ const ProductsListPage = ({ companyId }) => {
   const [currentPage, setCurrentPage] = useState(1)
   const [categories, setCategories] = useState()
   const [selectedCat, setSelectedCat] = useState()
+
   useEffect(() => {
     api.categories.getByCompany(companyId).then((data) => setCategories(data))
   }, [currentPage])

@@ -11,8 +11,7 @@ const GroupList = ({
   selectedItem,
   pathProperty
 }) => {
-  console.log(selectedItem)
-  if (!Array.isArray(items[0])) {
+  if (!Array.isArray(items)) {
     return (
       <ListGroup>
         {Object.keys(items).map((item) => (
@@ -20,7 +19,7 @@ const GroupList = ({
             className="text-decoration-none"
             key={items[item][valueProperty]}
             to={{
-              pathname: `/${items[item][pathProperty]}/category/${items[item][valueProperty]}`,
+              pathname: `/${items[item][pathProperty]}/${items[item][valueProperty]}`,
               state: {
                 selectedCatProp: items[item]
               }
@@ -44,7 +43,7 @@ const GroupList = ({
         <Link
           className="text-decoration-none"
           key={item[valueProperty]}
-          to={`/${item[pathProperty]}/category/${item[valueProperty]}`}
+          to={`/${item[pathProperty]}/${item[valueProperty]}`}
         >
           <ListGroup.Item
             key={item[valueProperty]}

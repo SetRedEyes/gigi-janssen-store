@@ -20,7 +20,7 @@ const CategoryPage = ({ companyId }) => {
               <Link
                 className="text-decoration-none"
                 to={{
-                  pathname: `/${companyId}/category/${categories[cat]._id}`,
+                  pathname: `/${companyId}/${categories[cat]._id}`,
                   state: {
                     selectedCatProp: categories[cat]
                   }

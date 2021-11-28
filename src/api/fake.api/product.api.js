@@ -12,7 +12,6 @@ const volume = {
 const products = [
   {
     _id: "1",
-    companyId: "gigi",
     name: "Acnon Smoothing Facial Cleanser ",
     rusName: "Успокаивающий гель для умывания",
     category: categories.gigi.acnon,
@@ -23,7 +22,6 @@ const products = [
   },
   {
     _id: "2",
-    companyId: "gigi",
     name: "New Age Comfort Day Cream SPF-15",
     rusName: "Дневной крем SPF-15",
     category: categories.gigi.newAge,
@@ -34,7 +32,6 @@ const products = [
   },
   {
     _id: "3",
-    companyId: "gigi",
     name: "Ester C Mild Cleanser",
     rusName: "Нежный гель для умывания",
     category: categories.gigi.esterC,
@@ -45,7 +42,6 @@ const products = [
   },
   {
     _id: "4",
-    companyId: "gigi",
     name: "Oxygen Prime Refreshing Cleansing Gel",
     rusName: "Освежающий очищающий гель",
     category: categories.gigi.oxygenPrime,
@@ -56,7 +52,6 @@ const products = [
   },
   {
     _id: "5",
-    companyId: "gigi",
     name: "Recovery Skin Clear Cleanser",
     rusName: "Очищающий гель",
     category: categories.gigi.recovery,
@@ -67,7 +62,6 @@ const products = [
   },
   {
     _id: "6",
-    companyId: "gigi",
     name: " Acnon Spotless Skin Refresher",
     rusName: "Очищающий тоник",
     category: categories.gigi.acnon,
@@ -78,7 +72,6 @@ const products = [
   },
   {
     _id: "7",
-    companyId: "gigi",
     name: "Oxygen Prime Advanced Moisturizer SPF-15",
     rusName: "Увлажняющий крем SPF-15",
     category: categories.gigi.oxygenPrime,
@@ -89,7 +82,6 @@ const products = [
   },
   {
     _id: "8",
-    companyId: "gigi",
     name: "Ester C Moisturizer Cream SPF-20",
     rusName: "Дневной увлажняющий крем SPF-20",
     category: categories.gigi.esterC,
@@ -100,7 +92,6 @@ const products = [
   },
   {
     _id: "9",
-    companyId: "gigi",
     name: "New Age Active Serum",
     rusName: "Активная сыворотка",
     category: categories.gigi.newAge,
@@ -111,7 +102,6 @@ const products = [
   },
   {
     _id: "10",
-    companyId: "gigi",
     name: "Sea Weed Toner",
     rusName: "Тонер",
     category: categories.gigi.recovery,
@@ -122,7 +112,6 @@ const products = [
   },
   {
     _id: "11",
-    companyId: "gigi",
     name: "Sea Weed Soapless Soap",
     rusName: "Непенящееся мыло",
     category: categories.gigi.seaWeed,
@@ -133,7 +122,6 @@ const products = [
   },
   {
     _id: "12",
-    companyId: "gigi",
     name: "Recovery Skin Clear Cleanser",
     rusName: "Очищающий гель",
     category: categories.gigi.recovery,
@@ -144,7 +132,6 @@ const products = [
   },
   {
     _id: "13",
-    companyId: "gigi",
     name: "Recovery Skin Clear Cleanser",
     rusName: "Очищающий гель",
     category: categories.gigi.recovery,
@@ -155,7 +142,6 @@ const products = [
   },
   {
     _id: "14",
-    companyId: "janssen",
     name: "Mature Skin Luxury Oil Cleanser",
     rusName: "Очищающее масло для лица",
     category: categories.janssen.matureSkin,
@@ -166,7 +152,6 @@ const products = [
   },
   {
     _id: "15",
-    companyId: "janssen",
     name: "Dry Skin Mild Creamy Cleanser",
     rusName: "Очищающее молочко",
     category: categories.janssen.drySkin,
@@ -177,7 +162,6 @@ const products = [
   },
   {
     _id: "16",
-    companyId: "janssen",
     name: "Platinum Care Day Cream",
     rusName: "Дневной крем реструктурирующий",
     category: categories.janssen.platinumCare,
@@ -188,7 +172,6 @@ const products = [
   },
   {
     _id: "17",
-    companyId: "janssen",
     name: "Demanding Skin Brightening Face Cleanser",
     rusName: "Осветляющая очищающая эмульсия ",
     category: categories.janssen.demandingSkin,
@@ -199,7 +182,6 @@ const products = [
   },
   {
     _id: "18",
-    companyId: "janssen",
     name: "Combination Skin Gentle Cleansing Powder",
     rusName: "Очищающая пудраа",
     category: categories.janssen.combinationSkin,
@@ -210,7 +192,6 @@ const products = [
   },
   {
     _id: "19",
-    companyId: "janssen",
     name: "Oily Skin Clarifying Cleansing Gel",
     rusName: "Очищающий гель",
     category: categories.janssen.oilySkin,

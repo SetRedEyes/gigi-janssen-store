@@ -19,9 +19,7 @@ const CategoryCard = ({ name, photo }) => {
 
 CategoryCard.propTypes = {
   name: PropTypes.string,
-  photo: PropTypes.string,
-  categoryId: PropTypes.string,
-  companyId: PropTypes.string
+  photo: PropTypes.string
 }
 
 export default CategoryCard

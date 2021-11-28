@@ -35,7 +35,7 @@ export const publicRoutes = [
   { path: "/basket", component: Basket },
 
   {
-    path: "/:companyId?/category/:categoryId?",
+    path: "/:companyId?/:categoryId?",
     component: Main
   }
 ]

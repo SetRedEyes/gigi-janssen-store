@@ -5,7 +5,7 @@ import { Link } from "react-router-dom"
 
 const CompanyCard = ({ name, photo, companyId }) => {
   return (
-    <Card className="mt-2" style={{ width: "18.5rem", border: "none" }}>
+    <Card className="mt-2 m-4" style={{ width: "18.5rem", border: "none" }}>
       <Link className="link text-decoration-none" to={`/${companyId}`}>
         <Card.Img
           style={{ width: "18.5rem", height: "18.5rem" }}

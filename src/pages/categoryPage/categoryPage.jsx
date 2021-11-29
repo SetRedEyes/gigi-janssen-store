@@ -3,7 +3,6 @@ import { Col, Container, Row, Spinner } from "react-bootstrap"
 import api from "../../api"
 import CategoryCard from "../../ui/categoryCard"
 import PropTypes from "prop-types"
-import { Link } from "react-router-dom"
 
 const CategoryPage = ({ companyId }) => {
   const [categories, setCategory] = useState()
@@ -17,22 +16,13 @@ const CategoryPage = ({ companyId }) => {
         <Row className="mt-2">
           {Object.keys(categories).map((cat) => (
             <Col key={categories[cat]._id}>
-              <Link
-                className="link text-decoration-none "
-                to={{
-                  pathname: `/${companyId}/${categories[cat]._id}`,
-                  state: {
-                    selectedCatProp: categories[cat]
-                  }
-                }}
-              >
-                <CategoryCard
-                  name={categories[cat].name}
-                  categoryId={categories[cat]._id}
-                  photo={categories[cat].photo}
-                  companyId={companyId}
-                />
-              </Link>
+              <CategoryCard
+                name={categories[cat].name}
+                categoryId={categories[cat]._id}
+                photo={categories[cat].photo}
+                companyId={companyId}
+                catObj={categories[cat]}
+              />
             </Col>
           ))}
         </Row>

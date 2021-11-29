@@ -2,18 +2,17 @@ import React, { useState } from "react"
 import { Button, Card } from "react-bootstrap"
 import PropTypes from "prop-types"
 
-const VolumePrice = ({ product, products }) => {
+const VolumePrice = ({ product }) => {
   const [price, setPrice] = useState(null)
   const [activeBtn, setActiveBtn] = useState(0)
 
-  const renderPrice = (volumeIndex, productId) => {
-    const p = products.filter((product) => product._id === productId)
+  const renderPrice = (volumeIndex, product) => {
     if (volumeIndex === 0) {
       setActiveBtn(volumeIndex)
-      setPrice(p[0].price[0])
+      setPrice(product.price[0])
     } else if (volumeIndex === 1) {
       setActiveBtn(volumeIndex)
-      setPrice(p[0].price[1])
+      setPrice(product.price[1])
     }
   }
 
@@ -29,8 +28,8 @@ const VolumePrice = ({ product, products }) => {
                 ? "enableFocus"
                 : "disableFocus"
             }`}
-            onClick={() => renderPrice(index, product._id)}
-            onMouseEnter={() => renderPrice(index, product._id)}
+            onClick={() => renderPrice(index, product)}
+            onMouseEnter={() => renderPrice(index, product)}
           >
             {`${item.name} мл`}
           </Button>
@@ -48,7 +47,6 @@ const VolumePrice = ({ product, products }) => {
   )
 }
 VolumePrice.propTypes = {
-  product: PropTypes.object.isRequired,
-  products: PropTypes.array.isRequired
+  product: PropTypes.object.isRequired
 }
 export default VolumePrice

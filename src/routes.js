@@ -2,11 +2,6 @@ import Admin from "./pages/Admin"
 import Auth from "./pages/Auth"
 import Basket from "./pages/Basket"
 import Main from "./layouts/main"
-// import CategoryPage from "./pages/categoryPage/categoryPage"
-// import Products from "./components/products"
-
-export const BASKET_ROUTE = "/basket"
-export const PRODUCT_ROUTE = "/product"
 
 export const authRoutes = [
   {
@@ -35,7 +30,7 @@ export const publicRoutes = [
   { path: "/basket", component: Basket },
 
   {
-    path: "/:companyId?/:categoryId?",
+    path: "/:companyId?/:categoryId?/:productId?",
     component: Main
   }
 ]

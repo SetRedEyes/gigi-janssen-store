@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 import { Card, Col, Image } from "react-bootstrap"
 import VolumePrice from "../components/volumePrice"
 
-const ProductsListCard = ({ products }) => {
+const ProductsListCard = ({ products, companyId, categoryId }) => {
   return (
     <>
       {products.map((product) => (
@@ -13,7 +13,7 @@ const ProductsListCard = ({ products }) => {
             <Card.Subtitle className="text-muted pt-2 mb-1 text-center">
               {product.rusName}
             </Card.Subtitle>
-            <Link to={`/product/${product._id}`}>
+            <Link to={`/${companyId}/${categoryId}/${product._id}`}>
               <Image
                 style={{ width: "18rem", height: "14rem" }}
                 src={product.photo}
@@ -21,13 +21,13 @@ const ProductsListCard = ({ products }) => {
             </Link>
             <Card.Body>
               <Link
-                className="text-decoration-none text-center link"
-                to={`/product/${product._id}`}
+                className="link text-decoration-none text-center"
+                to={`/${companyId}/${categoryId}/${product._id}`}
               >
                 <Card.Title style={{ height: "4rem" }}>{product.name}</Card.Title>
               </Link>
 
-              <VolumePrice product={product} products={products} />
+              <VolumePrice product={product} />
             </Card.Body>
           </Card>
         </Col>
@@ -37,6 +37,8 @@ const ProductsListCard = ({ products }) => {
 }
 
 ProductsListCard.propTypes = {
-  products: PropTypes.array.isRequired
+  products: PropTypes.array.isRequired,
+  companyId: PropTypes.string,
+  categoryId: PropTypes.string
 }
 export default ProductsListCard

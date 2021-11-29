@@ -2,8 +2,10 @@ import React, { useEffect, useState } from "react"
 import { Breadcrumb } from "react-bootstrap"
 import { Link, useLocation } from "react-router-dom"
 import api from "../api"
+import PropTypes from "prop-types"
 
-const BreadCrumbs = () => {
+const BreadCrumbs = ({ productId }) => {
+  const [product, setProduct] = useState()
   const [categories, setCategories] = useState()
   const { pathname } = useLocation()
 
@@ -21,15 +23,20 @@ const BreadCrumbs = () => {
     api.categories.fetchAll().then((data) => setCategories(transformData(data)))
   }, [])
 
-  const pathnames = pathname.split("/").filter((x) => x)
+  useEffect(() => {
+    api.products.getById(productId).then((data) => setProduct(data))
+  }, [productId])
 
-  const renderCrumbName = (pathName) => {
-    if (pathName === "gigi") {
+  const pathnames = pathname.split("/").filter((x) => x)
+  const renderCrumbName = (name) => {
+    if (name === "gigi") {
       return "Каталог GIGI"
-    } else if (pathName === "janssen") {
+    } else if (name === "janssen") {
       return "Каталог Janssen"
-    } else if (categories) {
-      return categories.find((cat) => cat._id === pathName).name
+    } else if (categories && isNaN(name)) {
+      return categories.find((cat) => cat._id === name).name
+    } else if (product) {
+      return `${product.name} - ${product.rusName}`
     }
   }
 
@@ -40,21 +47,25 @@ const BreadCrumbs = () => {
       <Breadcrumb.Item linkAs={Link} linkProps={{ to: `/` }}>
         Главная
       </Breadcrumb.Item>
-      {pathnames.map((pathname, index) => {
+      {pathnames.map((name, index) => {
         const isLast = index === pathnames.length - 1
         return (
           <Breadcrumb.Item
             linkAs={Link}
-            linkProps={{ to: `/${pathname}` }}
-            key={pathname}
+            linkProps={{ to: `/${name}` }}
+            key={name}
             active={isLast}
           >
-            {renderCrumbName(pathname)}
+            {renderCrumbName(name)}
           </Breadcrumb.Item>
         )
       })}
     </Breadcrumb>
   )
+}
+
+BreadCrumbs.propTypes = {
+  productId: PropTypes.string
 }
 
 export default BreadCrumbs

@@ -36,7 +36,7 @@ const BreadCrumbs = () => {
   if (pathname === "/") return null
 
   return (
-    <Breadcrumb>
+    <Breadcrumb className="ms-3 mt-2">
       <Breadcrumb.Item linkAs={Link} linkProps={{ to: `/` }}>
         Главная
       </Breadcrumb.Item>

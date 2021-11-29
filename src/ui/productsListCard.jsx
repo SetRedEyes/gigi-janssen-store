@@ -8,9 +8,9 @@ const ProductsListCard = ({ products }) => {
   return (
     <>
       {products.map((product) => (
-        <Col key={product._id} md={4} className="mt-5">
+        <Col key={product._id} md={4} className="mb-5">
           <Card style={{ width: "18rem", border: "none" }} border={"light"}>
-            <Card.Subtitle className="text-muted mb-1 text-center">
+            <Card.Subtitle className="text-muted pt-2 mb-1 text-center">
               {product.rusName}
             </Card.Subtitle>
             <Link to={`/product/${product._id}`}>

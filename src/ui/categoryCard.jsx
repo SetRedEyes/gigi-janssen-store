@@ -4,14 +4,14 @@ import PropTypes from "prop-types"
 
 const CategoryCard = ({ name, photo }) => {
   return (
-    <Card className="mt-5" style={{ width: "13rem", border: "none" }}>
+    <Card style={{ width: "13rem", border: "none" }} className="mb-3 ">
       <Card.Img
         style={{ width: "13rem", height: "14rem" }}
         variant="top"
         src={photo}
       />
-      <Card.Body>
-        <Card.Text className="text-center link">{name}</Card.Text>
+      <Card.Body style={{ padding: "0" }}>
+        <Card.Text className="text-center ">{name}</Card.Text>
       </Card.Body>
     </Card>
   )

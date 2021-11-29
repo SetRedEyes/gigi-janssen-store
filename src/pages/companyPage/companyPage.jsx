@@ -26,7 +26,7 @@ const CompanyPage = () => {
       <Container fluid>
         <Row>
           {categories && (
-            <Col md={3} className="mt-2">
+            <Col md={3} className="mt-1">
               <h1 className="text-center">GIGI</h1>
               <GroupList
                 selectedItem={selectedCat}
@@ -51,7 +51,7 @@ const CompanyPage = () => {
           </Col>
 
           {categories && (
-            <Col md={3} className="mt-2">
+            <Col md={3} className="mt-1">
               <h1 className="text-center">Janssen</h1>
               <GroupList
                 items={categories.janssen}

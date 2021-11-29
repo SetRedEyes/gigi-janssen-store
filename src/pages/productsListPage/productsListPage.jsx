@@ -55,8 +55,8 @@ const ProductsListPage = ({ companyId }) => {
     return (
       <Container fluid>
         {categories && (
-          <Row className="mt-2 me-5">
-            <Col md={3} className="mt-5">
+          <Row className="me-5">
+            <Col md={3} className="mt-4">
               <GroupList
                 selectedItem={selectedCat}
                 items={categories}
@@ -64,7 +64,7 @@ const ProductsListPage = ({ companyId }) => {
               />
             </Col>
 
-            <Col md={8} className="ms-5">
+            <Col md={8} className="ms-5 mt-2">
               <Row>
                 <ProductsListCard products={productCrop} />
               </Row>

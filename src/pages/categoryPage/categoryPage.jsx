@@ -14,11 +14,11 @@ const CategoryPage = ({ companyId }) => {
   if (companyId && categories) {
     return (
       <Container className="d-flex">
-        <Row className="mt-5">
+        <Row className="mt-2">
           {Object.keys(categories).map((cat) => (
             <Col key={categories[cat]._id}>
               <Link
-                className="text-decoration-none"
+                className="link text-decoration-none "
                 to={{
                   pathname: `/${companyId}/${categories[cat]._id}`,
                   state: {

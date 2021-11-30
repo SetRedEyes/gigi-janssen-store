@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { Col, Container, Row, Spinner } from "react-bootstrap"
 import api from "../../../api"
-import CategoryCard from "../../../ui/categoryCard"
+import CategoryCard from "../../ui/categoryCard"
 import PropTypes from "prop-types"
 
 const CategoryPage = ({ companyId }) => {

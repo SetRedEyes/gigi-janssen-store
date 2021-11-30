@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import { Col, Container, Row, Spinner } from "react-bootstrap"
 import api from "../../../api"
 import GroupList from "../../../components/common/groupList"
-import CompanyCard from "../../../ui/companyCard"
+import CompanyCard from "../../ui/companyCard"
 
 const CompanyPage = () => {
   const [companies, setCompanies] = useState()

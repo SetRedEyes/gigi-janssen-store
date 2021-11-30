@@ -2,7 +2,7 @@ import React from "react"
 import "./App.css"
 import "./normalize.css"
 import { Switch, Route, Redirect } from "react-router-dom"
-import NavBar from "./components/navBar"
+import NavBar from "./components/common/navBar"
 import { authRoutes, publicRoutes } from "./routes"
 
 const App = () => {

@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react"
 import { Col, Container, Row, Spinner, Image } from "react-bootstrap"
-import api from "../../api"
+import api from "../../../api"
 import PropTypes from "prop-types"
-import GroupList from "../../components/groupList"
-import VolumePrice from "../../components/volumePrice"
+import GroupList from "../../../components/common/groupList"
+import VolumePrice from "../../../components/common/volumePrice"
 
 const ProductPage = ({ productId, companyId }) => {
   const [product, setProduct] = useState(null)

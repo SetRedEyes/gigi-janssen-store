@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { Breadcrumb } from "react-bootstrap"
 import { Link, useLocation } from "react-router-dom"
-import api from "../api"
+import api from "../../api"
 import PropTypes from "prop-types"
 
 const BreadCrumbs = ({ productId }) => {

@@ -1,6 +1,6 @@
-import Admin from "./pages/Admin"
-import Auth from "./pages/Auth"
-import Basket from "./pages/Basket"
+import Admin from "./components/pages/Admin"
+import Auth from "./components/pages/Auth"
+import Basket from "./components/pages/Basket"
 import Main from "./layouts/main"
 
 export const authRoutes = [

@@ -16,11 +16,7 @@ const Main = () => {
       {companyId ? (
         categoryId ? (
           productId ? (
-            <ProductPage
-              productId={productId}
-              categoryId={categoryId}
-              companyId={companyId}
-            />
+            <ProductPage productId={productId} companyId={companyId} />
           ) : (
             <ProductsListPage companyId={companyId} categoryId={categoryId} />
           )

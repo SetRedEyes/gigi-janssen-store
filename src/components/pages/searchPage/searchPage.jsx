@@ -7,7 +7,7 @@ import GroupList from "../../common/groupList"
 import PagesPagination from "../../common/pagination"
 import ProductsListCard from "../../ui/productsListCard"
 import api from "../../../api"
-// import BreadCrumbs from "../../common/breadCrumbs"
+import BreadCrumbs from "../../common/breadCrumbs"
 
 const SearchPage = () => {
   const { search } = query.parse(useLocation().search)
@@ -49,7 +49,7 @@ const SearchPage = () => {
     console.log(productCrop.length)
     return (
       <Container fluid>
-        {/* <BreadCrumbs /> */}
+        <BreadCrumbs />
         {categories && (
           <>
             <Row>

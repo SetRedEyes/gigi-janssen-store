@@ -33,12 +33,12 @@ const BreadCrumbs = ({ productId }) => {
       return "Каталог GIGI"
     } else if (name === "janssen") {
       return "Каталог Janssen"
+    } else if (name === "search") {
+      return "Поиск"
     } else if (categories && isNaN(name)) {
       return categories.find((cat) => cat._id === name).name
     } else if (product && !isNaN(name)) {
       return `${product.name} - ${product.rusName}`
-    } else {
-      return "Поиск"
     }
   }
 

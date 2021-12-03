@@ -8,7 +8,7 @@ import ProductsListCard from "../../ui/productsListCard"
 import PropTypes from "prop-types"
 import { useLocation } from "react-router-dom"
 
-const ProductsListPage = ({ companyId, categoryId }) => {
+const ProductsListPage = ({ companyId }) => {
   const location = useLocation()
   const [products, setProducts] = useState()
   const [currentPage, setCurrentPage] = useState(1)
@@ -66,11 +66,7 @@ const ProductsListPage = ({ companyId, categoryId }) => {
 
             <Col md={8} className="ms-5 mt-2">
               <Row>
-                <ProductsListCard
-                  products={productCrop}
-                  companyId={companyId}
-                  categoryId={categoryId}
-                />
+                <ProductsListCard products={productCrop} />
               </Row>
               <Row className="mt-5">
                 <PagesPagination

@@ -4,14 +4,14 @@ import CategoryPage from "../components/pages/categoryPage/categoryPage"
 import { useParams } from "react-router-dom"
 import ProductsListPage from "../components/pages/productsListPage/productsListPage"
 import ProductPage from "../components/pages/productPage/productPage"
-import BreadCrumbs from "../components/common/breadCrumbs"
+// import BreadCrumbs from "../components/common/breadCrumbs"
 
 const Main = () => {
   const params = useParams()
   const { companyId, categoryId, productId } = params
   return (
     <>
-      <BreadCrumbs productId={productId} />
+      {/* <BreadCrumbs productId={productId} /> */}
 
       {companyId ? (
         categoryId ? (

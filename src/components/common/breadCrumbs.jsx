@@ -37,6 +37,8 @@ const BreadCrumbs = ({ productId }) => {
       return categories.find((cat) => cat._id === name).name
     } else if (product && !isNaN(name)) {
       return `${product.name} - ${product.rusName}`
+    } else {
+      return "Поиск"
     }
   }
 
@@ -49,10 +51,11 @@ const BreadCrumbs = ({ productId }) => {
       </Breadcrumb.Item>
       {pathnames.map((name, index) => {
         const isLast = index === pathnames.length - 1
+        const routeTo = pathnames.slice(0, index + 1).join("/")
         return (
           <Breadcrumb.Item
             linkAs={Link}
-            linkProps={{ to: `/${name}` }}
+            linkProps={{ to: routeTo }}
             key={name}
             active={isLast}
           >

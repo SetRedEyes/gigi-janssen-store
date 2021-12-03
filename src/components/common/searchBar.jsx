@@ -1,18 +1,37 @@
-import React from "react"
-import { Form } from "react-bootstrap"
+import React, { useState } from "react"
+import { Button, Form, FormControl, InputGroup } from "react-bootstrap"
+import { useHistory } from "react-router-dom"
 
 const SearchBar = () => {
+  const history = useHistory()
+  const [search, setSearch] = useState()
+
+  const handleSearch = ({ target }) => {
+    setSearch(target.value)
+  }
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    history.push(`/search?search=${search}`)
+  }
   return (
-    <div className="d-flex justify-content-end align-items-center  me-5">
-      <Form.Floating className="" style={{ width: "30rem" }}>
-        <Form.Control
-          id="floatingInputCustom"
-          type="text"
-          placeholder="name@example.com"
+    <Form onSubmit={handleSubmit}>
+      <InputGroup>
+        <FormControl
+          placeholder="Поиск"
+          aria-label="Recipient's username"
+          aria-describedby="basic-addon2"
+          onChange={handleSearch}
         />
-        <label htmlFor="floatingInputCustom">Поиск</label>
-      </Form.Floating>
-    </div>
+        <Button
+          variant="outline-light"
+          id="button-addon2"
+          onClick={handleSubmit}
+          className="searchBtn"
+        >
+          <i className="bi bi-search"></i>
+        </Button>
+      </InputGroup>
+    </Form>
   )
 }
 

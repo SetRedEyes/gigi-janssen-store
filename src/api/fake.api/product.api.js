@@ -104,8 +104,8 @@ const products = [
     _id: "10",
     name: "Sea Weed Toner",
     rusName: "Тонер",
-    category: categories.gigi.recovery,
-    price: [850],
+    category: categories.gigi.seaWeed,
+    price: [800],
     volume: [volume[250]],
     photo:
       "https://images.unsplash.com/photo-1633085650319-b9efc57dcf07?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1887&q=80"
@@ -115,7 +115,7 @@ const products = [
     name: "Sea Weed Soapless Soap",
     rusName: "Непенящееся мыло",
     category: categories.gigi.seaWeed,
-    price: [850, 1600],
+    price: [950, 1600],
     volume: [volume[120], volume[250]],
     photo:
       "https://images.unsplash.com/photo-1633085650319-b9efc57dcf07?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1887&q=80"
@@ -125,7 +125,7 @@ const products = [
     name: "Recovery Skin Clear Cleanser",
     rusName: "Очищающий гель",
     category: categories.gigi.recovery,
-    price: [850, 1600],
+    price: [900, 1600],
     volume: [volume[120], volume[250]],
     photo:
       "https://images.unsplash.com/photo-1633085650319-b9efc57dcf07?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1887&q=80"
@@ -135,7 +135,7 @@ const products = [
     name: "Recovery Skin Clear Cleanser",
     rusName: "Очищающий гель",
     category: categories.gigi.recovery,
-    price: [850, 1600],
+    price: [920, 1600],
     volume: [volume[120], volume[250]],
     photo:
       "https://images.unsplash.com/photo-1633085650319-b9efc57dcf07?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1887&q=80"

@@ -30,14 +30,14 @@ export const categoriesObject = {
     },
     seaWeed: {
       _id: "seaWeed",
-      name: "Recovery - Парамедицинская линия на основе растительных стволовых клеток",
+      name: "Sea Weed - Морские водоросли для комбинированной и жирной кожи",
       companyId: "gigi",
       photo:
         "https://images.unsplash.com/photo-1633085650319-b9efc57dcf07?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1887&q=80"
     },
     recovery: {
       _id: "recovery",
-      name: "Sea Weed - Морские водоросли для комбинированной и жирной кожи",
+      name: "Recovery - Парамедицинская линия на основе растительных стволовых клеток",
       companyId: "gigi",
       photo:
         "https://images.unsplash.com/photo-1633085650319-b9efc57dcf07?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1887&q=80"

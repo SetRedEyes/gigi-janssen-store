@@ -7,6 +7,8 @@ import GroupList from "../../../components/common/groupList"
 import ProductsListCard from "../../ui/productsListCard"
 import PropTypes from "prop-types"
 import { useLocation } from "react-router-dom"
+import SortSelect from "../../common/sortSelect"
+import _ from "lodash"
 
 const ProductsListPage = ({ companyId }) => {
   const location = useLocation()
@@ -14,6 +16,7 @@ const ProductsListPage = ({ companyId }) => {
   const [currentPage, setCurrentPage] = useState(1)
   const [categories, setCategories] = useState()
   const [selectedCat, setSelectedCat] = useState()
+  const [sortBy, setSortBy] = useState({ iter: "rusName", order: "asc" })
 
   useEffect(() => {
     api.categories.getByCompany(companyId).then((data) => setCategories(data))
@@ -43,6 +46,22 @@ const ProductsListPage = ({ companyId }) => {
     setSelectedCat(item)
   }
 
+  const handleSort = (target) => {
+    if (target.value === "") {
+      setSortBy((prevState) => ({
+        ...prevState,
+        iter: "rusName",
+        order: "asc"
+      }))
+    } else {
+      setSortBy((prevState) => ({
+        ...prevState,
+        iter: target.name,
+        order: target.value
+      }))
+    }
+  }
+
   if (products) {
     const filteredProducts = selectedCat
       ? products.filter((product) => {
@@ -51,12 +70,17 @@ const ProductsListPage = ({ companyId }) => {
       : products
     const count = filteredProducts.length
 
-    const productCrop = paginate(filteredProducts, currentPage, pageSize)
+    const sortedProducts = _.orderBy(filteredProducts, [sortBy.iter], [sortBy.order])
+    const productCrop = paginate(sortedProducts, currentPage, pageSize)
     return (
       <Container fluid>
+        <SortSelect onSort={handleSort} />
         {categories && (
           <Row className="me-5">
-            <Col md={3} className="mt-4">
+            <Col md={3}>
+              <h1 className="text-center m-0">
+                {companyId === "gigi" ? "GIGI" : "JANSSEN"}
+              </h1>
               <GroupList
                 selectedItem={selectedCat}
                 items={categories}
@@ -64,7 +88,7 @@ const ProductsListPage = ({ companyId }) => {
               />
             </Col>
 
-            <Col md={8} className="ms-5 mt-2">
+            <Col md={8} className="ms-5 mt-3">
               <Row>
                 <ProductsListCard products={productCrop} />
               </Row>

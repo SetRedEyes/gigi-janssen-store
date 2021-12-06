@@ -44,9 +44,7 @@ const SearchPage = () => {
         })
       : products
     const count = filteredProducts.length
-    console.log(filteredProducts.length)
     const productCrop = paginate(filteredProducts, currentPage, pageSize)
-    console.log(productCrop.length)
     return (
       <Container fluid>
         <BreadCrumbs />

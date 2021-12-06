@@ -28,6 +28,7 @@ const BreadCrumbs = ({ productId }) => {
   }, [productId])
 
   const pathnames = pathname.split("/").filter((x) => x)
+
   const renderCrumbName = (name) => {
     if (name === "gigi") {
       return "Каталог GIGI"
@@ -55,7 +56,7 @@ const BreadCrumbs = ({ productId }) => {
         return (
           <Breadcrumb.Item
             linkAs={Link}
-            linkProps={{ to: routeTo }}
+            linkProps={{ to: `/${routeTo}` }}
             key={name}
             active={isLast}
           >

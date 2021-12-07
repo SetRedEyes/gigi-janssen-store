@@ -78,7 +78,7 @@ const ProductsListPage = ({ companyId }) => {
         {categories && (
           <Row className="me-5">
             <Col md={3}>
-              <h1 className="text-center m-0">
+              <h1 className="text-center m-0 mb-1">
                 {companyId === "gigi" ? "GIGI" : "JANSSEN"}
               </h1>
               <GroupList

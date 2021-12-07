@@ -8,12 +8,15 @@ import PagesPagination from "../../common/pagination"
 import ProductsListCard from "../../ui/productsListCard"
 import api from "../../../api"
 import BreadCrumbs from "../../common/breadCrumbs"
+import _ from "lodash"
+import SortSelect from "../../common/sortSelect"
 
 const SearchPage = () => {
   const { search } = query.parse(useLocation().search)
   const [products, setProducts] = useState()
   const [currentPage, setCurrentPage] = useState(1)
   const [categories, setCategories] = useState()
+  const [sortBy, setSortBy] = useState({ iter: "rusName", order: "asc" })
 
   useEffect(() => {
     api.products.fetchAll().then((data) => setProducts(data))
@@ -31,6 +34,22 @@ const SearchPage = () => {
     localStorage.setItem("selectedCat", JSON.stringify(item))
   }
 
+  const handleSort = (target) => {
+    if (target.value === "") {
+      setSortBy((prevState) => ({
+        ...prevState,
+        iter: "rusName",
+        order: "asc"
+      }))
+    } else {
+      setSortBy((prevState) => ({
+        ...prevState,
+        iter: target.name,
+        order: target.value
+      }))
+    }
+  }
+
   const pageSize = 6
   const handlePageChange = (pageIndex) => {
     setCurrentPage(pageIndex)
@@ -44,14 +63,18 @@ const SearchPage = () => {
         })
       : products
     const count = filteredProducts.length
-    const productCrop = paginate(filteredProducts, currentPage, pageSize)
+
+    const sortedProducts = _.orderBy(filteredProducts, [sortBy.iter], [sortBy.order])
+    const productCrop = paginate(sortedProducts, currentPage, pageSize)
     return (
       <Container fluid>
         <BreadCrumbs />
+        <SortSelect onSort={handleSort} />
+
         {categories && (
           <>
             <Row>
-              <Col md={3} className="mt-2">
+              <Col md={3} className="mt-3">
                 <h1 className="text-center">GIGI</h1>
                 <GroupList
                   items={categories.gigi}

@@ -56,7 +56,7 @@ const ProductPage = ({ productId, companyId }) => {
                       {product.name} - {product.rusName}
                     </strong>
                   </h5>
-                  <Row className="mt-3 ">
+                  <Row className="mt-3">
                     <span>Тип кожи:</span>
                     <span>Область применения:</span>
                     <span>Возраст:</span>
@@ -65,8 +65,11 @@ const ProductPage = ({ productId, companyId }) => {
                     <span>Страна производитель:</span>
                     <span>Активные компоненты:</span>
                     <span>Способ применения:</span>
+                    <span>
+                      id товара: <strong>{product._id}</strong>
+                    </span>
                   </Row>
-                  <Row className="justify-content-center">
+                  <Row className="justify-content-center al">
                     <Col md={5} className="mt-5 ">
                       <VolumePrice product={product} />
                     </Col>

@@ -1,7 +1,7 @@
 import Admin from "./components/pages/Admin"
-import Auth from "./components/pages/Auth"
 import Basket from "./components/pages/Basket"
 import SearchPage from "./components/pages/searchPage/searchPage"
+import Login from "./layouts/login"
 import Main from "./layouts/main"
 
 export const authRoutes = [
@@ -21,13 +21,10 @@ export const publicRoutes = [
     component: Main
   },
   {
-    path: "/login",
-    component: Auth
+    path: "/login/:type?",
+    component: Login
   },
-  {
-    path: "/registration",
-    component: Auth
-  },
+
   { path: "/basket", component: Basket },
 
   { path: "/search", component: SearchPage },

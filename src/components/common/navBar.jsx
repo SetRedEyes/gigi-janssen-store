@@ -1,9 +1,11 @@
 import { React, useState } from "react"
 import { Button, Container, Nav, Navbar } from "react-bootstrap"
-import { NavLink } from "react-router-dom"
+import { NavLink, useLocation } from "react-router-dom"
 import SearchBar from "./searchBar"
 
 const NavBar = () => {
+  const { pathname } = useLocation()
+
   const [auth, setAuth] = useState(false)
   return (
     <Navbar bg="dark" variant="dark">
@@ -11,7 +13,7 @@ const NavBar = () => {
         <NavLink className="header-title text-decoration-none" to={"/"}>
           GIGI & JANSSEN
         </NavLink>
-        <SearchBar />
+        {pathname !== "/login" && <SearchBar />}
         {auth ? (
           <Nav style={{ color: "white" }}>
             <Button variant={"outline-light"}>Админ панель</Button>

@@ -13,7 +13,7 @@ const Login = () => {
   }
 
   return (
-    <Container className='mt-5'>
+    <Container className="mt-5">
       <Row>
         <Col md={{ span: 6, offset: 3 }} className="shadow p-4">
           {fomType === "register" ? (
@@ -24,7 +24,7 @@ const Login = () => {
                 Уже есть аккант?{" "}
                 <a role="button" onClick={toggleFormType}>
                   {" "}
-                  Войти
+                  <span className="link">Войти</span>
                 </a>
               </p>
             </>
@@ -37,7 +37,7 @@ const Login = () => {
                 Еще нет аккаунта?
                 <a role="button" onClick={toggleFormType}>
                   {" "}
-                  Зарегистрироваться
+                  <span className="link">Зарегистрироваться</span>
                 </a>
               </p>
             </>

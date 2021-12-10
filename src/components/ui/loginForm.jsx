@@ -74,7 +74,7 @@ const LoginForm = () => {
       <CheckBoxField value={data.stayOn} onChange={handleChange} name="stayOn">
         Оставаться в системе
       </CheckBoxField>
-      <Button type="submit" className="mx-auto w-100" disabled={!isValid}>
+      <Button type="submit" className="mx-auto w-100 submit-btn" disabled={!isValid}>
         Отправить данные
       </Button>
     </Form>

@@ -81,7 +81,7 @@ const RegisterForm = () => {
         onChange={handleChange}
         error={errors.password}
       />
-      <Button type="submit" className="mx-auto w-100" disabled={!isValid}>
+      <Button type="submit" className="mx-auto w-100 submit-btn" disabled={!isValid}>
         Отправить данные
       </Button>
     </Form>

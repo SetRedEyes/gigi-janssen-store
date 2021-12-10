@@ -23,6 +23,11 @@
   color: #fff;
 }
 
+.submit-btn {
+  background-color: #21c1cf !important;
+  border-color: #21c1cf !important;
+}
+
 .buyBtn {
   background-color: #212529;
   border-color: #212529;

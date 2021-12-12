@@ -4,6 +4,8 @@ import "./normalize.css"
 import { Switch, Route, Redirect } from "react-router-dom"
 import NavBar from "./components/common/navBar"
 import { authRoutes, publicRoutes } from "./routes"
+import { ToastContainer } from "react-toastify"
+import "react-toastify/dist/ReactToastify.css"
 
 const App = () => {
   const isAuth = false
@@ -22,6 +24,7 @@ const App = () => {
         ))}
         <Redirect to={"/"} />
       </Switch>
+      <ToastContainer />
     </div>
   )
 }

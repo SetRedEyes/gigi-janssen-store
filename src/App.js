@@ -6,6 +6,9 @@ import NavBar from "./components/common/navBar"
 import { authRoutes, publicRoutes } from "./routes"
 import { ToastContainer } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
+import ProductProvider from "./hooks/useProducts"
+import { CategoryProvider } from "./hooks/useCategory"
+import { CompanyProvider } from "./hooks/useCompany"
 
 const App = () => {
   const isAuth = false
@@ -14,15 +17,21 @@ const App = () => {
     <div>
       <NavBar />
       <Switch>
-        {isAuth &&
-          authRoutes.map(({ path, component }) => (
-            <Route key={path} path={path} component={component} exact />
-          ))}
+        <CompanyProvider>
+          <CategoryProvider>
+            <ProductProvider>
+              {isAuth &&
+                authRoutes.map(({ path, component }) => (
+                  <Route key={path} path={path} component={component} exact />
+                ))}
 
-        {publicRoutes.map(({ path, component }) => (
-          <Route key={path} path={path} component={component} exact />
-        ))}
-        <Redirect to={"/"} />
+              {publicRoutes.map(({ path, component }) => (
+                <Route key={path} path={path} component={component} exact />
+              ))}
+              <Redirect to={"/"} />
+            </ProductProvider>
+          </CategoryProvider>
+        </CompanyProvider>
       </Switch>
       <ToastContainer />
     </div>

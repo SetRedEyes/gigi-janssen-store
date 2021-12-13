@@ -1,22 +1,15 @@
 import React, { useEffect, useState } from "react"
 import { Col, Container, Row, Spinner, Image } from "react-bootstrap"
-import api from "../../../api"
 import PropTypes from "prop-types"
 import GroupList from "../../../components/common/groupList"
 import VolumePrice from "../../../components/common/volumePrice"
+import { useCategory } from "../../../hooks/useCategory"
+import { useProduct } from "../../../hooks/useProducts"
 
 const ProductPage = ({ productId, companyId }) => {
-  const [product, setProduct] = useState(null)
   const [selectedCat, setSelectedCat] = useState()
-  const [categories, setCategories] = useState()
-
-  useEffect(() => {
-    api.categories.getByCompany(companyId).then((data) => setCategories(data))
-  }, [])
-
-  useEffect(() => {
-    api.products.getById(productId).then((data) => setProduct(data))
-  }, [])
+  const categories = useCategory().getCategoriesByCompany(companyId)
+  const product = useProduct().getProduct(productId)
 
   useEffect(() => {
     setSelectedCat(JSON.parse(localStorage.getItem("selectedCat")))

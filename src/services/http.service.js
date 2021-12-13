@@ -1,5 +1,8 @@
 import axios from "axios"
 import { toast } from "react-toastify"
+import config from "../config.json"
+
+axios.defaults.baseurl = config.apiEndpoint
 
 axios.interceptors.response.use(
   (res) => res,
@@ -8,6 +11,8 @@ axios.interceptors.response.use(
       error.response && error.response.status >= 400 && error.response.status < 500
 
     if (!expectedErrors) {
+      console.log(error)
+
       toast.error("Что-то пошло не так. Попробуйте позже")
     }
     return Promise.reject(error)

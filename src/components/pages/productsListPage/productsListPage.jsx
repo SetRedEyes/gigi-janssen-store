@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { paginate } from "../../../utils/paginate"
 import { Row, Col, Container, Spinner } from "react-bootstrap"
-import api from "../../../api"
 import PagesPagination from "../../../components/common/pagination"
 import GroupList from "../../../components/common/groupList"
 import ProductsListCard from "../../ui/productsListCard"
@@ -9,22 +8,18 @@ import PropTypes from "prop-types"
 import { useLocation } from "react-router-dom"
 import SortSelect from "../../common/sortSelect"
 import _ from "lodash"
+import { useProduct } from "../../../hooks/useProducts"
+import { useCategory } from "../../../hooks/useCategory"
 
 const ProductsListPage = ({ companyId }) => {
   const location = useLocation()
-  const [products, setProducts] = useState()
+  const { products } = useProduct()
+  const categories = useCategory().getCategoriesByCompany(companyId)
+
   const [currentPage, setCurrentPage] = useState(1)
-  const [categories, setCategories] = useState()
+
   const [selectedCat, setSelectedCat] = useState()
   const [sortBy, setSortBy] = useState({ iter: "rusName", order: "asc" })
-
-  useEffect(() => {
-    api.categories.getByCompany(companyId).then((data) => setCategories(data))
-  }, [currentPage])
-
-  useEffect(() => {
-    api.products.fetchAll().then((data) => setProducts(data))
-  }, [])
 
   useEffect(() => {
     setCurrentPage(1)

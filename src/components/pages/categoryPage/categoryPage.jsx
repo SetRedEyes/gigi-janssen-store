@@ -1,14 +1,11 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
 import { Col, Container, Row, Spinner } from "react-bootstrap"
-import api from "../../../api"
 import CategoryCard from "../../ui/categoryCard"
 import PropTypes from "prop-types"
+import { useCategory } from "../../../hooks/useCategory"
 
 const CategoryPage = ({ companyId }) => {
-  const [categories, setCategory] = useState()
-  useEffect(() => {
-    api.categories.getByCompany(companyId).then((data) => setCategory(data))
-  }, [])
+  const categories = useCategory().getCategoriesByCompany(companyId)
 
   if (companyId && categories) {
     return (

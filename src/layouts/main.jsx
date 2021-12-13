@@ -9,6 +9,7 @@ import BreadCrumbs from "../components/common/breadCrumbs"
 const Main = () => {
   const params = useParams()
   const { companyId, categoryId, productId } = params
+
   return (
     <>
       <BreadCrumbs productId={productId} />

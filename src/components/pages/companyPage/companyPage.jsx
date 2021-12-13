@@ -1,21 +1,14 @@
-import React, { useEffect, useState } from "react"
+import React, { useState } from "react"
 import { Col, Container, Row, Spinner } from "react-bootstrap"
-import api from "../../../api"
 import GroupList from "../../../components/common/groupList"
+import { useCategory } from "../../../hooks/useCategory"
+import { useCompany } from "../../../hooks/useCompany"
 import CompanyCard from "../../ui/companyCard"
 
 const CompanyPage = () => {
-  const [companies, setCompanies] = useState()
+  const { companies } = useCompany()
+  const { categories } = useCategory()
   const [selectedCat, setSelectedCat] = useState()
-  const [categories, setCategories] = useState()
-
-  useEffect(() => {
-    api.companies.fetchAll().then((data) => setCompanies(data))
-  }, [])
-
-  useEffect(() => {
-    api.categories.fetchAll().then((data) => setCategories(data))
-  }, [])
 
   const handleCategorySelect = (item) => {
     localStorage.setItem("selectedCat", JSON.stringify(item))

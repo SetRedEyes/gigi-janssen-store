@@ -1,4 +1,4 @@
 {
-  "apiEndpoint": "",
+  "apiEndpoint": "https://gigi-janssen-online-store-default-rtdb.europe-west1.firebasedatabase.app/",
   "isFireBase": true
 }

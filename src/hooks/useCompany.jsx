@@ -43,9 +43,9 @@ export const CompanyProvider = ({ children }) => {
   }
 
   return (
-    <CompanyProvider value={{ companies, getCompanies }}>
+    <CompanyContext.Provider value={{ companies, getCompanies }}>
       {!isLoading ? children : <LoadingSpinner />}
-    </CompanyProvider>
+    </CompanyContext.Provider>
   )
 }
 

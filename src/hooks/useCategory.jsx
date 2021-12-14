@@ -46,9 +46,11 @@ export const CategoryProvider = ({ children }) => {
     setLoading(false)
   }
   return (
-    <CategoryContext value={{ categories, getCategories, getCategoriesByCompany }}>
+    <CategoryContext.Provider
+      value={{ categories, getCategories, getCategoriesByCompany }}
+    >
       {!isLoading ? children : <LoadingSpinner />}
-    </CategoryContext>
+    </CategoryContext.Provider>
   )
 }
 

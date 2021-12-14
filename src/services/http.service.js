@@ -2,8 +2,7 @@ import axios from "axios"
 import { toast } from "react-toastify"
 import configFile from "../config.json"
 
-axios.defaults.baseurl = configFile.apiEndpoint
-
+axios.defaults.baseURL = configFile.apiEndpoint
 axios.interceptors.request.use(
   function (config) {
     if (configFile.isFireBase) {

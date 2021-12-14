@@ -37,7 +37,7 @@ export const CategoryProvider = ({ children }) => {
   }
 
   const getCategoriesByCompany = (id) => {
-    return categories[id]
+    return categories.filter((c) => c.companyId === id)
   }
 
   function errorCatcher(error) {

@@ -7,22 +7,24 @@ import CompanyCard from "../../ui/companyCard"
 
 const CompanyPage = () => {
   const { companies } = useCompany()
-  const { categories } = useCategory()
+  const gigi = useCategory().getCategoriesByCompany("gigi")
+  const janssen = useCategory().getCategoriesByCompany("janssen")
   const [selectedCat, setSelectedCat] = useState()
-
   const handleCategorySelect = (item) => {
     localStorage.setItem("selectedCat", JSON.stringify(item))
     setSelectedCat(item)
   }
+
+  console.log("gigi", gigi)
   return (
     <Container fluid>
       <Row>
-        {categories && (
+        {gigi && (
           <Col md={3} className="mt-1">
             <h1 className="text-center">GIGI</h1>
             <GroupList
               selectedItem={selectedCat}
-              items={categories.gigi}
+              items={{ ...gigi }}
               onItemSelect={handleCategorySelect}
             />
           </Col>
@@ -42,11 +44,11 @@ const CompanyPage = () => {
           </Row>
         </Col>
 
-        {categories && (
+        {janssen && (
           <Col md={3} className="mt-1">
             <h1 className="text-center">Janssen</h1>
             <GroupList
-              items={categories.janssen}
+              items={{ ...janssen }}
               onItemSelect={handleCategorySelect}
               selectedItem={selectedCat}
             />

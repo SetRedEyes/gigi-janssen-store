@@ -13,9 +13,7 @@ const ProductsListCard = ({ products, colSize }) => {
             <Card.Subtitle className="text-muted pt-2 mb-1 text-center">
               {product.rusName}
             </Card.Subtitle>
-            <Link
-              to={`/${product.category.companyId}/${product.category._id}/${product._id}`}
-            >
+            <Link to={`/${product.companyId}/${product.category}/${product._id}`}>
               <Image
                 style={{ width: "18rem", height: "14rem" }}
                 src={product.photo}

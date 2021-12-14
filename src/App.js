@@ -16,10 +16,10 @@ const App = () => {
   return (
     <div>
       <NavBar />
-      <Switch>
-        <CompanyProvider>
-          <CategoryProvider>
-            <ProductProvider>
+      <CompanyProvider>
+        <CategoryProvider>
+          <ProductProvider>
+            <Switch>
               {isAuth &&
                 authRoutes.map(({ path, component }) => (
                   <Route key={path} path={path} component={component} exact />
@@ -29,10 +29,10 @@ const App = () => {
                 <Route key={path} path={path} component={component} exact />
               ))}
               <Redirect to={"/"} />
-            </ProductProvider>
-          </CategoryProvider>
-        </CompanyProvider>
-      </Switch>
+            </Switch>
+          </ProductProvider>
+        </CategoryProvider>
+      </CompanyProvider>
       <ToastContainer />
     </div>
   )

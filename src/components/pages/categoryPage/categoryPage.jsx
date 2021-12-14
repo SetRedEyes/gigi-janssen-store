@@ -6,7 +6,7 @@ import { useCategory } from "../../../hooks/useCategory"
 
 const CategoryPage = ({ companyId }) => {
   const categories = useCategory().getCategoriesByCompany(companyId)
-
+  console.log(categories)
   if (companyId && categories) {
     return (
       <Container className="d-flex">

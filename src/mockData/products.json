@@ -1,6 +1,7 @@
 [
   {
     "_id": "1a",
+    "companyId": "gigi",
     "name": "Acnon Smoothing Facial Cleanser",
     "rusName": "Успокаивающий гель для умывания",
     "category": "acnon",
@@ -10,6 +11,7 @@
   },
   {
     "_id": "2n",
+    "companyId": "gigi",
     "name": "New Age Comfort Day Cream SPF-15",
     "rusName": "Дневной крем SPF-15",
     "category": "newAge",
@@ -19,6 +21,7 @@
   },
   {
     "_id": "3",
+    "companyId": "gigi",
     "name": "Ester C Mild Cleanser",
     "rusName": "Нежный гель для умывания",
     "category": "esterC",
@@ -28,6 +31,7 @@
   },
   {
     "_id": "4",
+    "companyId": "gigi",
     "name": "Oxygen Prime Refreshing Cleansing Gel",
     "rusName": "Освежающий очищающий гель",
     "category": "oxygenPrime",
@@ -37,6 +41,7 @@
   },
   {
     "_id": "5",
+    "companyId": "gigi",
     "name": "Recovery Skin Clear Cleanser",
     "rusName": "Очищающий гель",
     "category": "recovery",
@@ -46,6 +51,7 @@
   },
   {
     "_id": "6",
+    "companyId": "gigi",
     "name": " Acnon Spotless Skin Refresher",
     "rusName": "Очищающий тоник",
     "category": "acnon",
@@ -55,6 +61,7 @@
   },
   {
     "_id": "7",
+    "companyId": "gigi",
     "name": "Oxygen Prime Advanced Moisturizer SPF-15",
     "rusName": "Увлажняющий крем SPF-15",
     "category": "oxygenPrime",
@@ -64,6 +71,7 @@
   },
   {
     "_id": "8",
+    "companyId": "gigi",
     "name": "Ester C Moisturizer Cream SPF-20",
     "rusName": "Дневной увлажняющий крем SPF-20",
     "category": "esterC",
@@ -73,6 +81,7 @@
   },
   {
     "_id": "9",
+    "companyId": "gigi",
     "name": "New Age Active Serum",
     "rusName": "Активная сыворотка",
     "category": "newAge",
@@ -82,6 +91,7 @@
   },
   {
     "_id": "10",
+    "companyId": "gigi",
     "name": "Sea Weed Toner",
     "rusName": "Тонер",
     "category": "seaWeed",
@@ -91,6 +101,7 @@
   },
   {
     "_id": "11",
+    "companyId": "gigi",
     "name": "Sea Weed Soapless Soap",
     "rusName": "Непенящееся мыло",
     "category": "seaWeed",
@@ -100,6 +111,7 @@
   },
   {
     "_id": "12",
+    "companyId": "gigi",
     "name": "Recovery Skin Clear Cleanser",
     "rusName": "Очищающий гель",
     "category": "recovery",
@@ -109,6 +121,7 @@
   },
   {
     "_id": "13",
+    "companyId": "gigi",
     "name": "Recovery Skin Clear Cleanser",
     "rusName": "Очищающий гель",
     "category": "recovery",
@@ -118,6 +131,7 @@
   },
   {
     "_id": "14",
+    "companyId": "janssen",
     "name": "Mature Skin Luxury Oil Cleanser",
     "rusName": "Очищающее масло для лица",
     "category": "matureSkin",
@@ -127,6 +141,7 @@
   },
   {
     "_id": "15",
+    "companyId": "janssen",
     "name": "Dry Skin Mild Creamy Cleanser",
     "rusName": "Очищающее молочко",
     "category": "drySkin",
@@ -136,6 +151,7 @@
   },
   {
     "_id": "16",
+    "companyId": "janssen",
     "name": "Platinum Care Day Cream",
     "rusName": "Дневной крем реструктурирующий",
     "category": "platinumCare",
@@ -145,6 +161,7 @@
   },
   {
     "_id": "17",
+    "companyId": "janssen",
     "name": "Demanding Skin Brightening Face Cleanser",
     "rusName": "Осветляющая очищающая эмульсия ",
     "category": "demandingSkin",
@@ -154,6 +171,7 @@
   },
   {
     "_id": "18",
+    "companyId": "janssen",
     "name": "Combination Skin Gentle Cleansing Powder",
     "rusName": "Очищающая пудраа",
     "category": "combinationSkin",
@@ -163,6 +181,7 @@
   },
   {
     "_id": "19",
+    "companyId": "janssen",
     "name": "Oily Skin Clarifying Cleansing Gel",
     "rusName": "Очищающий гель",
     "category": "oilySkin",

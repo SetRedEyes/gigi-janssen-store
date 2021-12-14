@@ -3,32 +3,19 @@ import { Breadcrumb } from "react-bootstrap"
 import { Link, useLocation } from "react-router-dom"
 import api from "../../api"
 import PropTypes from "prop-types"
+import { useCategory } from "../../hooks/useCategory"
 
 const BreadCrumbs = ({ productId }) => {
   const [product, setProduct] = useState()
-  const [categories, setCategories] = useState()
+  const { categories } = useCategory()
   const { pathname } = useLocation()
-
-  function transformData(data) {
-    const catArray = []
-    for (const company in data) {
-      for (const line in data[company]) {
-        catArray.push(data[company][line])
-      }
-    }
-    return catArray
-  }
-
-  useEffect(() => {
-    api.categories.fetchAll().then((data) => setCategories(transformData(data)))
-  }, [])
 
   useEffect(() => {
     api.products.getById(productId).then((data) => setProduct(data))
   }, [productId])
 
   const pathnames = pathname.split("/").filter((x) => x)
-
+  console.log(product)
   const renderCrumbName = (name) => {
     if (name === "gigi") {
       return "Каталог GIGI"

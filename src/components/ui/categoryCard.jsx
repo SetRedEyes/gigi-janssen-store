@@ -4,6 +4,7 @@ import PropTypes from "prop-types"
 import { Link } from "react-router-dom"
 
 const CategoryCard = ({ name, photo, companyId, categoryId, catObj }) => {
+  console.log(catObj)
   return (
     <Link
       className="link text-decoration-none "

@@ -21,7 +21,7 @@ const VolumePrice = ({ product }) => {
       <div className="d-flex justify-content-between mt-3">
         {product.volume.map((item, index) => (
           <Button
-            key={item._id}
+            key={item}
             variant="light"
             className={`text-nowrap ${
               (activeBtn === 0 && index === 0) || (activeBtn === 1 && index === 1)
@@ -31,7 +31,7 @@ const VolumePrice = ({ product }) => {
             onClick={() => renderPrice(index, product)}
             onMouseEnter={() => renderPrice(index, product)}
           >
-            {`${item.name} мл`}
+            {`${item} мл`}
           </Button>
         ))}
       </div>

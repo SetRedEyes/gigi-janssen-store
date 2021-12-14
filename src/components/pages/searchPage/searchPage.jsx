@@ -2,21 +2,21 @@ import React, { useState, useEffect } from "react"
 import query from "query-string"
 import { useLocation } from "react-router-dom"
 import { paginate } from "../../../utils/paginate"
-import { Col, Container, Row, Spinner } from "react-bootstrap"
+import { Col, Container, Row } from "react-bootstrap"
 import GroupList from "../../common/groupList"
 import PagesPagination from "../../common/pagination"
 import ProductsListCard from "../../ui/productsListCard"
 import BreadCrumbs from "../../common/breadCrumbs"
 import _ from "lodash"
 import SortSelect from "../../common/sortSelect"
-import ProductProvider, { useProduct } from "../../../hooks/useProducts"
+import { useProduct } from "../../../hooks/useProducts"
 import { useCategory } from "../../../hooks/useCategory"
 
 const SearchPage = () => {
   const { search } = query.parse(useLocation().search)
   const { products } = useProduct()
-  const { categories } = useCategory()
-
+  const gigi = useCategory().getCategoriesByCompany("gigi")
+  const janssen = useCategory().getCategoriesByCompany("janssen")
   const [currentPage, setCurrentPage] = useState(1)
   const [sortBy, setSortBy] = useState({ iter: "rusName", order: "asc" })
 
@@ -61,60 +61,40 @@ const SearchPage = () => {
     const sortedProducts = _.orderBy(filteredProducts, [sortBy.iter], [sortBy.order])
     const productCrop = paginate(sortedProducts, currentPage, pageSize)
     return (
-      <ProductProvider>
-        <Container fluid>
-          <BreadCrumbs />
-          <SortSelect onSort={handleSort} />
+      <Container fluid>
+        <BreadCrumbs />
+        <SortSelect onSort={handleSort} />
+        <Row>
+          <Col md={3}>
+            <h1 className="text-center m-0 mb-1">GIGI</h1>
+            <GroupList items={{ ...gigi }} onItemSelect={handleCategorySelect} />
+          </Col>
+          <Col md={{ offset: 1 }} className="mt-3 ms-4">
+            <Row className="ms-3">
+              {productCrop.length > 0 ? (
+                <ProductsListCard products={productCrop} colSize={6} />
+              ) : (
+                <h1 className="text-center mt-5">
+                  По Вашему запросу ({search}) ничего не найдено. Пожалуйста,
+                  измените параметры поиска.
+                </h1>
+              )}
+            </Row>
+          </Col>
 
-          {categories && (
-            <>
-              <Row>
-                <Col md={3} className="mt-3">
-                  <h1 className="text-center">GIGI</h1>
-                  <GroupList
-                    items={categories.gigi}
-                    onItemSelect={handleCategorySelect}
-                  />
-                </Col>
-                <Col md={{ offset: 1 }} className="mt-4 ms-4">
-                  <Row className="ms-3">
-                    {productCrop.length > 0 ? (
-                      <ProductsListCard products={productCrop} colSize={6} />
-                    ) : (
-                      <h1 className="text-center mt-5">
-                        По Вашему запросу ({search}) ничего не найдено. Пожалуйста,
-                        измените параметры поиска.
-                      </h1>
-                    )}
-                  </Row>
-                </Col>
-
-                <Col md={3} className="mt-1 ">
-                  <h1 className="text-center">Janssen</h1>
-                  <GroupList
-                    items={categories.janssen}
-                    onItemSelect={handleCategorySelect}
-                  />
-                </Col>
-              </Row>
-              <Row className="mt-5">
-                <PagesPagination
-                  itemsCount={count}
-                  pageSize={pageSize}
-                  currentPage={currentPage}
-                  onPageChange={handlePageChange}
-                />
-              </Row>
-            </>
-          )}
-        </Container>
-      </ProductProvider>
-    )
-  } else {
-    return (
-      <Container className="d-flex justify-content-center mt-4">
-        <Spinner animation="border" variant="info" />
-        <span className="mt-1 ms-2">Загрузка</span>
+          <Col md={3} className="mt-1 ">
+            <h1 className="text-center">Janssen</h1>
+            <GroupList items={{ ...janssen }} onItemSelect={handleCategorySelect} />
+          </Col>
+        </Row>
+        <Row className="mt-5">
+          <PagesPagination
+            itemsCount={count}
+            pageSize={pageSize}
+            currentPage={currentPage}
+            onPageChange={handlePageChange}
+          />
+        </Row>
       </Container>
     )
   }

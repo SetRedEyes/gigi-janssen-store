@@ -16,8 +16,21 @@ axios.interceptors.request.use(
   }
 )
 
+function transformData(data) {
+  return data
+    ? Object.keys(data).map((key) => ({
+        ...data[key]
+      }))
+    : []
+}
+
 axios.interceptors.response.use(
-  (res) => res,
+  (res) => {
+    if (configFile.isFireBase) {
+      res.data = transformData(res.data)
+    }
+    return res
+  },
   function (error) {
     const expectedErrors =
       error.response && error.response.status >= 400 && error.response.status < 500

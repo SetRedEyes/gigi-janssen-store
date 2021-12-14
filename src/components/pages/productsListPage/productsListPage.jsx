@@ -60,7 +60,7 @@ const ProductsListPage = ({ companyId }) => {
   if (products) {
     const filteredProducts = selectedCat
       ? products.filter((product) => {
-          return JSON.stringify(product.category) === JSON.stringify(selectedCat)
+          return JSON.stringify(product.category) === JSON.stringify(selectedCat._id)
         })
       : products
     const count = filteredProducts.length

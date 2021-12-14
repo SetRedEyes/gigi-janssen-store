@@ -5,6 +5,8 @@ const companyEndpoint = "company/"
 const companyService = {
   fetchAll: async () => {
     const data = await httpService.get(companyEndpoint)
+    console.log(data)
+
     return data
   }
 }

@@ -28,7 +28,6 @@ const ProductProvider = ({ children }) => {
   async function getProductsList() {
     try {
       const { data } = await productService.fetchAll()
-      console.log(data)
       setProducts(data)
       setLoading(false)
     } catch (error) {
@@ -41,7 +40,7 @@ const ProductProvider = ({ children }) => {
   }
 
   function errorCatcher(error) {
-    const { message } = error.response.data
+    const { message } = error
     setError(message)
     setLoading(false)
   }

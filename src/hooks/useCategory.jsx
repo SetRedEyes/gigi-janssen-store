@@ -41,7 +41,7 @@ export const CategoryProvider = ({ children }) => {
   }
 
   function errorCatcher(error) {
-    const { message } = error.response.data
+    const { message } = error
     setError(message)
     setLoading(false)
   }

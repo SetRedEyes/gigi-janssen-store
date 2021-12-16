@@ -3,8 +3,9 @@ import { validator } from "../../utils/validator"
 import { Button, Form } from "react-bootstrap"
 import TextField from "../form/textField"
 import { useAuth } from "../../hooks/useAuth"
-
+import { useHistory } from "react-router-dom"
 const RegisterForm = () => {
+  const history = useHistory()
   const [data, setData] = useState({
     email: "",
     password: ""
@@ -48,17 +49,21 @@ const RegisterForm = () => {
   const validate = () => {
     const errors = validator(data, validatorConfig)
     setErrors(errors)
-    return Object.keys(errors).length !== 0
+    return Object.keys(errors).length === 0
   }
 
-  const isValid = Object.keys(errors).length !== 0
+  const isValid = Object.keys(errors).length === 0
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     const isValid = validate()
-    if (isValid) return
-    signUp(data)
-    console.log(data)
+    if (!isValid) return
+    try {
+      await signUp(data)
+      history.push("/")
+    } catch (error) {
+      setErrors(error)
+    }
   }
 
   return (
@@ -78,7 +83,7 @@ const RegisterForm = () => {
         onChange={handleChange}
         error={errors.password}
       />
-      <Button type="submit" className="mx-auto w-100 submit-btn" disabled={isValid}>
+      <Button type="submit" className="mx-auto w-100 submit-btn" disabled={!isValid}>
         Отправить данные
       </Button>
     </Form>

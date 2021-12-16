@@ -70,16 +70,19 @@ const SearchPage = () => {
             <GroupList items={{ ...gigi }} onItemSelect={handleCategorySelect} />
           </Col>
           <Col md={{ offset: 1 }} className="mt-3 ms-4">
-            <Row className="ms-3">
-              {productCrop.length > 0 ? (
+            {productCrop.length > 0 ? (
+              <Row className="ms-3">
+                <h5 className="text-center mb-4 ">
+                  Результаты поиска по запросу ({search})
+                </h5>
                 <ProductsListCard products={productCrop} colSize={6} />
-              ) : (
-                <h1 className="text-center mt-5">
-                  По Вашему запросу ({search}) ничего не найдено. Пожалуйста,
-                  измените параметры поиска.
-                </h1>
-              )}
-            </Row>
+              </Row>
+            ) : (
+              <h1 className="text-center mt-5 ">
+                По Вашему запросу ({search}) ничего не найдено. Пожалуйста, измените
+                параметры поиска.
+              </h1>
+            )}
           </Col>
 
           <Col md={3} className="mt-1 ">

@@ -1,18 +1,13 @@
-import React, { useEffect, useState } from "react"
+import React from "react"
 import { Breadcrumb } from "react-bootstrap"
 import { Link, useLocation } from "react-router-dom"
-import api from "../../api"
 import PropTypes from "prop-types"
 import { useCategory } from "../../hooks/useCategory"
-
+import { useProduct } from "../../hooks/useProducts"
 const BreadCrumbs = ({ productId }) => {
-  const [product, setProduct] = useState()
+  const product = useProduct().getProduct(productId)
   const { categories } = useCategory()
   const { pathname } = useLocation()
-
-  useEffect(() => {
-    api.products.getById(productId).then((data) => setProduct(data))
-  }, [productId])
 
   const pathnames = pathname.split("/").filter((x) => x)
   const renderCrumbName = (name) => {
@@ -22,7 +17,7 @@ const BreadCrumbs = ({ productId }) => {
       return "Каталог Janssen"
     } else if (name === "search") {
       return "Поиск"
-    } else if (categories && isNaN(name)) {
+    } else if (categories && categories.includes(name)) {
       return categories.find((cat) => cat._id === name).name
     } else if (product) {
       return `${product.name} - ${product.rusName}`

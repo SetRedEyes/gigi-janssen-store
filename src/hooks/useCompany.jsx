@@ -37,7 +37,7 @@ export const CompanyProvider = ({ children }) => {
   }
 
   function errorCatcher(error) {
-    const { message } = error.response.data.error
+    const { message } = error
     setError(message)
     setLoading(false)
   }

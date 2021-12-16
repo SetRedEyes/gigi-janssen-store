@@ -1,10 +1,12 @@
-import React, { useState } from "react"
+import React, { useState, useRef } from "react"
 import { Button, Form, FormControl, InputGroup } from "react-bootstrap"
 import { useHistory } from "react-router-dom"
 
 const SearchBar = () => {
   const history = useHistory()
-  const [search, setSearch] = useState()
+  const [search, setSearch] = useState("")
+
+  const searchRef = useRef()
 
   const handleSearch = ({ target }) => {
     setSearch(target.value)
@@ -12,9 +14,11 @@ const SearchBar = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
     history.push(`/search?search=${search}`)
+    searchRef.current.reset()
   }
+
   return (
-    <Form onSubmit={handleSubmit}>
+    <Form onSubmit={handleSubmit} ref={searchRef}>
       <InputGroup>
         <FormControl
           placeholder="Поиск"

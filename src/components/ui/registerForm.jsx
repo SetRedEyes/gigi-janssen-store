@@ -2,13 +2,15 @@ import React, { useEffect, useState } from "react"
 import { validator } from "../../utils/validator"
 import { Button, Form } from "react-bootstrap"
 import TextField from "../form/textField"
+import { useAuth } from "../../hooks/useAuth"
 
 const RegisterForm = () => {
   const [data, setData] = useState({
     email: "",
-    password: "",
-    licese: false
+    password: ""
   })
+
+  const { signUp } = useAuth()
 
   const [errors, setErrors] = useState({})
 
@@ -36,12 +38,6 @@ const RegisterForm = () => {
         message: "Пароль должен состаять миниму из 8 символов",
         value: 8
       }
-    },
-    licence: {
-      isRequired: {
-        message:
-          "Вы не можете использовать наш сервис без подтреврждения лицензионного соглашения"
-      }
     }
   }
 
@@ -52,15 +48,16 @@ const RegisterForm = () => {
   const validate = () => {
     const errors = validator(data, validatorConfig)
     setErrors(errors)
-    return Object.keys(errors).length === 0
+    return Object.keys(errors).length !== 0
   }
 
-  const isValid = Object.keys(errors).length === 0
+  const isValid = Object.keys(errors).length !== 0
 
   const handleSubmit = (e) => {
     e.preventDefault()
     const isValid = validate()
     if (isValid) return
+    signUp(data)
     console.log(data)
   }
 
@@ -81,7 +78,7 @@ const RegisterForm = () => {
         onChange={handleChange}
         error={errors.password}
       />
-      <Button type="submit" className="mx-auto w-100 submit-btn" disabled={!isValid}>
+      <Button type="submit" className="mx-auto w-100 submit-btn" disabled={isValid}>
         Отправить данные
       </Button>
     </Form>

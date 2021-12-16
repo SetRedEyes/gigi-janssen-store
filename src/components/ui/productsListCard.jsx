@@ -22,7 +22,7 @@ const ProductsListCard = ({ products, colSize }) => {
             <Card.Body>
               <Link
                 className="link text-decoration-none text-center"
-                to={`/${product.category.companyId}/${product.category._id}/${product._id}`}
+                to={`/${product.companyId}/${product.category}/${product._id}`}
               >
                 <Card.Title style={{ height: "4rem" }}>{product.name}</Card.Title>
               </Link>

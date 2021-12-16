@@ -15,7 +15,6 @@ const BreadCrumbs = ({ productId }) => {
   }, [productId])
 
   const pathnames = pathname.split("/").filter((x) => x)
-  console.log(product)
   const renderCrumbName = (name) => {
     if (name === "gigi") {
       return "Каталог GIGI"
@@ -25,7 +24,7 @@ const BreadCrumbs = ({ productId }) => {
       return "Поиск"
     } else if (categories && isNaN(name)) {
       return categories.find((cat) => cat._id === name).name
-    } else if (product && !isNaN(name)) {
+    } else if (product) {
       return `${product.name} - ${product.rusName}`
     }
   }

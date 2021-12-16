@@ -15,7 +15,6 @@ const CompanyPage = () => {
     setSelectedCat(item)
   }
 
-  console.log("gigi", gigi)
   return (
     <Container fluid>
       <Row>

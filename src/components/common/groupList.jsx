@@ -11,7 +11,6 @@ const GroupList = ({
   selectedItem,
   pathProperty
 }) => {
-  console.log(selectedItem)
   if (!Array.isArray(items)) {
     return (
       <ListGroup>

@@ -9,30 +9,34 @@ import "react-toastify/dist/ReactToastify.css"
 import ProductProvider from "./hooks/useProducts"
 import { CategoryProvider } from "./hooks/useCategory"
 import { CompanyProvider } from "./hooks/useCompany"
+import AuthProvider from "./hooks/useAuth"
 
 const App = () => {
   const isAuth = false
 
   return (
     <div>
-      <NavBar />
-      <CompanyProvider>
-        <CategoryProvider>
-          <ProductProvider>
-            <Switch>
-              {isAuth &&
-                authRoutes.map(({ path, component }) => (
+      <AuthProvider>
+        <NavBar />
+        <CompanyProvider>
+          <CategoryProvider>
+            <ProductProvider>
+              <Switch>
+                {isAuth &&
+                  authRoutes.map(({ path, component }) => (
+                    <Route key={path} path={path} component={component} exact />
+                  ))}
+
+                {publicRoutes.map(({ path, component }) => (
                   <Route key={path} path={path} component={component} exact />
                 ))}
+                <Redirect to={"/"} />
+              </Switch>
+            </ProductProvider>
+          </CategoryProvider>
+        </CompanyProvider>
+      </AuthProvider>
 
-              {publicRoutes.map(({ path, component }) => (
-                <Route key={path} path={path} component={component} exact />
-              ))}
-              <Redirect to={"/"} />
-            </Switch>
-          </ProductProvider>
-        </CategoryProvider>
-      </CompanyProvider>
       <ToastContainer />
     </div>
   )

@@ -10,23 +10,11 @@ export const useAuth = () => {
   return useContext(AuthContext)
 }
 
-const TOKEN_KEY = "jwt-token"
-const REFRESH_KEY = "jwt-refresh-token"
-const EXPIRES_KEY = "jwt-expires"
-
 const AuthProvider = ({ children }) => {
   const [error, setError] = useState(null)
 
-  function setTokens({ refreshToken, idToken, expiresIn = 3600 }) {
-    const expiresDate = new Date().getTime() + expiresIn * 1000
-    localStorage.setItem(TOKEN_KEY, idToken)
-    localStorage.setItem(REFRESH_KEY, refreshToken)
-    localStorage.setItem(EXPIRES_KEY, expiresDate)
-  }
-
   async function signUp({ email, password }) {
-    const key = "AIzaSyA4rxfniv5J3Mx_jCfnoUZY7SW-CtDkVYY"
-    const url = `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${key}`
+    const url = `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${process.env.REACT_APP_FIREBASE_KEY}`
 
     try {
       const { data } = await httpAuth.post(url, {

@@ -10,6 +10,7 @@ const BreadCrumbs = ({ productId }) => {
   const { pathname } = useLocation()
 
   const pathnames = pathname.split("/").filter((x) => x)
+  console.log(pathnames)
   const renderCrumbName = (name) => {
     if (name === "gigi") {
       return "Каталог GIGI"
@@ -17,10 +18,10 @@ const BreadCrumbs = ({ productId }) => {
       return "Каталог Janssen"
     } else if (name === "search") {
       return "Поиск"
-    } else if (categories && categories.includes(name)) {
-      return categories.find((cat) => cat._id === name).name
-    } else if (product) {
+    } else if (product && product._id === name) {
       return `${product.name} - ${product.rusName}`
+    } else if (categories && isNaN(name)) {
+      return categories.find((cat) => cat._id === name).name
     }
   }
 
@@ -34,6 +35,7 @@ const BreadCrumbs = ({ productId }) => {
       {pathnames.map((name, index) => {
         const isLast = index === pathnames.length - 1
         const routeTo = pathnames.slice(0, index + 1).join("/")
+        console.log(name)
         return (
           <Breadcrumb.Item
             linkAs={Link}

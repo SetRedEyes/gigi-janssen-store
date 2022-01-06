@@ -12,7 +12,9 @@ const BreadCrumbs = ({ productId }) => {
   const pathnames = pathname.split("/").filter((x) => x)
   console.log(pathnames)
   const renderCrumbName = (name) => {
-    if (name === "gigi") {
+    if (name === "online-store-v2") {
+      return null
+    } else if (name === "gigi") {
       return "Каталог GIGI"
     } else if (name === "janssen") {
       return "Каталог Janssen"
@@ -22,12 +24,10 @@ const BreadCrumbs = ({ productId }) => {
       return `${product.name} - ${product.rusName}`
     } else if (categories && isNaN(name)) {
       return categories.find((cat) => cat._id === name).name
-    } else {
-      return null
     }
   }
 
-  if (pathname === "online-store-v2/") return null
+  if (pathname === "/") return null
 
   return (
     <Breadcrumb className="ms-3 mt-2">

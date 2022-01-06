@@ -60,7 +60,7 @@ const RegisterForm = () => {
     if (!isValid) return
     try {
       await signUp(data)
-      history.push("/online-store-v2/")
+      history.push("/online-store-v2")
     } catch (error) {
       setErrors(error)
     }

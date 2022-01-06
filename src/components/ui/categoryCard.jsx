@@ -8,7 +8,7 @@ const CategoryCard = ({ name, photo, companyId, categoryId, catObj }) => {
     <Link
       className="link text-decoration-none "
       to={{
-        pathname: `/${companyId}/${categoryId}`,
+        pathname: `/online-store-v2/${companyId}/${categoryId}`,
         state: {
           selectedCatProp: catObj
         }

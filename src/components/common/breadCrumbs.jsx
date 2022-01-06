@@ -25,11 +25,17 @@ const BreadCrumbs = ({ productId }) => {
     }
   }
 
-  if (pathname === "/") return null
+  if (pathname === "/online-store-v2/") return null
 
   return (
     <Breadcrumb className="ms-3 mt-2">
-      <Breadcrumb.Item linkAs={Link} linkProps={{ to: `/` }}>
+      <Breadcrumb.Item
+        linkAs={Link}
+        linkProps={{
+          to: `/online-store-v2/
+`
+        }}
+      >
         Главная
       </Breadcrumb.Item>
       {pathnames.map((name, index) => {

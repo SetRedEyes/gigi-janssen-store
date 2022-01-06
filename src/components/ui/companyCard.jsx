@@ -5,7 +5,7 @@ import { Link } from "react-router-dom"
 
 const CompanyCard = ({ name, photo, companyId }) => {
   return (
-    <Card className="mt-2 m-4" style={{ width: "18.5rem", border: "none" }}>
+    <Card className="mt-5" style={{ width: "18.5rem", border: "none" }}>
       <Link
         className="link text-decoration-none"
         to={`/online-store-v2/${companyId}`}

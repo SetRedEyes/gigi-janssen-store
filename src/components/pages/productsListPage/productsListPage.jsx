@@ -74,7 +74,7 @@ const ProductsListPage = ({ companyId }) => {
       <Container fluid>
         <SortSelect onSort={handleSort} />
         {categories && (
-          <Row className="me-5">
+          <Row>
             <Col md={3}>
               <h1 className="text-center m-0 mb-1">
                 {companyId === "gigi" ? "GIGI" : "JANSSEN"}

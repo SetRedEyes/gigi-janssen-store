@@ -29,7 +29,7 @@ const CompanyPage = () => {
           </Col>
         )}
 
-        <Col md={6}>
+        <Col xl={6}>
           <Row className="mt-3 justify-content-between">
             {companies &&
               companies.map((c) => (

@@ -4,11 +4,11 @@ import { Link } from "react-router-dom"
 import { Card, Col, Image } from "react-bootstrap"
 import VolumePrice from "../common/volumePrice"
 
-const ProductsListCard = ({ products, colSize }) => {
+const ProductsListCard = ({ products }) => {
   return (
     <>
       {products.map((product) => (
-        <Col key={product._id} md={colSize} className="mb-5 ">
+        <Col key={product._id} md={4} className="mb-5 ">
           <Card style={{ width: "18rem", border: "none" }} border={"light"}>
             <Card.Subtitle className="text-muted pt-2 mb-1 text-center">
               {product.rusName}
@@ -43,7 +43,6 @@ ProductsListCard.defaultProps = { colSize: 4 }
 ProductsListCard.propTypes = {
   products: PropTypes.array.isRequired,
   companyId: PropTypes.string,
-  categoryId: PropTypes.string,
-  colSize: PropTypes.number
+  categoryId: PropTypes.string
 }
 export default ProductsListCard

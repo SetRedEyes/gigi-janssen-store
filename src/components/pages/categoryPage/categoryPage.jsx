@@ -11,7 +11,7 @@ const CategoryPage = ({ companyId }) => {
     <Container className="d-flex">
       <Row className="mt-2">
         {Object.keys(categories).map((cat) => (
-          <Col key={categories[cat]._id}>
+          <Col md={3} key={categories[cat]._id}>
             <CategoryCard
               name={categories[cat].name}
               categoryId={categories[cat]._id}

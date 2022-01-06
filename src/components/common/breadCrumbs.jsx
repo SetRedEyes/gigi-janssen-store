@@ -22,10 +22,12 @@ const BreadCrumbs = ({ productId }) => {
       return `${product.name} - ${product.rusName}`
     } else if (categories && isNaN(name)) {
       return categories.find((cat) => cat._id === name).name
+    } else {
+      return null
     }
   }
 
-  if (pathname === "/online-store-v2" || pathname === "/") return null
+  if (pathname === "/") return null
 
   return (
     <Breadcrumb className="ms-3 mt-2">

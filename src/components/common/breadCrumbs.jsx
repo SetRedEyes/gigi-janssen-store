@@ -33,7 +33,7 @@ const BreadCrumbs = ({ productId }) => {
       <Breadcrumb.Item
         linkAs={Link}
         linkProps={{
-          to: `/
+          to: `/online-store-v2
 `
         }}
       >

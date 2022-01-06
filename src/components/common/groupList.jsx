@@ -34,7 +34,6 @@ const GroupList = ({
             </ListGroup.Item>
           </Link>
         ))}
-        z
       </ListGroup>
     )
   }

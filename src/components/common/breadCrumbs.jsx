@@ -8,12 +8,11 @@ const BreadCrumbs = ({ productId }) => {
   const product = useProduct().getProduct(productId)
   const { categories } = useCategory()
   const { pathname } = useLocation()
-  console.log(pathname.split("/"))
-  const pathnames = pathname.split("/").filter((x) => {
-    console.log(x)
-    return x
-  })
-  console.log(pathnames)
+  const pathnames = pathname
+    .split("/")
+    .splice(2)
+    .filter((x) => x)
+
   const renderCrumbName = (name) => {
     if (name === "gigi") {
       return "Каталог GIGI"

@@ -17,7 +17,7 @@ const CategoryCard = ({ name, photo, companyId, categoryId, catObj }) => {
       <Card style={{ width: "13rem", border: "none" }} className="mb-3 ">
         <Card.Img
           style={{ width: "13rem", height: "14rem" }}
-          variant="top"z
+          variant="top"
           src={photo}
         />
         <Card.Body style={{ padding: "0" }}>

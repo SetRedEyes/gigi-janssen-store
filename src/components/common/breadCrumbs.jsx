@@ -8,8 +8,11 @@ const BreadCrumbs = ({ productId }) => {
   const product = useProduct().getProduct(productId)
   const { categories } = useCategory()
   const { pathname } = useLocation()
-  console.log(pathname)
-  const pathnames = pathname.split("/").filter((x) => x)
+  console.log(pathname.split("/"))
+  const pathnames = pathname.split("/").filter((x) => {
+    console.log(x)
+    return x
+  })
   console.log(pathnames)
   const renderCrumbName = (name) => {
     if (name === "gigi") {
@@ -21,18 +24,17 @@ const BreadCrumbs = ({ productId }) => {
     } else if (product && product._id === name) {
       return `${product.name} - ${product.rusName}`
     } else if (categories && isNaN(name)) {
-      return categories.find((cat) => cat._id === name).name
+      return categories.find((cat) => cat._id === name)?.name
     }
   }
 
-  if (pathname === "/online-store-v2/") return null
-
+  if (pathname === "/") return null
   return (
     <Breadcrumb className="ms-3 mt-2">
       <Breadcrumb.Item
         linkAs={Link}
         linkProps={{
-          to: `/online-store-v2/
+          to: `/
 `
         }}
       >
@@ -40,12 +42,12 @@ const BreadCrumbs = ({ productId }) => {
       </Breadcrumb.Item>
       {pathnames.map((name, index) => {
         const isLast = index === pathnames.length - 1
-        const routeTo = pathnames.slice(0, index + 1).join("/")
+        const routeTo = `/${pathnames.slice(0, index + 1).join("/")}`
         console.log(name)
         return (
           <Breadcrumb.Item
             linkAs={Link}
-            linkProps={{ to: `/online-store-v2/${routeTo}` }}
+            linkProps={{ to: routeTo }}
             key={name}
             active={isLast}
           >

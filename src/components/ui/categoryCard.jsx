@@ -8,7 +8,7 @@ const CategoryCard = ({ name, photo, companyId, categoryId, catObj }) => {
     <Link
       className="link text-decoration-none "
       to={{
-        pathname: `/online-store-v2/${companyId}/${categoryId}`,
+        pathname: `/${companyId}/${categoryId}`,
         state: {
           selectedCatProp: catObj
         }
@@ -17,7 +17,7 @@ const CategoryCard = ({ name, photo, companyId, categoryId, catObj }) => {
       <Card style={{ width: "13rem", border: "none" }} className="mb-3 ">
         <Card.Img
           style={{ width: "13rem", height: "14rem" }}
-          variant="top"
+          variant="top"z
           src={photo}
         />
         <Card.Body style={{ padding: "0" }}>

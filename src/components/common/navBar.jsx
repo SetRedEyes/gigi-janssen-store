@@ -10,10 +10,10 @@ const NavBar = () => {
   return (
     <Navbar bg="dark" variant="dark">
       <Container>
-        <NavLink className="header-title text-decoration-none" to={"/online-store-v2/"}>
+        <NavLink className="header-title text-decoration-none" to={"/"}>
           GIGI & JANSSEN
         </NavLink>
-        {pathname !== "/online-store-v2/login" && <SearchBar />}
+        {pathname !== "/login" && <SearchBar />}
         {auth ? (
           <Nav style={{ color: "white" }}>
             <Button variant={"outline-light"}>Админ панель</Button>
@@ -23,7 +23,7 @@ const NavBar = () => {
           </Nav>
         ) : (
           <Nav style={{ color: "white" }}>
-            <NavLink onClick={() => setAuth(true)} to={"/online-store-v2/login"}>
+            <NavLink onClick={() => setAuth(true)} to={"/login"}>
               <Button variant={"outline-light"} className="navlink-btn">
                 Авторизация
               </Button>

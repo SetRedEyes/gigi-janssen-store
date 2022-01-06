@@ -45,7 +45,7 @@ const BreadCrumbs = ({ productId }) => {
         return (
           <Breadcrumb.Item
             linkAs={Link}
-            linkProps={{ to: `/${routeTo}` }}
+            linkProps={{ to: `/online-store-v2/${routeTo}` }}
             key={name}
             active={isLast}
           >

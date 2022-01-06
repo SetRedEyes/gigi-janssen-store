@@ -17,7 +17,7 @@ export const authRoutes = [
 
 export const publicRoutes = [
   {
-    path: "https://setredeyes.github.io/online-store-v2/",
+    path: "/",
     component: Main
   },
   {

@@ -25,7 +25,7 @@ const BreadCrumbs = ({ productId }) => {
     }
   }
 
-  if (pathname === "https://setredeyes.github.io/online-store-v2/") return null
+  if (pathname === "/") return null
 
   return (
     <Breadcrumb className="ms-3 mt-2">

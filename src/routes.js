@@ -6,31 +6,31 @@ import Main from "./layouts/main"
 
 export const authRoutes = [
   {
-    path: "online-store-v2/admin",
+    path: "/admin",
     component: Admin
   },
   {
-    path: "online-store-v2/login",
+    path: "/login",
     component: Basket
   }
 ]
 
 export const publicRoutes = [
   {
-    path: "online-store-v2/",
+    path: "/",
     component: Main
   },
   {
-    path: "online-store-v2/login/:type?",
+    path: "/login/:type?",
     component: Login
   },
 
-  { path: "online-store-v2/basket", component: Basket },
+  { path: "/basket", component: Basket },
 
-  { path: "online-store-v2/search", component: SearchPage },
+  { path: "/search", component: SearchPage },
 
   {
-    path: "online-store-v2/companyId?/:categoryId?/:productId?",
+    path: "/:companyId?/:categoryId?/:productId?",
     component: Main
   }
 ]

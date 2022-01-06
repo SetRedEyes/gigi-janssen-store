@@ -8,7 +8,7 @@ const BreadCrumbs = ({ productId }) => {
   const product = useProduct().getProduct(productId)
   const { categories } = useCategory()
   const { pathname } = useLocation()
-  console.log(pathname)
+
   const pathnames = pathname.split("/").filter((x) => x)
   console.log(pathnames)
   const renderCrumbName = (name) => {
@@ -25,7 +25,7 @@ const BreadCrumbs = ({ productId }) => {
     }
   }
 
-  if (pathname === "online-store-v2/") return null
+  if (pathname === "/") return null
 
   return (
     <Breadcrumb className="ms-3 mt-2">

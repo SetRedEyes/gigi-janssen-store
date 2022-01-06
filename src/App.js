@@ -30,7 +30,7 @@ const App = () => {
                 {publicRoutes.map(({ path, component }) => (
                   <Route key={path} path={path} component={component} exact />
                 ))}
-                <Redirect to={"online-store-v2/"} />
+                <Redirect to={"/"} />
               </Switch>
             </ProductProvider>
           </CategoryProvider>

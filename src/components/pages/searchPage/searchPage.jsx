@@ -65,7 +65,7 @@ const SearchPage = () => {
         <BreadCrumbs />
         <SortSelect onSort={handleSort} />
         <Row>
-          <Col md={3}>
+          <Col className="mt-4" md={3}>
             <h1 className="text-center m-0 mb-1">GIGI</h1>
             <GroupList items={{ ...gigi }} onItemSelect={handleCategorySelect} />
           </Col>
@@ -85,7 +85,7 @@ const SearchPage = () => {
             )}
           </Col>
 
-          <Col md={3} className="mt-1 ">
+          <Col md={3} className="mt-1">
             <h1 className="text-center">Janssen</h1>
             <GroupList items={{ ...janssen }} onItemSelect={handleCategorySelect} />
           </Col>

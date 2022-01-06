@@ -5,14 +5,14 @@ import PagesPagination from "../../../components/common/pagination"
 import GroupList from "../../../components/common/groupList"
 import ProductsListCard from "../../ui/productsListCard"
 import PropTypes from "prop-types"
-// import { useLocation } from "react-router-dom"
+import { useLocation } from "react-router-dom"
 import SortSelect from "../../common/sortSelect"
 import _ from "lodash"
 import { useProduct } from "../../../hooks/useProducts"
 import { useCategory } from "../../../hooks/useCategory"
 
 const ProductsListPage = ({ companyId }) => {
-  // const location = useLocation()
+  const location = useLocation()
   const { products } = useProduct()
   const categories = useCategory().getCategoriesByCompany(companyId)
 

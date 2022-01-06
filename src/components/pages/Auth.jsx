@@ -16,7 +16,10 @@ const Auth = () => {
           <Row style={{ width: "86%" }} className=" flex-nowrap mt-3 ">
             <div>
               Нет аккаунта?
-              <NavLink className="d-inline ps-1 " to={"/registration"}>
+              <NavLink
+                className="d-inline ps-1 "
+                to={"/online-store-v2/registration"}
+              >
                 Зарегистрируйся!
               </NavLink>
             </div>

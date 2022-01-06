@@ -13,7 +13,7 @@ const SearchBar = () => {
   }
   const handleSubmit = (e) => {
     e.preventDefault()
-    history.push(`/search?search=${search}`)
+    history.push(`/online-store-v2/search?search=${search}`)
     searchRef.current.reset()
   }
 

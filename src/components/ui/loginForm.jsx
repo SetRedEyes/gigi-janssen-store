@@ -51,7 +51,7 @@ const LoginForm = () => {
     if (!isValid) return
     try {
       await logIn(data)
-      history.push("/")
+      history.push("/online-store-v2/")
     } catch (error) {
       setEnterError(error.message)
       console.log(error)

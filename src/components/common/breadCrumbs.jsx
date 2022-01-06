@@ -8,7 +8,11 @@ const BreadCrumbs = ({ productId }) => {
   const product = useProduct().getProduct(productId)
   const { categories } = useCategory()
   const { pathname } = useLocation()
-  const pathnames = pathname.split("/").filter((x) => x)
+  const pathnames = pathname
+    .slice(16)
+    .split("/")
+    .filter((x) => x)
+  console.log(pathnames)
 
   const renderCrumbName = (name) => {
     if (name === "gigi") {
@@ -25,6 +29,7 @@ const BreadCrumbs = ({ productId }) => {
   }
 
   if (pathname === "/online-store-v2") return null
+
   return (
     <Breadcrumb className="ms-3 mt-2">
       <Breadcrumb.Item
@@ -38,8 +43,8 @@ const BreadCrumbs = ({ productId }) => {
       </Breadcrumb.Item>
       {pathnames.map((name, index) => {
         const isLast = index === pathnames.length - 1
-        const routeTo = `/${pathnames.slice(0, index + 1).join("/")}`
-        console.log(name)
+        const routeTo = `/online-store-v2/${pathnames.slice(0, index + 1).join("/")}`
+        console.log(routeTo)
         return (
           <Breadcrumb.Item
             linkAs={Link}

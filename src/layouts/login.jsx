@@ -6,7 +6,8 @@ import RegisterForm from "../components/ui/registerForm"
 
 const Login = () => {
   const { type } = useParams()
-  const [fomType, setFormType] = useState(type === "register" ? type : "login")
+  const [formType, setFormType] = useState(type === "register" ? type : "login")
+  console.log(formType)
 
   const toggleFormType = () => {
     setFormType((prevState) => (prevState === "register" ? "login" : "register"))
@@ -16,7 +17,7 @@ const Login = () => {
     <Container className="mt-5">
       <Row>
         <Col md={{ span: 6, offset: 3 }} className="shadow p-4">
-          {fomType === "register" ? (
+          {formType === "register" ? (
             <>
               <h3 className="mb-4">Регистрация</h3>
               <RegisterForm />

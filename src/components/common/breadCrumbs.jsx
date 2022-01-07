@@ -28,7 +28,9 @@ const BreadCrumbs = ({ productId }) => {
     }
   }
 
-  if (pathname === "/online-store-v2") return null
+  if (pathname === "/online-store-v2" || pathname === "/online-store-v2/") {
+    return null
+  }
 
   return (
     <Breadcrumb className="ms-3 mt-2">

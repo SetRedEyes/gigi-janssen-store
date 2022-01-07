@@ -26,7 +26,7 @@ const NavBar = () => {
           </Nav>
         ) : (
           <Nav style={{ color: "white" }}>
-            <NavLink onClick={() => setAuth(true)} to={"online-store-v2/login"}>
+            <NavLink onClick={() => setAuth(true)} to={"/login"}>
               <Button variant={"outline-light"} className="navlink-btn">
                 Авторизация
               </Button>

@@ -1,124 +1,124 @@
 .enableFocus {
-  box-shadow: 0 0 0 0.25rem #21c1cf;
+    box-shadow: 0 0 0 0.25rem #21c1cf;
 }
 .enableFocus:focus {
-  box-shadow: 0 0 0 0.25rem #21c1cf;
+    box-shadow: 0 0 0 0.25rem #21c1cf;
 }
 
 .disableFocus {
-  box-shadow: none;
+    box-shadow: none;
 }
 
 .header-title {
-  color: white;
-  font-size: 1.5rem !important;
+    color: white;
+    font-size: 1.5rem !important;
 }
 
 .navlink-btn {
-  color: #fff;
+    color: #fff;
 }
 .navlink-btn:hover {
-  background-color: #21c1cf;
-  border-color: #21c1cf;
-  color: #fff;
+    background-color: #21c1cf;
+    border-color: #21c1cf;
+    color: #fff;
 }
 
 .submit-btn {
-  background-color: #000000 !important;
-  border-color: #000000 !important;
+    background-color: #000000 !important;
+    border-color: #000000 !important;
 }
 
 .submit-btn:hover {
-  background-color: #21c1cf !important;
-  border-color: #21c1cf !important;
+    background-color: #21c1cf !important;
+    border-color: #21c1cf !important;
 }
 .submit-btn:focus {
-  outline: none !important;
-  box-shadow: none !important;
+    outline: none !important;
+    box-shadow: none !important;
 }
 
 .buyBtn {
-  background-color: #212529;
-  border-color: #212529;
-  text-decoration: none;
+    background-color: #212529;
+    border-color: #212529;
+    text-decoration: none;
 }
 
 .buyBtn:hover {
-  background-color: #21c1cf;
-  border-color: #21c1cf;
+    background-color: #21c1cf;
+    border-color: #21c1cf;
 }
 
 .buyBtn:focus {
-  outline: none !important;
-  box-shadow: none !important;
-  background-color: #21c1cf;
-  border-color: #21c1cf;
+    outline: none !important;
+    box-shadow: none !important;
+    background-color: #21c1cf;
+    border-color: #21c1cf;
 }
 
 .searchBtn:hover {
-  background-color: #21c1cf;
-  border-color: #21c1cf;
+    background-color: #21c1cf;
+    border-color: #21c1cf;
 }
 .searchBtn:focus {
-  box-shadow: none;
+    box-shadow: none;
 }
 
 .sortSelect:focus {
-  box-shadow: none;
-  border-color: #21c1cf;
+    box-shadow: none;
+    border-color: #21c1cf;
 }
 
 .link {
-  color: black;
+    color: black;
 }
 .link:hover,
 .header-title:hover {
-  color: #21c1cf;
+    color: #21c1cf;
 }
 
 .page-link {
-  color: #21c1cf;
+    color: #21c1cf;
 }
 
 .page-link:hover {
-  color: black;
+    color: black;
 }
 
 .page-item.active .page-link {
-  background-color: black;
-  border-color: black;
+    background-color: black;
+    border-color: black;
 }
 
 .list-group-item.active {
-  background-color: #21c1cf;
-  border-color: #21c1cf;
+    background-color: #21c1cf;
+    border-color: #21c1cf;
 }
 
 .list-group-item.active:hover {
-  color: #fff;
+    color: #fff;
 }
 
 .list-group-item:hover {
-  color: #21c1cf;
+    color: #21c1cf;
 }
 
 .breadcrumb-item a {
-  text-decoration: none;
-  color: black;
+    text-decoration: none;
+    color: black;
 }
 
 .breadcrumb-item a:hover {
-  color: #21c1cf;
+    color: #21c1cf;
 }
 
 .card {
-  padding: 0;
-  box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
-  transition: box-shadow 0.3s ease-in-out;
+    padding: 0;
+    box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+    transition: box-shadow 0.3s ease-in-out;
 }
 
 .card:hover {
-  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
-    rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
-    rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+        rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+        rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }

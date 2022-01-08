@@ -12,33 +12,43 @@ import { CompanyProvider } from "./hooks/useCompany"
 import AuthProvider from "./hooks/useAuth"
 
 const App = () => {
-  const isAuth = false
+    const isAuth = false
 
-  return (
-    <div>
-      <AuthProvider>
-        <NavBar />
-        <CompanyProvider>
-          <CategoryProvider>
-            <ProductProvider>
-              <Switch>
-                {isAuth &&
-                  authRoutes.map(({ path, component }) => (
-                    <Route key={path} path={path} component={component} exact />
-                  ))}
+    return (
+        <div>
+            <AuthProvider>
+                <NavBar />
+                <CompanyProvider>
+                    <CategoryProvider>
+                        <ProductProvider>
+                            <Switch>
+                                {isAuth &&
+                                    authRoutes.map(({ path, component }) => (
+                                        <Route
+                                            key={path}
+                                            path={path}
+                                            component={component}
+                                            exact
+                                        />
+                                    ))}
 
-                {publicRoutes.map(({ path, component }) => (
-                  <Route key={path} path={path} component={component} exact />
-                ))}
-                <Redirect to={"/online-store-v2"} />
-              </Switch>
-            </ProductProvider>
-          </CategoryProvider>
-        </CompanyProvider>
-      </AuthProvider>
+                                {publicRoutes.map(({ path, component }) => (
+                                    <Route
+                                        key={path}
+                                        path={path}
+                                        component={component}
+                                        exact
+                                    />
+                                ))}
+                                <Redirect to={"/online-store-v2"} />
+                            </Switch>
+                        </ProductProvider>
+                    </CategoryProvider>
+                </CompanyProvider>
+            </AuthProvider>
 
-      <ToastContainer />
-    </div>
-  )
+            <ToastContainer />
+        </div>
+    )
 }
 export default App

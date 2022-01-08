@@ -12,110 +12,117 @@ import { useProduct } from "../../../hooks/useProducts"
 import { useCategory } from "../../../hooks/useCategory"
 
 const ProductsListPage = ({ companyId }) => {
-  const location = useLocation()
-  const { products } = useProduct()
-  const categories = useCategory().getCategoriesByCompany(companyId)
+    const location = useLocation()
+    const { products } = useProduct()
+    const categories = useCategory().getCategoriesByCompany(companyId)
 
-  const [currentPage, setCurrentPage] = useState(1)
+    const [currentPage, setCurrentPage] = useState(1)
 
-  const [selectedCat, setSelectedCat] = useState()
-  const [sortBy, setSortBy] = useState({ iter: "rusName", order: "asc" })
+    const [selectedCat, setSelectedCat] = useState()
+    const [sortBy, setSortBy] = useState({ iter: "rusName", order: "asc" })
 
-  useEffect(() => {
-    setCurrentPage(1)
-  }, [selectedCat])
+    useEffect(() => {
+        setCurrentPage(1)
+    }, [selectedCat])
 
-  useEffect(() => {
-    if (location.state) {
-      const { selectedCatProp } = location.state
-      setSelectedCat(selectedCatProp)
-    } else {
-      setSelectedCat(JSON.parse(localStorage.getItem("selectedCat")))
+    useEffect(() => {
+        if (location.state) {
+            const { selectedCatProp } = location.state
+            setSelectedCat(selectedCatProp)
+        } else {
+            setSelectedCat(JSON.parse(localStorage.getItem("selectedCat")))
+        }
+    }, [])
+
+    const pageSize = 9
+    const handlePageChange = (pageIndex) => {
+        setCurrentPage(pageIndex)
     }
-  }, [])
 
-  const pageSize = 9
-  const handlePageChange = (pageIndex) => {
-    setCurrentPage(pageIndex)
-  }
-
-  const handleCategorySelect = (item) => {
-    localStorage.setItem("selectedCat", JSON.stringify(item))
-    setSelectedCat(item)
-  }
-
-  const handleSort = (target) => {
-    if (target.value === "") {
-      setSortBy((prevState) => ({
-        ...prevState,
-        iter: "rusName",
-        order: "asc"
-      }))
-    } else {
-      setSortBy((prevState) => ({
-        ...prevState,
-        iter: target.name,
-        order: target.value
-      }))
+    const handleCategorySelect = (item) => {
+        localStorage.setItem("selectedCat", JSON.stringify(item))
+        setSelectedCat(item)
     }
-  }
 
-  if (products) {
-    const filteredProducts = selectedCat
-      ? products.filter((product) => {
-          return JSON.stringify(product.category) === JSON.stringify(selectedCat._id)
-        })
-      : products
-    const count = filteredProducts.length
+    const handleSort = (target) => {
+        if (target.value === "") {
+            setSortBy((prevState) => ({
+                ...prevState,
+                iter: "rusName",
+                order: "asc"
+            }))
+        } else {
+            setSortBy((prevState) => ({
+                ...prevState,
+                iter: target.name,
+                order: target.value
+            }))
+        }
+    }
 
-    const sortedProducts = _.orderBy(filteredProducts, [sortBy.iter], [sortBy.order])
-    const productCrop = paginate(sortedProducts, currentPage, pageSize)
-    return (
-      <Container fluid>
-        <SortSelect onSort={handleSort} />
-        {categories && (
-          <Row>
-            <Col md={3}>
-              <h1 className="text-center m-0 mb-1">
-                {companyId === "gigi" ? "GIGI" : "JANSSEN"}
-              </h1>
-              <GroupList
-                selectedItem={selectedCat}
-                items={categories}
-                onItemSelect={handleCategorySelect}
-              />
-            </Col>
+    if (products) {
+        const filteredProducts = selectedCat
+            ? products.filter((product) => {
+                  return (
+                      JSON.stringify(product.category) ===
+                      JSON.stringify(selectedCat._id)
+                  )
+              })
+            : products
+        const count = filteredProducts.length
 
-            <Col md={8} className="ms-5 mt-3">
-              <Row>
-                <ProductsListCard products={productCrop} />
-              </Row>
-              <Row className="mt-5">
-                <PagesPagination
-                  itemsCount={count}
-                  pageSize={pageSize}
-                  currentPage={currentPage}
-                  onPageChange={handlePageChange}
-                />
-              </Row>
-            </Col>
-          </Row>
-        )}
-      </Container>
-    )
-  } else {
-    return (
-      <Container className="d-flex justify-content-center mt-4">
-        <Spinner animation="border" variant="info" />
-        <span className="mt-1 ms-2">Загрузка</span>
-      </Container>
-    )
-  }
+        const sortedProducts = _.orderBy(
+            filteredProducts,
+            [sortBy.iter],
+            [sortBy.order]
+        )
+        const productCrop = paginate(sortedProducts, currentPage, pageSize)
+        return (
+            <Container fluid>
+                <SortSelect onSort={handleSort} />
+                {categories && (
+                    <Row>
+                        <Col md={3}>
+                            <h1 className="text-center m-0 mb-1">
+                                {companyId === "gigi" ? "GIGI" : "JANSSEN"}
+                            </h1>
+                            <GroupList
+                                selectedItem={selectedCat}
+                                items={categories}
+                                onItemSelect={handleCategorySelect}
+                            />
+                        </Col>
+
+                        <Col md={8} className="ms-5 mt-3">
+                            <Row>
+                                <ProductsListCard products={productCrop} />
+                            </Row>
+                            <Row className="mt-5">
+                                <PagesPagination
+                                    itemsCount={count}
+                                    pageSize={pageSize}
+                                    currentPage={currentPage}
+                                    onPageChange={handlePageChange}
+                                />
+                            </Row>
+                        </Col>
+                    </Row>
+                )}
+            </Container>
+        )
+    } else {
+        return (
+            <Container className="d-flex justify-content-center mt-4">
+                <Spinner animation="border" variant="info" />
+                <span className="mt-1 ms-2">Загрузка</span>
+            </Container>
+        )
+    }
 }
 
 ProductsListPage.propTypes = {
-  companyId: PropTypes.string,
-  categoryId: PropTypes.string
+    companyId: PropTypes.string,
+    categoryId: PropTypes.string
 }
 
 export default ProductsListPage

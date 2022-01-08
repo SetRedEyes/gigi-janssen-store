@@ -7,28 +7,31 @@ import ProductPage from "../components/pages/productPage/productPage"
 import BreadCrumbs from "../components/common/breadCrumbs"
 
 const Main = () => {
-  const params = useParams()
-  const { companyId, categoryId, productId } = params
+    const params = useParams()
+    const { companyId, categoryId, productId } = params
 
-  return (
-    <>
-      <BreadCrumbs productId={productId} />
+    return (
+        <>
+            <BreadCrumbs productId={productId} />
 
-      {companyId ? (
-        categoryId ? (
-          productId ? (
-            <ProductPage productId={productId} companyId={companyId} />
-          ) : (
-            <ProductsListPage companyId={companyId} categoryId={categoryId} />
-          )
-        ) : (
-          <CategoryPage companyId={companyId} />
-        )
-      ) : (
-        <CompanyPage />
-      )}
-    </>
-  )
+            {companyId ? (
+                categoryId ? (
+                    productId ? (
+                        <ProductPage productId={productId} companyId={companyId} />
+                    ) : (
+                        <ProductsListPage
+                            companyId={companyId}
+                            categoryId={categoryId}
+                        />
+                    )
+                ) : (
+                    <CategoryPage companyId={companyId} />
+                )
+            ) : (
+                <CompanyPage />
+            )}
+        </>
+    )
 }
 
 export default Main

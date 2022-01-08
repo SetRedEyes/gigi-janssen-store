@@ -7,48 +7,51 @@ import PropTypes from "prop-types"
 const CompanyContext = React.createContext()
 
 export const useCompany = () => {
-  return useContext(CompanyContext)
+    return useContext(CompanyContext)
 }
 
 export const CompanyProvider = ({ children }) => {
-  const [companies, setCompanies] = useState([])
-  const [isLoading, setLoading] = useState(true)
-  const [error, setError] = useState(null)
+    const [companies, setCompanies] = useState([])
+    const [isLoading, setLoading] = useState(true)
+    const [error, setError] = useState(null)
 
-  useEffect(() => {
-    getCompanies()
-  }, [])
+    useEffect(() => {
+        getCompanies()
+    }, [])
 
-  useEffect(() => {
-    if (error !== null) {
-      toast(error)
-      setError(null)
+    useEffect(() => {
+        if (error !== null) {
+            toast(error)
+            setError(null)
+        }
+    }, [error])
+
+    async function getCompanies() {
+        try {
+            const { content } = await companyService.fetchAll()
+            setCompanies(content)
+            setLoading(false)
+        } catch (error) {
+            errorCatcher(error)
+        }
     }
-  }, [error])
 
-  async function getCompanies() {
-    try {
-      const { content } = await companyService.fetchAll()
-      setCompanies(content)
-      setLoading(false)
-    } catch (error) {
-      errorCatcher(error)
+    function errorCatcher(error) {
+        const { message } = error
+        setError(message)
+        setLoading(false)
     }
-  }
 
-  function errorCatcher(error) {
-    const { message } = error
-    setError(message)
-    setLoading(false)
-  }
-
-  return (
-    <CompanyContext.Provider value={{ companies, getCompanies }}>
-      {!isLoading ? children : <LoadingSpinner />}
-    </CompanyContext.Provider>
-  )
+    return (
+        <CompanyContext.Provider value={{ companies, getCompanies }}>
+            {!isLoading ? children : <LoadingSpinner />}
+        </CompanyContext.Provider>
+    )
 }
 
 CompanyProvider.propTypes = {
-  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node])
+    children: PropTypes.oneOfType([
+        PropTypes.arrayOf(PropTypes.node),
+        PropTypes.node
+    ])
 }

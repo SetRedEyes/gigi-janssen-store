@@ -5,32 +5,32 @@ import Login from "./layouts/login"
 import Main from "./layouts/main"
 
 export const authRoutes = [
-  {
-    path: "/online-store-v2/admin",
-    component: Admin
-  },
-  {
-    path: "/online-store-v2/login",
-    component: Basket
-  }
+    {
+        path: "/online-store-v2/admin",
+        component: Admin
+    },
+    {
+        path: "/online-store-v2/login",
+        component: Basket
+    }
 ]
 
 export const publicRoutes = [
-  {
-    path: "/online-store-v2",
-    component: Main
-  },
-  {
-    path: "/online-store-v2/login/:type?",
-    component: Login
-  },
+    {
+        path: "/online-store-v2",
+        component: Main
+    },
+    {
+        path: "/online-store-v2/login/:type?",
+        component: Login
+    },
 
-  { path: "/online-store-v2/basket", component: Basket },
+    { path: "/online-store-v2/basket", component: Basket },
 
-  { path: "/online-store-v2/search", component: SearchPage },
+    { path: "/online-store-v2/search", component: SearchPage },
 
-  {
-    path: "/online-store-v2/:companyId?/:categoryId?/:productId?",
-    component: Main
-  }
+    {
+        path: "/online-store-v2/:companyId?/:categoryId?/:productId?",
+        component: Main
+    }
 ]

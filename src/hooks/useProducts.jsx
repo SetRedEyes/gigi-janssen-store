@@ -27,8 +27,8 @@ const ProductProvider = ({ children }) => {
 
   async function getProductsList() {
     try {
-      const { data } = await productService.fetchAll()
-      setProducts(data)
+      const { content } = await productService.fetchAll()
+      setProducts(content)
       setLoading(false)
     } catch (error) {
       errorCatcher(error)

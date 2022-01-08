@@ -28,8 +28,8 @@ export const CompanyProvider = ({ children }) => {
 
   async function getCompanies() {
     try {
-      const { data } = await companyService.fetchAll()
-      setCompanies(data)
+      const { content } = await companyService.fetchAll()
+      setCompanies(content)
       setLoading(false)
     } catch (error) {
       errorCatcher(error)

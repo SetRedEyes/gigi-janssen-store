@@ -7,6 +7,8 @@ import { useHistory } from "react-router-dom"
 const RegisterForm = () => {
   const history = useHistory()
   const [data, setData] = useState({
+    firstName: "",
+    lastName: "",
     email: "",
     password: ""
   })
@@ -20,6 +22,24 @@ const RegisterForm = () => {
   }
 
   const validatorConfig = {
+    firstName: {
+      isRequired: {
+        message: "Имя обязательно для заполнения"
+      },
+      min: {
+        message: "Имя должно состаять минимум из 3 символов",
+        value: 3
+      }
+    },
+    lastName: {
+      isRequired: {
+        message: "Фамилия обязательна для заполнения"
+      },
+      min: {
+        message: "Фамилия должна состаять миниму из 3 символов",
+        value: 3
+      }
+    },
     email: {
       isRequired: {
         message: "Электронная почта обязательна для заполнения"
@@ -36,7 +56,7 @@ const RegisterForm = () => {
         message: "Пароль должен содержать хотя бы одно число"
       },
       min: {
-        message: "Пароль должен состаять миниму из 8 символов",
+        message: "Пароль должен состаять минимум из 8 символов",
         value: 8
       }
     }
@@ -69,6 +89,20 @@ const RegisterForm = () => {
   return (
     <Form onSubmit={handleSubmit}>
       <TextField
+        label="Имя"
+        name="firstName"
+        value={data.firstName}
+        onChange={handleChange}
+        error={errors.firstName}
+      />
+      <TextField
+        label="Фамилия"
+        name="lastName"
+        value={data.lastName}
+        onChange={handleChange}
+        error={errors.lastName}
+      />
+      <TextField
         label="Электронная почта"
         name="email"
         value={data.email}
@@ -84,7 +118,7 @@ const RegisterForm = () => {
         error={errors.password}
       />
       <Button type="submit" className="mx-auto w-100 submit-btn" disabled={!isValid}>
-        Отправить данные
+        Зарегистрироваться
       </Button>
     </Form>
   )

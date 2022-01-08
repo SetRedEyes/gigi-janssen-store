@@ -28,8 +28,8 @@ export const CategoryProvider = ({ children }) => {
 
   async function getCategories() {
     try {
-      const { data } = await categoryService.fetchAll()
-      setCategories(data)
+      const { content } = await categoryService.fetchAll()
+      setCategories(content)
       setLoading(false)
     } catch (error) {
       errorCatcher(error)

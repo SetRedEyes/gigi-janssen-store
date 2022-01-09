@@ -10,15 +10,26 @@ const NavProfile = () => {
     }
 
     return (
-        <div className="dropdown" onClick={toggleMenu}>
+        <div className="dropdown " onClick={toggleMenu}>
             <div className="btn dropdown-toggle d-flex align-items-center">
-                <div style={{ color: "white" }} className="me-2">
-                    {currentUser.firstName}
-                </div>
+                <div className="me-2 navProfile-name">{currentUser.firstName}</div>
                 <i style={{ color: "white" }} className="bi bi-person-circle"></i>
             </div>
-            <div className={"w-100 dropdown-menu" + (isOpen ? " show" : "")}>
-                <Link to={"online-store-v2/profile"}>Профиль</Link>
+            <div
+                className={
+                    "w-100 dropdown-menu navProfile-dropdown" +
+                    (isOpen ? " show" : "")
+                }
+            >
+                <Link
+                    to={"online-store-v2/profile"}
+                    className="dropdown-item navProfile-item "
+                >
+                    Профиль
+                </Link>
+                <Link to="logout" className="dropdown-item navProfile-item ">
+                    Выход
+                </Link>
             </div>
         </div>
     )

@@ -21,6 +21,8 @@ const BreadCrumbs = ({ productId }) => {
             return "Каталог Janssen"
         } else if (name === "search") {
             return "Поиск"
+        } else if (name === "profile") {
+            return "Профиль"
         } else if (product && product._id === name) {
             return `${product.name} - ${product.rusName}`
         } else if (categories && isNaN(name)) {

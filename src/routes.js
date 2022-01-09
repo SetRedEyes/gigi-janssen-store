@@ -1,6 +1,7 @@
 import Admin from "./components/pages/Admin"
 import Basket from "./components/pages/Basket"
 import SearchPage from "./components/pages/searchPage/searchPage"
+import UserPage from "./components/pages/userPage/userPage"
 import Login from "./layouts/login"
 import Main from "./layouts/main"
 
@@ -24,6 +25,7 @@ export const publicRoutes = [
         path: "/online-store-v2/login/:type?",
         component: Login
     },
+    { path: "/online-store-v2/profile", component: UserPage },
 
     { path: "/online-store-v2/basket", component: Basket },
 

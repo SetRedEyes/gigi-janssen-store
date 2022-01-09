@@ -28,7 +28,7 @@ const LoginForm = () => {
         },
         password: {
             isRequired: {
-                message: "Пароль обязателкн для заполнения"
+                message: "Пароль обязателен для заполнения"
             }
         }
     }
@@ -84,7 +84,7 @@ const LoginForm = () => {
                 className="mx-auto w-100 submit-btn"
                 disabled={!isValid || enterError}
             >
-                Отправить данные
+                Войти
             </Button>
         </Form>
     )

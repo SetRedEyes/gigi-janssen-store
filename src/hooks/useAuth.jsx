@@ -2,10 +2,10 @@ import React, { useContext, useEffect, useState } from "react"
 import PropTypes from "prop-types"
 import axios from "axios"
 import { toast } from "react-toastify"
-import { setTokens } from "../services/localStorage.service"
+import localStorageService, { setTokens } from "../services/localStorage.service"
 import userService from "../services/user.service"
 
-const httpAuth = axios.create({
+export const httpAuth = axios.create({
     baseURL: "https://identitytoolkit.googleapis.com/v1/",
     params: { key: process.env.REACT_APP_FIREBASE_KEY }
 })
@@ -27,6 +27,7 @@ const AuthProvider = ({ children }) => {
                 returnSecureToken: true
             })
             setTokens(data)
+            getUserData()
         } catch (error) {
             errorCatcher(error)
             const { code, message } = error.response.data.error
@@ -44,7 +45,7 @@ const AuthProvider = ({ children }) => {
         }
     }
 
-    async function signUp({ email, password }) {
+    async function signUp({ email, password, ...rest }) {
         try {
             const { data } = await httpAuth.post(`accounts:signUp`, {
                 email,
@@ -52,7 +53,14 @@ const AuthProvider = ({ children }) => {
                 returnSecureToken: true
             })
             setTokens(data)
-            await createUser()
+            await createUser({
+                _id: data.localId,
+                email,
+                phone: "",
+                city: "",
+                postOfficeNumber: "",
+                ...rest
+            })
         } catch (error) {
             errorCatcher(error)
             const { code, message } = error.response.data.error
@@ -69,7 +77,8 @@ const AuthProvider = ({ children }) => {
 
     async function createUser(data) {
         try {
-            const { content } = userService.create(data)
+            const { content } = await userService.create(data)
+            console.log(content)
             setUser(content)
         } catch (error) {
             errorCatcher(error)
@@ -80,7 +89,20 @@ const AuthProvider = ({ children }) => {
         const { message } = error.response.data.error
         setError(message)
     }
+    async function getUserData() {
+        try {
+            const { content } = await userService.getCurrentUser()
+            setUser(content)
+        } catch (error) {
+            errorCatcher(error)
+        }
+    }
 
+    useEffect(() => {
+        if (localStorageService.getAccessToken()) {
+            getUserData()
+        }
+    }, [])
     useEffect(() => {
         if (error !== null) {
             toast(error)

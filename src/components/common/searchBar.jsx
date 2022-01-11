@@ -18,24 +18,26 @@ const SearchBar = () => {
     }
 
     return (
-        <Form onSubmit={handleSubmit} ref={searchRef}>
-            <InputGroup>
-                <FormControl
-                    placeholder="Поиск"
-                    aria-label="Recipient's username"
-                    aria-describedby="basic-addon2"
-                    onChange={handleSearch}
-                />
-                <Button
-                    variant="outline-light"
-                    id="button-addon2"
-                    onClick={handleSubmit}
-                    className="searchBtn"
-                >
-                    <i className="bi bi-search"></i>
-                </Button>
-            </InputGroup>
-        </Form>
+        <div className="me-4">
+            <Form onSubmit={handleSubmit} ref={searchRef} className="me-5">
+                <InputGroup>
+                    <FormControl
+                        placeholder="Поиск"
+                        aria-label="Recipient's username"
+                        aria-describedby="basic-addon2"
+                        onChange={handleSearch}
+                    />
+                    <Button
+                        variant="outline-light"
+                        id="button-addon2"
+                        onClick={handleSubmit}
+                        className="searchBtn"
+                    >
+                        <i className="bi bi-search"></i>
+                    </Button>
+                </InputGroup>
+            </Form>
+        </div>
     )
 }
 

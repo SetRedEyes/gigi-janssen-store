@@ -1,8 +1,7 @@
 import { React } from "react"
 import { Button, Container, Nav, Navbar } from "react-bootstrap"
-import { NavLink, useLocation } from "react-router-dom"
+import { Link, NavLink, useLocation } from "react-router-dom"
 import { useAuth } from "../../hooks/useAuth"
-import NavProfile from "./navProfile"
 import SearchBar from "./searchBar"
 
 const NavBar = () => {
@@ -18,7 +17,9 @@ const NavBar = () => {
                 >
                     GIGI & JANSSEN
                 </NavLink>
-                {pathname !== "online-store-v2/login" && <SearchBar />}
+
+                {pathname !== "/online-store-v2/login" && <SearchBar />}
+
                 {/* {auth ? (
           <Nav style={{ color: "white" }}>
             <Button variant={"outline-light"}>Админ панель</Button>
@@ -30,7 +31,18 @@ const NavBar = () => {
 
                 <div className="d-flex me-5">
                     {currentUser ? (
-                        <NavProfile />
+                        <div className="d-flex align-items-center">
+                            <Link
+                                to={"/online-store-v2/profile"}
+                                className="navProfile-name text-decoration-none me-2"
+                            >
+                                {currentUser.firstName}
+                            </Link>
+                            <i
+                                style={{ color: "white" }}
+                                className="bi bi-person-circle"
+                            ></i>
+                        </div>
                     ) : (
                         <Nav>
                             <NavLink

@@ -13,16 +13,6 @@
     color: #fff;
 }
 
-.navProfile-dropdown {
-    background-color: #212529;
-}
-
-.navProfile-item {
-    color: #fff;
-    background-color: #212529;
-}
-
-.navProfile-item:hover,
 .navProfile-name:hover {
     background-color: #212529;
     color: #21c1cf;

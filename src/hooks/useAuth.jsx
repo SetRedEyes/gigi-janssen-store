@@ -4,6 +4,8 @@ import axios from "axios"
 import { toast } from "react-toastify"
 import localStorageService, { setTokens } from "../services/localStorage.service"
 import userService from "../services/user.service"
+import LoadingSpinner from "../components/common/loadingSpinner"
+import { useHistory } from "react-router-dom"
 
 export const httpAuth = axios.create({
     baseURL: "https://identitytoolkit.googleapis.com/v1/",
@@ -18,32 +20,8 @@ export const useAuth = () => {
 const AuthProvider = ({ children }) => {
     const [currentUser, setUser] = useState()
     const [error, setError] = useState(null)
-
-    async function logIn({ email, password }) {
-        try {
-            const { data } = await httpAuth.post(`accounts:signInWithPassword`, {
-                email,
-                password,
-                returnSecureToken: true
-            })
-            setTokens(data)
-            getUserData()
-        } catch (error) {
-            errorCatcher(error)
-            const { code, message } = error.response.data.error
-            if (code === 400) {
-                switch (message) {
-                    case "INVALID_PASSWORD":
-                        throw new Error("Email или пароль введены некорректно")
-
-                    default:
-                        throw new Error(
-                            "Слишком много попыток входа. Попробуйте позднее."
-                        )
-                }
-            }
-        }
-    }
+    const [isLoading, setLoading] = useState(true)
+    const history = useHistory()
 
     async function signUp({ email, password, ...rest }) {
         try {
@@ -73,16 +51,58 @@ const AuthProvider = ({ children }) => {
                 }
             }
         }
+
+        async function createUser(data) {
+            try {
+                const { content } = await userService.create(data)
+                console.log(content)
+                setUser(content)
+            } catch (error) {
+                errorCatcher(error)
+            }
+        }
     }
 
-    async function createUser(data) {
+    async function updateUserData(data) {
         try {
-            const { content } = await userService.create(data)
-            console.log(content)
+            const { content } = await userService.update(data)
+            console.log("Use Auth", data)
             setUser(content)
         } catch (error) {
             errorCatcher(error)
         }
+    }
+
+    async function logIn({ email, password }) {
+        try {
+            const { data } = await httpAuth.post(`accounts:signInWithPassword`, {
+                email,
+                password,
+                returnSecureToken: true
+            })
+            setTokens(data)
+            await getUserData()
+        } catch (error) {
+            errorCatcher(error)
+            const { code, message } = error.response.data.error
+            if (code === 400) {
+                switch (message) {
+                    case "INVALID_PASSWORD":
+                        throw new Error("Email или пароль введены некорректно")
+
+                    default:
+                        throw new Error(
+                            "Слишком много попыток входа. Попробуйте позднее."
+                        )
+                }
+            }
+        }
+    }
+
+    function logOut() {
+        localStorageService.removeAuthData()
+        setUser(null)
+        history.push("/online-store-v2")
     }
 
     function errorCatcher(error) {
@@ -95,14 +115,19 @@ const AuthProvider = ({ children }) => {
             setUser(content)
         } catch (error) {
             errorCatcher(error)
+        } finally {
+            setLoading(false)
         }
     }
 
     useEffect(() => {
         if (localStorageService.getAccessToken()) {
             getUserData()
+        } else {
+            setLoading(false)
         }
     }, [])
+
     useEffect(() => {
         if (error !== null) {
             toast(error)
@@ -111,8 +136,10 @@ const AuthProvider = ({ children }) => {
     }, [error])
 
     return (
-        <AuthContext.Provider value={{ signUp, logIn, currentUser }}>
-            {children}
+        <AuthContext.Provider
+            value={{ signUp, logIn, currentUser, updateUserData, logOut }}
+        >
+            {!isLoading ? children : <LoadingSpinner />}
         </AuthContext.Provider>
     )
 }

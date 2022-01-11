@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { Button, Form, InputGroup } from "react-bootstrap"
 import PropTypes from "prop-types"
 
-const TextField = ({ label, type, name, value, onChange, error }) => {
+const TextField = ({ label, type, name, value, onChange, error, disabled }) => {
     const [showPassword, setShowPassword] = useState(false)
 
     const handleChange = ({ target }) => {
@@ -28,6 +28,7 @@ const TextField = ({ label, type, name, value, onChange, error }) => {
                     value={value}
                     onChange={handleChange}
                     className={getInputClasses()}
+                    disabled={disabled}
                 ></Form.Control>
 
                 {type === "password" && (
@@ -59,7 +60,8 @@ TextField.propTypes = {
     name: PropTypes.string,
     value: PropTypes.string,
     onChange: PropTypes.func,
-    error: PropTypes.string
+    error: PropTypes.string,
+    disabled: PropTypes.bool
 }
 
 export default TextField

@@ -15,14 +15,14 @@ const BreadCrumbs = ({ productId }) => {
     console.log(pathnames)
 
     const renderCrumbName = (name) => {
-        if (name === "gigi") {
+        if (name === "profile") {
+            return "Профиль"
+        } else if (name === "gigi") {
             return "Каталог GIGI"
         } else if (name === "janssen") {
             return "Каталог Janssen"
         } else if (name === "search") {
             return "Поиск"
-        } else if (name === "profile") {
-            return "Профиль"
         } else if (product && product._id === name) {
             return `${product.name} - ${product.rusName}`
         } else if (categories && isNaN(name)) {

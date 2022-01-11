@@ -113,7 +113,7 @@ const UserPage = () => {
                     <div className="d-flex  justify-content-center">
                         <Link
                             to={"/online-store-v2/logOut"}
-                            className=" buyBtn btn btn-primary  "
+                            className="buyBtn btn btn-primary  "
                         >
                             Выйти из аккаунта
                         </Link>

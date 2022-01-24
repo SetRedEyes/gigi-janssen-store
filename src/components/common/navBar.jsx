@@ -13,12 +13,12 @@ const NavBar = () => {
             <Container fluid>
                 <NavLink
                     className="header-title text-decoration-none ms-5"
-                    to={"/online-store-v2"}
+                    to={"/gigi-janssen-store"}
                 >
                     GIGI & JANSSEN
                 </NavLink>
 
-                {pathname !== "/online-store-v2/login" && <SearchBar />}
+                {pathname !== "/gigi-janssen-store/login" && <SearchBar />}
 
                 {/* {auth ? (
           <Nav style={{ color: "white" }}>
@@ -33,7 +33,7 @@ const NavBar = () => {
                     {currentUser ? (
                         <div className="d-flex align-items-center">
                             <Link
-                                to={"/online-store-v2/profile"}
+                                to={"/gigi-janssen-store/profile"}
                                 className="navProfile-name text-decoration-none me-2"
                             >
                                 {currentUser.firstName}
@@ -47,7 +47,7 @@ const NavBar = () => {
                         <Nav>
                             <NavLink
                                 // onClick={() => setAuth(true)}
-                                to={"/online-store-v2/login"}
+                                to={"/gigi-janssen-store/login"}
                             >
                                 <Button
                                     variant={"outline-light"}

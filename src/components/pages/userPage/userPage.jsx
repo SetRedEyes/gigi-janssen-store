@@ -26,7 +26,7 @@ const UserPage = () => {
                 ...data
             })
 
-            history.push(`/online-store-v2/profile`)
+            history.push(`/gigi-janssen-store/profile`)
         } catch (error) {
             setErrors(error)
         }
@@ -112,7 +112,7 @@ const UserPage = () => {
                 <Container>
                     <div className="d-flex  justify-content-center">
                         <Link
-                            to={"/online-store-v2/logOut"}
+                            to={"/gigi-janssen-store/logOut"}
                             className="buyBtn btn btn-primary  "
                         >
                             Выйти из аккаунта

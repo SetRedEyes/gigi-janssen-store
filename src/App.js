@@ -45,7 +45,7 @@ const App = () => {
                                         }
                                     }
                                 )}
-                                <Redirect to={"/online-store-v2"} />
+                                <Redirect to={"/gigi-janssen-store"} />
                             </Switch>
                         </ProductProvider>
                     </CategoryProvider>

@@ -24,7 +24,7 @@ const Auth = () => {
                             Нет аккаунта?
                             <NavLink
                                 className="d-inline ps-1 "
-                                to={"/online-store-v2/registration"}
+                                to={"/gigi-janssen-store/registration"}
                             >
                                 Зарегистрируйся!
                             </NavLink>

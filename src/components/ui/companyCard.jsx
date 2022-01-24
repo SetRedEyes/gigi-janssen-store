@@ -8,7 +8,7 @@ const CompanyCard = ({ name, photo, companyId }) => {
         <Card className="mt-5" style={{ width: "18.5rem", border: "none" }}>
             <Link
                 className="link text-decoration-none"
-                to={`/online-store-v2/${companyId}`}
+                to={`/gigi-janssen-store/${companyId}`}
             >
                 <Card.Img
                     style={{ width: "18.5rem", height: "18.5rem" }}

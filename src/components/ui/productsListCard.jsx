@@ -17,7 +17,7 @@ const ProductsListCard = ({ products, colSize }) => {
                             {product.rusName}
                         </Card.Subtitle>
                         <Link
-                            to={`/online-store-v2/${product.companyId}/${product.category}/${product._id}`}
+                            to={`/gigi-janssen-store/${product.companyId}/${product.category}/${product._id}`}
                         >
                             <Image
                                 style={{ width: "18rem", height: "14rem" }}
@@ -27,7 +27,7 @@ const ProductsListCard = ({ products, colSize }) => {
                         <Card.Body>
                             <Link
                                 className="link text-decoration-none text-center"
-                                to={`/online-store-v2/${product.companyId}/${product.category}/${product._id}`}
+                                to={`/gigi-janssen-store/${product.companyId}/${product.category}/${product._id}`}
                             >
                                 <Card.Title style={{ height: "4rem" }}>
                                     {product.name}

@@ -102,7 +102,7 @@ const AuthProvider = ({ children }) => {
     function logOut() {
         localStorageService.removeAuthData()
         setUser(null)
-        history.push("/online-store-v2")
+        history.push("/gigi-janssen-store")
     }
 
     function errorCatcher(error) {

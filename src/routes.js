@@ -8,33 +8,33 @@ import Main from "./layouts/main"
 
 export const authRoutes = [
     {
-        path: "/online-store-v2/admin",
+        path: "/gigi-janssen-store/admin",
         component: Admin
     }
 ]
 
 export const publicRoutes = [
     {
-        path: "/online-store-v2",
+        path: "/gigi-janssen-store",
         component: Main
     },
     {
-        path: "/online-store-v2/login/:type?",
+        path: "/gigi-janssen-store/login/:type?",
         component: Login
     },
     {
-        path: "/online-store-v2/profile",
+        path: "/gigi-janssen-store/profile",
         component: UserPage,
         isProtectedRoute: true
     },
 
-    { path: "/online-store-v2/basket", component: Basket },
+    { path: "/gigi-janssen-store/basket", component: Basket },
 
-    { path: "/online-store-v2/search", component: SearchPage },
-    { path: "/online-store-v2/logOut", component: LogOut },
+    { path: "/gigi-janssen-store/search", component: SearchPage },
+    { path: "/gigi-janssen-store/logOut", component: LogOut },
 
     {
-        path: "/online-store-v2/:companyId?/:categoryId?/:productId?",
+        path: "/gigi-janssen-store/:companyId?/:categoryId?/:productId?",
         component: Main
     }
 ]

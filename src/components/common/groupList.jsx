@@ -19,7 +19,7 @@ const GroupList = ({
                         className="text-decoration-none"
                         key={items[item][valueProperty]}
                         to={{
-                            pathname: `/online-store-v2/${items[item][pathProperty]}/${items[item][valueProperty]}`,
+                            pathname: `/gigi-janssen-store/${items[item][pathProperty]}/${items[item][valueProperty]}`,
                             state: {
                                 selectedCatProp: items[item]
                             }
@@ -46,7 +46,7 @@ const GroupList = ({
                 <Link
                     className="text-decoration-none"
                     key={item[valueProperty]}
-                    to={`/online-store-v2/${item[pathProperty]}/${item[valueProperty]}`}
+                    to={`/gigi-janssen-store/${item[pathProperty]}/${item[valueProperty]}`}
                 >
                     <ListGroup.Item
                         key={item[valueProperty]}

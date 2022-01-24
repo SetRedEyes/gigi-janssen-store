@@ -30,7 +30,7 @@ const BreadCrumbs = ({ productId }) => {
         }
     }
 
-    if (pathname === "/online-store-v2" || pathname === "/online-store-v2/") {
+    if (pathname === "/gigi-janssen-store" || pathname === "/gigi-janssen-store/") {
         return null
     }
 
@@ -39,7 +39,7 @@ const BreadCrumbs = ({ productId }) => {
             <Breadcrumb.Item
                 linkAs={Link}
                 linkProps={{
-                    to: `/online-store-v2
+                    to: `/gigi-janssen-store
 `
                 }}
             >
@@ -47,7 +47,7 @@ const BreadCrumbs = ({ productId }) => {
             </Breadcrumb.Item>
             {pathnames.map((name, index) => {
                 const isLast = index === pathnames.length - 1
-                const routeTo = `/online-store-v2/${pathnames
+                const routeTo = `/gigi-janssen-store/${pathnames
                     .slice(0, index + 1)
                     .join("/")}`
                 console.log(routeTo)

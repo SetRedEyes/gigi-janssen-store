@@ -53,7 +53,7 @@ const LoginForm = () => {
             history.push(
                 history.location.state.from.pathname
                     ? history.location.state.from.pathname
-                    : "/online-store-v2"
+                    : "/gigi-janssen-store"
             )
         } catch (error) {
             setEnterError(error.message)

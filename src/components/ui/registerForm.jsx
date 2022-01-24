@@ -80,7 +80,7 @@ const RegisterForm = () => {
         if (!isValid) return
         try {
             await signUp(data)
-            history.push("/online-store-v2")
+            history.push("/gigi-janssen-store")
         } catch (error) {
             setErrors(error)
         }

@@ -10,13 +10,14 @@ import BreadCrumbs from "../../common/breadCrumbs"
 import _ from "lodash"
 import SortSelect from "../../common/sortSelect"
 import { useProduct } from "../../../hooks/useProducts"
-import { useCategory } from "../../../hooks/useCategory"
+import { useSelector } from "react-redux"
+import { getCategoriesByCompany } from "../../../store/categories"
 
 const SearchPage = () => {
     const { search } = query.parse(useLocation().search)
     const { products } = useProduct()
-    const gigi = useCategory().getCategoriesByCompany("gigi")
-    const janssen = useCategory().getCategoriesByCompany("janssen")
+    const gigiCats = useSelector(getCategoriesByCompany("gigi"))
+    const janssenCats = useSelector(getCategoriesByCompany("janssen"))
     const [currentPage, setCurrentPage] = useState(1)
     const [sortBy, setSortBy] = useState({ iter: "rusName", order: "asc" })
 
@@ -72,7 +73,7 @@ const SearchPage = () => {
                     <Col className="mt-4" md={3}>
                         <h1 className="text-center m-0 mb-1">GIGI</h1>
                         <GroupList
-                            items={{ ...gigi }}
+                            items={{ ...gigiCats }}
                             onItemSelect={handleCategorySelect}
                         />
                     </Col>
@@ -98,7 +99,7 @@ const SearchPage = () => {
                     <Col md={3} className="mt-1">
                         <h1 className="text-center">Janssen</h1>
                         <GroupList
-                            items={{ ...janssen }}
+                            items={{ ...janssenCats }}
                             onItemSelect={handleCategorySelect}
                         />
                     </Col>

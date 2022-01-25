@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { Col, Container, Row } from "react-bootstrap"
 import { useSelector } from "react-redux"
 import GroupList from "../../../components/common/groupList"
-import { useCategory } from "../../../hooks/useCategory"
+import { getCategoriesByCompany } from "../../../store/categories"
 import { getCompanies, getCompaniesLoadingStatus } from "../../../store/companies"
 import LoadingSpinner from "../../common/loadingSpinner"
 import CompanyCard from "../../ui/companyCard"
@@ -10,28 +10,27 @@ import CompanyCard from "../../ui/companyCard"
 const CompanyPage = () => {
     const companies = useSelector(getCompanies())
     const companiesLoading = useSelector(getCompaniesLoadingStatus())
-
-    const gigi = useCategory().getCategoriesByCompany("gigi")
-    const janssen = useCategory().getCategoriesByCompany("janssen")
+    const gigiCats = useSelector(getCategoriesByCompany("gigi"))
+    const janssenCats = useSelector(getCategoriesByCompany("janssen"))
     const [selectedCat, setSelectedCat] = useState()
     const handleCategorySelect = (item) => {
         localStorage.setItem("selectedCat", JSON.stringify(item))
         setSelectedCat(item)
     }
 
+    console.log({ gigiCats })
+
     return (
         <Container fluid>
             <Row>
-                {gigi && (
-                    <Col md={3} className="mt-1">
-                        <h1 className="text-center">GIGI</h1>
-                        <GroupList
-                            selectedItem={selectedCat}
-                            items={{ ...gigi }}
-                            onItemSelect={handleCategorySelect}
-                        />
-                    </Col>
-                )}
+                <Col md={3} className="mt-1">
+                    <h1 className="text-center">GIGI</h1>
+                    <GroupList
+                        selectedItem={selectedCat}
+                        items={{ ...gigiCats }}
+                        onItemSelect={handleCategorySelect}
+                    />
+                </Col>
 
                 <Col xl={6}>
                     <Row className="mt-3 justify-content-between">
@@ -50,16 +49,14 @@ const CompanyPage = () => {
                     </Row>
                 </Col>
 
-                {janssen && (
-                    <Col md={3} className="mt-1">
-                        <h1 className="text-center">Janssen</h1>
-                        <GroupList
-                            items={{ ...janssen }}
-                            onItemSelect={handleCategorySelect}
-                            selectedItem={selectedCat}
-                        />
-                    </Col>
-                )}
+                <Col md={3} className="mt-1">
+                    <h1 className="text-center">Janssen</h1>
+                    <GroupList
+                        items={{ ...janssenCats }}
+                        onItemSelect={handleCategorySelect}
+                        selectedItem={selectedCat}
+                    />
+                </Col>
             </Row>
         </Container>
     )

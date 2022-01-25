@@ -2,11 +2,13 @@ import React from "react"
 import { Breadcrumb } from "react-bootstrap"
 import { Link, useLocation } from "react-router-dom"
 import PropTypes from "prop-types"
-import { useCategory } from "../../hooks/useCategory"
 import { useProduct } from "../../hooks/useProducts"
+import { getCategories } from "../../store/categories"
+import { useSelector } from "react-redux"
+
 const BreadCrumbs = ({ productId }) => {
     const product = useProduct().getProduct(productId)
-    const { categories } = useCategory()
+    const categories = useSelector(getCategories())
     const { pathname } = useLocation()
     const pathnames = pathname
         .slice(20)

@@ -2,11 +2,11 @@ import React from "react"
 import { Col, Container, Row } from "react-bootstrap"
 import CategoryCard from "../../ui/categoryCard"
 import PropTypes from "prop-types"
-import { useCategory } from "../../../hooks/useCategory"
+import { getCategoriesByCompany } from "../../../store/categories"
+import { useSelector } from "react-redux"
 
 const CategoryPage = ({ companyId }) => {
-    const categories = useCategory().getCategoriesByCompany(companyId)
-
+    const categories = useSelector(getCategoriesByCompany(companyId))
     return (
         <Container className="d-flex">
             <Row className="mt-2">

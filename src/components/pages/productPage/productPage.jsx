@@ -3,12 +3,13 @@ import { Col, Container, Row, Spinner, Image } from "react-bootstrap"
 import PropTypes from "prop-types"
 import GroupList from "../../../components/common/groupList"
 import VolumePrice from "../../../components/common/volumePrice"
-import { useCategory } from "../../../hooks/useCategory"
 import { useProduct } from "../../../hooks/useProducts"
+import { useSelector } from "react-redux"
+import { getCategoriesByCompany } from "../../../store/categories"
 
 const ProductPage = ({ productId, companyId }) => {
     const [selectedCat, setSelectedCat] = useState()
-    const categories = useCategory().getCategoriesByCompany(companyId)
+    const categories = useSelector(getCategoriesByCompany(companyId))
     const product = useProduct().getProduct(productId)
 
     useEffect(() => {

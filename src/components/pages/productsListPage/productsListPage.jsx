@@ -9,12 +9,13 @@ import { useLocation } from "react-router-dom"
 import SortSelect from "../../common/sortSelect"
 import _ from "lodash"
 import { useProduct } from "../../../hooks/useProducts"
-import { useCategory } from "../../../hooks/useCategory"
+import { useSelector } from "react-redux"
+import { getCategoriesByCompany } from "../../../store/categories"
 
 const ProductsListPage = ({ companyId }) => {
     const location = useLocation()
     const { products } = useProduct()
-    const categories = useCategory().getCategoriesByCompany(companyId)
+    const categories = useSelector(getCategoriesByCompany(companyId))
 
     const [currentPage, setCurrentPage] = useState(1)
 

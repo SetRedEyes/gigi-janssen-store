@@ -63,16 +63,20 @@ const ProductPage = ({ productId, companyId }) => {
                                         </span>
                                     </Row>
                                     <Row className="justify-content-center al">
-                                        <Col md={5} className="mt-5 ">
+                                        <Col md={5} className="mt-5 mb-5 ">
                                             <VolumePrice product={product} />
                                         </Col>
                                     </Row>
                                 </Col>
                             </Row>
                             <Row>
-                                <Col>
-                                    <h5 className="ms-5">Описание товара</h5>
-                                    <p>
+                                <hr />
+                                <Col className="mt-3">
+                                    <h3 className="ms-5 ">Описание товара</h3>
+                                    <p
+                                        className="text-left"
+                                        style={{ textIndent: "2rem" }}
+                                    >
                                         Мыло содержит активный комплекс ингредиентов,
                                         действующих на все симптомы и проявления
                                         акне. Экстракт канадского кипрея обладает

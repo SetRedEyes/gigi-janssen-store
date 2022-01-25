@@ -17,6 +17,7 @@ export const CategoryProvider = ({ children }) => {
 
     useEffect(() => {
         getCategories()
+        console.log(categories)
     }, [])
 
     useEffect(() => {

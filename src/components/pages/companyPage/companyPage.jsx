@@ -1,12 +1,16 @@
 import React, { useState } from "react"
 import { Col, Container, Row } from "react-bootstrap"
+import { useSelector } from "react-redux"
 import GroupList from "../../../components/common/groupList"
 import { useCategory } from "../../../hooks/useCategory"
-import { useCompany } from "../../../hooks/useCompany"
+import { getCompanies, getCompaniesLoadingStatus } from "../../../store/companies"
+import LoadingSpinner from "../../common/loadingSpinner"
 import CompanyCard from "../../ui/companyCard"
 
 const CompanyPage = () => {
-    const { companies } = useCompany()
+    const companies = useSelector(getCompanies())
+    const companiesLoading = useSelector(getCompaniesLoadingStatus())
+
     const gigi = useCategory().getCategoriesByCompany("gigi")
     const janssen = useCategory().getCategoriesByCompany("janssen")
     const [selectedCat, setSelectedCat] = useState()
@@ -31,7 +35,7 @@ const CompanyPage = () => {
 
                 <Col xl={6}>
                     <Row className="mt-3 justify-content-between">
-                        {companies &&
+                        {!companiesLoading ? (
                             companies.map((c) => (
                                 <CompanyCard
                                     key={c._id}
@@ -39,7 +43,10 @@ const CompanyPage = () => {
                                     photo={c.photo}
                                     companyId={c._id}
                                 />
-                            ))}
+                            ))
+                        ) : (
+                            <LoadingSpinner />
+                        )}
                     </Row>
                 </Col>
 

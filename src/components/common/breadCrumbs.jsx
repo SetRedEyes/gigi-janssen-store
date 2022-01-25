@@ -9,7 +9,7 @@ const BreadCrumbs = ({ productId }) => {
     const { categories } = useCategory()
     const { pathname } = useLocation()
     const pathnames = pathname
-        .slice(16)
+        .slice(20)
         .split("/")
         .filter((x) => x)
     console.log(pathnames)

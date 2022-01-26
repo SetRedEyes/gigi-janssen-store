@@ -2,18 +2,18 @@ import React, { useEffect, useState } from "react"
 import { validator } from "../../utils/validator"
 import { Button, Form } from "react-bootstrap"
 import TextField from "../form/textField"
-import { useAuth } from "../../hooks/useAuth"
-import { useHistory } from "react-router-dom"
+
+import { signUp } from "../../store/users"
+import { useDispatch } from "react-redux"
 const RegisterForm = () => {
-    const history = useHistory()
+    const dispatch = useDispatch()
+
     const [data, setData] = useState({
         firstName: "",
         lastName: "",
         email: "",
         password: ""
     })
-
-    const { signUp } = useAuth()
 
     const [errors, setErrors] = useState({})
 
@@ -74,16 +74,11 @@ const RegisterForm = () => {
 
     const isValid = Object.keys(errors).length === 0
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault()
         const isValid = validate()
         if (!isValid) return
-        try {
-            await signUp(data)
-            history.push("/gigi-janssen-store")
-        } catch (error) {
-            setErrors(error)
-        }
+        dispatch(signUp(data))
     }
 
     return (

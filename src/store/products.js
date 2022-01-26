@@ -27,7 +27,7 @@ const { reducer: productsReducer, actions } = productsSlice
 
 const { productsRequested, productsRecieved, productsRequestFailed } = actions
 
-export const loadproductsList = () => async (dispatch) => {
+export const loadProductsList = () => async (dispatch) => {
     dispatch(productsRequested())
     try {
         const { content } = await productService.fetchAll()
@@ -39,9 +39,9 @@ export const loadproductsList = () => async (dispatch) => {
 
 export const getProducts = () => (state) => state.products.entities
 export const getProductsLoadingStatus = () => (state) => state.products.isLoading
-export const getProductsById = (id) => (state) => {
+export const getProductById = (id) => (state) => {
     if (state.products.entities) {
-        return state.products.entities.find((q) => q.companyId === id)
+        return state.products.entities.find((q) => q._id === id)
     }
 }
 

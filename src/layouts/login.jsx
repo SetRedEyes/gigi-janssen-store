@@ -30,7 +30,7 @@ const Login = () => {
                         </>
                     ) : (
                         <>
-                            <h3 className="mb-4">Логин</h3>
+                            <h3 className="mb-4">Войти</h3>
 
                             <LoginForm />
                             <p>

@@ -8,13 +8,13 @@ import PropTypes from "prop-types"
 import { useLocation } from "react-router-dom"
 import SortSelect from "../../common/sortSelect"
 import _ from "lodash"
-import { useProduct } from "../../../hooks/useProducts"
 import { useSelector } from "react-redux"
 import { getCategoriesByCompany } from "../../../store/categories"
+import { getProducts } from "../../../store/products"
 
 const ProductsListPage = ({ companyId }) => {
     const location = useLocation()
-    const { products } = useProduct()
+    const products = useSelector(getProducts())
     const categories = useSelector(getCategoriesByCompany(companyId))
 
     const [currentPage, setCurrentPage] = useState(1)

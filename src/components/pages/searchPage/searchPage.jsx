@@ -9,13 +9,14 @@ import ProductsListCard from "../../ui/productsListCard"
 import BreadCrumbs from "../../common/breadCrumbs"
 import _ from "lodash"
 import SortSelect from "../../common/sortSelect"
-import { useProduct } from "../../../hooks/useProducts"
 import { useSelector } from "react-redux"
 import { getCategoriesByCompany } from "../../../store/categories"
+import { getProducts } from "../../../store/products"
 
 const SearchPage = () => {
     const { search } = query.parse(useLocation().search)
-    const { products } = useProduct()
+    const products = useSelector(getProducts())
+
     const gigiCats = useSelector(getCategoriesByCompany("gigi"))
     const janssenCats = useSelector(getCategoriesByCompany("janssen"))
     const [currentPage, setCurrentPage] = useState(1)

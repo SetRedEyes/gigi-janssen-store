@@ -1,6 +1,6 @@
 import React, { useEffect } from "react"
 import "./App.css"
-import "./normalize.css"
+import "../normalize.css"
 import { Switch, Route, Redirect } from "react-router-dom"
 import NavBar from "./components/common/navBar"
 import { publicRoutes } from "./routes"

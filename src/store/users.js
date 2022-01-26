@@ -2,6 +2,7 @@ import { createAction, createSlice } from "@reduxjs/toolkit"
 import authService from "../services/auth.service"
 import localStorageService from "../services/localStorage.service"
 import userService from "../services/user.service"
+// import history from "../utils/history"
 
 const usersSlice = createSlice({
     name: "user",
@@ -61,6 +62,7 @@ function createUser(payload) {
         try {
             const { content } = await userService.create(payload)
             dispatch(userCreated(content))
+            // history.push("/gigi-janssen-store")
         } catch (error) {
             dispatch(createUserFailed(error.message))
         }

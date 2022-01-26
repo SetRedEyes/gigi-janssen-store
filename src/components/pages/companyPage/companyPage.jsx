@@ -18,8 +18,6 @@ const CompanyPage = () => {
         setSelectedCat(item)
     }
 
-    console.log({ gigiCats })
-
     return (
         <Container fluid>
             <Row>

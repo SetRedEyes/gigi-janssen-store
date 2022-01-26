@@ -7,7 +7,6 @@ import SearchBar from "./searchBar"
 const NavBar = () => {
     const { pathname } = useLocation()
     const { currentUser } = useAuth()
-    // const [auth, setAuth] = useState(false)
     return (
         <Navbar bg="dark" variant="dark" sticky="top">
             <Container fluid>
@@ -20,15 +19,6 @@ const NavBar = () => {
 
                 {pathname !== "/gigi-janssen-store/login" && <SearchBar />}
 
-                {/* {auth ? (
-          <Nav style={{ color: "white" }}>
-            <Button variant={"outline-light"}>Админ панель</Button>
-            <Button variant={"outline-light"} className="ms-2">
-              Войти
-            </Button>
-          </Nav>
-        ) : ( */}
-
                 <div className="d-flex me-5">
                     {currentUser ? (
                         <div className="d-flex align-items-center">
@@ -37,11 +27,11 @@ const NavBar = () => {
                                 className="navProfile-name text-decoration-none me-2"
                             >
                                 {currentUser.firstName}
+                                <i
+                                    style={{ color: "white" }}
+                                    className="bi bi-person-circle ms-2"
+                                ></i>
                             </Link>
-                            <i
-                                style={{ color: "white" }}
-                                className="bi bi-person-circle"
-                            ></i>
                         </div>
                     ) : (
                         <Nav>

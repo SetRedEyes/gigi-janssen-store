@@ -2,12 +2,11 @@ import { createAction, createSlice } from "@reduxjs/toolkit"
 import authService from "../services/auth.service"
 import localStorageService from "../services/localStorage.service"
 import userService from "../services/user.service"
-// import history from "../utils/history"
+import history from "../utils/history"
 
 const usersSlice = createSlice({
     name: "user",
     initialState: {
-        entities: null,
         isLoading: true,
         error: null,
         auth: null,
@@ -19,20 +18,17 @@ const usersSlice = createSlice({
         },
         authRequestFailed: (state, action) => {
             state.error = action.payload
-        },
-        userCreated: (state, action) => {
-            state.entities.push(action.payload)
         }
     }
 })
 
 const { reducer: usersReducer, actions } = usersSlice
-const { authRequestSuccess, authRequestFailed, userCreated } = actions
+const { authRequestSuccess, authRequestFailed } = actions
 
 const authRequested = createAction("users/authRequested")
 const userCreateRequested = createAction("users/userCreateRequested")
 const createUserFailed = createAction("users/createUserFailed")
-
+const userCreated = createAction("users/userCreated")
 export const signUp =
     ({ email, password, ...rest }) =>
     async (dispatch) => {
@@ -55,14 +51,13 @@ export const signUp =
             dispatch(authRequestFailed(error.message))
         }
     }
-
 function createUser(payload) {
     return async function (dispatch) {
         dispatch(userCreateRequested())
         try {
             const { content } = await userService.create(payload)
             dispatch(userCreated(content))
-            // history.push("/gigi-janssen-store")
+            history.push("/gigi-janssen-store")
         } catch (error) {
             dispatch(createUserFailed(error.message))
         }

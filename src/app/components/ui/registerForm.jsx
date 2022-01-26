@@ -5,7 +5,6 @@ import TextField from "../form/textField"
 
 import { signUp } from "../../store/users"
 import { useDispatch } from "react-redux"
-import history from "../../utils/history"
 const RegisterForm = () => {
     const dispatch = useDispatch()
 
@@ -80,7 +79,6 @@ const RegisterForm = () => {
         const isValid = validate()
         if (!isValid) return
         dispatch(signUp(data))
-        history.push("/gigi-janssen-store")
     }
 
     return (

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react"
-// import { useHistory } from "react-router-dom"
 import { useAuth } from "../../../hooks/useAuth"
 import TextField from "../../form/textField"
 import { validator } from "../../../utils/validator"
@@ -8,7 +7,6 @@ import { Link } from "react-router-dom"
 import { Col, Container, Form, Row } from "react-bootstrap"
 
 const UserPage = () => {
-    // const history = useHistory()
     const [isLoading, setIsLoading] = useState(true)
     const [data, setData] = useState()
     const { currentUser, updateUserData } = useAuth()
@@ -25,8 +23,6 @@ const UserPage = () => {
             await updateUserData({
                 ...data
             })
-
-            history.push(`/gigi-janssen-store/profile`)
         } catch (error) {
             setErrors(error)
         }

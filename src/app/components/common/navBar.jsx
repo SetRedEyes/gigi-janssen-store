@@ -1,12 +1,14 @@
 import { React } from "react"
 import { Button, Container, Nav, Navbar } from "react-bootstrap"
+import { useSelector } from "react-redux"
 import { Link, NavLink, useLocation } from "react-router-dom"
-import { useAuth } from "../../hooks/useAuth"
+import { getCurrentUserData, getIsLoggedIn } from "../../store/user"
 import SearchBar from "./searchBar"
 
 const NavBar = () => {
     const { pathname } = useLocation()
-    const { currentUser } = useAuth()
+    const currentUser = useSelector(getCurrentUserData())
+    const isloggedIn = useSelector(getIsLoggedIn())
     return (
         <Navbar bg="dark" variant="dark" sticky="top">
             <Container fluid>
@@ -20,7 +22,7 @@ const NavBar = () => {
                 {pathname !== "/gigi-janssen-store/login" && <SearchBar />}
 
                 <div className="d-flex me-5">
-                    {currentUser ? (
+                    {isloggedIn && currentUser ? (
                         <div className="d-flex align-items-center">
                             <Link
                                 to={"/gigi-janssen-store/profile"}
@@ -35,10 +37,7 @@ const NavBar = () => {
                         </div>
                     ) : (
                         <Nav>
-                            <NavLink
-                                // onClick={() => setAuth(true)}
-                                to={"/gigi-janssen-store/login"}
-                            >
+                            <NavLink to={"/gigi-janssen-store/login"}>
                                 <Button
                                     variant={"outline-light"}
                                     className="navlink-btn"
@@ -49,7 +48,6 @@ const NavBar = () => {
                         </Nav>
                     )}
                 </div>
-                {/* )} */}
             </Container>
         </Navbar>
     )

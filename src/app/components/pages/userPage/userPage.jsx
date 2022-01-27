@@ -1,31 +1,29 @@
 import React, { useEffect, useState } from "react"
-import { useAuth } from "../../../hooks/useAuth"
 import TextField from "../../form/textField"
 import { validator } from "../../../utils/validator"
 import LoadingSpinner from "../../common/loadingSpinner"
 import { Link } from "react-router-dom"
 import { Col, Container, Form, Row } from "react-bootstrap"
+import { useDispatch, useSelector } from "react-redux"
+import { getCurrentUserData, updateUser } from "../../../store/user"
 
 const UserPage = () => {
+    const dispatch = useDispatch()
     const [isLoading, setIsLoading] = useState(true)
     const [data, setData] = useState()
-    const { currentUser, updateUserData } = useAuth()
+    const currentUser = useSelector(getCurrentUserData())
     const [errors, setErrors] = useState({})
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault()
 
         const isValid = validate()
         if (!isValid) return
-        try {
-            console.log("from SUBMIT", data)
-
-            await updateUserData({
+        dispatch(
+            updateUser({
                 ...data
             })
-        } catch (error) {
-            setErrors(error)
-        }
+        )
     }
 
     useEffect(() => {

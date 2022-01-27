@@ -8,12 +8,13 @@ import PropTypes from "prop-types"
 import { useLocation } from "react-router-dom"
 import SortSelect from "../../common/sortSelect"
 import _ from "lodash"
-import { useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { getCategoriesByCompany } from "../../../store/categories"
-import { getProducts } from "../../../store/products"
+import { getProducts, loadProductsList } from "../../../store/products"
 
 const ProductsListPage = ({ companyId }) => {
     const location = useLocation()
+    const dispatch = useDispatch()
     const products = useSelector(getProducts())
     const categories = useSelector(getCategoriesByCompany(companyId))
 
@@ -24,6 +25,7 @@ const ProductsListPage = ({ companyId }) => {
 
     useEffect(() => {
         setCurrentPage(1)
+        dispatch(loadProductsList())
     }, [selectedCat])
 
     useEffect(() => {

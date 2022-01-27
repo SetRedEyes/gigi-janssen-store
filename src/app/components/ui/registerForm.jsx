@@ -3,7 +3,7 @@ import { validator } from "../../utils/validator"
 import { Button, Form } from "react-bootstrap"
 import TextField from "../form/textField"
 
-import { signUp } from "../../store/users"
+import { signUp } from "../../store/user"
 import { useDispatch } from "react-redux"
 const RegisterForm = () => {
     const dispatch = useDispatch()

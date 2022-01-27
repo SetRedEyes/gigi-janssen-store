@@ -1,12 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit"
 import productService from "../services/product.service"
+import isOutdated from "../utils/isOutDated"
 
 const productsSlice = createSlice({
     name: "products",
     initialState: {
         entities: null,
         isLoading: true,
-        error: null
+        error: null,
+        lastFetch: null
     },
     reducers: {
         productsRequested: (state) => {
@@ -14,6 +16,7 @@ const productsSlice = createSlice({
         },
         productsRecieved: (state, action) => {
             state.entities = action.payload
+            state.lastFetch = Date.now()
             state.isLoading = false
         },
         productsRequestFailed: (state, action) => {
@@ -27,13 +30,20 @@ const { reducer: productsReducer, actions } = productsSlice
 
 const { productsRequested, productsRecieved, productsRequestFailed } = actions
 
-export const loadProductsList = () => async (dispatch) => {
-    dispatch(productsRequested())
-    try {
-        const { content } = await productService.fetchAll()
-        dispatch(productsRecieved(content))
-    } catch (error) {
-        dispatch(productsRequestFailed(error.message))
+export const loadProductsList = () => async (dispatch, getState) => {
+    const { lastFetch } = getState().products
+
+    if (isOutdated(lastFetch)) {
+        console.log(lastFetch)
+
+        dispatch(productsRequested())
+
+        try {
+            const { content } = await productService.fetchAll()
+            dispatch(productsRecieved(content))
+        } catch (error) {
+            dispatch(productsRequestFailed(error.message))
+        }
     }
 }
 

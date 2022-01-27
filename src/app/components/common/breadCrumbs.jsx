@@ -14,7 +14,6 @@ const BreadCrumbs = ({ productId }) => {
         .slice(20)
         .split("/")
         .filter((x) => x)
-    console.log(pathnames)
 
     const renderCrumbName = (name) => {
         if (name === "profile") {
@@ -52,7 +51,6 @@ const BreadCrumbs = ({ productId }) => {
                 const routeTo = `/gigi-janssen-store/${pathnames
                     .slice(0, index + 1)
                     .join("/")}`
-                console.log(routeTo)
                 return (
                     <Breadcrumb.Item
                         linkAs={Link}

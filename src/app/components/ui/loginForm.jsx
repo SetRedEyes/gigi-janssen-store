@@ -3,12 +3,12 @@ import { Button, Form } from "react-bootstrap"
 import TextField from "../form/textField"
 import { validator } from "../../utils/validator"
 import CheckBoxField from "../form/checkBoxField"
-import { useAuth } from "../../hooks/useAuth"
-import { useHistory } from "react-router-dom"
+import { useDispatch } from "react-redux"
+import { login } from "../../store/user"
+import history from "../../utils/history"
 
 const LoginForm = () => {
-    const history = useHistory()
-    const { logIn } = useAuth()
+    const dispatch = useDispatch()
 
     const [data, setData] = useState({ email: "", password: "", stayOn: false })
     const [errors, setErrors] = useState({})
@@ -44,20 +44,15 @@ const LoginForm = () => {
 
     const isValid = Object.keys(errors).length === 0
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault()
         const isValid = validate()
         if (!isValid) return
-        try {
-            await logIn(data)
-            history.push(
-                history.location.state.from.pathname
-                    ? history.location.state.from.pathname
-                    : "/gigi-janssen-store"
-            )
-        } catch (error) {
-            setEnterError(error.message)
-        }
+        const redirect = history.location.state
+            ? history.location.state.from.pathname
+            : "/gigi-janssen-store"
+
+        dispatch(login({ payload: data, redirect }))
     }
 
     return (

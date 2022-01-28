@@ -42,7 +42,7 @@ const NavBar = () => {
                                     variant={"outline-light"}
                                     className="navlink-btn"
                                 >
-                                    Авторизация
+                                    Вход/Регистрация
                                 </Button>
                             </NavLink>
                         </Nav>

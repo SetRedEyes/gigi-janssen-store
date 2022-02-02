@@ -124,8 +124,7 @@ const ProductsListPage = ({ companyName }) => {
 }
 
 ProductsListPage.propTypes = {
-    companyName: PropTypes.string,
-    categoryId: PropTypes.string
+    companyName: PropTypes.string
 }
 
 export default ProductsListPage

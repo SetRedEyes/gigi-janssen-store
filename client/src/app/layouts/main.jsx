@@ -8,20 +8,20 @@ import BreadCrumbs from "../components/common/breadCrumbs"
 
 const Main = () => {
     const params = useParams()
-    const { companyName, categoryId, productId } = params
+    const { companyName, categoryName, productId } = params
 
     return (
         <>
             <BreadCrumbs productId={productId} />
 
             {companyName ? (
-                categoryId ? (
+                categoryName ? (
                     productId ? (
                         <ProductPage productId={productId} companyName={companyName} />
                     ) : (
                         <ProductsListPage
                             companyName={companyName}
-                            categoryId={categoryId}
+                            categoryName={categoryName}
                         />
                     )
                 ) : (

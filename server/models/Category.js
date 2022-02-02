@@ -2,11 +2,11 @@ const { Schema, model } = require('mongoose')
 
 const schema = new Schema(
   {
-    _id: {
+    name: {
       type: String,
       required: true
     },
-    name: {
+    fullName: {
       type: String,
       required: true
     },

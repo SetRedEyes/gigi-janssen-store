@@ -66,7 +66,7 @@ const GroupList = ({
 
 GroupList.defaultProps = {
     valueProperty: "_id",
-    contentProperty: "name",
+    contentProperty: "fullName",
     pathProperty: "companyName"
 }
 GroupList.propTypes = {

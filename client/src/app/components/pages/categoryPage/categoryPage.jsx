@@ -20,8 +20,8 @@ const CategoryPage = ({ companyName }) => {
                 {Object.keys(categories).map((cat) => (
                     <Col md={3} key={categories[cat]._id}>
                         <CategoryCard
-                            name={categories[cat].name}
-                            categoryId={categories[cat]._id}
+                            fullName={categories[cat].fullName}
+                            categoryName={categories[cat].name}
                             photo={categories[cat].photo}
                             companyName={companyName}
                             catObj={categories[cat]}

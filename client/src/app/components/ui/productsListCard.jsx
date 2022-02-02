@@ -48,7 +48,6 @@ ProductsListCard.defaultProps = { colSize: 4 }
 ProductsListCard.propTypes = {
     products: PropTypes.array.isRequired,
     companyName: PropTypes.string,
-    categoryId: PropTypes.string,
     colSize: PropTypes.number
 }
 export default ProductsListCard

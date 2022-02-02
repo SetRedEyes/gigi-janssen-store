@@ -3,13 +3,11 @@ import { Button, Container, Nav, Navbar } from "react-bootstrap"
 import { useSelector } from "react-redux"
 import { Link, NavLink, useLocation } from "react-router-dom"
 import { getCurrentUserData, getIsLoggedIn } from "../../store/user"
-import useMockData from "../../utils/mockData"
 import SearchBar from "./searchBar"
 const NavBar = () => {
     const { pathname } = useLocation()
     const currentUser = useSelector(getCurrentUserData())
     const isloggedIn = useSelector(getIsLoggedIn())
-    const { initialize } = useMockData()
 
     return (
         <Navbar bg="dark" variant="dark" sticky="top">
@@ -20,7 +18,6 @@ const NavBar = () => {
                 >
                     GIGI & JANSSEN
                 </NavLink>
-                <button onClick={() => initialize()}></button>
                 {pathname !== "/gigi-janssen-store/login" && <SearchBar />}
 
                 <div className="d-flex me-5">

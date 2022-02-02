@@ -17,7 +17,7 @@ const ProductsListCard = ({ products, colSize }) => {
                             {product.rusName}
                         </Card.Subtitle>
                         <Link
-                            to={`/gigi-janssen-store/${product.companyId}/${product.category}/${product._id}`}
+                            to={`/gigi-janssen-store/${product.companyName}/${product.category}/${product._id}`}
                         >
                             <Image
                                 style={{ width: "18rem", height: "14rem" }}
@@ -27,7 +27,7 @@ const ProductsListCard = ({ products, colSize }) => {
                         <Card.Body>
                             <Link
                                 className="link text-decoration-none text-center"
-                                to={`/gigi-janssen-store/${product.companyId}/${product.category}/${product._id}`}
+                                to={`/gigi-janssen-store/${product.companyName}/${product.category}/${product._id}`}
                             >
                                 <Card.Title style={{ height: "4rem" }}>
                                     {product.name}
@@ -47,7 +47,7 @@ ProductsListCard.defaultProps = { colSize: 4 }
 
 ProductsListCard.propTypes = {
     products: PropTypes.array.isRequired,
-    companyId: PropTypes.string,
+    companyName: PropTypes.string,
     categoryId: PropTypes.string,
     colSize: PropTypes.number
 }

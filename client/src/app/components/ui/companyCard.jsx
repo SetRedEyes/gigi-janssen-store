@@ -3,12 +3,12 @@ import { Card } from "react-bootstrap"
 import PropTypes from "prop-types"
 import { Link } from "react-router-dom"
 
-const CompanyCard = ({ name, photo, companyId }) => {
+const CompanyCard = ({ fullName, photo, companyName }) => {
     return (
         <Card className="mt-5" style={{ width: "18.5rem", border: "none" }}>
             <Link
                 className="link text-decoration-none"
-                to={`/gigi-janssen-store/${companyId}`}
+                to={`/gigi-janssen-store/${companyName}`}
             >
                 <Card.Img
                     style={{ width: "18.5rem", height: "18.5rem" }}
@@ -16,7 +16,7 @@ const CompanyCard = ({ name, photo, companyId }) => {
                     src={photo}
                 />
                 <Card.Body>
-                    <Card.Title className="text-center">{name}</Card.Title>
+                    <Card.Title className="text-center">{fullName}</Card.Title>
                 </Card.Body>
             </Link>
         </Card>
@@ -24,9 +24,9 @@ const CompanyCard = ({ name, photo, companyId }) => {
 }
 
 CompanyCard.propTypes = {
-    name: PropTypes.string,
+    fullName: PropTypes.string,
     photo: PropTypes.string,
-    companyId: PropTypes.string
+    companyName: PropTypes.string
 }
 
 export default CompanyCard

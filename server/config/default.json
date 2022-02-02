@@ -1,4 +1,4 @@
 {
   "port": "8080",
-  "mongoUri": ""
+  "mongoUri": "mongodb+srv://SetRedEyes:800962aaa@cluster0.0b9jt.mongodb.net/gigiJanssenStoreDB?retryWrites=true&w=majority"
 }

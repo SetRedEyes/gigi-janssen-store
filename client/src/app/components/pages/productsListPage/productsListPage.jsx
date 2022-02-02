@@ -12,11 +12,11 @@ import { useDispatch, useSelector } from "react-redux"
 import { getCategoriesByCompany } from "../../../store/categories"
 import { getProducts, loadProductsList } from "../../../store/products"
 
-const ProductsListPage = ({ companyId }) => {
+const ProductsListPage = ({ companyName }) => {
     const location = useLocation()
     const dispatch = useDispatch()
     const products = useSelector(getProducts())
-    const categories = useSelector(getCategoriesByCompany(companyId))
+    const categories = useSelector(getCategoriesByCompany(companyName))
 
     const [currentPage, setCurrentPage] = useState(1)
 
@@ -87,7 +87,7 @@ const ProductsListPage = ({ companyId }) => {
                     <Row>
                         <Col md={3}>
                             <h1 className="text-center m-0 mb-1">
-                                {companyId === "gigi" ? "GIGI" : "JANSSEN"}
+                                {companyName === "gigi" ? "GIGI" : "JANSSEN"}
                             </h1>
                             <GroupList
                                 selectedItem={selectedCat}
@@ -124,7 +124,7 @@ const ProductsListPage = ({ companyId }) => {
 }
 
 ProductsListPage.propTypes = {
-    companyId: PropTypes.string,
+    companyName: PropTypes.string,
     categoryId: PropTypes.string
 }
 

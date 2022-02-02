@@ -7,9 +7,9 @@ import { useSelector } from "react-redux"
 import { getCategoriesByCompany } from "../../../store/categories"
 import { getProductById } from "../../../store/products"
 
-const ProductPage = ({ productId, companyId }) => {
+const ProductPage = ({ productId, companyName }) => {
     const [selectedCat, setSelectedCat] = useState()
-    const categories = useSelector(getCategoriesByCompany(companyId))
+    const categories = useSelector(getCategoriesByCompany(companyName))
     const product = useSelector(getProductById(productId))
 
     useEffect(() => {
@@ -125,7 +125,7 @@ const ProductPage = ({ productId, companyId }) => {
 
 ProductPage.propTypes = {
     productId: PropTypes.string,
-    companyId: PropTypes.string
+    companyName: PropTypes.string
 }
 
 export default ProductPage

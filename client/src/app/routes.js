@@ -34,7 +34,7 @@ export const publicRoutes = [
     { path: "/gigi-janssen-store/logOut", component: LogOut },
 
     {
-        path: "/gigi-janssen-store/:companyId?/:categoryId?/:productId?",
+        path: "/gigi-janssen-store/:companyName?/:categoryId?/:productId?",
         component: Main
     }
 ]

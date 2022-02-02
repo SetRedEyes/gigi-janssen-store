@@ -3,12 +3,12 @@ import { Card } from "react-bootstrap"
 import PropTypes from "prop-types"
 import { Link } from "react-router-dom"
 
-const CategoryCard = ({ name, photo, companyId, categoryId, catObj }) => {
+const CategoryCard = ({ name, photo, companyName, categoryId, catObj }) => {
     return (
         <Link
             className="link text-decoration-none "
             to={{
-                pathname: `/gigi-janssen-store/${companyId}/${categoryId}`,
+                pathname: `/gigi-janssen-store/${companyName}/${categoryId}`,
                 state: {
                     selectedCatProp: catObj
                 }
@@ -31,7 +31,7 @@ const CategoryCard = ({ name, photo, companyId, categoryId, catObj }) => {
 CategoryCard.propTypes = {
     name: PropTypes.string,
     photo: PropTypes.string,
-    companyId: PropTypes.string,
+    companyName: PropTypes.string,
     categoryId: PropTypes.string,
     catObj: PropTypes.object
 }

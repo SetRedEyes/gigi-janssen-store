@@ -1,6 +1,7 @@
 import categories from "../mockData/categories.json"
 import products from "../mockData/products.json"
 import httpService from "../services/http.service"
+import companies from "../mockData/companies.json"
 const useMockData = () => {
     async function initialize() {
         try {
@@ -10,6 +11,10 @@ const useMockData = () => {
 
             for (const product of products) {
                 await httpService.put("product/" + product._id, product)
+            }
+
+            for (const company of companies) {
+                await httpService.put("company/" + company._id, company)
             }
         } catch (error) {
             console.log(error)

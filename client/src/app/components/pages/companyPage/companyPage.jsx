@@ -36,9 +36,9 @@ const CompanyPage = () => {
                             companies.map((c) => (
                                 <CompanyCard
                                     key={c._id}
-                                    name={c.name}
+                                    fullName={c.fullName}
                                     photo={c.photo}
-                                    companyId={c._id}
+                                    companyName={c.name}
                                 />
                             ))
                         ) : (

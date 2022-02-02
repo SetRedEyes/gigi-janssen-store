@@ -2,11 +2,18 @@ import React from "react"
 import { Col, Container, Row } from "react-bootstrap"
 import CategoryCard from "../../ui/categoryCard"
 import PropTypes from "prop-types"
-import { getCategoriesByCompany } from "../../../store/categories"
+import {
+    getCategoriesByCompany,
+    getCategoriesLoadingStatus
+} from "../../../store/categories"
 import { useSelector } from "react-redux"
+import LoadingSpinner from "../../common/loadingSpinner"
 
-const CategoryPage = ({ companyId }) => {
-    const categories = useSelector(getCategoriesByCompany(companyId))
+const CategoryPage = ({ companyName }) => {
+    const categories = useSelector(getCategoriesByCompany(companyName))
+    const categoriesLoading = useSelector(getCategoriesLoadingStatus())
+    console.log(categories)
+    if (categoriesLoading) return <LoadingSpinner />
     return (
         <Container className="d-flex">
             <Row className="mt-2">
@@ -16,7 +23,7 @@ const CategoryPage = ({ companyId }) => {
                             name={categories[cat].name}
                             categoryId={categories[cat]._id}
                             photo={categories[cat].photo}
-                            companyId={companyId}
+                            companyName={companyName}
                             catObj={categories[cat]}
                         />
                     </Col>
@@ -27,7 +34,7 @@ const CategoryPage = ({ companyId }) => {
 }
 
 CategoryPage.propTypes = {
-    companyId: PropTypes.string
+    companyName: PropTypes.string
 }
 
 export default CategoryPage

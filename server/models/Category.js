@@ -10,7 +10,7 @@ const schema = new Schema(
       type: String,
       required: true
     },
-    companyId: {
+    companyName: {
       type: String,
       required: true
     },

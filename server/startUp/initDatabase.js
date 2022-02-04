@@ -7,21 +7,21 @@ const categoryMock = require('../mock/categories.json')
 const productMock = require('../mock/products.json')
 
 module.exports = async () => {
-  const companies = Company.find()
+  const companies = await Company.find()
   if (companies.length !== companyMock.length) {
-    createInitialEntity(Company, companyMock)
+    await createInitialEntity(Company, companyMock)
   }
 }
 module.exports = async () => {
-  const categories = Category.find()
+  const categories = await Category.find()
   if (categories.length !== categoryMock.length) {
-    createInitialEntity(Category, categoryMock)
+    await createInitialEntity(Category, categoryMock)
   }
 }
 module.exports = async () => {
-  const products = Product.find()
+  const products = await Product.find()
   if (products.length !== productMock.length) {
-    createInitialEntity(Product, productMock)
+    await createInitialEntity(Product, productMock)
   }
 }
 
@@ -33,7 +33,6 @@ async function createInitialEntity(Model, data) {
         delete item._id
         const newItem = new Model(item)
         await newItem.save()
-
         return newItem
       } catch (e) {
         return e

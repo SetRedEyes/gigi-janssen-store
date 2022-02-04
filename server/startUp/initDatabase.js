@@ -11,14 +11,12 @@ module.exports = async () => {
   if (companies.length !== companyMock.length) {
     await createInitialEntity(Company, companyMock)
   }
-}
-module.exports = async () => {
+
   const categories = await Category.find()
   if (categories.length !== categoryMock.length) {
     await createInitialEntity(Category, categoryMock)
   }
-}
-module.exports = async () => {
+
   const products = await Product.find()
   if (products.length !== productMock.length) {
     await createInitialEntity(Product, productMock)

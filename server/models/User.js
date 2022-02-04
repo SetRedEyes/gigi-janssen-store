@@ -30,10 +30,3 @@ const schema = new Schema(
 )
 
 module.exports = model('User', schema)
-_id: 'sIazImb0BaM34kEH3wgwyMPFuiy2'
-city: 'Харьков'
-email: 'denidraven@gmail.com'
-firstName: 'Денис'
-lastName: 'Cаберов'
-phone: 'sdasd'
-postOfficeNumber: '4444'

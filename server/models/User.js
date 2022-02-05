@@ -3,13 +3,10 @@ const { Schema, model } = require('mongoose')
 const schema = new Schema(
   {
     firstName: {
-      type: String,
-      required: true
+      type: String
     },
     lastName: {
-      type: String,
-      required: true,
-      unique: true
+      type: String
     },
     email: {
       type: String,
@@ -23,7 +20,7 @@ const schema = new Schema(
       type: String
     },
     postOfficeNumber: {
-      type: Number
+      type: String
     }
   },
   { timestamps: true }

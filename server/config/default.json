@@ -1,4 +1,8 @@
 {
   "port": "8080",
-  "mongoUri": "mongodb+srv://SetRedEyes:800962aaa@cluster0.0b9jt.mongodb.net/gigiJanssenStoreDB?retryWrites=true&w=majority"
+  "mongoUri": "mongodb+srv://SetRedEyes:800962aaa@cluster0.0b9jt.mongodb.net/gigiJanssenStoreDB?retryWrites=true&w=majority",
+  "accessSecret": "super secret from backend",
+  "refreshSecret": "super refresh key"
 }
+
+

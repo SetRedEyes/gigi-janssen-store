@@ -13,7 +13,9 @@ const categoriesSlice = createSlice({
             state.isLoading = true
         },
         categoriesRecieved: (state, action) => {
-            state.entities = action.payload
+            state.entities = action.payload.sort((a, b) =>
+                a.name > b.name ? 1 : -1
+            )
             state.isLoading = false
         },
         categoriesRequestFailed: (state, action) => {

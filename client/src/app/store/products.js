@@ -34,8 +34,6 @@ export const loadProductsList = () => async (dispatch, getState) => {
     const { lastFetch } = getState().products
 
     if (isOutdated(lastFetch)) {
-        console.log(lastFetch)
-
         dispatch(productsRequested())
 
         try {

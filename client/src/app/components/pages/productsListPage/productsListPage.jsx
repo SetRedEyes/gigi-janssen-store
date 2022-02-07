@@ -16,6 +16,7 @@ const ProductsListPage = ({ companyName }) => {
     const location = useLocation()
     const dispatch = useDispatch()
     const products = useSelector(getProducts())
+
     const categories = useSelector(getCategoriesByCompany(companyName))
 
     const [currentPage, setCurrentPage] = useState(1)
@@ -68,7 +69,7 @@ const ProductsListPage = ({ companyName }) => {
             ? products.filter((product) => {
                   return (
                       JSON.stringify(product.category) ===
-                      JSON.stringify(selectedCat._id)
+                      JSON.stringify(selectedCat.name)
                   )
               })
             : products
@@ -80,6 +81,7 @@ const ProductsListPage = ({ companyName }) => {
             [sortBy.order]
         )
         const productCrop = paginate(sortedProducts, currentPage, pageSize)
+
         return (
             <Container fluid>
                 <SortSelect onSort={handleSort} />

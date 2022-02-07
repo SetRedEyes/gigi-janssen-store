@@ -27,7 +27,7 @@ const BreadCrumbs = ({ productId }) => {
         } else if (product && product._id === name) {
             return `${product.name} - ${product.rusName}`
         } else if (categories && isNaN(name)) {
-            return categories.find((cat) => cat._id === name)?.fullName
+            return categories.find((cat) => cat.name === name)?.fullName
         }
     }
 

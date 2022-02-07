@@ -24,10 +24,11 @@ router.patch('/:userId', auth, async (req, res) => {
   }
 })
 
-router.get('/', auth, async (req, res) => {
+router.get('/:userId', auth, async (req, res) => {
   try {
-    const list = await User.find()
-    res.send(list)
+    const { userId } = req.params
+    const currentUser = await User.findById(userId)
+    res.send(currentUser)
   } catch (e) {
     res
       .status(500)

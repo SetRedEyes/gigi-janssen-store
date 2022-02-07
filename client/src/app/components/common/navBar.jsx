@@ -8,7 +8,7 @@ const NavBar = () => {
     const { pathname } = useLocation()
     const currentUser = useSelector(getCurrentUserData())
     const isloggedIn = useSelector(getIsLoggedIn())
-
+    console.log(currentUser)
     return (
         <Navbar bg="dark" variant="dark" sticky="top">
             <Container fluid>

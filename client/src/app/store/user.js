@@ -69,9 +69,6 @@ const {
 } = actions
 
 const authRequested = createAction("user/authRequested")
-const userCreateRequested = createAction("user/userCreateRequested")
-const userCreated = createAction("user/userCreated")
-const createUserFailed = createAction("user/createUserFailed")
 const userUpdateRequested = createAction("user/userUpdateRequested")
 const userUpdateFailed = createAction("user/userUpdateFailed")
 
@@ -85,38 +82,15 @@ export const loadCurrentUser = () => async (dispatch) => {
     }
 }
 
-export const signUp =
-    ({ email, password, ...rest }) =>
-    async (dispatch) => {
-        dispatch(authRequested())
-        try {
-            const data = await authService.register({ email, password })
-            localStorageService.setTokens(data)
-            dispatch(authRequestSuccess({ userId: data.localId }))
-            dispatch(
-                createUser({
-                    _id: data.localId,
-                    email,
-                    phone: "",
-                    city: "",
-                    postOfficeNumber: "",
-                    ...rest
-                })
-            )
-        } catch (error) {
-            dispatch(authRequestFailed(error.message))
-        }
-    }
-function createUser(payload) {
-    return async function (dispatch) {
-        dispatch(userCreateRequested())
-        try {
-            const { content } = await userService.create(payload)
-            dispatch(userCreated(content))
-            history.push("/gigi-janssen-store")
-        } catch (error) {
-            dispatch(createUserFailed(error.message))
-        }
+export const signUp = (payload) => async (dispatch) => {
+    dispatch(authRequested())
+    try {
+        const data = await authService.register(payload)
+        localStorageService.setTokens(data)
+        dispatch(authRequestSuccess({ userId: data.userId }))
+        history.push("/gigi-janssen-store")
+    } catch (error) {
+        dispatch(authRequestFailed(error.message))
     }
 }
 
@@ -127,8 +101,9 @@ export const login =
         dispatch(authRequested())
         try {
             const data = await authService.login({ email, password })
-            dispatch(authRequestSuccess({ userId: data.localId }))
+            console.log(data)
             localStorageService.setTokens(data)
+            dispatch(authRequestSuccess({ userId: data.userId }))
             history.push(redirect)
         } catch (error) {
             dispatch(authRequestFailed(error.message))

@@ -6,7 +6,7 @@ Fullstack online store
 
 #### Auth
 
-```http
+```
   interface Tokens {
 	userId: string
 	accessToken: string
@@ -23,7 +23,7 @@ Fullstack online store
 
 #### Company
 
-```http
+```
   interface Company {
 	fullName: string
 	name: string
@@ -38,7 +38,7 @@ Fullstack online store
 
 #### Category
 
-```http
+```
   interface Company {
 	companyName: string
 	fullName: string
@@ -53,7 +53,7 @@ Fullstack online store
 
 #### Product
 
-```http
+```
   interface Company {
  	companyName: string
   	name: string
@@ -72,7 +72,7 @@ Fullstack online store
 
 #### User
 
-```http
+```
   interface Company {
  	firstName: string
 	lastName: string

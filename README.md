@@ -1,4 +1,4 @@
-# gigi-janssen-store
+# Gigi & Janssen Store
 Fullstack online store
 
 

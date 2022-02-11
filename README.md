@@ -42,7 +42,7 @@ Fullstack online store
   interface Company {
 	companyName: string
 	fullName: string
-    name: string
+   	name: string
 	photo: string
 }
 ```

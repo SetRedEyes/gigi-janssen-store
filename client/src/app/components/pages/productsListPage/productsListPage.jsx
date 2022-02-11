@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from "react"
-import { paginate } from "../../../utils/paginate"
-import { Row, Col, Container, Spinner } from "react-bootstrap"
-import PagesPagination from "../../../components/common/pagination"
-import GroupList from "../../../components/common/groupList"
-import ProductsListCard from "../../ui/productsListCard"
-import PropTypes from "prop-types"
 import { useLocation } from "react-router-dom"
-import SortSelect from "../../common/sortSelect"
-import _ from "lodash"
+import { Row, Col, Container, Spinner } from "react-bootstrap"
 import { useDispatch, useSelector } from "react-redux"
 import { getCategoriesByCompany } from "../../../store/categories"
 import { getProducts, loadProductsList } from "../../../store/products"
+import { paginate } from "../../../utils/paginate"
+import _ from "lodash"
+import PropTypes from "prop-types"
+
+import ProductsListCard from "../../ui/productsListCard"
+import GroupList from "../../../components/common/groupList"
+import SortSelect from "../../common/sortSelect"
+import PagesPagination from "../../../components/common/pagination"
 
 const ProductsListPage = ({ companyName }) => {
     const location = useLocation()

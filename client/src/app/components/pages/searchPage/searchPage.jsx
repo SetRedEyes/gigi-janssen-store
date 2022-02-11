@@ -1,17 +1,19 @@
 import React, { useState, useEffect } from "react"
-import query from "query-string"
 import { useLocation } from "react-router-dom"
-import { paginate } from "../../../utils/paginate"
 import { Col, Container, Row } from "react-bootstrap"
-import GroupList from "../../common/groupList"
-import PagesPagination from "../../common/pagination"
-import ProductsListCard from "../../ui/productsListCard"
-import BreadCrumbs from "../../common/breadCrumbs"
-import _ from "lodash"
-import SortSelect from "../../common/sortSelect"
 import { useSelector } from "react-redux"
 import { getCategoriesByCompany } from "../../../store/categories"
 import { getProducts } from "../../../store/products"
+import { paginate } from "../../../utils/paginate"
+import query from "query-string"
+import _ from "lodash"
+
+import BreadCrumbs from "../../common/breadCrumbs"
+import ProductsListCard from "../../ui/productsListCard"
+import GroupList from "../../common/groupList"
+import SortSelect from "../../common/sortSelect"
+import PagesPagination from "../../common/pagination"
+import LoadingSpinner from "../../common/loadingSpinner"
 
 const SearchPage = () => {
     const { search } = query.parse(useLocation().search)
@@ -66,6 +68,7 @@ const SearchPage = () => {
             [sortBy.order]
         )
         const productCrop = paginate(sortedProducts, currentPage, pageSize)
+
         return (
             <Container fluid>
                 <BreadCrumbs />
@@ -115,6 +118,8 @@ const SearchPage = () => {
                 </Row>
             </Container>
         )
+    } else {
+        return <LoadingSpinner />
     }
 }
 

@@ -1,11 +1,12 @@
 import React, { useState } from "react"
 import { Col, Container, Row } from "react-bootstrap"
 import { useSelector } from "react-redux"
-import GroupList from "../../../components/common/groupList"
 import { getCategoriesByCompany } from "../../../store/categories"
 import { getCompanies, getCompaniesLoadingStatus } from "../../../store/companies"
-import LoadingSpinner from "../../common/loadingSpinner"
+
 import CompanyCard from "../../ui/companyCard"
+import GroupList from "../../../components/common/groupList"
+import LoadingSpinner from "../../common/loadingSpinner"
 
 const CompanyPage = () => {
     const companies = useSelector(getCompanies())

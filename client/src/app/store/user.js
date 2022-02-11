@@ -1,8 +1,8 @@
+import history from "../utils/history"
 import { createAction, createSlice } from "@reduxjs/toolkit"
 import authService from "../services/auth.service"
 import localStorageService from "../services/localStorage.service"
 import userService from "../services/user.service"
-import history from "../utils/history"
 
 const initialState = localStorageService.getAccessToken()
     ? {
@@ -10,8 +10,7 @@ const initialState = localStorageService.getAccessToken()
           isLoading: true,
           error: null,
           auth: { userId: localStorageService.getUserId() },
-          isLoggedIn: true,
-          dataLoaded: false
+          isLoggedIn: true
       }
     : {
           entities: null,
@@ -31,7 +30,6 @@ const userSlice = createSlice({
         },
         currentUserRecieved: (state, action) => {
             state.entities = action.payload
-            state.dataLoaded = true
             state.isLoading = false
         },
         currentUserRequestFailed: (state, action) => {
@@ -127,7 +125,6 @@ export const updateUser = (payload) => async (dispatch) => {
 }
 
 export const getIsLoggedIn = () => (state) => state.user.isLoggedIn
-export const getDataStatus = () => (state) => state.user.dataLoaded
 export const getCurrentUserData = () => (state) => {
     return state.user.entities ? state.user.entities : null
 }

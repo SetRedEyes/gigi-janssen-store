@@ -1,9 +1,10 @@
 import { React } from "react"
+import { Link, NavLink, useLocation } from "react-router-dom"
 import { Button, Container, Nav, Navbar } from "react-bootstrap"
 import { useSelector } from "react-redux"
-import { Link, NavLink, useLocation } from "react-router-dom"
 import { getCurrentUserData, getIsLoggedIn } from "../../store/user"
 import SearchBar from "./searchBar"
+
 const NavBar = () => {
     const { pathname } = useLocation()
     const currentUser = useSelector(getCurrentUserData())

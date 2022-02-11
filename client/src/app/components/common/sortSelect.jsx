@@ -18,7 +18,7 @@ const SortSelect = ({ onSort }) => {
                 style={{ width: "15rem" }}
                 onChange={handleChange}
                 name="price[0]"
-                className="sortSelect"
+                className="sort-select"
             >
                 <option value="">алфафиту</option>
                 <option value="asc">возрастанию цены</option>

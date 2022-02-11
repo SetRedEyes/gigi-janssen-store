@@ -1,7 +1,7 @@
 import React from "react"
-import PropTypes from "prop-types"
 import { Link } from "react-router-dom"
 import { Card, Col, Image } from "react-bootstrap"
+import PropTypes from "prop-types"
 import VolumePrice from "../common/volumePrice"
 
 const ProductsListCard = ({ products, colSize }) => {

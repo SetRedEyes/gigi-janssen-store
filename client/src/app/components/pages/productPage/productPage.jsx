@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react"
 import { Col, Container, Row, Spinner, Image } from "react-bootstrap"
-import PropTypes from "prop-types"
-import GroupList from "../../../components/common/groupList"
-import VolumePrice from "../../../components/common/volumePrice"
 import { useSelector } from "react-redux"
 import { getCategoriesByCompany } from "../../../store/categories"
 import { getProductById } from "../../../store/products"
+import PropTypes from "prop-types"
+
+import VolumePrice from "../../../components/common/volumePrice"
+import GroupList from "../../../components/common/groupList"
 
 const ProductPage = ({ productId, companyName }) => {
     const [selectedCat, setSelectedCat] = useState()

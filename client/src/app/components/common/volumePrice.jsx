@@ -42,7 +42,7 @@ const VolumePrice = ({ product }) => {
                         ? `${product.price[0]} грн`
                         : `${price} грн`}
                 </Card.Title>
-                <Button className="buyBtn">Купить</Button>
+                <Button className="buy-btn">Купить</Button>
             </div>
         </>
     )

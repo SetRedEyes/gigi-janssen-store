@@ -1,10 +1,10 @@
 import React from "react"
-import { Breadcrumb } from "react-bootstrap"
 import { Link, useLocation } from "react-router-dom"
-import PropTypes from "prop-types"
-import { getCategories } from "../../store/categories"
+import { Breadcrumb } from "react-bootstrap"
 import { useSelector } from "react-redux"
+import { getCategories } from "../../store/categories"
 import { getProductById } from "../../store/products"
+import PropTypes from "prop-types"
 
 const BreadCrumbs = ({ productId }) => {
     const product = useSelector(getProductById(productId))

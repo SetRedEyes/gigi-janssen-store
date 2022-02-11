@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react"
 import { Button, Form } from "react-bootstrap"
-import TextField from "../form/textField"
-import { validator } from "../../utils/validator"
-import CheckBoxField from "../form/checkBoxField"
 import { useDispatch } from "react-redux"
 import { login } from "../../store/user"
+import { validator } from "../../utils/validator"
 import history from "../../utils/history"
+
+import TextField from "../form/textField"
+import CheckBoxField from "../form/checkBoxField"
 
 const LoginForm = () => {
     const dispatch = useDispatch()

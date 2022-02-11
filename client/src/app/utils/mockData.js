@@ -1,7 +1,8 @@
+import httpService from "../services/http.service"
 import categories from "../mockData/categories.json"
 import products from "../mockData/products.json"
-import httpService from "../services/http.service"
 import companies from "../mockData/companies.json"
+
 const useMockData = () => {
     async function initialize() {
         try {

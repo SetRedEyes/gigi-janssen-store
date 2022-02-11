@@ -107,7 +107,7 @@ const UserPage = () => {
                     <div className="d-flex  justify-content-center">
                         <Link
                             to={"/gigi-janssen-store/logOut"}
-                            className="buyBtn btn btn-primary  "
+                            className="buy-btn btn btn-primary  "
                         >
                             Выйти из аккаунта
                         </Link>

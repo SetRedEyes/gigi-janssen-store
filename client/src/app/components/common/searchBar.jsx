@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react"
-import { Button, Form, FormControl, InputGroup } from "react-bootstrap"
 import { useHistory } from "react-router-dom"
+import { Button, Form, FormControl, InputGroup } from "react-bootstrap"
 
 const SearchBar = () => {
     const history = useHistory()
@@ -26,12 +26,13 @@ const SearchBar = () => {
                         aria-label="Recipient's username"
                         aria-describedby="basic-addon2"
                         onChange={handleSearch}
+                        required
                     />
                     <Button
                         variant="outline-light"
                         id="button-addon2"
                         onClick={handleSubmit}
-                        className="searchBtn"
+                        className="search-btn"
                     >
                         <i className="bi bi-search"></i>
                     </Button>

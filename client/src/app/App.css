@@ -47,33 +47,33 @@
     box-shadow: none !important;
 }
 
-.buyBtn {
+.buy-btn {
     background-color: #212529;
     border-color: #212529;
     text-decoration: none;
 }
 
-.buyBtn:hover {
+.buy-btn:hover {
     background-color: #21c1cf;
     border-color: #21c1cf;
 }
 
-.buyBtn:focus {
+.buy-btn:focus {
     outline: none !important;
     box-shadow: none !important;
     background-color: #21c1cf;
     border-color: #21c1cf;
 }
 
-.searchBtn:hover {
+.search-btn:hover {
     background-color: #21c1cf;
     border-color: #21c1cf;
 }
-.searchBtn:focus {
+.search-btn:focus {
     box-shadow: none;
 }
 
-.sortSelect:focus {
+.sort-select:focus {
     box-shadow: none;
     border-color: #21c1cf;
 }

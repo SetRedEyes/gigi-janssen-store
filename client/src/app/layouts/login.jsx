@@ -1,6 +1,6 @@
 import React, { useState } from "react"
-import { Col, Container, Row } from "react-bootstrap"
 import { useParams } from "react-router-dom"
+import { Col, Container, Row } from "react-bootstrap"
 import LoginForm from "../components/ui/loginForm"
 import RegisterForm from "../components/ui/registerForm"
 

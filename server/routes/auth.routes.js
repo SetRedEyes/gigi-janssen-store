@@ -1,12 +1,12 @@
 const express = require('express')
-const User = require('../models/User')
-const bcrypt = require('bcryptjs')
 const {
   check,
   validationResult
 } = require('express-validator')
+const bcrypt = require('bcryptjs')
 const { generateUserData } = require('../utils/helpers')
 const tokenService = require('../services/token.service')
+const User = require('../models/User')
 const router = express.Router({ mergeParams: true })
 
 router.post('/signUp', [

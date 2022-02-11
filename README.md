@@ -90,6 +90,9 @@ Fullstack online store
 | /api/user/:id        | `true` | `patch` |  User  
 | /api/user/:id             | `true`| `get` |  User | 
 
+## Authors
+
+- [@SetRedEyes](https://www.github.com/SetRedEyes)
 
 
 

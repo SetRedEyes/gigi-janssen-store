@@ -1,4 +1,4 @@
-import Admin from "./components/pages/Admin"
+import AdminPage from "./components/pages/adminPage/adminPage"
 import Basket from "./components/pages/Basket"
 import SearchPage from "./components/pages/searchPage"
 import UserPage from "./components/pages/userPage"
@@ -6,14 +6,7 @@ import Login from "./layouts/login"
 import LogOut from "./layouts/logOut"
 import Main from "./layouts/main"
 
-export const authRoutes = [
-    {
-        path: "/gigi-janssen-store/admin",
-        component: Admin
-    }
-]
-
-export const publicRoutes = [
+export const routes = [
     {
         path: "/gigi-janssen-store",
         component: Main
@@ -27,7 +20,11 @@ export const publicRoutes = [
         component: UserPage,
         isProtectedRoute: true
     },
-
+    {
+        path: "/gigi-janssen-store/adminPage",
+        component: AdminPage,
+        isProtectedRoute: true
+    },
     { path: "/gigi-janssen-store/basket", component: Basket },
 
     { path: "/gigi-janssen-store/search", component: SearchPage },

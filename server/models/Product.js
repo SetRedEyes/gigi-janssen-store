@@ -2,6 +2,10 @@ const { Schema, model } = require('mongoose')
 
 const schema = new Schema(
   {
+    vendorCode: {
+      type: String,
+      required: true
+    },
     companyName: {
       type: String,
       required: true

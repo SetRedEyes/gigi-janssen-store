@@ -1,13 +1,15 @@
 import React from "react"
+import { Switch, Route, Redirect } from "react-router-dom"
 import "./App.css"
 import "../normalize.css"
-import { Switch, Route, Redirect } from "react-router-dom"
-import NavBar from "./components/common/navBar"
-import { publicRoutes } from "./routes"
 import { ToastContainer } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
+
+import { routes } from "./routes"
+import NavBar from "./components/common/navBar"
 import ProtectedRoute from "./components/common/protectedRoute"
 import AppLoader from "./components/ui/hoc/appLoader"
+
 const App = () => {
     return (
         <div>
@@ -15,7 +17,7 @@ const App = () => {
                 <NavBar />
 
                 <Switch>
-                    {publicRoutes.map(({ path, component, isProtectedRoute }) =>
+                    {routes.map(({ path, component, isProtectedRoute }) =>
                         isProtectedRoute ? (
                             <ProtectedRoute
                                 key={path}

@@ -61,7 +61,8 @@ const ProductPage = ({ productId, companyName }) => {
                                         <span>Активные компоненты:</span>
                                         <span>Способ применения:</span>
                                         <span>
-                                            id товара: <strong>{product._id}</strong>
+                                            id товара:{" "}
+                                            <strong>{product.vendorCode}</strong>
                                         </span>
                                     </Row>
                                     <Row className="justify-content-center al">

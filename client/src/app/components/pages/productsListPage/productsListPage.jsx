@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { useLocation } from "react-router-dom"
-import { Row, Col, Container, Spinner } from "react-bootstrap"
+import { Row, Col, Container } from "react-bootstrap"
 import { useDispatch, useSelector } from "react-redux"
 import { getCategoriesByCompany } from "../../../store/categories"
 import { getProducts, loadProductsList } from "../../../store/products"
@@ -12,6 +12,7 @@ import ProductsListCard from "../../ui/productsListCard"
 import GroupList from "../../../components/common/groupList"
 import SortSelect from "../../common/sortSelect"
 import PagesPagination from "../../../components/common/pagination"
+import LoadingSpinner from "../../common/loadingSpinner"
 
 const ProductsListPage = ({ companyName }) => {
     const location = useLocation()
@@ -117,12 +118,7 @@ const ProductsListPage = ({ companyName }) => {
             </Container>
         )
     } else {
-        return (
-            <Container className="d-flex justify-content-center mt-4">
-                <Spinner animation="border" variant="info" />
-                <span className="mt-1 ms-2">Загрузка</span>
-            </Container>
-        )
+        return <LoadingSpinner />
     }
 }
 

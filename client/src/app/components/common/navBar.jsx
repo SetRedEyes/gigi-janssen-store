@@ -21,9 +21,20 @@ const NavBar = () => {
                 </NavLink>
                 {pathname !== "/gigi-janssen-store/login" && <SearchBar />}
 
-                <div className="d-flex me-5">
+                <div className="d-flex me-5 ">
                     {isloggedIn && currentUser ? (
                         <div className="d-flex align-items-center">
+                            <Link
+                                to={"/gigi-janssen-store/adminPage"}
+                                className="navProfile-name text-decoration-none me-5"
+                            >
+                                <Button
+                                    variant={"outline-light"}
+                                    className="navlink-btn"
+                                >
+                                    Админ панель
+                                </Button>
+                            </Link>
                             <Link
                                 to={"/gigi-janssen-store/profile"}
                                 className="navProfile-name text-decoration-none me-2"

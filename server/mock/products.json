@@ -1,6 +1,7 @@
 [
   {
     "_id": "1a",
+    "vendorCode": "1a",
     "companyName": "gigi",
     "name": "Acnon Smoothing Facial Cleanser",
     "rusName": "Успокаивающий гель для умывания",
@@ -11,6 +12,7 @@
   },
   {
     "_id": "2n",
+    "vendorCode": "1ab",
     "companyName": "gigi",
     "name": "New Age Comfort Day Cream SPF-15",
     "rusName": "Дневной крем SPF-15",
@@ -21,6 +23,7 @@
   },
   {
     "_id": "3",
+    "vendorCode": "1asd",
     "companyName": "gigi",
     "name": "Ester C Mild Cleanser",
     "rusName": "Нежный гель для умывания",
@@ -31,6 +34,7 @@
   },
   {
     "_id": "4",
+    "vendorCode": "1adsfsd",
     "companyName": "gigi",
     "name": "Oxygen Prime Refreshing Cleansing Gel",
     "rusName": "Освежающий очищающий гель",
@@ -41,6 +45,7 @@
   },
   {
     "_id": "5",
+    "vendorCode": "1a3re",
     "companyName": "gigi",
     "name": "Recovery Skin Clear Cleanser",
     "rusName": "Очищающий гель",
@@ -51,6 +56,7 @@
   },
   {
     "_id": "6",
+    "vendorCode": "1sdfa",
     "companyName": "gigi",
     "name": " Acnon Spotless Skin Refresher",
     "rusName": "Очищающий тоник",
@@ -61,6 +67,7 @@
   },
   {
     "_id": "7",
+    "vendorCode": "234sf",
     "companyName": "gigi",
     "name": "Oxygen Prime Advanced Moisturizer SPF-15",
     "rusName": "Увлажняющий крем SPF-15",
@@ -71,6 +78,7 @@
   },
   {
     "_id": "8",
+    "vendorCode": "3tre3",
     "companyName": "gigi",
     "name": "Ester C Moisturizer Cream SPF-20",
     "rusName": "Дневной увлажняющий крем SPF-20",
@@ -81,6 +89,7 @@
   },
   {
     "_id": "9",
+    "vendorCode": "sds32",
     "companyName": "gigi",
     "name": "New Age Active Serum",
     "rusName": "Активная сыворотка",
@@ -91,6 +100,7 @@
   },
   {
     "_id": "10",
+    "vendorCode": "e4fd",
     "companyName": "gigi",
     "name": "Sea Weed Toner",
     "rusName": "Тонер",
@@ -101,6 +111,7 @@
   },
   {
     "_id": "11",
+    "vendorCode": "144wfa",
     "companyName": "gigi",
     "name": "Sea Weed Soapless Soap",
     "rusName": "Непенящееся мыло",
@@ -111,26 +122,19 @@
   },
   {
     "_id": "12",
+    "vendorCode": "4fd1a",
     "companyName": "gigi",
-    "name": "Recovery Skin Clear Cleanser",
-    "rusName": "Очищающий гель",
+    "name": "Recovery Optimizing Serum",
+    "rusName": "Восстанавливающий серум",
     "category": "recovery",
-    "price": [900, 1600],
-    "volume": [120, 250],
+    "price": [3600],
+    "volume": [120],
     "photo": "https://images.unsplash.com/photo-1633085650319-b9efc57dcf07?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1887&q=80"
   },
-  {
-    "_id": "13",
-    "companyName": "gigi",
-    "name": "Recovery Skin Clear Cleanser",
-    "rusName": "Очищающий гель",
-    "category": "recovery",
-    "price": [920, 1600],
-    "volume": [120, 250],
-    "photo": "https://images.unsplash.com/photo-1633085650319-b9efc57dcf07?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1887&q=80"
-  },
+
   {
     "_id": "14",
+    "vendorCode": "dkfsd333",
     "companyName": "janssen",
     "name": "Mature Skin Luxury Oil Cleanser",
     "rusName": "Очищающее масло для лица",
@@ -141,6 +145,7 @@
   },
   {
     "_id": "15",
+    "vendorCode": "efew33",
     "companyName": "janssen",
     "name": "Dry Skin Mild Creamy Cleanser",
     "rusName": "Очищающее молочко",
@@ -151,6 +156,7 @@
   },
   {
     "_id": "16",
+    "vendorCode": "113qa",
     "companyName": "janssen",
     "name": "Platinum Care Day Cream",
     "rusName": "Дневной крем реструктурирующий",
@@ -161,6 +167,7 @@
   },
   {
     "_id": "17",
+    "vendorCode": "26g1a",
     "companyName": "janssen",
     "name": "Demanding Skin Brightening Face Cleanser",
     "rusName": "Осветляющая очищающая эмульсия ",
@@ -171,6 +178,7 @@
   },
   {
     "_id": "18",
+    "vendorCode": "rg44",
     "companyName": "janssen",
     "name": "Combination Skin Gentle Cleansing Powder",
     "rusName": "Очищающая пудраа",
@@ -181,6 +189,7 @@
   },
   {
     "_id": "19",
+    "vendorCode": "q4353",
     "companyName": "janssen",
     "name": "Oily Skin Clarifying Cleansing Gel",
     "rusName": "Очищающий гель",

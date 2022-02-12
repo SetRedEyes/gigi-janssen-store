@@ -132,3 +132,33 @@
         rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
         rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
+
+.admin-panel-table {
+    font-size: 0.8rem;
+    width: 60%;
+}
+
+.admin-panel-table th,
+td {
+    text-align: center;
+    vertical-align: middle;
+    padding: 1 0 !important;
+    border-bottom-width: 0.1rem !important;
+}
+
+.long-string {
+    width: 10rem;
+    white-space: nowrap;
+    word-break: break-all;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.long-ceil {
+    padding-top: 1.5rem !important;
+}
+
+.long-string:hover {
+    word-break: break-all;
+    white-space: normal;
+}

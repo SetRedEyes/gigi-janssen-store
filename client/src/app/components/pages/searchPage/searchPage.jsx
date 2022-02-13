@@ -11,7 +11,7 @@ import _ from "lodash"
 import BreadCrumbs from "../../common/breadCrumbs"
 import ProductsListCard from "../../ui/productsListCard"
 import GroupList from "../../common/groupList"
-import SortSelect from "../../common/sortSelect"
+import SortSelect from "../../ui/sortSelect"
 import PagesPagination from "../../common/pagination"
 import LoadingSpinner from "../../common/loadingSpinner"
 

@@ -142,8 +142,11 @@
 td {
     text-align: center;
     vertical-align: middle;
-    padding: 1 0 !important;
     border-bottom-width: 0.1rem !important;
+}
+
+.table-title:hover {
+    color: #21c1cf;
 }
 
 .long-string {

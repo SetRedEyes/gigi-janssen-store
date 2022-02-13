@@ -14,6 +14,15 @@ const adminPage = () => {
     const [sortBy, setSortBy] = useState({ iter: "name", order: "asc" })
     const pageSize = 9
 
+    const handleDeleteProduct = (productId) => {
+        // setUsers((users) => users.filter((user) => user._id !== userId))
+        console.log(productId)
+    }
+
+    const handleEditProduct = (productId) => {
+        console.log(productId)
+    }
+
     const handlePageChange = (pageIndex) => {
         setCurrentPage(pageIndex)
     }
@@ -27,8 +36,7 @@ const adminPage = () => {
 
     if (products) {
         const count = products.length
-
-        const sortedProducts = _.orderBy(products, [sortBy.iter], [sortBy.order])
+        const sortedProducts = _.orderBy(products, [sortBy.path], [sortBy.order])
 
         const productsCrop = paginate(sortedProducts, currentPage, pageSize)
 
@@ -38,7 +46,9 @@ const adminPage = () => {
                     <ProductsTable
                         products={productsCrop}
                         onSort={handleSort}
-                        currentSort={sortBy}
+                        selectedSort={sortBy}
+                        onEditProduct={handleEditProduct}
+                        onDeleteProduct={handleDeleteProduct}
                     />
                 )}
                 <PagesPagination

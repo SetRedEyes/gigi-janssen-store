@@ -6,6 +6,7 @@ import TableHeader from "../common/table/tableHeader"
 import TableBody from "../common/table/tableBody"
 import EditButton from "../common/editButton"
 import DeleteButton from "../common/deleteButton"
+import DataList from "./dataList"
 
 const ProductsTable = ({
     products,
@@ -21,8 +22,14 @@ const ProductsTable = ({
         rusName: { path: "rusName", name: "Русское наименование" },
         companyName: { path: "companyName", name: "Компания" },
         category: { path: "category", name: "Категория" },
-        price: { name: "Цена" },
-        volume: { name: "Объем" },
+        price: {
+            name: "Цена",
+            component: (product) => <DataList data={product.price} />
+        },
+        volume: {
+            name: "Объем",
+            component: (product) => <DataList data={product.volume} />
+        },
         photo: { name: "Фото" },
         edit: {
             name: "Редактировать",

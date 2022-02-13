@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import TextField from "../../form/textField"
+import TextField from "../../common/form/textField"
 import { validator } from "../../../utils/validator"
 import LoadingSpinner from "../../common/loadingSpinner"
 import { Link } from "react-router-dom"

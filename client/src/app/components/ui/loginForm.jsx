@@ -5,8 +5,8 @@ import { login } from "../../store/user"
 import { validator } from "../../utils/validator"
 import history from "../../utils/history"
 
-import TextField from "../form/textField"
-import CheckBoxField from "../form/checkBoxField"
+import TextField from "../common/form/textField"
+import CheckBoxField from "../common/form/checkBoxField"
 
 const LoginForm = () => {
     const dispatch = useDispatch()

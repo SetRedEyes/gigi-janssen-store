@@ -21,9 +21,7 @@ const TableBody = ({ data, columns }) => {
                 return <td key={column}>{component(item)}</td>
             }
         } else {
-            return (
-                <td key={column}>{Array.isArray(path) ? path.join(", ") : path}</td>
-            )
+            return <td key={column}>{path}</td>
         }
     }
 

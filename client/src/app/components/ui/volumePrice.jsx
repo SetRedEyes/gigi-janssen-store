@@ -7,13 +7,8 @@ const VolumePrice = ({ product }) => {
     const [activeBtn, setActiveBtn] = useState(0)
 
     const renderPrice = (volumeIndex, product) => {
-        if (volumeIndex === 0) {
-            setActiveBtn(volumeIndex)
-            setPrice(product.price[0])
-        } else if (volumeIndex === 1) {
-            setActiveBtn(volumeIndex)
-            setPrice(product.price[1])
-        }
+        setActiveBtn(volumeIndex)
+        setPrice(product.price[volumeIndex])
     }
 
     return (
@@ -24,10 +19,7 @@ const VolumePrice = ({ product }) => {
                         key={item}
                         variant="light"
                         className={`text-nowrap ${
-                            (activeBtn === 0 && index === 0) ||
-                            (activeBtn === 1 && index === 1)
-                                ? "enableFocus"
-                                : "disableFocus"
+                            activeBtn === index ? "enableFocus" : "disableFocus"
                         }`}
                         onClick={() => renderPrice(index, product)}
                         onMouseEnter={() => renderPrice(index, product)}

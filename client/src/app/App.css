@@ -1,9 +1,6 @@
 .enableFocus {
     box-shadow: 0 0 0 0.25rem #21c1cf;
 }
-.enableFocus:focus {
-    box-shadow: 0 0 0 0.25rem #21c1cf;
-}
 
 .disableFocus {
     box-shadow: none;
@@ -133,9 +130,14 @@
         rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
 
+.user-page-input {
+    margin-bottom: 1.5rem;
+}
+
 .admin-panel-table {
-    font-size: 0.8rem;
-    width: 60%;
+    font-size: 0.7rem;
+    width: 100%;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
 .admin-panel-table th,
@@ -143,6 +145,7 @@ td {
     text-align: center;
     vertical-align: middle;
     border-bottom-width: 0.1rem !important;
+    white-space: nowrap;
 }
 
 .table-title:hover {
@@ -150,18 +153,41 @@ td {
 }
 
 .long-string {
-    width: 10rem;
+    width: 8rem;
     white-space: nowrap;
     word-break: break-all;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-.long-ceil {
-    padding-top: 1.5rem !important;
-}
-
 .long-string:hover {
     word-break: break-all;
     white-space: normal;
+}
+
+.edit-form {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 2px solid;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    padding: 0.5rem 1rem;
+}
+
+.edit-panel:hover h5 {
+    color: #21c1cf;
+}
+
+.edit-panel:hover .edit-form {
+    border-color: #21c1cf;
+}
+
+.edit-form .form-control {
+    height: 2rem;
+}
+
+.edit-form .form-select {
+    height: 2.2rem;
+    vertical-align:center
 }

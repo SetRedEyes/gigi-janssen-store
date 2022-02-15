@@ -1,12 +1,10 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-import Table from "react-bootstrap/Table"
-import TableHeader from "../common/table/tableHeader"
-import TableBody from "../common/table/tableBody"
 import EditButton from "../common/editButton"
 import DeleteButton from "../common/deleteButton"
 import DataList from "./dataList"
+import Table from "../common/table"
 
 const ProductsTable = ({
     products,
@@ -46,10 +44,12 @@ const ProductsTable = ({
     }
 
     return (
-        <Table striped borderless hover className="mt-5 admin-panel-table">
-            <TableHeader {...{ onSort, selectedSort, columns }} />
-            <TableBody {...{ columns, data: products }} />
-        </Table>
+        <Table
+            onSort={onSort}
+            selectedSort={selectedSort}
+            columns={columns}
+            data={products}
+        ></Table>
     )
 }
 

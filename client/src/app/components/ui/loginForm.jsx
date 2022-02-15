@@ -6,7 +6,6 @@ import { validator } from "../../utils/validator"
 import history from "../../utils/history"
 
 import TextField from "../common/form/textField"
-import CheckBoxField from "../common/form/checkBoxField"
 
 const LoginForm = () => {
     const dispatch = useDispatch()
@@ -73,9 +72,7 @@ const LoginForm = () => {
                 onChange={handleChange}
                 error={errors.password}
             />
-            <CheckBoxField value={data.stayOn} onChange={handleChange} name="stayOn">
-                Оставаться в системе
-            </CheckBoxField>
+
             {enterError && <p className="text-danger">{enterError}</p>}
             <Button
                 type="submit"

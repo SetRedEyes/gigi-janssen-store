@@ -3,7 +3,7 @@ import TextField from "../../common/form/textField"
 import { validator } from "../../../utils/validator"
 import LoadingSpinner from "../../common/loadingSpinner"
 import { Link } from "react-router-dom"
-import { Col, Container, Form, Row } from "react-bootstrap"
+import { Button, Col, Container, Form, Row } from "react-bootstrap"
 import { useDispatch, useSelector } from "react-redux"
 import { getCurrentUserData, updateUser } from "../../../store/user"
 
@@ -101,10 +101,10 @@ const UserPage = () => {
 
     const isValid = Object.keys(errors).length !== 0
     return (
-        <Row>
-            <Col md={{ span: 6, offset: 3 }} className="shadow p-4">
-                <Container>
-                    <div className="d-flex  justify-content-center">
+        <Container>
+            <Row>
+                <Col md={{ span: 6, offset: 3 }} className="shadow p-4">
+                    <div className="d-flex justify-content-center">
                         <Link
                             to={"/gigi-janssen-store/logOut"}
                             className="buy-btn btn btn-primary  "
@@ -158,20 +158,20 @@ const UserPage = () => {
                                 error={errors.postOfficeNumber}
                             />
 
-                            <button
+                            <Button
                                 type="submit"
                                 disabled={isValid}
                                 className="btn btn-primary w-100 mx-auto submit-btn"
                             >
                                 Отправить данные
-                            </button>
+                            </Button>
                         </Form>
                     ) : (
                         <LoadingSpinner />
                     )}
-                </Container>
-            </Col>
-        </Row>
+                </Col>
+            </Row>
+        </Container>
     )
 }
 

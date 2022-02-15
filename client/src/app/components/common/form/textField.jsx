@@ -2,7 +2,17 @@ import React, { useState } from "react"
 import { Button, Form, InputGroup } from "react-bootstrap"
 import PropTypes from "prop-types"
 
-const TextField = ({ label, type, name, value, onChange, error, disabled }) => {
+const TextField = ({
+    label,
+    type,
+    name,
+    value,
+    onChange,
+    error,
+    disabled,
+    placeholder,
+    marginBottom
+}) => {
     const [showPassword, setShowPassword] = useState(false)
 
     const handleChange = ({ target }) => {
@@ -18,7 +28,7 @@ const TextField = ({ label, type, name, value, onChange, error, disabled }) => {
     }
 
     return (
-        <Form.Group className="mb-4">
+        <Form.Group className={marginBottom}>
             <Form.Label>{label}</Form.Label>
             <InputGroup>
                 <Form.Control
@@ -29,6 +39,7 @@ const TextField = ({ label, type, name, value, onChange, error, disabled }) => {
                     onChange={handleChange}
                     className={getInputClasses()}
                     disabled={disabled}
+                    placeholder={placeholder}
                 ></Form.Control>
 
                 {type === "password" && (
@@ -52,7 +63,7 @@ const TextField = ({ label, type, name, value, onChange, error, disabled }) => {
     )
 }
 
-TextField.defaultProps = { type: "text" }
+TextField.defaultProps = { type: "text", marginBottom: "mb-4" }
 
 TextField.propTypes = {
     label: PropTypes.string,
@@ -61,7 +72,9 @@ TextField.propTypes = {
     value: PropTypes.string,
     onChange: PropTypes.func,
     error: PropTypes.string,
-    disabled: PropTypes.bool
+    disabled: PropTypes.bool,
+    marginBottom: PropTypes.string,
+    placeholder: PropTypes.string
 }
 
 export default TextField

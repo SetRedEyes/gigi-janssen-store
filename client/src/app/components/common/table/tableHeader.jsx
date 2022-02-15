@@ -38,8 +38,10 @@ const TableHeader = ({ onSort, selectedSort, columns }) => {
                                 className: path ? "table-title" : ""
                             }}
                         >
-                            {[columns[column].name]}
-                            {renderSortArrow(selectedSort, path)}
+                            <div className="d-flex  justify-content-center">
+                                {[columns[column].name]}
+                                {renderSortArrow(selectedSort, path)}
+                            </div>
                         </th>
                     )
                 })}

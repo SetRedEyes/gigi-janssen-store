@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit"
+import { createAction, createSlice } from "@reduxjs/toolkit"
 import productService from "../services/product.service"
 import isOutdated from "../utils/isOutDated"
 
@@ -22,13 +22,23 @@ const productsSlice = createSlice({
         productsRequestFailed: (state, action) => {
             state.error = action.payload
             state.isLoading = false
+        },
+        productCreated: (state, action) => {
+            state.entities.push(action.payload)
         }
     }
 })
 
 const { reducer: productsReducer, actions } = productsSlice
 
-const { productsRequested, productsRecieved, productsRequestFailed } = actions
+const {
+    productsRequested,
+    productsRecieved,
+    productsRequestFailed,
+    productCreated
+} = actions
+
+const addProductRequested = createAction("products/addProductRequested")
 
 export const loadProductsList = () => async (dispatch, getState) => {
     const { lastFetch } = getState().products
@@ -42,6 +52,18 @@ export const loadProductsList = () => async (dispatch, getState) => {
         } catch (error) {
             dispatch(productsRequestFailed(error.message))
         }
+    }
+}
+
+export const createProduct = (payload) => async (dispatch) => {
+    dispatch(addProductRequested(payload))
+    console.log("from redux", payload)
+    try {
+        const { content } = await productService.createProduct(payload)
+
+        dispatch(productCreated(content))
+    } catch (error) {
+        dispatch(productsRequestFailed(error.message))
     }
 }
 

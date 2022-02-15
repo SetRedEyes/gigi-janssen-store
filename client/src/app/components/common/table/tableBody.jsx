@@ -6,14 +6,6 @@ const TableBody = ({ data, columns }) => {
     const renderContent = (item, column) => {
         const path = _.get(item, columns[column].path) || item[column]
 
-        if (column === "photo") {
-            return (
-                <td key={column} className="long-ceil">
-                    <p className="long-string ">{path}</p>
-                </td>
-            )
-        }
-
         const component = columns[column].component
 
         if (component) {
@@ -21,7 +13,15 @@ const TableBody = ({ data, columns }) => {
                 return <td key={column}>{component(item)}</td>
             }
         } else {
-            return <td key={column}>{path}</td>
+            return (
+                <td key={column}>
+                    {column === "photo" ? (
+                        <div className="long-string ">{path}</div>
+                    ) : (
+                        path
+                    )}
+                </td>
+            )
         }
     }
 

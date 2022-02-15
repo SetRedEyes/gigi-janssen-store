@@ -19,7 +19,8 @@ const NavBar = () => {
                 >
                     GIGI & JANSSEN
                 </NavLink>
-                {pathname !== "/gigi-janssen-store/login" && <SearchBar />}
+                {pathname !== "/gigi-janssen-store/login" &&
+                    pathname !== "/gigi-janssen-store/profile" && <SearchBar />}
 
                 <div className="d-flex me-5 ">
                     {isloggedIn && currentUser ? (

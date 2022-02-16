@@ -6,7 +6,6 @@ module.exports = (req, res, next) => {
   }
 
   try {
-    //Bearer fgdfgdfgfdgfdger3r23ref
     const token = req.headers.authorization.split(' ')[1]
     if (!token) {
       return res
@@ -15,7 +14,6 @@ module.exports = (req, res, next) => {
     }
 
     const data = tokenService.validateAccess(token)
-    console.log('decoded', data)
     req.user = data
 
     next()

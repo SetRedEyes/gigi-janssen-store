@@ -25,6 +25,14 @@ const productsSlice = createSlice({
         },
         productCreated: (state, action) => {
             state.entities.push(action.payload)
+        },
+        productRemoved: (state, action) => {
+            state.entities = state.entities.filter((c) => c._id !== action.payload)
+        },
+        productUpdated: (state, action) => {
+            state.entities[
+                state.entities.findIndex((p) => p._id === action.payload._id)
+            ] = action.payload
         }
     }
 })
@@ -35,10 +43,15 @@ const {
     productsRequested,
     productsRecieved,
     productsRequestFailed,
-    productCreated
+    productCreated,
+    productRemoved,
+    productUpdated
 } = actions
 
 const addProductRequested = createAction("products/addProductRequested")
+const removeProductRequested = createAction("products/removeProductRequested")
+const productUpdateFailed = createAction("products/productUpdateFailed")
+const productUpdateRequested = createAction("products/productUpdateRequested")
 
 export const loadProductsList = () => async (dispatch, getState) => {
     const { lastFetch } = getState().products
@@ -64,6 +77,29 @@ export const createProduct = (payload) => async (dispatch) => {
         dispatch(productCreated(content))
     } catch (error) {
         dispatch(productsRequestFailed(error.message))
+    }
+}
+
+export const removeProduct = (productId) => async (dispatch) => {
+    dispatch(removeProductRequested())
+    try {
+        const { content } = await productService.removeProduct(productId)
+        if (!content) {
+            dispatch(productRemoved(productId))
+        }
+    } catch (error) {
+        dispatch(productsRequestFailed(error.message))
+    }
+}
+
+export const updateProductData = (payload) => async (dispatch) => {
+    dispatch(productUpdateRequested())
+    try {
+        const { content } = await productService.updateProduct(payload)
+        dispatch(productUpdated(content))
+        dispatch(loadProductsList())
+    } catch (error) {
+        dispatch(productUpdateFailed(error.message))
     }
 }
 

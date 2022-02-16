@@ -4,22 +4,40 @@ import SelectField from "../common/form/selectField"
 import TextField from "../common/form/textField"
 import { validator } from "../../utils/validator"
 import { useDispatch, useSelector } from "react-redux"
-import { getCompanies } from "../../store/companies"
-import { getCategoriesByCompany } from "../../store/categories"
+import { getCompanies, getCompaniesLoadingStatus } from "../../store/companies"
+import {
+    getCategoriesByCompany,
+    getCategoriesLoadingStatus
+} from "../../store/categories"
 import LoadingSpinner from "../common/loadingSpinner"
-import { createProduct } from "../../store/products"
+import { createProduct, updateProductData } from "../../store/products"
+import PropTypes from "prop-types"
 
-const AdminEditPanel = () => {
+const initialData = {
+    vendorCode: "",
+    name: "",
+    rusName: "",
+    companyName: "",
+    category: "",
+    price: "",
+    volume: "",
+    photo: ""
+}
+
+const AdminEditPanel = ({ product }) => {
     const dispatch = useDispatch()
+    const [productData, setProductData] = useState(initialData)
+    const [data, setData] = useState(initialData)
 
-    const [data, setData] = useState({})
     const companies = useSelector(getCompanies())
+    const companiesLoading = useSelector(getCompaniesLoadingStatus())
     const companiesList = companies.map((c) => ({
         label: c.fullName,
         value: c.name
     }))
 
     const categories = useSelector(getCategoriesByCompany(data.companyName))
+    const categoriesLoading = useSelector(getCategoriesLoadingStatus())
     const categoriesList = categories.map((c) => ({
         label: c.fullName.split("-")[0],
         value: c.name
@@ -29,24 +47,49 @@ const AdminEditPanel = () => {
     const [errors, setErrors] = useState({})
 
     const clearForm = () => {
-        setData({})
+        setData(initialData)
         setErrors({})
+        setProductData(null)
     }
+
+    useEffect(() => {
+        setProductData((prevState) => (prevState === product ? product : null))
+    }, [product])
+
+    useEffect(() => {
+        if (!companiesLoading && !categoriesLoading && productData && product) {
+            setData({
+                ...productData,
+                price: productData.price.join(","),
+                volume: productData.volume.join(",")
+            })
+        }
+    }, [companiesLoading, categoriesLoading, productData, product])
 
     const handleSubmit = (e) => {
         e.preventDefault()
 
         const isValid = validate()
         if (!isValid) return
-        console.log(data)
-        dispatch(
-            createProduct({
-                ...data,
-                price: data.price.split(",").map((el) => +el),
-                volume: data.volume.split(",").map((el) => +el)
-            })
-        )
-        clearForm({})
+        if (productData) {
+            dispatch(
+                updateProductData({
+                    ...data,
+                    price: data.price.split(",").map((el) => +el),
+                    volume: data.volume.split(",").map((el) => +el)
+                })
+            )
+        } else {
+            dispatch(
+                createProduct({
+                    ...data,
+                    price: data.price.split(",").map((el) => +el),
+                    volume: data.volume.split(",").map((el) => +el)
+                })
+            )
+        }
+
+        clearForm()
     }
 
     useEffect(() => {
@@ -55,6 +98,12 @@ const AdminEditPanel = () => {
         }
     }, [data])
 
+    const handleChange = (target) => {
+        setData((prevState) => ({
+            ...prevState,
+            [target.name]: target.value
+        }))
+    }
     const validatorConfig = {
         vendorCode: {
             isRequired: {
@@ -102,13 +151,6 @@ const AdminEditPanel = () => {
         validate()
     }, [data])
 
-    const handleChange = (target) => {
-        setData((prevState) => ({
-            ...prevState,
-            [target.name]: target.value
-        }))
-    }
-
     const validate = () => {
         const errors = validator(data, validatorConfig)
         setErrors(errors)
@@ -119,13 +161,13 @@ const AdminEditPanel = () => {
     return (
         <div className="mt-4 edit-panel">
             <h5 className="text-center">Добавление/редактирование товара</h5>
-            {!isLoading ? (
+            {!isLoading && Object.keys(companies).length > 0 ? (
                 <Form onSubmit={handleSubmit} className="edit-form">
                     <TextField
                         label="Артикул"
                         name="vendorCode"
                         marginBottom="mt1"
-                        value={data.vendorCode || ""}
+                        value={data.vendorCode}
                         onChange={handleChange}
                         error={errors.vendorCode}
                     />
@@ -133,7 +175,7 @@ const AdminEditPanel = () => {
                         label="Английское наименование"
                         name="name"
                         marginBottom="mt-1"
-                        value={data.name || ""}
+                        value={data.name}
                         onChange={handleChange}
                         error={errors.name}
                     />
@@ -141,7 +183,7 @@ const AdminEditPanel = () => {
                         label="Русское наименование"
                         name="rusName"
                         marginBottom="mt-1"
-                        value={data.rusName || ""}
+                        value={data.rusName}
                         onChange={handleChange}
                         error={errors.rusName}
                     />
@@ -149,7 +191,7 @@ const AdminEditPanel = () => {
                         label="Компания"
                         name="companyName"
                         marginBottom="mt-1"
-                        value={data.companyName || ""}
+                        value={data.companyName}
                         onChange={handleChange}
                         error={errors.companyName}
                         options={companiesList}
@@ -158,7 +200,7 @@ const AdminEditPanel = () => {
                         label="Категория"
                         name="category"
                         marginBottom="mt-1"
-                        value={data.category || ""}
+                        value={data.category}
                         onChange={handleChange}
                         error={errors.category}
                         options={categoriesList}
@@ -170,7 +212,7 @@ const AdminEditPanel = () => {
                         label="Цена"
                         name="price"
                         marginBottom="mt-1"
-                        value={data.price || ""}
+                        value={data.price}
                         onChange={handleChange}
                         error={errors.price}
                         placeholder="Введите цены через запятую"
@@ -179,7 +221,7 @@ const AdminEditPanel = () => {
                         label="Объем"
                         name="volume"
                         marginBottom="mt-1"
-                        value={data.volume || ""}
+                        value={data.volume}
                         onChange={handleChange}
                         error={errors.volume}
                         placeholder="Ведите объемы через запятую"
@@ -188,7 +230,7 @@ const AdminEditPanel = () => {
                         label="Фото"
                         name="photo"
                         marginBottom="mt-1"
-                        value={data.photo || ""}
+                        value={data.photo}
                         onChange={handleChange}
                         error={errors.photo}
                     />
@@ -208,4 +250,7 @@ const AdminEditPanel = () => {
     )
 }
 
+AdminEditPanel.propTypes = {
+    product: PropTypes.object
+}
 export default AdminEditPanel

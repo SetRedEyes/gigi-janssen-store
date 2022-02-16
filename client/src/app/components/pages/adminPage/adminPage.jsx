@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react"
 import { Col, Container, FormControl, InputGroup, Row } from "react-bootstrap"
-import { getProducts } from "../../../store/products"
+import { getProductById, getProducts, removeProduct } from "../../../store/products"
 import ProductsTable from "../../ui/productsTable"
-import { useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import LoadingSpinner from "../../common/loadingSpinner"
 import PagesPagination from "../../common/pagination"
 import { paginate } from "../../../utils/paginate"
@@ -10,19 +10,26 @@ import _ from "lodash"
 import AdminEditPanel from "../../ui/adminEditPanel"
 
 const adminPage = () => {
+    const dispatch = useDispatch()
     const products = useSelector(getProducts())
+    const [productId, setProductId] = useState(null)
+    const product = useSelector(getProductById(productId))
+
     const [currentPage, setCurrentPage] = useState(1)
-    const [sortBy, setSortBy] = useState({ iter: "name", order: "asc" })
+    const [sortBy, setSortBy] = useState({ path: "name", order: "asc" })
     const [searchQuery, setSearchQuery] = useState("")
     const pageSize = 9
 
-    const handleDeleteProduct = (productId) => {
-        // setUsers((users) => users.filter((user) => user._id !== userId))
-        console.log(productId)
-    }
+    useEffect(() => {
+        setCurrentPage(1)
+    }, [searchQuery])
 
     const handleEditProduct = (productId) => {
-        console.log(productId)
+        setProductId(productId)
+    }
+
+    const handleRemoveProduct = (productId) => {
+        dispatch(removeProduct(productId))
     }
 
     const handlePageChange = (pageIndex) => {
@@ -36,9 +43,6 @@ const adminPage = () => {
     const handleSort = (item) => {
         setSortBy(item)
     }
-    useEffect(() => {
-        setCurrentPage(1)
-    }, [searchQuery])
 
     if (products) {
         const filteredProducts = searchQuery
@@ -64,7 +68,7 @@ const adminPage = () => {
                 <Row>
                     <Col md={3}>
                         <Row>
-                            <AdminEditPanel />
+                            <AdminEditPanel product={product} />
                         </Row>
                     </Col>
                     <Col md={9}>
@@ -85,8 +89,8 @@ const adminPage = () => {
                                     products={productsCrop}
                                     onSort={handleSort}
                                     selectedSort={sortBy}
-                                    onEditProduct={handleEditProduct}
-                                    onDeleteProduct={handleDeleteProduct}
+                                    onEdit={handleEditProduct}
+                                    onRemove={handleRemoveProduct}
                                 />
                             ) : (
                                 <h1 className="text-center mt-5 ">

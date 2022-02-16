@@ -10,8 +10,8 @@ const ProductsTable = ({
     products,
     onSort,
     selectedSort,
-    onEditProduct,
-    onDeleteProduct,
+    onEdit,
+    onRemove,
     ...rest
 }) => {
     const columns = {
@@ -32,13 +32,13 @@ const ProductsTable = ({
         edit: {
             name: "Редактировать",
             component: (product) => (
-                <EditButton onClick={() => onEditProduct(product._id)} />
+                <EditButton onClick={() => onEdit(product._id)} />
             )
         },
         delete: {
             name: "Удалить",
             component: (product) => (
-                <DeleteButton onClick={() => onDeleteProduct(product._id)} />
+                <DeleteButton onClick={() => onRemove(product._id)} />
             )
         }
     }
@@ -57,8 +57,8 @@ ProductsTable.propTypes = {
     products: PropTypes.array.isRequired,
     onSort: PropTypes.func.isRequired,
     selectedSort: PropTypes.object.isRequired,
-    onEditProduct: PropTypes.func,
-    onDeleteProduct: PropTypes.func
+    onEdit: PropTypes.func,
+    onRemove: PropTypes.func
 }
 
 export default ProductsTable

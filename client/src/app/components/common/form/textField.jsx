@@ -26,7 +26,6 @@ const TextField = ({
     const getInputClasses = () => {
         return "form-control" + (error ? " is-invalid" : "")
     }
-
     return (
         <Form.Group className={marginBottom}>
             <Form.Label>{label}</Form.Label>

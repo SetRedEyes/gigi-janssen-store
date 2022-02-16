@@ -26,7 +26,7 @@ const initialData = {
 
 const AdminEditPanel = ({ product }) => {
     const dispatch = useDispatch()
-    const [productData, setProductData] = useState(initialData)
+    const [productData, setProductData] = useState(null)
     const [data, setData] = useState(initialData)
 
     const companies = useSelector(getCompanies())
@@ -46,16 +46,6 @@ const AdminEditPanel = ({ product }) => {
     const [isLoading, setIsLoading] = useState(true)
     const [errors, setErrors] = useState({})
 
-    const clearForm = () => {
-        setData(initialData)
-        setErrors({})
-        setProductData(null)
-    }
-
-    useEffect(() => {
-        setProductData((prevState) => (prevState === product ? product : null))
-    }, [product])
-
     useEffect(() => {
         if (!companiesLoading && !categoriesLoading && productData && product) {
             setData({
@@ -65,6 +55,12 @@ const AdminEditPanel = ({ product }) => {
             })
         }
     }, [companiesLoading, categoriesLoading, productData, product])
+
+    const clearForm = () => {
+        setData(initialData)
+        setErrors({})
+        setProductData(null)
+    }
 
     const handleSubmit = (e) => {
         e.preventDefault()

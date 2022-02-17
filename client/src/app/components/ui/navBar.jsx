@@ -20,7 +20,8 @@ const NavBar = () => {
                     GIGI & JANSSEN
                 </NavLink>
                 {pathname !== "/gigi-janssen-store/login" &&
-                    pathname !== "/gigi-janssen-store/profile" && <SearchBar />}
+                    pathname !== "/gigi-janssen-store/profile" &&
+                    pathname !== "/gigi-janssen-store/adminPage" && <SearchBar />}
 
                 <div className="d-flex me-5 ">
                     {isloggedIn && currentUser ? (
@@ -36,6 +37,7 @@ const NavBar = () => {
                                     Админ панель
                                 </Button>
                             </Link>
+
                             <Link
                                 to={"/gigi-janssen-store/profile"}
                                 className="navProfile-name text-decoration-none me-2"

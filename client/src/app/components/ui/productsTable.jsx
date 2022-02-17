@@ -5,15 +5,9 @@ import EditButton from "../common/editButton"
 import DeleteButton from "../common/deleteButton"
 import DataList from "./dataList"
 import Table from "../common/table"
+import history from "../../utils/history"
 
-const ProductsTable = ({
-    products,
-    onSort,
-    selectedSort,
-    onEdit,
-    onRemove,
-    ...rest
-}) => {
+const ProductsTable = ({ products, onSort, selectedSort, onRemove }) => {
     const columns = {
         vendorCode: { path: "vendorCode", name: "Артикул" },
         name: { path: "name", name: "Английское наименование" },
@@ -32,7 +26,11 @@ const ProductsTable = ({
         edit: {
             name: "Редактировать",
             component: (product) => (
-                <EditButton onClick={() => onEdit(product._id)} />
+                <EditButton
+                    onClick={() =>
+                        history.push(`/gigi-janssen-store/adminPage/${product._id}`)
+                    }
+                />
             )
         },
         delete: {
@@ -57,7 +55,6 @@ ProductsTable.propTypes = {
     products: PropTypes.array.isRequired,
     onSort: PropTypes.func.isRequired,
     selectedSort: PropTypes.object.isRequired,
-    onEdit: PropTypes.func,
     onRemove: PropTypes.func
 }
 

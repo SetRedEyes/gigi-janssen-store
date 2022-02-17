@@ -7,12 +7,12 @@ import LoadingSpinner from "../../common/loadingSpinner"
 import PagesPagination from "../../common/pagination"
 import { paginate } from "../../../utils/paginate"
 import _ from "lodash"
-import AdminEditPanel from "../../ui/adminEditPanel"
+import AddProductForm from "../../ui/addProductForm"
+import history from "../../../utils/history"
 
 const adminPage = () => {
     const dispatch = useDispatch()
     const products = useSelector(getProducts())
-    const [productId, setProductId] = useState(null)
 
     const [currentPage, setCurrentPage] = useState(1)
     const [sortBy, setSortBy] = useState({ path: "name", order: "asc" })
@@ -24,7 +24,8 @@ const adminPage = () => {
     }, [searchQuery])
 
     const handleEditProduct = (productId) => {
-        setProductId(productId)
+        console.log(productId)
+        history.push(`/gigi-janssen-store/${productId}`)
     }
 
     const handleRemoveProduct = (productId) => {
@@ -67,7 +68,7 @@ const adminPage = () => {
                 <Row>
                     <Col md={3}>
                         <Row>
-                            <AdminEditPanel productId={productId} />
+                            <AddProductForm />
                         </Row>
                     </Col>
                     <Col md={9}>

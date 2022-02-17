@@ -4,18 +4,10 @@ import SelectField from "../common/form/selectField"
 import TextField from "../common/form/textField"
 import { validator } from "../../utils/validator"
 import { useDispatch, useSelector } from "react-redux"
-import { getCompanies, getCompaniesLoadingStatus } from "../../store/companies"
-import {
-    getCategoriesByCompany,
-    getCategoriesLoadingStatus
-} from "../../store/categories"
+import { getCompanies } from "../../store/companies"
+import { getCategoriesByCompany } from "../../store/categories"
 import LoadingSpinner from "../common/loadingSpinner"
-import {
-    createProduct,
-    getProductById,
-    updateProductData
-} from "../../store/products"
-import PropTypes from "prop-types"
+import { createProduct } from "../../store/products"
 
 const initialData = {
     vendorCode: "",
@@ -28,20 +20,17 @@ const initialData = {
     photo: ""
 }
 
-const AdminEditPanel = ({ productId }) => {
+const AddProductForm = () => {
     const dispatch = useDispatch()
-    const product = useSelector(getProductById(productId))
     const [data, setData] = useState(initialData)
 
     const companies = useSelector(getCompanies())
-    const companiesLoading = useSelector(getCompaniesLoadingStatus())
     const companiesList = companies.map((c) => ({
         label: c.fullName,
         value: c.name
     }))
 
     const categories = useSelector(getCategoriesByCompany(data.companyName))
-    const categoriesLoading = useSelector(getCategoriesLoadingStatus())
     const categoriesList = categories.map((c) => ({
         label: c.fullName.split("-")[0],
         value: c.name
@@ -49,16 +38,6 @@ const AdminEditPanel = ({ productId }) => {
 
     const [isLoading, setIsLoading] = useState(true)
     const [errors, setErrors] = useState({})
-
-    useEffect(() => {
-        if (!companiesLoading && !categoriesLoading && product) {
-            setData({
-                ...product,
-                price: product.price.join(","),
-                volume: product.volume.join(",")
-            })
-        }
-    }, [companiesLoading, categoriesLoading, product])
 
     const clearForm = () => {
         setData(initialData)
@@ -70,23 +49,14 @@ const AdminEditPanel = ({ productId }) => {
 
         const isValid = validate()
         if (!isValid) return
-        if (product) {
-            dispatch(
-                updateProductData({
-                    ...data,
-                    price: data.price.split(",").map((el) => +el),
-                    volume: data.volume.split(",").map((el) => +el)
-                })
-            )
-        } else {
-            dispatch(
-                createProduct({
-                    ...data,
-                    price: data.price.split(",").map((el) => +el),
-                    volume: data.volume.split(",").map((el) => +el)
-                })
-            )
-        }
+
+        dispatch(
+            createProduct({
+                ...data,
+                price: data.price.split(",").map((el) => +el),
+                volume: data.volume.split(",").map((el) => +el)
+            })
+        )
 
         clearForm()
     }
@@ -159,7 +129,7 @@ const AdminEditPanel = ({ productId }) => {
     const isValid = Object.keys(errors).length !== 0
     return (
         <div className="mt-4 edit-panel">
-            <h5 className="text-center">Добавление/редактирование товара</h5>
+            <h5 className="text-center">Добавление товара</h5>
             {!isLoading && Object.keys(companies).length > 0 ? (
                 <Form onSubmit={handleSubmit} className="edit-form">
                     <TextField
@@ -239,7 +209,7 @@ const AdminEditPanel = ({ productId }) => {
                         disabled={isValid}
                         className="btn btn-primary w-100 mx-auto submit-btn mt-3"
                     >
-                        Добавить/редактировать товар
+                        Добавить товар
                     </Button>
                 </Form>
             ) : (
@@ -249,7 +219,4 @@ const AdminEditPanel = ({ productId }) => {
     )
 }
 
-AdminEditPanel.propTypes = {
-    productId: PropTypes.string
-}
-export default AdminEditPanel
+export default AddProductForm

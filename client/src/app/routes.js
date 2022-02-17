@@ -1,7 +1,7 @@
-import AdminPage from "./components/pages/adminPage/adminPage"
 import Basket from "./components/pages/Basket"
 import SearchPage from "./components/pages/searchPage"
 import UserPage from "./components/pages/userPage"
+import AdminPanel from "./layouts/adminPanel"
 import Login from "./layouts/login"
 import LogOut from "./layouts/logOut"
 import Main from "./layouts/main"
@@ -21,8 +21,8 @@ export const routes = [
         isProtectedRoute: true
     },
     {
-        path: "/gigi-janssen-store/adminPage",
-        component: AdminPage,
+        path: "/gigi-janssen-store/adminPage/:productId?",
+        component: AdminPanel,
         isProtectedRoute: true
     },
     { path: "/gigi-janssen-store/basket", component: Basket },

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { Col, Container, FormControl, InputGroup, Row } from "react-bootstrap"
-import { getProductById, getProducts, removeProduct } from "../../../store/products"
+import { getProducts, removeProduct } from "../../../store/products"
 import ProductsTable from "../../ui/productsTable"
 import { useDispatch, useSelector } from "react-redux"
 import LoadingSpinner from "../../common/loadingSpinner"
@@ -13,7 +13,6 @@ const adminPage = () => {
     const dispatch = useDispatch()
     const products = useSelector(getProducts())
     const [productId, setProductId] = useState(null)
-    const product = useSelector(getProductById(productId))
 
     const [currentPage, setCurrentPage] = useState(1)
     const [sortBy, setSortBy] = useState({ path: "name", order: "asc" })
@@ -68,7 +67,7 @@ const adminPage = () => {
                 <Row>
                     <Col md={3}>
                         <Row>
-                            <AdminEditPanel product={product} />
+                            <AdminEditPanel productId={productId} />
                         </Row>
                     </Col>
                     <Col md={9}>

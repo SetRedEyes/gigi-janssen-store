@@ -136,13 +136,11 @@
 
 .admin-panel-table {
     font-size: 0.7rem;
-    width: 100%;
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
 .admin-panel-table th,
 td {
-    text-align: center;
     vertical-align: middle;
     border-bottom-width: 0.1rem !important;
     white-space: nowrap;
@@ -153,18 +151,20 @@ td {
 }
 
 .long-string {
-    width: 8rem;
+    width: 14rem;
     white-space: nowrap;
-    word-break: break-all;
     overflow: hidden;
     text-overflow: ellipsis;
+    text-align: center !important;
 }
 
 .long-string:hover {
-    word-break: break-all;
+    word-break: break-word;
     white-space: normal;
 }
-
+.photo-string {
+    width: 9rem;
+}
 .edit-form {
     margin-top: 1rem;
     margin-bottom: 1rem;
@@ -189,5 +189,11 @@ td {
 
 .edit-form .form-select {
     height: 2.2rem;
-    vertical-align:center
+    vertical-align: center;
+}
+
+@media (max-width: 1386px) {
+    .long-string {
+        width: 10rem;
+    }
 }

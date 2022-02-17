@@ -35,10 +35,10 @@ const TableHeader = ({ onSort, selectedSort, columns }) => {
                             onClick={path ? () => handleSort(path) : undefined}
                             {...{
                                 role: path && "button",
-                                className: path ? "table-title" : ""
+                                className: path ? "table-title " : ""
                             }}
                         >
-                            <div className="d-flex  justify-content-center">
+                            <div className="d-flex justify-content-center">
                                 {[columns[column].name]}
                                 {renderSortArrow(selectedSort, path)}
                             </div>

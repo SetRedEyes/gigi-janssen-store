@@ -10,7 +10,11 @@ import {
     getCategoriesLoadingStatus
 } from "../../store/categories"
 import LoadingSpinner from "../common/loadingSpinner"
-import { createProduct, updateProductData } from "../../store/products"
+import {
+    createProduct,
+    getProductById,
+    updateProductData
+} from "../../store/products"
 import PropTypes from "prop-types"
 
 const initialData = {
@@ -24,9 +28,9 @@ const initialData = {
     photo: ""
 }
 
-const AdminEditPanel = ({ product }) => {
+const AdminEditPanel = ({ productId }) => {
     const dispatch = useDispatch()
-    const [productData, setProductData] = useState(null)
+    const product = useSelector(getProductById(productId))
     const [data, setData] = useState(initialData)
 
     const companies = useSelector(getCompanies())
@@ -47,19 +51,18 @@ const AdminEditPanel = ({ product }) => {
     const [errors, setErrors] = useState({})
 
     useEffect(() => {
-        if (!companiesLoading && !categoriesLoading && productData && product) {
+        if (!companiesLoading && !categoriesLoading && product) {
             setData({
-                ...productData,
-                price: productData.price.join(","),
-                volume: productData.volume.join(",")
+                ...product,
+                price: product.price.join(","),
+                volume: product.volume.join(",")
             })
         }
-    }, [companiesLoading, categoriesLoading, productData, product])
+    }, [companiesLoading, categoriesLoading, product])
 
     const clearForm = () => {
         setData(initialData)
         setErrors({})
-        setProductData(null)
     }
 
     const handleSubmit = (e) => {
@@ -67,7 +70,7 @@ const AdminEditPanel = ({ product }) => {
 
         const isValid = validate()
         if (!isValid) return
-        if (productData) {
+        if (product) {
             dispatch(
                 updateProductData({
                     ...data,
@@ -236,7 +239,7 @@ const AdminEditPanel = ({ product }) => {
                         disabled={isValid}
                         className="btn btn-primary w-100 mx-auto submit-btn mt-3"
                     >
-                        Добавить/Редактировать
+                        Добавить/редактировать товар
                     </Button>
                 </Form>
             ) : (
@@ -247,6 +250,6 @@ const AdminEditPanel = ({ product }) => {
 }
 
 AdminEditPanel.propTypes = {
-    product: PropTypes.object
+    productId: PropTypes.string
 }
 export default AdminEditPanel

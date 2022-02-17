@@ -15,10 +15,16 @@ const TableBody = ({ data, columns }) => {
         } else {
             return (
                 <td key={column}>
-                    {column === "photo" ? (
-                        <div className="long-string ">{path}</div>
+                    {column.match(/^(name|rusName|photo)$/) ? (
+                        <div
+                            className={`long-string
+                                ${column === "photo" ? "photo-string" : ""}
+                            `}
+                        >
+                            {path}
+                        </div>
                     ) : (
-                        path
+                        <div className="text-center">{path}</div>
                     )}
                 </td>
             )

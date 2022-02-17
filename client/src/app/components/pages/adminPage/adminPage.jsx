@@ -44,14 +44,17 @@ const adminPage = () => {
     const handleSort = (item) => {
         setSortBy(item)
     }
+    function includes(item) {
+        return item.toLowerCase().includes(searchQuery.toLowerCase())
+    }
 
     if (products) {
         const filteredProducts = searchQuery
             ? products.filter(
                   (p) =>
-                      p.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                      p.rusName.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                      p.vendorCode.toLowerCase().includes(searchQuery.toLowerCase())
+                      includes(p.name) ||
+                      includes(p.rusName) ||
+                      includes(p.vendorCode)
               )
             : products
 

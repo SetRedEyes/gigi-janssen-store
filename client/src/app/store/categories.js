@@ -39,7 +39,11 @@ export const loadCategoriesList = () => async (dispatch) => {
     }
 }
 
-export const getCategories = () => (state) => state.categories.entities
+export const getCategories = () => (state) => {
+    if (state.categories.entities) {
+        return state.categories.entities
+    }
+}
 export const getCategoriesLoadingStatus = () => (state) => state.categories.isLoading
 export const getCategoriesByCompany = (name) => (state) => {
     if (state.categories.entities) {

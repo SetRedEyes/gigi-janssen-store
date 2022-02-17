@@ -10,7 +10,8 @@ const productsSlice = createSlice({
         entities: null,
         isLoading: true,
         error: null,
-        lastFetch: null
+        lastFetch: null,
+        dataLoaded: false
     },
     reducers: {
         productsRequested: (state) => {
@@ -18,6 +19,7 @@ const productsSlice = createSlice({
         },
         productsRecieved: (state, action) => {
             state.entities = action.payload
+            state.dataLoaded = true
             state.lastFetch = Date.now()
             state.isLoading = false
         },
@@ -113,5 +115,6 @@ export const getProductById = (id) => (state) => {
         return state.products.entities.find((q) => q._id === id)
     }
 }
+export const getDataStatus = () => (state) => state.products.dataLoaded
 
 export default productsReducer

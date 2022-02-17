@@ -166,7 +166,7 @@ td {
 .photo-string {
     width: 9rem;
 }
-.edit-form {
+.add-form {
     margin-top: 1rem;
     margin-bottom: 1rem;
     border: 2px solid;
@@ -176,7 +176,7 @@ td {
     padding: 0.5rem 1rem;
 }
 
-.edit-panel:hover h5 {
+.add-panel:hover h5 {
     color: #21c1cf;
 }
 
@@ -184,11 +184,12 @@ td {
     border-color: #21c1cf;
 }
 
+.add-form .form-control,
 .edit-form .form-control {
     height: 2rem;
 }
 
-.edit-form .form-select {
+.add-form .form-select {
     height: 2.2rem;
     vertical-align: center;
 }

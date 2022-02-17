@@ -105,7 +105,7 @@ const UserPage = () => {
         <Container>
             <Row>
                 <Col md={{ span: 6, offset: 3 }} className="shadow p-4">
-                    <div className="d-flex justify-content-center">
+                    <div className="d-flex justify-content-end">
                         <Link
                             to={SHOP_ROUTE + LOGOUT_ROUTE}
                             className="buy-btn btn btn-primary  "
@@ -114,7 +114,7 @@ const UserPage = () => {
                         </Link>
                     </div>
                     {!isLoading && Object.keys(currentUser).length > 0 ? (
-                        <Form onSubmit={handleSubmit} className="ms-3">
+                        <Form onSubmit={handleSubmit}>
                             <TextField
                                 label="Электронная почта"
                                 name="email"

@@ -5,7 +5,10 @@ const BackHistoryButton = () => {
     const history = useHistory()
 
     return (
-        <button className="buy-btn btn btn-primary " onClick={() => history.goBack()}>
+        <button
+            className="buy-btn btn btn-primary "
+            onClick={() => history.goBack()}
+        >
             <i className="bi bi-caret-left"></i>
             Назад
         </button>

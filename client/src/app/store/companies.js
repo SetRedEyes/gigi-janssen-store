@@ -37,6 +37,10 @@ export const loadCompaniesList = () => async (dispatch) => {
     }
 }
 
-export const getCompanies = () => (state) => state.companies.entities
+export const getCompanies = () => (state) => {
+    if (state.companies.entities) {
+        return state.companies.entities
+    }
+}
 export const getCompaniesLoadingStatus = () => (state) => state.companies.isLoading
 export default companiesReducer

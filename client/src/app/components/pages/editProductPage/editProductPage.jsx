@@ -22,6 +22,8 @@ const EditProductPage = () => {
     const [data, setData] = useState({})
 
     const companies = useSelector(getCompanies())
+    console.log(companies)
+
     const companiesLoading = useSelector(getCompaniesLoadingStatus())
     const companiesList = companies.map((c) => ({
         label: c.fullName,
@@ -133,12 +135,13 @@ const EditProductPage = () => {
         <Container>
             <Row>
                 <Col md={{ span: 6, offset: 3 }} className="shadow p-4">
-                    <div className="d-flex justify-content-start ">
+                    <div className="d-flex justify-content-between align-items-center">
+                        <h5 className="align-self-bottom">Добавление товара</h5>
+
                         <BackHistoryButton />
                     </div>
-                    <h5 className="text-center">Добавление товара</h5>
                     {!isLoading && Object.keys(companies).length > 0 ? (
-                        <Form onSubmit={handleSubmit} className="ms-3">
+                        <Form onSubmit={handleSubmit} className="edit-form">
                             <TextField
                                 label="Артикул"
                                 name="vendorCode"

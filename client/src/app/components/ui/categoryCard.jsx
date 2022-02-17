@@ -2,13 +2,14 @@ import React from "react"
 import { Link } from "react-router-dom"
 import { Card } from "react-bootstrap"
 import PropTypes from "prop-types"
+import { SHOP_ROUTE } from "../../consts"
 
 const CategoryCard = ({ fullName, photo, companyName, categoryName, catObj }) => {
     return (
         <Link
             className="link text-decoration-none "
             to={{
-                pathname: `/gigi-janssen-store/${companyName}/${categoryName}`,
+                pathname: SHOP_ROUTE + `/${companyName}/${categoryName}`,
                 state: {
                     selectedCatProp: catObj
                 }

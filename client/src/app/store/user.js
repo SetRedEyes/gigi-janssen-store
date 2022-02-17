@@ -3,6 +3,7 @@ import { createAction, createSlice } from "@reduxjs/toolkit"
 import authService from "../services/auth.service"
 import localStorageService from "../services/localStorage.service"
 import userService from "../services/user.service"
+import { SHOP_ROUTE } from "../consts"
 
 const initialState = localStorageService.getAccessToken()
     ? {
@@ -86,7 +87,7 @@ export const signUp = (payload) => async (dispatch) => {
         const data = await authService.register(payload)
         localStorageService.setTokens(data)
         dispatch(authRequestSuccess({ userId: data.userId }))
-        history.push("/gigi-janssen-store")
+        history.push(SHOP_ROUTE)
     } catch (error) {
         dispatch(authRequestFailed(error.message))
     }
@@ -111,7 +112,7 @@ export const login =
 export const logOut = () => (dispatch) => {
     localStorageService.removeAuthData()
     dispatch(userLoggedOut())
-    history.push("/gigi-janssen-store")
+    history.push(SHOP_ROUTE)
 }
 
 export const updateUser = (payload) => async (dispatch) => {

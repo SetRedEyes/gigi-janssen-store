@@ -9,6 +9,7 @@ import { paginate } from "../../../utils/paginate"
 import _ from "lodash"
 import AddProductForm from "../../ui/addProductForm"
 import history from "../../../utils/history"
+import { ADMIN_ROUTE, SHOP_ROUTE } from "../../../consts"
 
 const adminPage = () => {
     const dispatch = useDispatch()
@@ -25,7 +26,7 @@ const adminPage = () => {
 
     const handleEditProduct = (productId) => {
         console.log(productId)
-        history.push(`/gigi-janssen-store/${productId}`)
+        history.push(SHOP_ROUTE + ADMIN_ROUTE + productId)
     }
 
     const handleRemoveProduct = (productId) => {

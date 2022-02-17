@@ -4,6 +4,7 @@ import { Button, Container, Nav, Navbar } from "react-bootstrap"
 import { useSelector } from "react-redux"
 import { getCurrentUserData, getIsLoggedIn } from "../../store/user"
 import SearchBar from "./searchBar"
+import { ADMIN_ROUTE, LOGIN_ROUTE, PROFILE_ROUTE, SHOP_ROUTE } from "../../consts"
 
 const NavBar = () => {
     const { pathname } = useLocation()
@@ -15,19 +16,19 @@ const NavBar = () => {
             <Container fluid>
                 <NavLink
                     className="header-title text-decoration-none ms-5"
-                    to={"/gigi-janssen-store"}
+                    to={SHOP_ROUTE}
                 >
                     GIGI & JANSSEN
                 </NavLink>
-                {pathname !== "/gigi-janssen-store/login" &&
-                    pathname !== "/gigi-janssen-store/profile" &&
-                    pathname !== "/gigi-janssen-store/adminPage" && <SearchBar />}
+                {pathname !== SHOP_ROUTE + LOGIN_ROUTE &&
+                    pathname !== SHOP_ROUTE + PROFILE_ROUTE &&
+                    pathname !== SHOP_ROUTE + ADMIN_ROUTE && <SearchBar />}
 
                 <div className="d-flex me-5 ">
                     {isloggedIn && currentUser ? (
                         <div className="d-flex align-items-center">
                             <Link
-                                to={"/gigi-janssen-store/adminPage"}
+                                to={SHOP_ROUTE + ADMIN_ROUTE}
                                 className="navProfile-name text-decoration-none me-5"
                             >
                                 <Button
@@ -39,7 +40,7 @@ const NavBar = () => {
                             </Link>
 
                             <Link
-                                to={"/gigi-janssen-store/profile"}
+                                to={SHOP_ROUTE + PROFILE_ROUTE}
                                 className="navProfile-name text-decoration-none me-2"
                             >
                                 {currentUser.firstName}
@@ -51,7 +52,7 @@ const NavBar = () => {
                         </div>
                     ) : (
                         <Nav>
-                            <NavLink to={"/gigi-janssen-store/login"}>
+                            <NavLink to={SHOP_ROUTE + LOGIN_ROUTE}>
                                 <Button
                                     variant={"outline-light"}
                                     className="navlink-btn"

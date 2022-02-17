@@ -6,6 +6,7 @@ import { Link } from "react-router-dom"
 import { Button, Col, Container, Form, Row } from "react-bootstrap"
 import { useDispatch, useSelector } from "react-redux"
 import { getCurrentUserData, updateUser } from "../../../store/user"
+import { LOGOUT_ROUTE, SHOP_ROUTE } from "../../../consts"
 
 const UserPage = () => {
     const dispatch = useDispatch()
@@ -106,7 +107,7 @@ const UserPage = () => {
                 <Col md={{ span: 6, offset: 3 }} className="shadow p-4">
                     <div className="d-flex justify-content-center">
                         <Link
-                            to={"/gigi-janssen-store/logOut"}
+                            to={SHOP_ROUTE + LOGOUT_ROUTE}
                             className="buy-btn btn btn-primary  "
                         >
                             Выйти из аккаунта

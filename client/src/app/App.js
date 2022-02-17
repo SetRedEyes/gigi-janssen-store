@@ -9,6 +9,7 @@ import { routes } from "./routes"
 import NavBar from "./components/ui/navBar"
 import ProtectedRoute from "./components/common/protectedRoute"
 import AppLoader from "./components/ui/hoc/appLoader"
+import { SHOP_ROUTE } from "./consts"
 
 const App = () => {
     return (
@@ -34,7 +35,7 @@ const App = () => {
                             />
                         )
                     )}
-                    <Redirect to={"/gigi-janssen-store"} />
+                    <Redirect to={SHOP_ROUTE} />
                 </Switch>
             </AppLoader>
             <ToastContainer />

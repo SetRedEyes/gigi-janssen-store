@@ -3,6 +3,7 @@ import { Route, Redirect } from "react-router-dom"
 import { useSelector } from "react-redux"
 import { getIsLoggedIn } from "../../store/user"
 import PropTypes from "prop-types"
+import { LOGIN_ROUTE, SHOP_ROUTE } from "../../consts"
 
 const ProtectedRoute = ({ component: Component, children, ...rest }) => {
     const isLoggedIn = useSelector(getIsLoggedIn())
@@ -14,7 +15,7 @@ const ProtectedRoute = ({ component: Component, children, ...rest }) => {
                     return (
                         <Redirect
                             to={{
-                                pathname: "/gigi-janssen-store/login",
+                                pathname: SHOP_ROUTE + LOGIN_ROUTE,
                                 state: {
                                     from: props.location
                                 }

@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "react-router-dom"
 import { ListGroup } from "react-bootstrap"
 import PropTypes from "prop-types"
+import { SHOP_ROUTE } from "../../consts"
 
 const GroupList = ({
     items,
@@ -19,7 +20,9 @@ const GroupList = ({
                         className="text-decoration-none"
                         key={items[item][valueProperty]}
                         to={{
-                            pathname: `/gigi-janssen-store/${items[item][pathProperty]}/${items[item][valueProperty]}`,
+                            pathname:
+                                SHOP_ROUTE +
+                                `/${items[item][pathProperty]}/${items[item][valueProperty]}`,
                             state: {
                                 selectedCatProp: items[item]
                             }
@@ -46,7 +49,7 @@ const GroupList = ({
                 <Link
                     className="text-decoration-none"
                     key={item[valueProperty]}
-                    to={`/gigi-janssen-store/${item[pathProperty]}/${item[valueProperty]}`}
+                    to={SHOP_ROUTE + `/${item[pathProperty]}/${item[valueProperty]}`}
                 >
                     <ListGroup.Item
                         key={item[valueProperty]}

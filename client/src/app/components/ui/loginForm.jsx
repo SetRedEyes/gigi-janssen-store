@@ -6,6 +6,7 @@ import { validator } from "../../utils/validator"
 import history from "../../utils/history"
 
 import TextField from "../common/form/textField"
+import { SHOP_ROUTE } from "../../consts"
 
 const LoginForm = () => {
     const dispatch = useDispatch()
@@ -50,7 +51,7 @@ const LoginForm = () => {
         if (!isValid) return
         const redirect = history.location.state
             ? history.location.state.from.pathname
-            : "/gigi-janssen-store"
+            : SHOP_ROUTE
 
         dispatch(login({ payload: data, redirect }))
     }

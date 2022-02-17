@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"
 import { Card, Col, Image } from "react-bootstrap"
 import PropTypes from "prop-types"
 import VolumePrice from "./volumePrice"
+import { SHOP_ROUTE } from "../../consts"
 
 const ProductsListCard = ({ products, colSize }) => {
     return (
@@ -17,7 +18,10 @@ const ProductsListCard = ({ products, colSize }) => {
                             {product.rusName}
                         </Card.Subtitle>
                         <Link
-                            to={`/gigi-janssen-store/${product.companyName}/${product.category}/${product._id}`}
+                            to={
+                                SHOP_ROUTE +
+                                `/${product.companyName}/${product.category}/${product._id}`
+                            }
                         >
                             <Image
                                 style={{ width: "18rem", height: "14rem" }}
@@ -27,7 +31,10 @@ const ProductsListCard = ({ products, colSize }) => {
                         <Card.Body>
                             <Link
                                 className="link text-decoration-none text-center"
-                                to={`/gigi-janssen-store/${product.companyName}/${product.category}/${product._id}`}
+                                to={
+                                    SHOP_ROUTE +
+                                    `/${product.companyName}/${product.category}/${product._id}`
+                                }
                             >
                                 <Card.Title style={{ height: "4rem" }}>
                                     {product.name}

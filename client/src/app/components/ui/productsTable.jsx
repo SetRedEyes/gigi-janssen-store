@@ -6,6 +6,7 @@ import DeleteButton from "../common/deleteButton"
 import DataList from "./dataList"
 import Table from "../common/table"
 import history from "../../utils/history"
+import { ADMIN_ROUTE, SHOP_ROUTE } from "../../consts"
 
 const ProductsTable = ({ products, onSort, selectedSort, onRemove }) => {
     const columns = {
@@ -28,7 +29,7 @@ const ProductsTable = ({ products, onSort, selectedSort, onRemove }) => {
             component: (product) => (
                 <EditButton
                     onClick={() =>
-                        history.push(`/gigi-janssen-store/adminPage/${product._id}`)
+                        history.push(SHOP_ROUTE + ADMIN_ROUTE + `/${product._id}`)
                     }
                 />
             )

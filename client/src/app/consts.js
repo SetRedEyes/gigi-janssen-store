@@ -1,2 +1,6 @@
 export const SHOP_ROUTE = "/gigi-janssen-store"
 export const LOGIN_ROUTE = "/login"
+export const ADMIN_ROUTE = "/admin"
+export const PROFILE_ROUTE = "/profile"
+export const SEARCH_ROUTE = "/search"
+export const LOGOUT_ROUTE = "/logout"

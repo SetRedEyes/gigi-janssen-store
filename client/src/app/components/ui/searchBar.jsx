@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react"
 import { useHistory } from "react-router-dom"
 import { Button, Form, FormControl, InputGroup } from "react-bootstrap"
+import { SEARCH_ROUTE, SHOP_ROUTE } from "../../consts"
 
 const SearchBar = () => {
     const history = useHistory()
@@ -13,7 +14,7 @@ const SearchBar = () => {
     }
     const handleSubmit = (e) => {
         e.preventDefault()
-        history.push(`/gigi-janssen-store/search?search=${search}`)
+        history.push(SHOP_ROUTE + SEARCH_ROUTE + `?search=${search}`)
         searchRef.current.reset()
     }
 

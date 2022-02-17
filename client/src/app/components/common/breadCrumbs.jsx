@@ -5,6 +5,7 @@ import { useSelector } from "react-redux"
 import { getCategories } from "../../store/categories"
 import { getProductById } from "../../store/products"
 import PropTypes from "prop-types"
+import { SHOP_ROUTE } from "../../consts"
 
 const BreadCrumbs = ({ productId }) => {
     const product = useSelector(getProductById(productId))
@@ -40,15 +41,14 @@ const BreadCrumbs = ({ productId }) => {
             <Breadcrumb.Item
                 linkAs={Link}
                 linkProps={{
-                    to: `/gigi-janssen-store
-`
+                    to: SHOP_ROUTE
                 }}
             >
                 Главная
             </Breadcrumb.Item>
             {pathnames.map((name, index) => {
                 const isLast = index === pathnames.length - 1
-                const routeTo = `/gigi-janssen-store/${pathnames
+                const routeTo = `${SHOP_ROUTE}/${pathnames
                     .slice(0, index + 1)
                     .join("/")}`
                 return (

@@ -137,6 +137,7 @@
 .admin-panel-table {
     font-size: 0.7rem;
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    max-width: 212rem;
 }
 
 .admin-panel-table th,

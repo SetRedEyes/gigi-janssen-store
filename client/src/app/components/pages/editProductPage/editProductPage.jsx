@@ -136,7 +136,7 @@ const EditProductPage = () => {
             <Row>
                 <Col md={{ span: 6, offset: 3 }} className="shadow p-4">
                     <div className="d-flex justify-content-between align-items-center">
-                        <h5 className="align-self-bottom">Добавление товара</h5>
+                        <h5 className="align-self-bottom">Редактирование товара</h5>
 
                         <BackHistoryButton />
                     </div>
@@ -221,7 +221,7 @@ const EditProductPage = () => {
                                 disabled={isValid}
                                 className="btn btn-primary w-100 mx-auto submit-btn mt-3"
                             >
-                                Редактировать товар
+                                Редактировать
                             </Button>
                         </Form>
                     ) : (

@@ -203,7 +203,7 @@ const AddProductForm = () => {
                         disabled={isValid}
                         className="btn btn-primary w-100 mx-auto submit-btn mt-1"
                     >
-                        Добавить товар
+                        Добавить
                     </Button>
                 </Form>
             ) : (

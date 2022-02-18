@@ -11,6 +11,21 @@ const NavBar = () => {
     const currentUser = useSelector(getCurrentUserData())
     const isloggedIn = useSelector(getIsLoggedIn())
 
+    // function includesPath(...args) {
+    //     const paths = [...args]
+    //     // console.log(pathname.includes(...paths))
+    //     let a = 1
+    //     paths.forEach((p) => (a = !pathname.includes(p)))
+    //     // for (const path of paths) {
+    //     //     console.log(path)
+    //     //     a = !pathname.includes(path)
+    //     //     console.log(a)
+    //     // }
+    //     console.log(pathname.includes("/profile"))
+
+    //     return a
+    // }
+
     return (
         <Navbar bg="dark" variant="dark" sticky="top">
             <Container fluid>
@@ -22,7 +37,7 @@ const NavBar = () => {
                 </NavLink>
                 {pathname !== SHOP_ROUTE + LOGIN_ROUTE &&
                     pathname !== SHOP_ROUTE + PROFILE_ROUTE &&
-                    pathname !== SHOP_ROUTE + ADMIN_ROUTE && <SearchBar />}
+                    !pathname.includes(ADMIN_ROUTE) && <SearchBar />}
 
                 <div className="d-flex me-5 ">
                     {isloggedIn && currentUser ? (

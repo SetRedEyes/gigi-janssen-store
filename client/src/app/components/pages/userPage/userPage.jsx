@@ -7,6 +7,7 @@ import { Button, Col, Container, Form, Row } from "react-bootstrap"
 import { useDispatch, useSelector } from "react-redux"
 import { getCurrentUserData, updateUser } from "../../../store/user"
 import { LOGOUT_ROUTE, SHOP_ROUTE } from "../../../consts"
+import BackHistoryButton from "../../common/backButton"
 
 const UserPage = () => {
     const dispatch = useDispatch()
@@ -105,7 +106,9 @@ const UserPage = () => {
         <Container>
             <Row>
                 <Col md={{ span: 6, offset: 3 }} className="shadow p-4">
-                    <div className="d-flex justify-content-end">
+                    <div className="d-flex justify-content-between">
+                        <BackHistoryButton />
+
                         <Link
                             to={SHOP_ROUTE + LOGOUT_ROUTE}
                             className="buy-btn btn btn-primary  "
@@ -114,7 +117,7 @@ const UserPage = () => {
                         </Link>
                     </div>
                     {!isLoading && Object.keys(currentUser).length > 0 ? (
-                        <Form onSubmit={handleSubmit}>
+                        <Form className="mt-2" onSubmit={handleSubmit}>
                             <TextField
                                 label="Электронная почта"
                                 name="email"

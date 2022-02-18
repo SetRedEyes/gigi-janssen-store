@@ -44,7 +44,8 @@ const adminPage = () => {
     const handleSort = (item) => {
         setSortBy(item)
     }
-    function includes(item) {
+
+    function includesSearchQuery(item) {
         return item.toLowerCase().includes(searchQuery.toLowerCase())
     }
 
@@ -52,9 +53,9 @@ const adminPage = () => {
         const filteredProducts = searchQuery
             ? products.filter(
                   (p) =>
-                      includes(p.name) ||
-                      includes(p.rusName) ||
-                      includes(p.vendorCode)
+                      includesSearchQuery(p.name) ||
+                      includesSearchQuery(p.rusName) ||
+                      includesSearchQuery(p.vendorCode)
               )
             : products
 

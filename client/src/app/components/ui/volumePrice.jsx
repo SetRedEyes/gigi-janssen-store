@@ -1,14 +1,22 @@
 import React, { useState } from "react"
 import { Button, Card } from "react-bootstrap"
 import PropTypes from "prop-types"
+// import { useDispatch } from "react-redux"
 
 const VolumePrice = ({ product }) => {
+    // const dispatch = useDispatch()
     const [price, setPrice] = useState(null)
     const [activeBtn, setActiveBtn] = useState(0)
 
     const renderPrice = (volumeIndex, product) => {
         setActiveBtn(volumeIndex)
         setPrice(product.price[volumeIndex])
+        console.log(volumeIndex, product.price[volumeIndex])
+    }
+
+    const handleClick = (e) => {
+        e.stopPropagation()
+        // dispatch(itemAdded({ ...product }))
     }
 
     return (
@@ -18,8 +26,10 @@ const VolumePrice = ({ product }) => {
                     <Button
                         key={item}
                         variant="light"
-                        className={`text-nowrap ${
-                            activeBtn === index ? "enableFocus" : "disableFocus"
+                        className={`text-nowrap  ${
+                            activeBtn === index
+                                ? "enableFocus volume-btn"
+                                : "disableFocus"
                         }`}
                         onClick={() => renderPrice(index, product)}
                         onMouseEnter={() => renderPrice(index, product)}
@@ -28,13 +38,15 @@ const VolumePrice = ({ product }) => {
                     </Button>
                 ))}
             </div>
-            <div className="d-flex align-items-end justify-content-between mt-4">
+            <div className="d-flex align-items-end justify-content-between mt-4 ">
                 <Card.Title>
                     {!price || product.price.length === 1
                         ? `${product.price[0]} грн`
                         : `${price} грн`}
                 </Card.Title>
-                <Button className="buy-btn">В корзину</Button>
+                <Button onClick={handleClick} className="buy-btn">
+                    В корзину
+                </Button>
             </div>
         </>
     )

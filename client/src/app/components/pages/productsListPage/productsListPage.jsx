@@ -10,7 +10,7 @@ import PropTypes from "prop-types"
 
 import ProductsListCard from "../../ui/productsListCard"
 import GroupList from "../../../components/common/groupList"
-import SortSelect from "../../ui/sortSelect"
+import SortSelect from "../../common/sortSelect"
 import PagesPagination from "../../../components/common/pagination"
 import LoadingSpinner from "../../common/loadingSpinner"
 

@@ -11,37 +11,28 @@ const NavBar = () => {
     const currentUser = useSelector(getCurrentUserData())
     const isloggedIn = useSelector(getIsLoggedIn())
 
-    // function includesPath(...args) {
-    //     const paths = [...args]
-    //     // console.log(pathname.includes(...paths))
-    //     let a = 1
-    //     paths.forEach((p) => (a = !pathname.includes(p)))
-    //     // for (const path of paths) {
-    //     //     console.log(path)
-    //     //     a = !pathname.includes(path)
-    //     //     console.log(a)
-    //     // }
-    //     console.log(pathname.includes("/profile"))
-
-    //     return a
-    // }
-
     return (
         <Navbar bg="dark" variant="dark" sticky="top">
             <Container fluid>
                 <NavLink
-                    className="header-title text-decoration-none ms-5"
+                    className="header-title text-decoration-none ms-5 me-5"
                     to={SHOP_ROUTE}
                 >
                     GIGI & JANSSEN
                 </NavLink>
-                {pathname !== SHOP_ROUTE + LOGIN_ROUTE &&
-                    pathname !== SHOP_ROUTE + PROFILE_ROUTE &&
-                    !pathname.includes(ADMIN_ROUTE) && <SearchBar />}
 
-                <div className="d-flex me-5 ">
+                <div className="ms-5">
+                    {pathname !== SHOP_ROUTE + LOGIN_ROUTE &&
+                        pathname !== SHOP_ROUTE + PROFILE_ROUTE &&
+                        !pathname.includes(ADMIN_ROUTE) && <SearchBar />}
+                </div>
+
+                <div className="d-flex me-3">
+                    <Button variant={"outline-light"} className="navlink-btn me-5">
+                        <i className="bi bi-cart"></i>
+                    </Button>
                     {isloggedIn && currentUser ? (
-                        <div className="d-flex align-items-center">
+                        <div className="d-flex align-items-center ">
                             <Link
                                 to={SHOP_ROUTE + ADMIN_ROUTE}
                                 className="navProfile-name text-decoration-none me-5"
@@ -56,7 +47,7 @@ const NavBar = () => {
 
                             <Link
                                 to={SHOP_ROUTE + PROFILE_ROUTE}
-                                className="navProfile-name text-decoration-none me-2"
+                                className="navProfile-name text-decoration-none me-5"
                             >
                                 {currentUser.firstName}
                                 <i
@@ -70,7 +61,7 @@ const NavBar = () => {
                             <NavLink to={SHOP_ROUTE + LOGIN_ROUTE}>
                                 <Button
                                     variant={"outline-light"}
-                                    className="navlink-btn"
+                                    className="navlink-btn me-5"
                                 >
                                     Вход/Регистрация
                                 </Button>

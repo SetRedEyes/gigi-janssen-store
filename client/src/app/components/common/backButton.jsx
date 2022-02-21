@@ -6,7 +6,7 @@ const BackHistoryButton = () => {
 
     return (
         <button
-            className="buy-btn btn btn-primary "
+            className="action-btn btn btn-primary "
             onClick={() => history.goBack()}
         >
             <i className="bi bi-caret-left"></i>

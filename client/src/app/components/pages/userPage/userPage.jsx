@@ -111,7 +111,7 @@ const UserPage = () => {
 
                         <Link
                             to={SHOP_ROUTE + LOGOUT_ROUTE}
-                            className="buy-btn btn btn-primary  "
+                            className="action-btn btn btn-primary  "
                         >
                             Выйти из аккаунта
                         </Link>

@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { Button, Card } from "react-bootstrap"
 import PropTypes from "prop-types"
 import { useDispatch, useSelector } from "react-redux"
-import { getItemsInCart, itemAdded } from "../../store/cart"
+import { getItemsInCart, itemAdded, itemRemoved } from "../../store/cart"
 
 const VolumePrice = ({ product }) => {
     const dispatch = useDispatch()
@@ -23,13 +23,17 @@ const VolumePrice = ({ product }) => {
 
     const handleClick = (e) => {
         e.stopPropagation()
-        dispatch(
-            itemAdded({
-                ...product,
-                price: product.price[activeBtn],
-                volume: product.volume[activeBtn]
-            })
-        )
+        if (isItemInCart) {
+            dispatch(itemRemoved(product._id + product.volume[activeBtn]))
+        } else {
+            dispatch(
+                itemAdded({
+                    ...product,
+                    price: product.price[activeBtn],
+                    volume: product.volume[activeBtn]
+                })
+            )
+        }
     }
 
     return (
@@ -39,10 +43,8 @@ const VolumePrice = ({ product }) => {
                     <Button
                         key={item}
                         variant="light"
-                        className={`text-nowrap  ${
-                            activeBtn === index
-                                ? "enableFocus volume-btn"
-                                : "disableFocus"
+                        className={`text-nowrap volume-btn ${
+                            activeBtn === index ? "enableFocus " : "disableFocus"
                         }`}
                         onClick={() => renderPrice(index, product)}
                         onMouseEnter={() => renderPrice(index, product)}
@@ -57,16 +59,20 @@ const VolumePrice = ({ product }) => {
                         ? `${product.price[0]} грн`
                         : `${price} грн`}
                 </Card.Title>
-                <Button
+                <div
+                    role="button"
                     onClick={handleClick}
+                    // variant="secondary"
                     className={
-                        isItemInCart && product.volume[activeBtn] ? "" : "buy-btn"
+                        isItemInCart && product.volume[activeBtn]
+                            ? "grey-btn"
+                            : "action-btn"
                     }
                 >
                     {isItemInCart && product.volume[activeBtn]
                         ? "Убрать из корзины"
                         : "В Корзину"}
-                </Button>
+                </div>
             </div>
         </>
     )

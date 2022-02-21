@@ -10,7 +10,9 @@ const cartSlice = createSlice({
             state.entities.push(action.payload)
         },
         itemRemoved: (state, action) => {
-            state.entities = state.entities.filter((c) => c._id !== action.payload)
+            state.entities = state.entities.filter(
+                (c) => c._id + c.volume !== action.payload
+            )
         }
     }
 })

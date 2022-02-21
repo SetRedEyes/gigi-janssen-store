@@ -13,7 +13,7 @@ import { SHOP_ROUTE } from "./consts"
 
 const App = () => {
     return (
-        <div>
+        <div className="app">
             <AppLoader>
                 <NavBar />
 

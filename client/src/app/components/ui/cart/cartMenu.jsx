@@ -9,24 +9,28 @@ import { capitalizeFirstLetter } from "../../../utils/capitalizeFirstLetter"
 
 const CartMenu = ({ onClick }) => {
     const items = useSelector(getItemsInCart())
-    console.log(items)
+
     return (
         <div className="cart-menu">
             <div className="cart-menu__products-list">
-                {items.length > 0
-                    ? items.map((product) => (
-                          <CartItem
-                              key={product._id + product.volume}
-                              photo={product.photo}
-                              price={product.price}
-                              title={`${capitalizeFirstLetter(
-                                  product.companyName
-                              )} ${product.name} `}
-                              id={product._id}
-                              volume={product.volume}
-                          />
-                      ))
-                    : "Корзина пуста"}
+                {items.length > 0 ? (
+                    items.map((product) => (
+                        <CartItem
+                            key={product._id + product.volume}
+                            photo={product.photo}
+                            price={product.price}
+                            title={`${capitalizeFirstLetter(product.companyName)} ${
+                                product.name
+                            } `}
+                            id={product._id + product.volume}
+                            volume={product.volume}
+                        />
+                    ))
+                ) : (
+                    <span className="d-flex  justify-content-center">
+                        Корзина пуста
+                    </span>
+                )}
             </div>
             {items.length > 0 ? (
                 <div className="cart-menu__arrange">
@@ -34,7 +38,7 @@ const CartMenu = ({ onClick }) => {
                         <span>Итого:</span>
                         <span>{calcTotalPrice(items)} грн.</span>
                     </div>
-                    <Button className="submit-btn" onClick={onClick}>
+                    <Button className="order-btn" onClick={onClick}>
                         Оформить заказ
                     </Button>
                 </div>

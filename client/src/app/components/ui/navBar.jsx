@@ -29,9 +29,6 @@ const NavBar = () => {
                 </div>
 
                 <div className="d-flex me-3">
-                    <Button variant={"outline-light"} className="navlink-btn me-5">
-                        <i className="bi bi-cart"></i>
-                    </Button>
                     <CartButton />
 
                     {isloggedIn && currentUser ? (

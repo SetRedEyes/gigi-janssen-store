@@ -1,22 +1,35 @@
 import React, { useState } from "react"
 import { Button, Card } from "react-bootstrap"
 import PropTypes from "prop-types"
-// import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
+import { getItemsInCart, itemAdded } from "../../store/cart"
 
 const VolumePrice = ({ product }) => {
-    // const dispatch = useDispatch()
+    const dispatch = useDispatch()
     const [price, setPrice] = useState(null)
     const [activeBtn, setActiveBtn] = useState(0)
+    const items = useSelector(getItemsInCart())
+    const isItemInCart = items.some(
+        (item) =>
+            item._id === product._id && product.volume[activeBtn] === item.volume
+    )
 
     const renderPrice = (volumeIndex, product) => {
         setActiveBtn(volumeIndex)
         setPrice(product.price[volumeIndex])
-        console.log(volumeIndex, product.price[volumeIndex])
+        console.log(product.price[volumeIndex])
+        console.log(product.volume[volumeIndex])
     }
 
     const handleClick = (e) => {
         e.stopPropagation()
-        // dispatch(itemAdded({ ...product }))
+        dispatch(
+            itemAdded({
+                ...product,
+                price: product.price[activeBtn],
+                volume: product.volume[activeBtn]
+            })
+        )
     }
 
     return (
@@ -44,8 +57,15 @@ const VolumePrice = ({ product }) => {
                         ? `${product.price[0]} грн`
                         : `${price} грн`}
                 </Card.Title>
-                <Button onClick={handleClick} className="buy-btn">
-                    В корзину
+                <Button
+                    onClick={handleClick}
+                    className={
+                        isItemInCart && product.volume[activeBtn] ? "" : "buy-btn"
+                    }
+                >
+                    {isItemInCart && product.volume[activeBtn]
+                        ? "Убрать из корзины"
+                        : "В Корзину"}
                 </Button>
             </div>
         </>

@@ -5,6 +5,7 @@ import { useSelector } from "react-redux"
 import { getCurrentUserData, getIsLoggedIn } from "../../store/user"
 import SearchBar from "./searchBar"
 import { ADMIN_ROUTE, LOGIN_ROUTE, PROFILE_ROUTE, SHOP_ROUTE } from "../../consts"
+import CartButton from "./cart/cartButton"
 
 const NavBar = () => {
     const { pathname } = useLocation()
@@ -31,6 +32,8 @@ const NavBar = () => {
                     <Button variant={"outline-light"} className="navlink-btn me-5">
                         <i className="bi bi-cart"></i>
                     </Button>
+                    <CartButton />
+
                     {isloggedIn && currentUser ? (
                         <div className="d-flex align-items-center ">
                             <Link

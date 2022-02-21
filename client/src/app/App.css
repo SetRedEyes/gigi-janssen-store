@@ -10,20 +10,75 @@ html {
     box-shadow: none;
 }
 
-.items-in-cart {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background-color: tomato;
-    border-radius: 15px;
-    font-size: 15px;
+/* Cart */
+
+.cart-block {
     display: flex;
-    justify-content: center;
     align-items: center;
-    color: white;
+    position: relative;
+}
+
+.total-price {
+    margin-left: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.cart-icon {
+    cursor: pointer;
+    position: relative;
+}
+
+.cart-menu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 3.4rem;
+    left: -300px;
+    background-color: rgb(36, 37, 41);
+    width: 400px;
+    padding: 10px 20px;
     z-index: 2;
-    left: 15px;
-    top: -10px;
+    border-radius: 15px;
+    color: #fff;
+}
+
+.cart-menu::after {
+    border-bottom: 0.5rem solid rgb(36, 37, 41);
+    border-left: 0.6rem solid rgba(0, 0, 0, 0);
+    border-right: 0.6rem solid rgba(0, 0, 0, 0);
+    content: "";
+    display: inline-block;
+    left: 19.5rem;
+    position: absolute;
+    top: -7px;
+}
+.cart-menu__arrange {
+    margin-top: 20px;
+    padding: 20px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.cart-menu__total-price {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.cart-item {
+    width: 100%;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+}
+
+.cart-item__price {
+    display: flex;
+    align-items: center;
+    color: #fff;
 }
 
 .navProfile-name {
@@ -157,6 +212,8 @@ html {
 .user-page-input {
     margin-bottom: 1.5rem;
 }
+
+/* AdminPanel */
 
 .admin-panel-table {
     font-size: 0.7rem;

@@ -30,7 +30,8 @@ html {
     position: relative;
 }
 
-.cart-menu {
+.cart-menu,
+.empty-cart-menu {
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -38,15 +39,23 @@ html {
     left: -18.7rem;
     background-color: rgb(36, 37, 41);
     width: 35rem;
-    height: 40rem;
-    overflow-y: scroll;
+    max-height: 40rem;
+    overflow-y: visible;
     padding: 0.5rem 1rem;
     z-index: 2;
     border-radius: 1rem;
     color: #fff;
 }
 
-.cart-menu::after {
+.empty-cart-menu {
+    height: 3rem;
+    width: 10rem;
+    line-height: 1.8rem;
+    left: -3.5rem;
+}
+
+.cart-menu::before,
+.empty-cart-menu::before {
     border-bottom: 0.5rem solid rgb(36, 37, 41);
     border-left: 0.6rem solid rgba(0, 0, 0, 0);
     border-right: 0.6rem solid rgba(0, 0, 0, 0);
@@ -56,6 +65,11 @@ html {
     position: absolute;
     top: -0.45rem;
 }
+
+.empty-cart-menu::before {
+    left: 4.3rem;
+}
+
 .cart-menu__arrange {
     margin-top: 1rem;
     padding: 1rem 0;
@@ -127,8 +141,9 @@ html {
 
 .order-btn {
     background-color: #212529 !important;
-    border-color: #212529 !important;
+    border-color: #21c1cf !important;
 }
+
 .submit-btn {
     background-color: #000000 !important;
     border-color: #000000 !important;
@@ -210,11 +225,18 @@ html {
     border-color: #21c1cf;
 }
 
-.link {
-    color: black;
+.link-in-cart {
+    color: #fff;
+    text-decoration: none;
 }
-.link:hover,
-.header-title:hover {
+
+.link-title {
+    color: black;
+    text-decoration: none;
+}
+.link-title:hover,
+.header-title:hover,
+.link-in-cart:hover {
     color: #21c1cf;
 }
 

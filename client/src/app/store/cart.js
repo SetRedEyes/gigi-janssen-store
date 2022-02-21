@@ -11,7 +11,7 @@ const cartSlice = createSlice({
         },
         itemRemoved: (state, action) => {
             state.entities = state.entities.filter(
-                (c) => c._id + c.volume !== action.payload
+                (item) => item.volumeId !== action.payload
             )
         }
     }

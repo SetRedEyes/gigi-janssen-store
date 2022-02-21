@@ -7,10 +7,7 @@ import { SHOP_ROUTE } from "../../consts"
 const CompanyCard = ({ fullName, photo, companyName }) => {
     return (
         <Card className="mt-5" style={{ width: "18.5rem", border: "none" }}>
-            <Link
-                className="link text-decoration-none"
-                to={SHOP_ROUTE + `/${companyName}`}
-            >
+            <Link className="link-title" to={SHOP_ROUTE + `/${companyName}`}>
                 <Card.Img
                     style={{ width: "18.5rem", height: "18.5rem" }}
                     variant="top"

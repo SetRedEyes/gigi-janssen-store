@@ -7,7 +7,7 @@ import { SHOP_ROUTE } from "../../consts"
 const CategoryCard = ({ fullName, photo, companyName, categoryName, catObj }) => {
     return (
         <Link
-            className="link text-decoration-none "
+            className="link-title "
             to={{
                 pathname: SHOP_ROUTE + `/${companyName}/${categoryName}`,
                 state: {

@@ -5,25 +5,19 @@ import CartItem from "./cartItem"
 import PropTypes from "prop-types"
 import { Button } from "react-bootstrap"
 import { calcTotalPrice } from "../../../utils/calcTotalPrice"
-import { capitalizeFirstLetter } from "../../../utils/capitalizeFirstLetter"
 
 const CartMenu = ({ onClick }) => {
     const items = useSelector(getItemsInCart())
 
     return (
-        <div className="cart-menu">
+        <div className={!items.length ? "empty-cart-menu" : "cart-menu"}>
             <div className="cart-menu__products-list">
                 {items.length > 0 ? (
                     items.map((product) => (
                         <CartItem
+                            product={product}
                             key={product._id + product.volume}
-                            photo={product.photo}
-                            price={product.price}
-                            title={`${capitalizeFirstLetter(product.companyName)} ${
-                                product.name
-                            } `}
-                            id={product._id + product.volume}
-                            volume={product.volume}
+                            volumeId={product._id + product.volume}
                         />
                     ))
                 ) : (

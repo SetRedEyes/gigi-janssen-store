@@ -24,7 +24,7 @@ const Login = () => {
                                 Уже есть аккант?{" "}
                                 <a role="button" onClick={toggleFormType}>
                                     {" "}
-                                    <span className="link">Войти</span>
+                                    <span className="link-title">Войти</span>
                                 </a>
                             </p>
                         </>
@@ -37,7 +37,7 @@ const Login = () => {
                                 Еще нет аккаунта?
                                 <a role="button" onClick={toggleFormType}>
                                     {" "}
-                                    <span className="link">Зарегистрироваться</span>
+                                    <span className="link-title">Зарегистрироваться</span>
                                 </a>
                             </p>
                         </>

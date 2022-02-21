@@ -30,7 +30,7 @@ const ProductsListCard = ({ products, colSize }) => {
                         </Link>
                         <Card.Body>
                             <Link
-                                className="link text-decoration-none text-center"
+                                className="link-title text-center"
                                 to={
                                     SHOP_ROUTE +
                                     `/${product.companyName}/${product.category}/${product._id}`

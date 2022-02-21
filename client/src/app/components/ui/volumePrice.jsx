@@ -13,24 +13,25 @@ const VolumePrice = ({ product }) => {
         (item) =>
             item._id === product._id && product.volume[activeBtn] === item.volume
     )
+    const selectedVolume = product.volume[activeBtn]
 
     const renderPrice = (volumeIndex, product) => {
         setActiveBtn(volumeIndex)
         setPrice(product.price[volumeIndex])
-        console.log(product.price[volumeIndex])
-        console.log(product.volume[volumeIndex])
     }
 
     const handleClick = (e) => {
         e.stopPropagation()
+        console.log(selectedVolume)
         if (isItemInCart) {
-            dispatch(itemRemoved(product._id + product.volume[activeBtn]))
+            dispatch(itemRemoved(product._id + selectedVolume))
         } else {
             dispatch(
                 itemAdded({
                     ...product,
                     price: product.price[activeBtn],
-                    volume: product.volume[activeBtn]
+                    volume: selectedVolume,
+                    volumeId: product._id + selectedVolume
                 })
             )
         }
@@ -53,7 +54,7 @@ const VolumePrice = ({ product }) => {
                     </Button>
                 ))}
             </div>
-            <div className="d-flex align-items-end justify-content-between mt-4 ">
+            <div className="d-flex align-items-end justify-content-between mt-4">
                 <Card.Title>
                     {!price || product.price.length === 1
                         ? `${product.price[0]} грн`
@@ -62,14 +63,11 @@ const VolumePrice = ({ product }) => {
                 <div
                     role="button"
                     onClick={handleClick}
-                    // variant="secondary"
                     className={
-                        isItemInCart && product.volume[activeBtn]
-                            ? "grey-btn"
-                            : "action-btn"
+                        isItemInCart && selectedVolume ? "grey-btn" : "action-btn"
                     }
                 >
-                    {isItemInCart && product.volume[activeBtn]
+                    {isItemInCart && selectedVolume
                         ? "Убрать из корзины"
                         : "В Корзину"}
                 </div>

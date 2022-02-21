@@ -1,24 +1,38 @@
 import React from "react"
+import { Link } from "react-router-dom"
+
 import { useDispatch } from "react-redux"
 import DeleteButton from "../../common/deleteButton"
 import PropTypes from "prop-types"
+import { SHOP_ROUTE } from "../../../consts"
 import { itemRemoved } from "../../../store/cart"
+import { capitalizeFirstLetter } from "../../../utils/capitalizeFirstLetter"
 
-const CartItem = ({ title, price, volume, id }) => {
+const CartItem = ({ product, volumeId }) => {
     const dispatch = useDispatch()
     const handleDeleteClick = () => {
-        dispatch(itemRemoved(id))
+        dispatch(itemRemoved(volumeId))
     }
 
     return (
         <div className="cart-item">
-            <div className="d-flex flex-column">
-                <span>{title}</span>
-                <span>{`Объем: ${volume}`} </span>
-            </div>
+            <Link
+                className="d-flex flex-column link-in-cart"
+                to={
+                    SHOP_ROUTE +
+                    `/${product.companyName}/${product.category}/${product._id}`
+                }
+            >
+                <span>
+                    {`${capitalizeFirstLetter(product.companyName)} ${
+                        product.name
+                    } `}
+                </span>
+                <span>{`Объем: ${product.volume} мл.`} </span>
+            </Link>
 
             <div className="cart-item__price">
-                <span className="me-2">{price} грн.</span>
+                <span className="me-2">{product.price} грн.</span>
                 <DeleteButton size="sm" onClick={handleDeleteClick} />
             </div>
         </div>
@@ -26,10 +40,8 @@ const CartItem = ({ title, price, volume, id }) => {
 }
 
 CartItem.propTypes = {
-    title: PropTypes.string,
-    price: PropTypes.number,
-    id: PropTypes.string,
-    volume: PropTypes.number
+    volumeId: PropTypes.string,
+    product: PropTypes.object
 }
 
 export default CartItem

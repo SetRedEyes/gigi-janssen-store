@@ -5,8 +5,6 @@ import CartItem from "./cartItem"
 import PropTypes from "prop-types"
 import { Button } from "react-bootstrap"
 import { calcTotalPrice } from "../../../utils/calcTotalPrice"
-import { Link } from "react-router-dom"
-import { ORDER_ROUTE, SHOP_ROUTE } from "../../../consts"
 
 const CartMenu = ({ onClick }) => {
     const items = useSelector(getItemsInCart())
@@ -37,11 +35,9 @@ const CartMenu = ({ onClick }) => {
                             <span>Итого:</span>
                             <span>{calcTotalPrice(items)} грн.</span>
                         </div>
-                        <Link to={SHOP_ROUTE + ORDER_ROUTE}>
-                            <Button className="order-btn" onClick={onClick}>
-                                Оформить заказ
-                            </Button>
-                        </Link>
+                        <Button className="order-btn" onClick={onClick}>
+                            Оформить заказ
+                        </Button>
                     </div>
                 ) : null}
             </div>

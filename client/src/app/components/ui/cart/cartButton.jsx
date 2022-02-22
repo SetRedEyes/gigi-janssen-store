@@ -1,9 +1,4 @@
-// import React, { useState, useCallback } from "react";
-// import { useHistory } from "react-router-dom";
-// import { BiCartAlt } from "react-icons/bi";
-// import { CartMenu } from "../cart-menu";
-// import { ItemsInCart } from "../items-in-cart";
-
+import { useHistory } from "react-router-dom"
 import React, { useState } from "react"
 import { Button } from "react-bootstrap"
 import { useSelector } from "react-redux"
@@ -11,11 +6,18 @@ import { useClickOutside } from "../../../hooks/useClickOutside"
 import { getItemsInCart } from "../../../store/cart"
 import { calcTotalPrice } from "../../../utils/calcTotalPrice"
 import CartMenu from "./cartMenu"
+import { ORDER_ROUTE, SHOP_ROUTE } from "../../../consts"
 
 const CartButton = () => {
     const items = useSelector(getItemsInCart())
     const totalPrice = calcTotalPrice(items)
     const [isOpen, setIsOpen] = useState(false)
+    const history = useHistory()
+
+    const goToOrder = () => {
+        setIsOpen(false)
+        history.push(SHOP_ROUTE + ORDER_ROUTE)
+    }
 
     const domNode = useClickOutside(() => {
         setIsOpen(false)
@@ -34,7 +36,7 @@ const CartButton = () => {
             {totalPrice > 0 ? (
                 <span className="total-price">{totalPrice} грн.</span>
             ) : null}
-            {isOpen && <CartMenu onClick={() => null} />}
+            {isOpen && <CartMenu onClick={goToOrder} />}
         </div>
     )
 }

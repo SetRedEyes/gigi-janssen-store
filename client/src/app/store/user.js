@@ -4,6 +4,7 @@ import authService from "../services/auth.service"
 import localStorageService from "../services/localStorage.service"
 import userService from "../services/user.service"
 import { SHOP_ROUTE } from "../consts"
+import { geterateAuthError } from "../utils/generateAuthError"
 
 const initialState = localStorageService.getAccessToken()
     ? {
@@ -104,7 +105,13 @@ export const login =
             dispatch(authRequestSuccess({ userId: data.userId }))
             history.push(redirect)
         } catch (error) {
-            dispatch(authRequestFailed(error.message))
+            const { code, message } = error.response.data.error
+            if (code === 400) {
+                const errorMessage = geterateAuthError(message)
+                dispatch(authRequestFailed(errorMessage))
+            } else {
+                dispatch(authRequestFailed(error.message))
+            }
         }
     }
 
@@ -129,4 +136,6 @@ export const getCurrentUserData = () => (state) => {
     return state.user.entities ? state.user.entities : null
 }
 export const getUserLoadingStatus = () => (state) => state.user.isLoading
+export const getAuthErrors = () => (state) => state.user.error
+
 export default userReducer

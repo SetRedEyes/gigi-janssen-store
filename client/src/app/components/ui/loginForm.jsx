@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { Button, Form } from "react-bootstrap"
-import { useDispatch } from "react-redux"
-import { login } from "../../store/user"
+import { useDispatch, useSelector } from "react-redux"
+import { login, getAuthErrors } from "../../store/user"
 import { validator } from "../../utils/validator"
 import history from "../../utils/history"
 
@@ -10,14 +10,12 @@ import { SHOP_ROUTE } from "../../consts"
 
 const LoginForm = () => {
     const dispatch = useDispatch()
-
-    const [data, setData] = useState({ email: "", password: "", stayOn: false })
+    const loginError = useSelector(getAuthErrors())
+    const [data, setData] = useState({ email: "", password: "" })
     const [errors, setErrors] = useState({})
-    const [enterError, setEnterError] = useState(null)
 
     const handleChange = (target) => {
         setData((prevState) => ({ ...prevState, [target.name]: target.value }))
-        setEnterError(null)
     }
 
     const validatorConfig = {
@@ -74,11 +72,12 @@ const LoginForm = () => {
                 error={errors.password}
             />
 
-            {enterError && <p className="text-danger">{enterError}</p>}
+            {loginError && <p className="text-danger">{loginError}</p>}
+
             <Button
                 type="submit"
                 className="mx-auto w-100 submit-btn"
-                disabled={!isValid || enterError}
+                disabled={!isValid}
             >
                 Войти
             </Button>

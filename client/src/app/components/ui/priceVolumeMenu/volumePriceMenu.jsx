@@ -1,7 +1,11 @@
 import React, { useState } from "react"
 import PropTypes from "prop-types"
 import { useDispatch, useSelector } from "react-redux"
-import { getItemsInCart, itemAdded, itemRemoved } from "../../../store/cart"
+import {
+    addItemToCart,
+    getItemsInCart,
+    removeItemFromCart
+} from "../../../store/cart"
 import Price from "./priceButton"
 import Volume from "./volumeButton.jsx"
 
@@ -10,6 +14,7 @@ const VolumePriceMenu = ({ product }) => {
     const [selectedPrice, setSelectedPrice] = useState(null)
     const [activeBtn, setActiveBtn] = useState(0)
     const items = useSelector(getItemsInCart())
+
     const isItemInCart = items.some(
         (item) =>
             item._id === product._id && product.volume[activeBtn] === item.volume
@@ -24,10 +29,10 @@ const VolumePriceMenu = ({ product }) => {
     const handleClick = (e) => {
         e.stopPropagation()
         if (isItemInCart) {
-            dispatch(itemRemoved(product._id + selectedVolume))
+            dispatch(removeItemFromCart(product._id + selectedVolume))
         } else {
             dispatch(
-                itemAdded({
+                addItemToCart({
                     ...product,
                     price: product.price[activeBtn],
                     volume: selectedVolume,

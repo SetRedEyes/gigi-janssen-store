@@ -19,7 +19,7 @@ const SearchBar = () => {
     }
 
     return (
-        <Form onSubmit={handleSubmit} ref={searchRef} className="ms-5">
+        <Form onSubmit={handleSubmit} ref={searchRef} className="search-bar">
             <InputGroup>
                 <FormControl
                     placeholder="Поиск"
@@ -27,6 +27,7 @@ const SearchBar = () => {
                     aria-describedby="basic-addon2"
                     onChange={handleSearch}
                     required
+                    className="search-input"
                 />
                 <Button
                     variant="outline-light"

@@ -74,7 +74,6 @@ export const loadProductsList = () => async (dispatch, getState) => {
 
 export const createProduct = (payload) => async (dispatch) => {
     dispatch(addProductRequested(payload))
-    console.log("from redux", payload)
     try {
         const { content } = await productService.createProduct(payload)
 

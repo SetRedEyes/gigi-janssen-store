@@ -5,13 +5,13 @@ import { useDispatch } from "react-redux"
 import DeleteButton from "../../common/deleteButton"
 import PropTypes from "prop-types"
 import { SHOP_ROUTE } from "../../../consts"
-import { itemRemoved } from "../../../store/cart"
+import { removeItemFromCart } from "../../../store/cart"
 import { capitalizeFirstLetter } from "../../../utils/capitalizeFirstLetter"
 
 const CartItem = ({ product, volumeId }) => {
     const dispatch = useDispatch()
     const handleDelete = () => {
-        dispatch(itemRemoved(volumeId))
+        dispatch(removeItemFromCart(volumeId))
     }
 
     return (

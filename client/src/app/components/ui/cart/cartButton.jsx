@@ -1,19 +1,22 @@
 import { useHistory } from "react-router-dom"
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import { Button } from "react-bootstrap"
-import { useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { useClickOutside } from "../../../hooks/useClickOutside"
-import { getItemsInCart } from "../../../store/cart"
+import { getItemsInCart, loadCartList } from "../../../store/cart"
 import { calcTotalPrice } from "../../../utils/calcTotalPrice"
 import CartMenu from "./cartMenu"
 import { ORDER_ROUTE, SHOP_ROUTE } from "../../../consts"
 
 const CartButton = () => {
+    const dispatch = useDispatch()
     const items = useSelector(getItemsInCart())
     const totalPrice = calcTotalPrice(items)
     const [isOpen, setIsOpen] = useState(false)
     const history = useHistory()
-
+    useEffect(() => {
+        dispatch(loadCartList())
+    }, [totalPrice])
     const goToOrder = () => {
         setIsOpen(false)
         history.push(SHOP_ROUTE + ORDER_ROUTE)

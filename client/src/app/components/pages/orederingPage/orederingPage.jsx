@@ -3,7 +3,7 @@ import { Button, Col, Container, Image, Row } from "react-bootstrap"
 import { useDispatch, useSelector } from "react-redux"
 import { Link } from "react-router-dom"
 import { SHOP_ROUTE } from "../../../consts"
-import { getItemsInCart, itemRemoved } from "../../../store/cart"
+import { getItemsInCart, removeItemFromCart } from "../../../store/cart"
 import { calcTotalPrice } from "../../../utils/calcTotalPrice"
 import { capitalizeFirstLetter } from "../../../utils/capitalizeFirstLetter"
 import { enumerate } from "../../../utils/enumerate"
@@ -14,7 +14,7 @@ const OrderingPage = () => {
     const items = useSelector(getItemsInCart())
     const dispatch = useDispatch()
     const handleDelete = (volumeId) => {
-        dispatch(itemRemoved(volumeId))
+        dispatch(removeItemFromCart(volumeId))
     }
 
     console.log(items)

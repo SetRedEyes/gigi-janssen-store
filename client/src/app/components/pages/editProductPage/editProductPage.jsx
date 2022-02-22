@@ -22,7 +22,6 @@ const EditProductPage = () => {
     const [data, setData] = useState({})
 
     const companies = useSelector(getCompanies())
-    console.log(companies)
 
     const companiesLoading = useSelector(getCompaniesLoadingStatus())
     const companiesList = companies.map((c) => ({

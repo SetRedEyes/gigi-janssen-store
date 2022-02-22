@@ -151,10 +151,11 @@ html {
     margin-left: 2rem;
 }
 
-.order-item__volume {
+.order-item__options {
     font-size: 1rem;
-    font-weight: bold;
+    font-weight: ;
     margin-left: 2rem;
+    color: #000000;
 }
 
 .order-item__price {

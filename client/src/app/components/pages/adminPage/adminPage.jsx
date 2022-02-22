@@ -25,7 +25,6 @@ const adminPage = () => {
     }, [searchQuery])
 
     const handleEditProduct = (productId) => {
-        console.log(productId)
         history.push(SHOP_ROUTE + ADMIN_ROUTE + productId)
     }
 

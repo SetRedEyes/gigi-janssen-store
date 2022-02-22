@@ -17,7 +17,6 @@ const OrderingPage = () => {
         dispatch(removeItemFromCart(volumeId))
     }
 
-    console.log(items)
     if (items.length < 1) {
         return <h1 className="text-center mt-5">Ваша корзина пуста</h1>
     }
@@ -48,15 +47,19 @@ const OrderingPage = () => {
                                 `/${product.companyName}/${product.category}/${product._id}`
                             }
                         >
-                            <span className="order-item__title">
+                            <span className="order-item__title ">
                                 {`${capitalizeFirstLetter(product.companyName)} ${
                                     product.name
                                 } - ${product.rusName} `}
                             </span>
-                            <span className="order-item__volume">
-                                Объем: {product.volume} мл.
-                            </span>
                         </Link>
+                        <span className="order-item__options ">
+                            Объем: {product.volume} мл.
+                        </span>
+                        <br />
+                        <span className="order-item__options text-end">
+                            Количество:
+                        </span>
                     </Col>
                     <Col
                         md={{ span: 2, offset: 1 }}

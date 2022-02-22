@@ -100,7 +100,6 @@ export const login =
         dispatch(authRequested())
         try {
             const data = await authService.login({ email, password })
-            console.log(data)
             localStorageService.setTokens(data)
             dispatch(authRequestSuccess({ userId: data.userId }))
             history.push(redirect)

@@ -13,7 +13,6 @@ import PropTypes from "prop-types"
 const CategoryPage = ({ companyName }) => {
     const categories = useSelector(getCategoriesByCompany(companyName))
     const categoriesLoading = useSelector(getCategoriesLoadingStatus())
-    console.log(categories)
     if (categoriesLoading) return <LoadingSpinner />
     return (
         <Container className="d-flex">

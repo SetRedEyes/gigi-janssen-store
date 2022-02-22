@@ -66,7 +66,7 @@ const ProductPage = ({ productId, companyName }) => {
                                         </span>
                                     </Row>
                                     <Row className="justify-content-center al">
-                                        <Col md={5} className="mt-5 mb-5 ">
+                                        <Col md={6} className="mt-5 mb-5 ">
                                             <VolumePriceMenu product={product} />
                                         </Col>
                                     </Row>

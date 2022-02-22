@@ -12,6 +12,10 @@ const NavBar = () => {
     const currentUser = useSelector(getCurrentUserData())
     const isloggedIn = useSelector(getIsLoggedIn())
 
+    const isIncludes = (...paths) => {
+        return !paths.some((path) => pathname.includes(path))
+    }
+
     return (
         <Navbar bg="dark" variant="dark" sticky="top">
             <Container fluid>
@@ -23,9 +27,9 @@ const NavBar = () => {
                 </NavLink>
 
                 <div className="ms-5">
-                    {pathname !== SHOP_ROUTE + LOGIN_ROUTE &&
-                        pathname !== SHOP_ROUTE + PROFILE_ROUTE &&
-                        !pathname.includes(ADMIN_ROUTE) && <SearchBar />}
+                    {isIncludes(LOGIN_ROUTE, PROFILE_ROUTE, ADMIN_ROUTE) && (
+                        <SearchBar />
+                    )}
                 </div>
 
                 <div className="d-flex me-3">

@@ -1,10 +1,13 @@
 import React from "react"
-import { Container, Image } from "react-bootstrap"
+import { Button, Col, Container, Image, Row } from "react-bootstrap"
 import { useDispatch, useSelector } from "react-redux"
+import { Link } from "react-router-dom"
+import { SHOP_ROUTE } from "../../../consts"
 import { getItemsInCart, itemRemoved } from "../../../store/cart"
 import { calcTotalPrice } from "../../../utils/calcTotalPrice"
 import { capitalizeFirstLetter } from "../../../utils/capitalizeFirstLetter"
 import { enumerate } from "../../../utils/enumerate"
+import BackHistoryButton from "../../common/backButton"
 import DeleteButton from "../../common/deleteButton"
 
 const OrderingPage = () => {
@@ -21,42 +24,70 @@ const OrderingPage = () => {
 
     return (
         <Container className="order-page">
-            <div className="order-page__left">
-                {items.map((product) => (
-                    <div className="order-item" key={product.volumeId}>
-                        <div className="me-5">
+            <BackHistoryButton mb="mb-4" />
+            {items.map((product) => (
+                <Row key={product.volumeId} className="cart-item">
+                    <Col md={1}>
+                        <Link
+                            to={
+                                SHOP_ROUTE +
+                                `/${product.companyName}/${product.category}/${product._id}`
+                            }
+                        >
                             <Image
-                                className="m-4"
+                                className="order-item_image"
                                 src={product.photo}
-                                fluid
-                                style={{ width: "6rem", height: "6rem" }}
                             />
-                        </div>
-                        <span className="order-item__title">
-                            {`${capitalizeFirstLetter(product.companyName)} ${
-                                product.name
-                            } - ${product.rusName}`}
-                        </span>
-                        <span className="order-item__price">
-                            {product.price} руб.
+                        </Link>
+                    </Col>
+                    <Col md={7}>
+                        <Link
+                            className="d-flex flex-column link-title"
+                            to={
+                                SHOP_ROUTE +
+                                `/${product.companyName}/${product.category}/${product._id}`
+                            }
+                        >
+                            <span className="order-item__title">
+                                {`${capitalizeFirstLetter(product.companyName)} ${
+                                    product.name
+                                } - ${product.rusName} `}
+                            </span>
+                            <span className="order-item__volume">
+                                Объем: {product.volume} мл.
+                            </span>
+                        </Link>
+                    </Col>
+                    <Col
+                        md={{ span: 2, offset: 1 }}
+                        className="d-flex justify-content-between align-items-center"
+                    >
+                        <span className="order-item__price ">
+                            {product.price} грн.
                         </span>
                         <DeleteButton
-                            // className="cart-item__delete-icon"
                             size="lg"
                             onClick={() => handleDelete(product.volumeId)}
                         />
-                    </div>
-                ))}
-            </div>
-            <div className="order-page__right">
-                <div className="order-page__total-price">
-                    <span>
-                        {items.length}
+                    </Col>
+                </Row>
+            ))}
+            <Row className="order-page__total-price ">
+                <hr />
+                <Col md={8}>
+                    <h1>Итого:</h1>
+                    <h4>
+                        {items.length}{" "}
                         {enumerate(items.length, ["товар", "товара", "товаров"])} на
                         сумму {calcTotalPrice(items)} грн.
-                    </span>
-                </div>
-            </div>
+                    </h4>
+                </Col>
+                <Col md={2}>
+                    <Button className="btn btn-primary submit-btn w-100 m-auto">
+                        Купить
+                    </Button>
+                </Col>
+            </Row>
         </Container>
     )
 }

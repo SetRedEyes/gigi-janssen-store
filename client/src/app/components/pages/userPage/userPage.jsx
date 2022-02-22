@@ -106,7 +106,7 @@ const UserPage = () => {
         <Container>
             <Row>
                 <Col md={{ span: 6, offset: 3 }} className="shadow p-4">
-                    <div className="d-flex justify-content-between">
+                    <div className="d-flex justify-content-between ">
                         <BackHistoryButton />
 
                         <Link

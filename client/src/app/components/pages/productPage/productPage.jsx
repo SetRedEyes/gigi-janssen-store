@@ -5,7 +5,7 @@ import { getCategoriesByCompany } from "../../../store/categories"
 import { getProductById } from "../../../store/products"
 import PropTypes from "prop-types"
 
-import VolumePrice from "../../ui/priceVolumeMenu/volumePriceMenu"
+import VolumePriceMenu from "../../ui/priceVolumeMenu/volumePriceMenu"
 import GroupList from "../../../components/common/groupList"
 
 const ProductPage = ({ productId, companyName }) => {
@@ -67,7 +67,7 @@ const ProductPage = ({ productId, companyName }) => {
                                     </Row>
                                     <Row className="justify-content-center al">
                                         <Col md={5} className="mt-5 mb-5 ">
-                                            <VolumePrice product={product} />
+                                            <VolumePriceMenu product={product} />
                                         </Col>
                                     </Row>
                                 </Col>

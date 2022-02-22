@@ -1,10 +1,12 @@
 import Basket from "./components/pages/Basket"
+import OrderingPage from "./components/pages/orederingPage/orederingPage"
 import SearchPage from "./components/pages/searchPage"
 import UserPage from "./components/pages/userPage"
 import {
     ADMIN_ROUTE,
     LOGIN_ROUTE,
     LOGOUT_ROUTE,
+    ORDER_ROUTE,
     PROFILE_ROUTE,
     SEARCH_ROUTE,
     SHOP_ROUTE
@@ -36,6 +38,7 @@ export const routes = [
     { path: SHOP_ROUTE + "/basket", component: Basket },
 
     { path: SHOP_ROUTE + SEARCH_ROUTE, component: SearchPage },
+    { path: SHOP_ROUTE + ORDER_ROUTE, component: OrderingPage },
     { path: SHOP_ROUTE + LOGOUT_ROUTE, component: LogOut },
 
     {

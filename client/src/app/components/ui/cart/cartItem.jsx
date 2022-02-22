@@ -10,7 +10,7 @@ import { capitalizeFirstLetter } from "../../../utils/capitalizeFirstLetter"
 
 const CartItem = ({ product, volumeId }) => {
     const dispatch = useDispatch()
-    const handleDeleteClick = () => {
+    const handleDelete = () => {
         dispatch(itemRemoved(volumeId))
     }
 
@@ -33,7 +33,7 @@ const CartItem = ({ product, volumeId }) => {
 
             <div className="cart-item__price">
                 <span className="me-2">{product.price} грн.</span>
-                <DeleteButton size="sm" onClick={handleDeleteClick} />
+                <DeleteButton size="sm" onClick={handleDelete} />
             </div>
         </div>
     )

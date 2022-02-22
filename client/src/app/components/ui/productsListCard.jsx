@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "react-router-dom"
 import { Card, Col, Image } from "react-bootstrap"
 import PropTypes from "prop-types"
-import VolumePrice from "./priceVolumeMenu/volumePriceMenu"
+import VolumePriceMenu from "./priceVolumeMenu/volumePriceMenu"
 import { SHOP_ROUTE } from "../../consts"
 
 const ProductsListCard = ({ products, colSize }) => {
@@ -41,7 +41,7 @@ const ProductsListCard = ({ products, colSize }) => {
                                 </Card.Title>
                             </Link>
 
-                            <VolumePrice product={product} />
+                            <VolumePriceMenu product={product} />
                         </Card.Body>
                     </Card>
                 </Col>

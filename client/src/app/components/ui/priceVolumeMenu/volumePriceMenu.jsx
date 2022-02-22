@@ -5,7 +5,7 @@ import { getItemsInCart, itemAdded, itemRemoved } from "../../../store/cart"
 import Price from "./priceButton"
 import Volume from "./volumeButton.jsx"
 
-const VolumePrice = ({ product }) => {
+const VolumePriceMenu = ({ product }) => {
     const dispatch = useDispatch()
     const [selectedPrice, setSelectedPrice] = useState(null)
     const [activeBtn, setActiveBtn] = useState(0)
@@ -54,7 +54,7 @@ const VolumePrice = ({ product }) => {
         </>
     )
 }
-VolumePrice.propTypes = {
+VolumePriceMenu.propTypes = {
     product: PropTypes.object.isRequired
 }
-export default VolumePrice
+export default VolumePriceMenu

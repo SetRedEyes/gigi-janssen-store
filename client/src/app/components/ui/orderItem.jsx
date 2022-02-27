@@ -1,37 +1,12 @@
-import React, { useEffect } from "react"
+import React from "react"
 import { Col, Image, Row } from "react-bootstrap"
 import { Link } from "react-router-dom"
 import { SHOP_ROUTE } from "../../consts"
 import { capitalizeFirstLetter } from "../../utils/capitalizeFirstLetter"
 import PropTypes from "prop-types"
-import { useDispatch } from "react-redux"
-import { addItemToCart, loadCartList, removeItemFromCart } from "../../store/cart"
 import DeleteButton from "../common/deleteButton"
-import localStorageService from "../../services/localStorage.service"
 
-const OrderItem = ({ product }) => {
-    const dispatch = useDispatch()
-    const handleDelete = (volumeId) => {
-        dispatch(removeItemFromCart(volumeId))
-    }
-
-    const handleQuantityChange = (e, product) => {
-        const cart = localStorageService.getCartItems()
-        cart.forEach((item) => {
-            if (item.volumeId === product.volumeId) {
-                item.count = e.target.value
-            }
-        })
-
-        localStorage.setItem("cart", JSON.stringify(cart))
-
-        dispatch(addItemToCart(...cart))
-    }
-
-    useEffect(() => {
-        dispatch(loadCartList())
-    }, [])
-
+const OrderItem = ({ product, onDelete, onQuantityChange }) => {
     return (
         <Row className="cart-item">
             <Col md={1}>
@@ -71,7 +46,7 @@ const OrderItem = ({ product }) => {
                         defaultValue={product.count}
                         min="1"
                         max="100"
-                        onChange={(e) => handleQuantityChange(e, product)}
+                        onChange={(e) => onQuantityChange(e, product)}
                     />
                 </span>
             </Col>
@@ -81,10 +56,7 @@ const OrderItem = ({ product }) => {
                 className="d-flex justify-content-between align-items-center"
             >
                 <span className="order-item__price">{product.totalPrice} грн.</span>
-                <DeleteButton
-                    size="lg"
-                    onClick={() => handleDelete(product.volumeId)}
-                />
+                <DeleteButton size="lg" onClick={() => onDelete(product.volumeId)} />
             </Col>
         </Row>
     )
@@ -92,6 +64,7 @@ const OrderItem = ({ product }) => {
 
 OrderItem.propTypes = {
     product: PropTypes.object,
-    price: PropTypes.number
+    onDelete: PropTypes.func,
+    onQuantityChange: PropTypes.func
 }
 export default OrderItem

@@ -1,21 +1,16 @@
 import React from "react"
-import { Button, Col, Container, Image, Row } from "react-bootstrap"
-import { useDispatch, useSelector } from "react-redux"
-import { Link } from "react-router-dom"
-import { SHOP_ROUTE } from "../../../consts"
-import { getItemsInCart, removeItemFromCart } from "../../../store/cart"
+import { Button, Col, Container, Row } from "react-bootstrap"
+import { useSelector } from "react-redux"
+import { getCartItems } from "../../../store/cart"
 import { calcTotalPrice } from "../../../utils/calcTotalPrice"
-import { capitalizeFirstLetter } from "../../../utils/capitalizeFirstLetter"
+import { calculateItemsQuantity } from "../../../utils/calculateItemsQuantity"
 import { enumerate } from "../../../utils/enumerate"
 import BackHistoryButton from "../../common/backButton"
-import DeleteButton from "../../common/deleteButton"
+import OrderItem from "../../ui/orderItem"
 
 const OrderingPage = () => {
-    const items = useSelector(getItemsInCart())
-    const dispatch = useDispatch()
-    const handleDelete = (volumeId) => {
-        dispatch(removeItemFromCart(volumeId))
-    }
+    const items = useSelector(getCartItems())
+    const itemsQuantity = calculateItemsQuantity(items)
 
     if (items.length < 1) {
         return <h1 className="text-center mt-5">Ваша корзина пуста</h1>
@@ -25,63 +20,19 @@ const OrderingPage = () => {
         <Container className="order-page">
             <BackHistoryButton mb="mb-4" />
             {items.map((product) => (
-                <Row key={product.volumeId} className="cart-item">
-                    <Col md={1}>
-                        <Link
-                            to={
-                                SHOP_ROUTE +
-                                `/${product.companyName}/${product.category}/${product._id}`
-                            }
-                        >
-                            <Image
-                                className="order-item_image"
-                                src={product.photo}
-                            />
-                        </Link>
-                    </Col>
-                    <Col md={7}>
-                        <Link
-                            className="d-flex flex-column link-title"
-                            to={
-                                SHOP_ROUTE +
-                                `/${product.companyName}/${product.category}/${product._id}`
-                            }
-                        >
-                            <span className="order-item__title ">
-                                {`${capitalizeFirstLetter(product.companyName)} ${
-                                    product.name
-                                } - ${product.rusName} `}
-                            </span>
-                        </Link>
-                        <span className="order-item__options ">
-                            Объем: {product.volume} мл.
-                        </span>
-                        <br />
-                        <span className="order-item__options text-end">
-                            Количество:
-                        </span>
-                    </Col>
-                    <Col
-                        md={{ span: 2, offset: 1 }}
-                        className="d-flex justify-content-between align-items-center"
-                    >
-                        <span className="order-item__price ">
-                            {product.price} грн.
-                        </span>
-                        <DeleteButton
-                            size="lg"
-                            onClick={() => handleDelete(product.volumeId)}
-                        />
-                    </Col>
-                </Row>
+                <OrderItem
+                    key={product.volumeId}
+                    product={product}
+                    price={product.price}
+                />
             ))}
-            <Row className="order-page__total-price ">
+            <Row className="order-page__total-price">
                 <hr />
                 <Col md={8}>
                     <h1>Итого:</h1>
                     <h4>
-                        {items.length}{" "}
-                        {enumerate(items.length, ["товар", "товара", "товаров"])} на
+                        {calculateItemsQuantity(items)}{" "}
+                        {enumerate(itemsQuantity, ["товар", "товара", "товаров"])} на
                         сумму {calcTotalPrice(items)} грн.
                     </h4>
                 </Col>

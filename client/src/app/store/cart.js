@@ -52,7 +52,7 @@ export const loadCartList = () => async (dispatch) => {
     dispatch(itemsRequested())
 
     try {
-        const cart = await localStorageService.getItemsInCart()
+        const cart = await localStorageService.getCartItems()
         dispatch(itemsRecieved(cart))
     } catch (error) {
         dispatch(itemsRequestFailed(error.message))
@@ -62,12 +62,12 @@ export const loadCartList = () => async (dispatch) => {
 export const addItemToCart = (payload) => async (dispatch) => {
     dispatch(addItemRequested())
     try {
-        const cart = await localStorageService.getItemsInCart()
+        const cart = await localStorageService.getCartItems()
 
         const duplicates = cart.filter((item) => item.volumeId === payload.volumeId)
 
         if (duplicates.length === 0) {
-            const itemToAdd = { ...payload, count: 1 }
+            const itemToAdd = { ...payload, count: 1, totalPrice: payload.price }
             cart.push(itemToAdd)
             localStorage.setItem("cart", JSON.stringify(cart))
             dispatch(itemAdded(...cart))
@@ -81,7 +81,7 @@ export const removeItemFromCart = (itemId) => async (dispatch) => {
     dispatch(removeItemRequested())
 
     try {
-        const cart = await localStorageService.getItemsInCart()
+        const cart = await localStorageService.getCartItems()
         const updatedCart = await cart.filter((item) => item.volumeId !== itemId)
         localStorage.setItem("cart", JSON.stringify(updatedCart))
         dispatch(itemRemoved(itemId))
@@ -90,7 +90,7 @@ export const removeItemFromCart = (itemId) => async (dispatch) => {
     }
 }
 
-export const getItemsInCart = () => (state) => {
+export const getCartItems = () => (state) => {
     if (state.cart.entities) {
         return state.cart.entities
     }

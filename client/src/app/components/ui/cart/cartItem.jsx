@@ -29,6 +29,7 @@ const CartItem = ({ product, volumeId }) => {
                     } `}
                 </span>
                 <span>{`Объем: ${product.volume} мл.`} </span>
+                <span>{`Количество: ${product.count}`} </span>
             </Link>
 
             <div className="cart-item__price">

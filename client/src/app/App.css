@@ -84,16 +84,22 @@ html {
 
 .cart-item {
     width: 100%;
-    margin-bottom: 1.2rem;
+    margin-bottom: 0.7rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.cart-menu__products-list .cart-item {
     color: #fff;
 }
 
 .cart-item__price {
     display: flex;
     align-items: center;
+}
+
+.cart-menu__products-list .cart-item {
     color: #fff;
 }
 
@@ -147,7 +153,7 @@ html {
 
 .order-item__title {
     font-size: 1.3rem;
-    font-weight: bold;
+    font-weight: 500;
     margin-left: 2rem;
 }
 
@@ -160,10 +166,14 @@ html {
 .order-item__price {
     font-size: 1.2rem;
     font-weight: bold;
-    margin-right: 2rem;
+    margin-right: 5rem;
     color: black;
     white-space: nowrap;
     width: 3rem;
+}
+
+input[type="number"] {
+    width: 2.5rem;
 }
 
 /* Buttons */

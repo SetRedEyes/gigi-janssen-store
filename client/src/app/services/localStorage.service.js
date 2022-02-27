@@ -33,7 +33,7 @@ export function removeAuthData() {
     localStorage.removeItem(EXPIRES_KEY)
 }
 
-export function getItemsInCart() {
+export function getCartItems() {
     return localStorage.getItem("cart")
         ? JSON.parse(localStorage.getItem("cart"))
         : []
@@ -46,7 +46,7 @@ const localStorageService = {
     getTokenExpiresDate,
     getUserId,
     removeAuthData,
-    getItemsInCart
+    getCartItems
 }
 
 export default localStorageService

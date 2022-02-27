@@ -1,11 +1,7 @@
 import React, { useState } from "react"
 import PropTypes from "prop-types"
 import { useDispatch, useSelector } from "react-redux"
-import {
-    addItemToCart,
-    getItemsInCart,
-    removeItemFromCart
-} from "../../../store/cart"
+import { addItemToCart, getCartItems, removeItemFromCart } from "../../../store/cart"
 import Price from "./priceButton"
 import Volume from "./volumeButton.jsx"
 
@@ -13,7 +9,7 @@ const VolumePriceMenu = ({ product }) => {
     const dispatch = useDispatch()
     const [selectedPrice, setSelectedPrice] = useState(null)
     const [activeBtn, setActiveBtn] = useState(0)
-    const items = useSelector(getItemsInCart())
+    const items = useSelector(getCartItems())
 
     const isItemInCart = items.some(
         (item) =>

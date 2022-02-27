@@ -1,8 +1,13 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { Button, Col, Container, Row } from "react-bootstrap"
 import { useSelector, useDispatch } from "react-redux"
 import localStorageService from "../../../services/localStorage.service"
-import { addItemToCart, getCartItems, removeItemFromCart } from "../../../store/cart"
+import {
+    addItemToCart,
+    getCartItems,
+    loadCartList,
+    removeItemFromCart
+} from "../../../store/cart"
 import { calcTotalPrice } from "../../../utils/calcTotalPrice"
 import { calculateItemsQuantity } from "../../../utils/calculateItemsQuantity"
 import { enumerate } from "../../../utils/enumerate"
@@ -11,6 +16,7 @@ import OrderItem from "../../ui/orderItem"
 
 const OrderingPage = () => {
     const dispatch = useDispatch()
+    const [state, setState] = useState("")
 
     const items = useSelector(getCartItems())
     const itemsQuantity = calculateItemsQuantity(items)
@@ -18,6 +24,9 @@ const OrderingPage = () => {
     const handleDelete = (volumeId) => {
         dispatch(removeItemFromCart(volumeId))
     }
+    useEffect(() => {
+        dispatch(loadCartList())
+    }, [state])
 
     const handleQuantityChange = (e, product) => {
         const cart = localStorageService.getCartItems()
@@ -31,6 +40,7 @@ const OrderingPage = () => {
         localStorage.setItem("cart", JSON.stringify(cart))
 
         dispatch(addItemToCart(...cart))
+        setState({ ...state })
     }
 
     if (items.length < 1) {

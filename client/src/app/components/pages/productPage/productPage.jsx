@@ -5,7 +5,7 @@ import { getCategoriesByCompany } from "../../../store/categories"
 import { getProductById } from "../../../store/products"
 import PropTypes from "prop-types"
 
-import VolumePriceMenu from "../../ui/priceVolumeMenu/volumePriceMenu"
+import VolumePriceMenu from "../../common/VolumePriceMenu"
 import GroupList from "../../../components/common/groupList"
 
 const ProductPage = ({ productId, companyName }) => {

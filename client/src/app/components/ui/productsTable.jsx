@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 
 import EditButton from "../common/editButton"
 import DeleteButton from "../common/deleteButton"
-import DataList from "./dataList"
+import DataList from "../common/dataList"
 import Table from "../common/table"
 import history from "../../utils/history"
 import { ADMIN_ROUTE, SHOP_ROUTE } from "../../consts"

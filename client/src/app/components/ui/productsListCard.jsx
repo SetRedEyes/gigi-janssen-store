@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "react-router-dom"
 import { Card, Col, Image } from "react-bootstrap"
 import PropTypes from "prop-types"
-import VolumePriceMenu from "./priceVolumeMenu/volumePriceMenu"
+import VolumePriceMenu from "../common/VolumePriceMenu"
 import { SHOP_ROUTE } from "../../consts"
 
 const ProductsListCard = ({ products, colSize }) => {

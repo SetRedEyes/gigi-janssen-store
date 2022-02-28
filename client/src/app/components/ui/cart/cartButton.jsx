@@ -1,12 +1,13 @@
-import { useHistory } from "react-router-dom"
 import React, { useEffect, useState } from "react"
-import { Button } from "react-bootstrap"
-import { useDispatch, useSelector } from "react-redux"
 import { useClickOutside } from "../../../hooks/useClickOutside"
+import { useHistory } from "react-router-dom"
+import { useDispatch, useSelector } from "react-redux"
 import { getCartItems, loadCartList } from "../../../store/cart"
 import { calcTotalPrice } from "../../../utils/calcTotalPrice"
-import CartMenu from "./cartMenu"
 import { ORDER_ROUTE, SHOP_ROUTE } from "../../../consts"
+
+import { Button } from "react-bootstrap"
+import CartMenu from "./cartMenu"
 
 const CartButton = () => {
     const dispatch = useDispatch()

@@ -1,10 +1,11 @@
 import React from "react"
+import PropTypes from "prop-types"
 import { useSelector } from "react-redux"
 import { getCartItems } from "../../../store/cart"
-import CartItem from "./cartItem"
-import PropTypes from "prop-types"
-import { Button } from "react-bootstrap"
 import { calcTotalPrice } from "../../../utils/calcTotalPrice"
+
+import { Button } from "react-bootstrap"
+import CartItem from "./cartItem"
 
 const CartMenu = ({ onClick }) => {
     const items = useSelector(getCartItems())

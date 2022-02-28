@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react"
-import { Col, Container, Row, Spinner, Image } from "react-bootstrap"
+import PropTypes from "prop-types"
 import { useSelector } from "react-redux"
 import { getCategoriesByCompany } from "../../../store/categories"
 import { getProductById } from "../../../store/products"
-import PropTypes from "prop-types"
 
+import { Col, Container, Row, Spinner, Image } from "react-bootstrap"
 import VolumePriceMenu from "../../common/VolumePriceMenu"
 import GroupList from "../../../components/common/groupList"
 

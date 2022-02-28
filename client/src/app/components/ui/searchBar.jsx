@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react"
 import { useHistory } from "react-router-dom"
-import { Button, Form, FormControl, InputGroup } from "react-bootstrap"
 import { SEARCH_ROUTE, SHOP_ROUTE } from "../../consts"
+import { Button, Form, FormControl, InputGroup } from "react-bootstrap"
 
 const SearchBar = () => {
     const history = useHistory()

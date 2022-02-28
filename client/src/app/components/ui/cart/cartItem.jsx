@@ -1,12 +1,12 @@
 import React from "react"
-import { Link } from "react-router-dom"
-
-import { useDispatch } from "react-redux"
-import DeleteButton from "../../common/deleteButton"
 import PropTypes from "prop-types"
-import { SHOP_ROUTE } from "../../../consts"
+import { useDispatch } from "react-redux"
 import { removeItemFromCart } from "../../../store/cart"
 import { capitalizeFirstLetter } from "../../../utils/capitalizeFirstLetter"
+import { SHOP_ROUTE } from "../../../consts"
+
+import { Link } from "react-router-dom"
+import DeleteButton from "../../common/deleteButton"
 
 const CartItem = ({ product, volumeId }) => {
     const dispatch = useDispatch()

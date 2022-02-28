@@ -1,6 +1,6 @@
 import React, { useState } from "react"
-import { Button, Form, InputGroup } from "react-bootstrap"
 import PropTypes from "prop-types"
+import { Button, Form, InputGroup } from "react-bootstrap"
 
 const TextField = ({
     label,

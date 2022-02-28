@@ -1,6 +1,6 @@
 import React from "react"
-import { Button } from "react-bootstrap"
 import PropTypes from "prop-types"
+import { Button } from "react-bootstrap"
 
 const volumeButton = ({ product, activeBtn, renderPrice }) => {
     return (

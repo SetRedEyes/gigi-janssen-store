@@ -1,6 +1,6 @@
 import React from "react"
-import { Form } from "react-bootstrap"
 import PropTypes from "prop-types"
+import { Form } from "react-bootstrap"
 
 const SortSelect = ({ onSort }) => {
     const handleChange = ({ target }) => {

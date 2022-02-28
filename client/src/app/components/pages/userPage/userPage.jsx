@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react"
-import TextField from "../../common/form/textField"
-import { validator } from "../../../utils/validator"
-import LoadingSpinner from "../../common/loadingSpinner"
-import { Link } from "react-router-dom"
-import { Button, Col, Container, Form, Row } from "react-bootstrap"
 import { useDispatch, useSelector } from "react-redux"
 import { getCurrentUserData, updateUser } from "../../../store/user"
+import { validator } from "../../../utils/validator"
 import { LOGOUT_ROUTE, SHOP_ROUTE } from "../../../consts"
+
+import { Link } from "react-router-dom"
+import { Button, Col, Container, Form, Row } from "react-bootstrap"
+import LoadingSpinner from "../../common/loadingSpinner"
 import BackHistoryButton from "../../common/backButton"
+import TextField from "../../common/form/textField"
 
 const UserPage = () => {
     const dispatch = useDispatch()

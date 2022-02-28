@@ -1,19 +1,20 @@
 import React, { useEffect, useState } from "react"
-import TextField from "../../common/form/textField"
 import PropTypes from "prop-types"
-import LoadingSpinner from "../../common/loadingSpinner"
-import { Button, Col, Container, Form, Row } from "react-bootstrap"
-import SelectField from "../../common/form/selectField"
-import { validator } from "../../../utils/validator"
 import { useDispatch, useSelector } from "react-redux"
+import { useParams } from "react-router-dom"
+import { getCompanies, getCompaniesLoadingStatus } from "../../../store/companies"
+import { getProductById, updateProductData } from "../../../store/products"
 import {
     getCategoriesByCompany,
     getCategoriesLoadingStatus
 } from "../../../store/categories"
-import { getCompanies, getCompaniesLoadingStatus } from "../../../store/companies"
-import { getProductById, updateProductData } from "../../../store/products"
+import { validator } from "../../../utils/validator"
+
+import { Button, Col, Container, Form, Row } from "react-bootstrap"
+import LoadingSpinner from "../../common/loadingSpinner"
+import SelectField from "../../common/form/selectField"
+import TextField from "../../common/form/textField"
 import BackHistoryButton from "../../common/backButton"
-import { useParams } from "react-router-dom"
 
 const EditProductPage = () => {
     const { productId } = useParams()

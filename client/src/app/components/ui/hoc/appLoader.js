@@ -1,10 +1,10 @@
 import React, { useEffect } from "react"
+import PropTypes from "prop-types"
 import { useDispatch, useSelector } from "react-redux"
 import { loadCompaniesList } from "../../../store/companies"
 import { loadCategoriesList } from "../../../store/categories"
 import { getProductsLoadingStatus, loadProductsList } from "../../../store/products"
 import { getIsLoggedIn, loadCurrentUser } from "../../../store/user"
-import PropTypes from "prop-types"
 import LoadingSpinner from "../../common/loadingSpinner"
 
 const AppLoader = ({ children }) => {

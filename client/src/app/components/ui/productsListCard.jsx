@@ -1,9 +1,10 @@
 import React from "react"
+import PropTypes from "prop-types"
+import { SHOP_ROUTE } from "../../consts"
+
 import { Link } from "react-router-dom"
 import { Card, Col, Image } from "react-bootstrap"
-import PropTypes from "prop-types"
 import VolumePriceMenu from "../common/VolumePriceMenu"
-import { SHOP_ROUTE } from "../../consts"
 
 const ProductsListCard = ({ products, colSize }) => {
     return (

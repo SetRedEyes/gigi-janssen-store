@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react"
-import { Button, Form } from "react-bootstrap"
 import { useDispatch, useSelector } from "react-redux"
 import { login, getAuthErrors } from "../../store/user"
 import { validator } from "../../utils/validator"
 import history from "../../utils/history"
-
-import TextField from "../common/form/textField"
 import { SHOP_ROUTE } from "../../consts"
+
+import { Button, Form } from "react-bootstrap"
+import TextField from "../common/form/textField"
 
 const LoginForm = () => {
     const dispatch = useDispatch()

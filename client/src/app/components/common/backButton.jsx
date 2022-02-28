@@ -1,7 +1,7 @@
 import React from "react"
-import { Button } from "react-bootstrap"
-import { useHistory } from "react-router"
 import PropTypes from "prop-types"
+import { useHistory } from "react-router"
+import { Button } from "react-bootstrap"
 
 const BackHistoryButton = ({ mb }) => {
     const history = useHistory()

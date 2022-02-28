@@ -1,11 +1,12 @@
 import { React } from "react"
-import { Link, NavLink, useLocation } from "react-router-dom"
-import { Button, Nav, Navbar } from "react-bootstrap"
 import { useSelector } from "react-redux"
 import { getCurrentUserData, getIsLoggedIn } from "../../store/user"
-import SearchBar from "./searchBar"
 import { ADMIN_ROUTE, LOGIN_ROUTE, PROFILE_ROUTE, SHOP_ROUTE } from "../../consts"
+
+import { Link, NavLink, useLocation } from "react-router-dom"
+import { Button, Nav, Navbar } from "react-bootstrap"
 import CartButton from "./cart/cartButton"
+import SearchBar from "./searchBar"
 
 const NavBar = () => {
     const { pathname } = useLocation()

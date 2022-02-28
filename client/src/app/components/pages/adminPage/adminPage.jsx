@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from "react"
-import { Col, Container, FormControl, InputGroup, Row } from "react-bootstrap"
-import { getProducts, removeProduct } from "../../../store/products"
-import ProductsTable from "../../ui/productsTable"
 import { useDispatch, useSelector } from "react-redux"
-import LoadingSpinner from "../../common/loadingSpinner"
-import PagesPagination from "../../common/pagination"
+import { getProducts, removeProduct } from "../../../store/products"
 import { paginate } from "../../../utils/paginate"
-import _ from "lodash"
-import AddProductForm from "../../ui/addProductForm"
 import history from "../../../utils/history"
+import _ from "lodash"
 import { ADMIN_ROUTE, SHOP_ROUTE } from "../../../consts"
+
+import { Col, Container, FormControl, InputGroup, Row } from "react-bootstrap"
+import AddProductForm from "../../ui/addProductForm"
+import PagesPagination from "../../common/pagination"
+import LoadingSpinner from "../../common/loadingSpinner"
+import ProductsTable from "../../ui/productsTable"
 
 const adminPage = () => {
     const dispatch = useDispatch()

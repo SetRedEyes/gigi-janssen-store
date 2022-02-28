@@ -1,7 +1,7 @@
 import React, { useEffect } from "react"
+import PropTypes from "prop-types"
 import { useDispatch, useSelector } from "react-redux"
 import { getDataStatus, loadProductsList } from "../../../store/products"
-import PropTypes from "prop-types"
 import LoadingSpinner from "../../common/loadingSpinner"
 
 const ProductsLoader = ({ children }) => {

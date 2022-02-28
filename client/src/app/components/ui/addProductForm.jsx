@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react"
-import { Button, Form } from "react-bootstrap"
-import SelectField from "../common/form/selectField"
-import TextField from "../common/form/textField"
-import { validator } from "../../utils/validator"
 import { useDispatch, useSelector } from "react-redux"
 import { getCompanies } from "../../store/companies"
 import { getCategoriesByCompany } from "../../store/categories"
-import LoadingSpinner from "../common/loadingSpinner"
 import { createProduct } from "../../store/products"
+import { validator } from "../../utils/validator"
+
+import { Button, Form } from "react-bootstrap"
+import LoadingSpinner from "../common/loadingSpinner"
+import SelectField from "../common/form/selectField"
+import TextField from "../common/form/textField"
 
 const initialData = {
     vendorCode: "",

@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react"
-import { Button, Form } from "react-bootstrap"
 import { useDispatch } from "react-redux"
 import { signUp } from "../../store/user"
 import { validator } from "../../utils/validator"
+
+import { Button, Form } from "react-bootstrap"
 import TextField from "../common/form/textField"
 
 const RegisterForm = () => {

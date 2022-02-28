@@ -1,14 +1,14 @@
 import React from "react"
-import { Col, Container, Row } from "react-bootstrap"
-import CategoryCard from "../../ui/categoryCard"
-
+import PropTypes from "prop-types"
+import { useSelector } from "react-redux"
 import {
     getCategoriesByCompany,
     getCategoriesLoadingStatus
 } from "../../../store/categories"
-import { useSelector } from "react-redux"
+
+import { Col, Container, Row } from "react-bootstrap"
 import LoadingSpinner from "../../common/loadingSpinner"
-import PropTypes from "prop-types"
+import CategoryCard from "../../ui/categoryCard"
 
 const CategoryPage = ({ companyName }) => {
     const categories = useSelector(getCategoriesByCompany(companyName))

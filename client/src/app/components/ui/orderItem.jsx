@@ -1,9 +1,10 @@
 import React from "react"
-import { Col, Image, Row } from "react-bootstrap"
-import { Link } from "react-router-dom"
-import { SHOP_ROUTE } from "../../consts"
-import { capitalizeFirstLetter } from "../../utils/capitalizeFirstLetter"
 import PropTypes from "prop-types"
+import { capitalizeFirstLetter } from "../../utils/capitalizeFirstLetter"
+import { SHOP_ROUTE } from "../../consts"
+
+import { Link } from "react-router-dom"
+import { Col, Image, Row } from "react-bootstrap"
 import DeleteButton from "../common/deleteButton"
 
 const OrderItem = ({ product, onDelete, onQuantityChange }) => {

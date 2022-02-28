@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react"
-import { Button, Col, Container, Row } from "react-bootstrap"
-import { useSelector, useDispatch } from "react-redux"
 import localStorageService from "../../../services/localStorage.service"
+import { useSelector, useDispatch } from "react-redux"
 import {
     addItemToCart,
     getCartItems,
@@ -11,6 +10,8 @@ import {
 import { calcTotalPrice } from "../../../utils/calcTotalPrice"
 import { calculateItemsQuantity } from "../../../utils/calculateItemsQuantity"
 import { enumerate } from "../../../utils/enumerate"
+
+import { Button, Col, Container, Row } from "react-bootstrap"
 import BackHistoryButton from "../../common/backButton"
 import OrderItem from "../../ui/orderItem"
 

@@ -1,12 +1,12 @@
 import React from "react"
 import PropTypes from "prop-types"
+import history from "../../utils/history"
+import { ADMIN_ROUTE, SHOP_ROUTE } from "../../consts"
 
 import EditButton from "../common/editButton"
 import DeleteButton from "../common/deleteButton"
 import DataList from "../common/dataList"
 import Table from "../common/table"
-import history from "../../utils/history"
-import { ADMIN_ROUTE, SHOP_ROUTE } from "../../consts"
 
 const ProductsTable = ({ products, onSort, selectedSort, onRemove }) => {
     const columns = {

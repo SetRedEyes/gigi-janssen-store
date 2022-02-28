@@ -1,8 +1,9 @@
 import React from "react"
-import { Table as BootstrapTable } from "react-bootstrap"
-import TableHeader from "./tableHeader"
-import TableBody from "./tableBody"
 import PropTypes from "prop-types"
+
+import TableBody from "./tableBody"
+import TableHeader from "./tableHeader"
+import { Table as BootstrapTable } from "react-bootstrap"
 
 const Table = ({ onSort, selectedSort, columns, data, children }) => {
     return (

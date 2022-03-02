@@ -13,8 +13,7 @@ const OrderItem = ({ product, onDelete, onQuantityChange }) => {
             <Col md={1}>
                 <Link
                     to={
-                        SHOP_ROUTE +
-                        `/${product.companyName}/${product.category}/${product._id}`
+                        SHOP_ROUTE + `/${product.companyName}/${product.category}/${product._id}`
                     }
                 >
                     <Image className="order-item_image" src={product.photo} />
@@ -25,14 +24,11 @@ const OrderItem = ({ product, onDelete, onQuantityChange }) => {
                 <Link
                     className="d-flex flex-column link-title"
                     to={
-                        SHOP_ROUTE +
-                        `/${product.companyName}/${product.category}/${product._id}`
+                        SHOP_ROUTE + `/${product.companyName}/${product.category}/${product._id}`
                     }
                 >
                     <span className="order-item__title ">
-                        {`${capitalizeFirstLetter(product.companyName)} ${
-                            product.name
-                        } - ${product.rusName} `}
+                        {`${capitalizeFirstLetter(product.companyName)} ${product.name} - ${product.rusName} `}
                     </span>
                 </Link>
 
@@ -68,4 +64,5 @@ OrderItem.propTypes = {
     onDelete: PropTypes.func,
     onQuantityChange: PropTypes.func
 }
+
 export default OrderItem

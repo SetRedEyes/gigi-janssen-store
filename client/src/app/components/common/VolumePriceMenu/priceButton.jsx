@@ -2,13 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { Card } from "react-bootstrap"
 
-const priceButton = ({
-    selectedPrice,
-    prices,
-    handleClick,
-    isItemInCart,
-    selectedVolume
-}) => {
+const priceButton = ({ selectedPrice, prices, handleClick, isItemInCart, selectedVolume }) => {
     return (
         <div className="d-flex align-items-end justify-content-between mt-4">
             <Card.Title>
@@ -19,9 +13,7 @@ const priceButton = ({
             <div
                 role="button"
                 onClick={handleClick}
-                className={
-                    isItemInCart && selectedVolume ? "grey-btn" : "action-btn"
-                }
+                className={isItemInCart && selectedVolume ? "grey-btn" : "action-btn"}
             >
                 {isItemInCart && selectedVolume ? "Убрать из корзины" : "В Корзину"}
             </div>

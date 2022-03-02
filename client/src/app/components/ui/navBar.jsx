@@ -64,7 +64,7 @@ const NavBar = () => {
                     <Nav>
                         <NavLink to={SHOP_ROUTE + LOGIN_ROUTE}>
                             <Button
-                                variant={"outline-light"}
+                                variant="outline-light"
                                 className="navlink-btn "
                             >
                                 Вход/Регистрация

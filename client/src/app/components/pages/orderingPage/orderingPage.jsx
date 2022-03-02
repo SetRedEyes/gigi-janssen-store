@@ -1,12 +1,7 @@
 import React, { useEffect, useState } from "react"
 import localStorageService from "../../../services/localStorage.service"
 import { useSelector, useDispatch } from "react-redux"
-import {
-    addItemToCart,
-    getCartItems,
-    loadCartList,
-    removeItemFromCart
-} from "../../../store/cart"
+import { addItemToCart, getCartItems, loadCartList, removeItemFromCart } from "../../../store/cart"
 import { calcTotalPrice } from "../../../utils/calcTotalPrice"
 import { calculateItemsQuantity } from "../../../utils/calculateItemsQuantity"
 import { enumerate } from "../../../utils/enumerate"
@@ -22,12 +17,13 @@ const OrderingPage = () => {
     const items = useSelector(getCartItems())
     const itemsQuantity = calculateItemsQuantity(items)
 
-    const handleDelete = (volumeId) => {
-        dispatch(removeItemFromCart(volumeId))
-    }
     useEffect(() => {
         dispatch(loadCartList())
     }, [state])
+
+    const handleDelete = (volumeId) => {
+        dispatch(removeItemFromCart(volumeId))
+    }
 
     const handleQuantityChange = (e, product) => {
         const cart = localStorageService.getCartItems()
@@ -39,7 +35,6 @@ const OrderingPage = () => {
         })
 
         localStorage.setItem("cart", JSON.stringify(cart))
-
         dispatch(addItemToCart(...cart))
         setState({ ...state })
     }
@@ -71,7 +66,7 @@ const OrderingPage = () => {
                     </h4>
                 </Col>
                 <Col md={2}>
-                    <Button className="btn btn-primary submit-btn w-100 m-auto">
+                    <Button className="submit-btn w-100">
                         Купить
                     </Button>
                 </Col>

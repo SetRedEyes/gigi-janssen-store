@@ -43,6 +43,7 @@ const GroupList = ({
             </ListGroup>
         )
     }
+
     return (
         <ListGroup>
             {items.map((item) => (
@@ -72,6 +73,7 @@ GroupList.defaultProps = {
     contentProperty: "fullName",
     pathProperty: "companyName"
 }
+
 GroupList.propTypes = {
     items: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     valueProperty: PropTypes.string.isRequired,

@@ -8,14 +8,15 @@ import Volume from "./volumeButton.jsx"
 
 const VolumePriceMenu = ({ product }) => {
     const dispatch = useDispatch()
+    const items = useSelector(getCartItems())
     const [selectedPrice, setSelectedPrice] = useState(null)
     const [activeBtn, setActiveBtn] = useState(0)
-    const items = useSelector(getCartItems())
 
     const isItemInCart = items.some(
         (item) =>
             item._id === product._id && product.volume[activeBtn] === item.volume
     )
+
     const selectedVolume = product.volume[activeBtn]
 
     const renderPrice = (volumeIndex, product) => {

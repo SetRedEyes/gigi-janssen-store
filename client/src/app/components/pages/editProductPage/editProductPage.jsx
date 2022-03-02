@@ -4,10 +4,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { useParams } from "react-router-dom"
 import { getCompanies, getCompaniesLoadingStatus } from "../../../store/companies"
 import { getProductById, updateProductData } from "../../../store/products"
-import {
-    getCategoriesByCompany,
-    getCategoriesLoadingStatus
-} from "../../../store/categories"
+import { getCategoriesByCompany, getCategoriesLoadingStatus } from "../../../store/categories"
 import { validator } from "../../../utils/validator"
 
 import { Button, Col, Container, Form, Row } from "react-bootstrap"
@@ -18,12 +15,11 @@ import BackHistoryButton from "../../common/backButton"
 
 const EditProductPage = () => {
     const { productId } = useParams()
+    const [data, setData] = useState({})
     const dispatch = useDispatch()
     const product = useSelector(getProductById(productId))
-    const [data, setData] = useState({})
 
     const companies = useSelector(getCompanies())
-
     const companiesLoading = useSelector(getCompaniesLoadingStatus())
     const companiesList = companies.map((c) => ({
         label: c.fullName,
@@ -41,6 +37,12 @@ const EditProductPage = () => {
     const [errors, setErrors] = useState({})
 
     useEffect(() => {
+        if (data && isLoading) {
+            setIsLoading(false)
+        }
+    }, [data])
+
+    useEffect(() => {
         if (!companiesLoading && !categoriesLoading && product) {
             setData({
                 ...product,
@@ -50,32 +52,13 @@ const EditProductPage = () => {
         }
     }, [companiesLoading, categoriesLoading, productId])
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
-
-        const isValid = validate()
-        if (!isValid) return
-        dispatch(
-            updateProductData({
-                ...data,
-                price: data.price.split(",").map((el) => +el),
-                volume: data.volume.split(",").map((el) => +el)
-            })
-        )
-    }
-
-    useEffect(() => {
-        if (data && isLoading) {
-            setIsLoading(false)
-        }
-    }, [data])
-
     const handleChange = (target) => {
         setData((prevState) => ({
             ...prevState,
             [target.name]: target.value
         }))
     }
+
     const validatorConfig = {
         vendorCode: {
             isRequired: {
@@ -119,17 +102,30 @@ const EditProductPage = () => {
         }
     }
 
-    useEffect(() => {
-        validate()
-    }, [data])
-
     const validate = () => {
         const errors = validator(data, validatorConfig)
         setErrors(errors)
         return Object.keys(errors).length === 0
     }
 
+    useEffect(() => {
+        validate()
+    }, [data])
+
     const isValid = Object.keys(errors).length !== 0
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        const isValid = validate()
+        if (!isValid) return
+        dispatch(
+            updateProductData({
+                ...data,
+                price: data.price.split(",").map((el) => +el),
+                volume: data.volume.split(",").map((el) => +el)
+            })
+        )
+    }
 
     return (
         <Container>
@@ -137,7 +133,6 @@ const EditProductPage = () => {
                 <Col md={{ span: 6, offset: 3 }} className="shadow p-4">
                     <div className="d-flex justify-content-between align-items-center">
                         <h5 className="align-self-bottom">Редактирование товара</h5>
-
                         <BackHistoryButton />
                     </div>
                     {!isLoading && Object.keys(companies).length > 0 ? (
@@ -183,8 +178,7 @@ const EditProductPage = () => {
                                 onChange={handleChange}
                                 error={errors.category}
                                 options={categoriesList}
-                                defaultOption={
-                                    categories.length < 1
+                                defaultOption={ categories.length < 1
                                         ? "Сначала выберите компанию"
                                         : ""
                                 }
@@ -236,4 +230,5 @@ const EditProductPage = () => {
 EditProductPage.propTypes = {
     productId: PropTypes.string
 }
+
 export default EditProductPage

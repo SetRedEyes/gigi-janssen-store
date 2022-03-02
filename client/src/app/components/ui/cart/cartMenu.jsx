@@ -13,7 +13,6 @@ const CartMenu = ({ onClick }) => {
     return (
         <>
             <div id="triangle"></div>
-
             <div className={!items.length ? "empty-cart-menu" : "cart-menu"}>
                 <div className="cart-menu__products-list">
                     {items.length > 0 ? (
@@ -25,12 +24,12 @@ const CartMenu = ({ onClick }) => {
                             />
                         ))
                     ) : (
-                        <span className="d-flex  justify-content-center">
+                        <span className="d-flex justify-content-center">
                             Корзина пуста
                         </span>
                     )}
                 </div>
-                {items.length > 0 ? (
+                {items.length > 0 && (
                     <div className="cart-menu__arrange">
                         <div className="cart-menu__total-price">
                             <span>Итого:</span>
@@ -40,7 +39,7 @@ const CartMenu = ({ onClick }) => {
                             Оформить заказ
                         </Button>
                     </div>
-                ) : null}
+                ) }
             </div>
         </>
     )

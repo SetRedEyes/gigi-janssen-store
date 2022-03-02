@@ -10,6 +10,7 @@ import DeleteButton from "../../common/deleteButton"
 
 const CartItem = ({ product, volumeId }) => {
     const dispatch = useDispatch()
+
     const handleDelete = () => {
         dispatch(removeItemFromCart(volumeId))
     }

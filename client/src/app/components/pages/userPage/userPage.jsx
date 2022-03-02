@@ -12,22 +12,10 @@ import TextField from "../../common/form/textField"
 
 const UserPage = () => {
     const dispatch = useDispatch()
-    const [isLoading, setIsLoading] = useState(true)
-    const [data, setData] = useState()
     const currentUser = useSelector(getCurrentUserData())
+    const [data, setData] = useState()
+    const [isLoading, setIsLoading] = useState(true)
     const [errors, setErrors] = useState({})
-
-    const handleSubmit = (e) => {
-        e.preventDefault()
-
-        const isValid = validate()
-        if (!isValid) return
-        dispatch(
-            updateUser({
-                ...data
-            })
-        )
-    }
 
     useEffect(() => {
         if (currentUser && !data) {
@@ -42,6 +30,13 @@ const UserPage = () => {
             setIsLoading(false)
         }
     }, [data])
+
+    const handleChange = (target) => {
+        setData((prevState) => ({
+            ...prevState,
+            [target.name]: target.value
+        }))
+    }
 
     const validatorConfig = {
         email: {
@@ -85,24 +80,29 @@ const UserPage = () => {
         }
     }
 
-    useEffect(() => {
-        validate()
-    }, [data])
-
-    const handleChange = (target) => {
-        setData((prevState) => ({
-            ...prevState,
-            [target.name]: target.value
-        }))
-    }
-
     const validate = () => {
         const errors = validator(data, validatorConfig)
         setErrors(errors)
         return Object.keys(errors).length === 0
     }
 
+    useEffect(() => {
+        validate()
+    }, [data])
     const isValid = Object.keys(errors).length !== 0
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+
+        const isValid = validate()
+        if (!isValid) return
+        dispatch(
+            updateUser({
+                ...data
+            })
+        )
+    }
+
     return (
         <Container>
             <Row>
@@ -162,11 +162,10 @@ const UserPage = () => {
                                 onChange={handleChange}
                                 error={errors.postOfficeNumber}
                             />
-
                             <Button
                                 type="submit"
                                 disabled={isValid}
-                                className="btn btn-primary w-100 mx-auto submit-btn"
+                                className="w-100 submit-btn"
                             >
                                 Отправить данные
                             </Button>

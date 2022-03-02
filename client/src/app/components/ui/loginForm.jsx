@@ -76,7 +76,7 @@ const LoginForm = () => {
 
             <Button
                 type="submit"
-                className="mx-auto w-100 submit-btn"
+                className="w-100 submit-btn"
                 disabled={!isValid}
             >
                 Войти

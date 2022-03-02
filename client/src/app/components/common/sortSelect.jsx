@@ -4,10 +4,7 @@ import { Form } from "react-bootstrap"
 
 const SortSelect = ({ onSort }) => {
     const handleChange = ({ target }) => {
-        onSort({
-            name: target.name,
-            value: target.value
-        })
+        onSort({ name: target.name, value: target.value })
     }
 
     return (
@@ -15,7 +12,6 @@ const SortSelect = ({ onSort }) => {
             <span className="me-3">Сортировать по:</span>
             <Form.Select
                 aria-label="Default select example"
-                style={{ width: "15rem" }}
                 onChange={handleChange}
                 name="price[0]"
                 className="sort-select"

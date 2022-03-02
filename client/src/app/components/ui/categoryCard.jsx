@@ -16,14 +16,14 @@ const CategoryCard = ({ fullName, photo, companyName, categoryName, catObj }) =>
                 }
             }}
         >
-            <Card style={{ width: "13rem", border: "none" }} className="mb-3 ">
+            <Card style={{ width: "13rem", border: "none" }} className="mb-3">
                 <Card.Img
                     style={{ width: "13rem", height: "14rem" }}
                     variant="top"
                     src={photo}
                 />
                 <Card.Body style={{ padding: "0" }}>
-                    <Card.Text className="text-center p-1 pb-2 ">
+                    <Card.Text className="text-center p-1 pb-2">
                         {fullName}
                     </Card.Text>
                 </Card.Body>

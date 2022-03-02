@@ -60,12 +60,7 @@ const adminPage = () => {
             : products
 
         const count = filteredProducts.length
-
-        const sortedProducts = _.orderBy(
-            filteredProducts,
-            [sortBy.path],
-            [sortBy.order]
-        )
+        const sortedProducts = _.orderBy(filteredProducts, [sortBy.path], [sortBy.order])
         const productsCrop = paginate(sortedProducts, currentPage, pageSize)
 
         return (

@@ -13,7 +13,9 @@ const CompanyPage = () => {
     const companiesLoading = useSelector(getCompaniesLoadingStatus())
     const gigiCats = useSelector(getCategoriesByCompany("gigi"))
     const janssenCats = useSelector(getCategoriesByCompany("janssen"))
+
     const [selectedCat, setSelectedCat] = useState()
+
     const handleCategorySelect = (item) => {
         localStorage.setItem("selectedCat", JSON.stringify(item))
         setSelectedCat(item)

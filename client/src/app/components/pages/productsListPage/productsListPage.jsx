@@ -18,13 +18,12 @@ const ProductsListPage = ({ companyName }) => {
     const location = useLocation()
     const dispatch = useDispatch()
     const products = useSelector(getProducts())
-
     const categories = useSelector(getCategoriesByCompany(companyName))
 
     const [currentPage, setCurrentPage] = useState(1)
-
     const [selectedCat, setSelectedCat] = useState()
     const [sortBy, setSortBy] = useState({ iter: "rusName", order: "asc" })
+    const pageSize = 9
 
     useEffect(() => {
         setCurrentPage(1)
@@ -40,7 +39,6 @@ const ProductsListPage = ({ companyName }) => {
         }
     }, [])
 
-    const pageSize = 9
     const handlePageChange = (pageIndex) => {
         setCurrentPage(pageIndex)
     }
@@ -51,19 +49,11 @@ const ProductsListPage = ({ companyName }) => {
     }
 
     const handleSort = (target) => {
-        if (target.value === "") {
-            setSortBy((prevState) => ({
-                ...prevState,
-                iter: "rusName",
-                order: "asc"
-            }))
-        } else {
-            setSortBy((prevState) => ({
-                ...prevState,
-                iter: target.name,
-                order: target.value
-            }))
-        }
+        setSortBy((prevState) => ({
+            ...prevState,
+            iter: target.value === "" ? "rusName" : target.name,
+            order: target.value
+        }))
     }
 
     if (products) {
@@ -77,11 +67,7 @@ const ProductsListPage = ({ companyName }) => {
             : products
         const count = filteredProducts.length
 
-        const sortedProducts = _.orderBy(
-            filteredProducts,
-            [sortBy.iter],
-            [sortBy.order]
-        )
+        const sortedProducts = _.orderBy(filteredProducts, [sortBy.iter], [sortBy.order])
         const productCrop = paginate(sortedProducts, currentPage, pageSize)
 
         return (

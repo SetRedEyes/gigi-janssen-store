@@ -40,28 +40,6 @@ const AddProductForm = () => {
     const [isLoading, setIsLoading] = useState(true)
     const [errors, setErrors] = useState({})
 
-    const clearForm = () => {
-        setData(initialData)
-        setErrors({})
-    }
-
-    const handleSubmit = (e) => {
-        e.preventDefault()
-
-        const isValid = validate()
-        if (!isValid) return
-
-        dispatch(
-            createProduct({
-                ...data,
-                price: data.price.split(",").map((el) => +el),
-                volume: data.volume.split(",").map((el) => +el)
-            })
-        )
-
-        clearForm()
-    }
-
     useEffect(() => {
         if (data && isLoading) {
             setIsLoading(false)
@@ -74,6 +52,7 @@ const AddProductForm = () => {
             [target.name]: target.value
         }))
     }
+
     const validatorConfig = {
         vendorCode: {
             isRequired: {
@@ -117,17 +96,39 @@ const AddProductForm = () => {
         }
     }
 
-    useEffect(() => {
-        validate()
-    }, [data])
-
     const validate = () => {
         const errors = validator(data, validatorConfig)
         setErrors(errors)
         return Object.keys(errors).length === 0
     }
 
+    useEffect(() => {
+        validate()
+    }, [data])
+
     const isValid = Object.keys(errors).length !== 0
+
+    const clearForm = () => {
+        setData(initialData)
+        setErrors({})
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+
+        const isValid = validate()
+        if (!isValid) return
+
+        dispatch(
+            createProduct({
+                ...data,
+                price: data.price.split(",").map((el) => +el),
+                volume: data.volume.split(",").map((el) => +el)
+            })
+        )
+        clearForm()
+    }
+
     return (
         <div className="mt-3 add-panel">
             <h5 className="text-center">Добавление товара</h5>
@@ -169,9 +170,7 @@ const AddProductForm = () => {
                         value={data.category}
                         onChange={handleChange}
                         options={categoriesList}
-                        defaultOption={
-                            categories.length < 1 ? "Сначала выберите компанию" : ""
-                        }
+                        defaultOption={categories.length < 1 ? "Сначала выберите компанию" : ""}
                     />
                     <TextField
                         label="Цена"

@@ -5,10 +5,7 @@ const DataList = ({ data }) => {
     return (
         <>
             {data.map((item) => (
-                <span
-                    key={item}
-                    className="row justify-content-center "
-                >
+                <span key={item} className="row justify-content-center ">
                     {item}
                 </span>
             ))}

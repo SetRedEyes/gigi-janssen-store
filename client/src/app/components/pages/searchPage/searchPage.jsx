@@ -33,19 +33,11 @@ const SearchPage = () => {
     }
 
     const handleSort = (target) => {
-        if (target.value === "") {
-            setSortBy((prevState) => ({
-                ...prevState,
-                iter: "rusName",
-                order: "asc"
-            }))
-        } else {
-            setSortBy((prevState) => ({
-                ...prevState,
-                iter: target.name,
-                order: target.value
-            }))
-        }
+        setSortBy((prevState) => ({
+            ...prevState,
+            iter: target.value === "" ? "rusName" : target.name,
+            order: target.value
+        }))
     }
 
     const pageSize = 6

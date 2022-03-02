@@ -10,11 +10,11 @@ import { Button } from "react-bootstrap"
 import CartMenu from "./cartMenu"
 
 const CartButton = () => {
+    const history = useHistory()
     const dispatch = useDispatch()
     const items = useSelector(getCartItems())
     const totalPrice = calcTotalPrice(items)
     const [isOpen, setIsOpen] = useState(false)
-    const history = useHistory()
 
     useEffect(() => {
         dispatch(loadCartList())

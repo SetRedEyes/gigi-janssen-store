@@ -44,7 +44,9 @@ export const getCategories = () => (state) => {
         return state.categories.entities
     }
 }
+
 export const getCategoriesLoadingStatus = () => (state) => state.categories.isLoading
+
 export const getCategoriesByCompany = (name) => (state) => {
     if (state.categories.entities) {
         return state.categories.entities.filter((q) => q.companyName === name)

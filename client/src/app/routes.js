@@ -1,4 +1,3 @@
-import Basket from "./components/pages/Basket"
 import SearchPage from "./components/pages/searchPage"
 import UserPage from "./components/pages/userPage"
 import {
@@ -35,12 +34,9 @@ export const routes = [
         component: AdminPanel,
         isProtectedRoute: true
     },
-    { path: SHOP_ROUTE + "/basket", component: Basket },
-
     { path: SHOP_ROUTE + SEARCH_ROUTE, component: SearchPage },
     { path: SHOP_ROUTE + ORDER_ROUTE, component: Cart },
     { path: SHOP_ROUTE + LOGOUT_ROUTE, component: LogOut },
-
     {
         path: SHOP_ROUTE + "/:companyName?/:categoryName?/:productId?",
         component: Main

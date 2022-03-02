@@ -21,7 +21,6 @@ const TableHeader = ({ onSort, selectedSort, columns }) => {
                 return <i className="bi bi-caret-up-fill"></i>
             }
         }
-        return null
     }
 
     return (

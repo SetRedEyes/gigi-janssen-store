@@ -9,9 +9,7 @@ const volumeButton = ({ product, activeBtn, renderPrice }) => {
                 <Button
                     key={item}
                     variant="light"
-                    className={`text-nowrap volume-btn ${
-                        activeBtn === index ? "enableFocus " : "disableFocus"
-                    }`}
+                    className={`text-nowrap volume-btn ${activeBtn === index ? "enableFocus " : "disableFocus"}`}
                     onClick={() => renderPrice(index, product)}
                     onMouseEnter={() => renderPrice(index, product)}
                 >

@@ -5,9 +5,11 @@ import LoadingSpinner from "../components/common/loadingSpinner"
 
 const LogOut = () => {
     const dispatch = useDispatch()
+
     useEffect(() => {
         dispatch(logOut())
     }, [])
+
     return <LoadingSpinner />
 }
 

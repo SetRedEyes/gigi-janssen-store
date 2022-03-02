@@ -12,6 +12,7 @@ const SearchBar = () => {
     const handleSearch = ({ target }) => {
         setSearch(target.value)
     }
+
     const handleSubmit = (e) => {
         e.preventDefault()
         history.push(SHOP_ROUTE + SEARCH_ROUTE + `?search=${search}`)

@@ -16,11 +16,7 @@ const TableBody = ({ data, columns }) => {
             return (
                 <td key={column}>
                     {column.match(/^(name|rusName|photo)$/) ? (
-                        <div
-                            className={`long-string
-                                ${column === "photo" ? "photo-string" : ""}
-                            `}
-                        >
+                        <div className={`long-string ${column === "photo" ? "photo-string" : ""}`}>
                             {path}
                         </div>
                     ) : (

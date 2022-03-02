@@ -2,16 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { Form } from "react-bootstrap"
 
-const SelectField = ({
-    name,
-    label,
-    value,
-    onChange,
-    defaultOption,
-    options,
-    error,
-    marginBottom
-}) => {
+const SelectField = ({ name, label, value, options, defaultOption, onChange, error, marginBottom }) => {
     const handleChange = ({ target }) => {
         onChange({ name: [target.name], value: target.value })
     }
@@ -41,8 +32,7 @@ const SelectField = ({
                 <option disabled value="">
                     {defaultOption}
                 </option>
-                {optionsArray &&
-                    optionsArray.map((option) => (
+                {optionsArray && optionsArray.map((option) => (
                         <option key={option.value} value={option.value}>
                             {option.label}
                         </option>

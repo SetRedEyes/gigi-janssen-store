@@ -108,12 +108,15 @@ export const updateProductData = (payload) => async (dispatch) => {
 }
 
 export const getProducts = () => (state) => state.products.entities
-export const getProductsLoadingStatus = () => (state) => state.products.isLoading
+
 export const getProductById = (id) => (state) => {
     if (state.products.entities) {
         return state.products.entities.find((q) => q._id === id)
     }
 }
+
+export const getProductsLoadingStatus = () => (state) => state.products.isLoading
+
 export const getDataStatus = () => (state) => state.products.dataLoaded
 
 export default productsReducer

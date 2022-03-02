@@ -308,6 +308,10 @@ input[type="number"] {
     box-shadow: none;
 }
 
+.sort-select {
+    width: 15rem;
+}
+
 .sort-select:focus {
     box-shadow: none;
     border-color: #21c1cf;

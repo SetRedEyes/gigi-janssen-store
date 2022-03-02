@@ -9,6 +9,7 @@ const PagesPagination = ({ itemsCount, pageSize, onPageChange, currentPage }) =>
     if (pageCount === 1) return null
 
     const pages = _.range(1, pageCount + 1)
+
     const items = pages.map((page) => (
         <Pagination.Item
             key={page}

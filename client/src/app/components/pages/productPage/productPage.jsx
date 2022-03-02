@@ -52,21 +52,39 @@ const ProductPage = ({ productId, companyName }) => {
                                         </strong>
                                     </h5>
                                     <Row className="mt-3">
-                                        <span>Тип кожи:</span>
-                                        <span>Область применения:</span>
-                                        <span>Возраст:</span>
-                                        <span>Классификация: </span>
-                                        <span>Назначение: </span>
-                                        <span>Страна производитель:</span>
-                                        <span>Активные компоненты:</span>
-                                        <span>Способ применения:</span>
                                         <span>
-                                            id товара:{" "}
-                                            <strong>{product.vendorCode}</strong>
+                                            <b>Тип кожи:</b> Проблемная кожа,
+                                            Жирная/комбинированная кожа
+                                        </span>
+                                        <span>
+                                            <b>Область применения:</b> Для лица
+                                        </span>
+                                        <span>
+                                            <b>Возраст:</b> 18+, 25+, 30+
+                                        </span>
+                                        <span>
+                                            <b>Классификация:</b> Профессиональная
+                                        </span>
+                                        <span>
+                                            <b>Назначение:</b> Увлажнение,
+                                            Матирование/Сужение пор{" "}
+                                        </span>
+                                        <span>
+                                            <b>Страна производитель:</b> Израиль
+                                        </span>
+                                        <span>
+                                            <b>Активные компоненты:</b> Витамин А
+                                            (Ретинол), Увлажняющий фактор
+                                        </span>
+                                        <span>
+                                            <b>Способ применения:</b> Наружно
+                                        </span>
+                                        <span>
+                                            <b>id товара:</b> {product.vendorCode}
                                         </span>
                                     </Row>
-                                    <Row className="justify-content-center al">
-                                        <Col md={6} className="mt-5 mb-5 ">
+                                    <Row className="justify-content-center">
+                                        <Col md={6} className="mt-5 mb-5">
                                             <VolumePriceMenu product={product} />
                                         </Col>
                                     </Row>

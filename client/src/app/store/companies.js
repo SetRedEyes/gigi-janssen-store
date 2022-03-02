@@ -43,4 +43,5 @@ export const getCompanies = () => (state) => {
     }
 }
 export const getCompaniesLoadingStatus = () => (state) => state.companies.isLoading
+
 export default companiesReducer

@@ -37,7 +37,6 @@ const Login = () => {
                             <p>
                                 Еще нет аккаунта?
                                 <a role="button" onClick={toggleFormType}>
-                                    {" "}
                                     <span className="link-title">Зарегистрироваться</span>
                                 </a>
                             </p>

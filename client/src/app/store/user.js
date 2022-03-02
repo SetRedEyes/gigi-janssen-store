@@ -132,10 +132,13 @@ export const updateUser = (payload) => async (dispatch) => {
 }
 
 export const getIsLoggedIn = () => (state) => state.user.isLoggedIn
+
 export const getCurrentUserData = () => (state) => {
     return state.user.entities ? state.user.entities : null
 }
+
 export const getUserLoadingStatus = () => (state) => state.user.isLoading
+
 export const getAuthErrors = () => (state) => state.user.error
 
 export default userReducer

@@ -14,7 +14,7 @@ const Login = () => {
     }
 
     return (
-        <Container className="mt-5">
+        <Container className="mt-5 login-layout">
             <Row>
                 <Col md={{ span: 6, offset: 3 }} className="shadow p-4">
                     {formType === "register" ? (

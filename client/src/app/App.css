@@ -1,6 +1,132 @@
 html {
     max-width: 1920px;
+    overflow-y: scroll;
 }
+
+.content {
+    min-height: calc(100vh - 6rem);
+}
+
+/* Position */
+
+.flex-between {
+    display: flex;
+    justify-content: space-between;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+}
+
+/* CardShadow */
+
+.card {
+    padding: 0;
+    box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+        rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+        rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+/* SearchBar */
+
+.search-bar {
+    margin-left: 15rem;
+}
+
+.search-input {
+    background: #2c3233 !important;
+    border: none;
+    font-weight: 700;
+    color: #fff !important;
+}
+
+.search-input:focus {
+    background-color: #ffffff !important;
+    border-radius: 0.25rem;
+    color: #000000 !important;
+}
+
+.search-btn {
+    border: none;
+    color: #fff;
+}
+
+.search-btn:hover {
+    background-color: #21c1cf;
+    border-color: #21c1cf;
+}
+
+.search-btn:focus {
+    box-shadow: none;
+}
+
+/* SortSelect */
+
+.sort-select {
+    width: 15rem;
+}
+
+.sort-select:focus {
+    box-shadow: none;
+    border-color: #21c1cf;
+}
+
+/* GroupList */
+
+.list-group-item.active {
+    background-color: #21c1cf;
+    border-color: #21c1cf;
+}
+
+.list-group-item.active:hover {
+    color: #fff;
+}
+
+.list-group-item:hover {
+    color: #21c1cf;
+}
+
+/* Breadcrumbs */
+
+.breadcrumb-item a {
+    text-decoration: none;
+    color: black;
+}
+
+.breadcrumb-item a:hover {
+    color: #21c1cf;
+}
+
+.user-page-input {
+    margin-bottom: 1.5rem;
+}
+
+/* CompanyPage */
+
+.company-card {
+    margin-top: 2.5rem;
+    width: 18.5rem;
+    border-radius: 1rem !important;
+}
+
+.company-card_img {
+    width: 18.5rem;
+    height: 18.5rem;
+    border-top-left-radius: 1rem !important;
+    border-top-right-radius: 1rem !important;
+}
+
+.accordion-button:focus {
+    box-shadow: 0 0 0 0.25rem #21c1cf !important;
+}
+
+/* VolumePriceMenu */
 
 .enableFocus {
     box-shadow: 0 0 0 0.25rem #21c1cf;
@@ -8,6 +134,73 @@ html {
 
 .disableFocus {
     box-shadow: none;
+}
+
+.volume-btn:focus {
+    box-shadow: 0 0 0 0.25rem #21c1cf;
+}
+
+/* AdminPanel */
+
+.admin-panel-table {
+    font-size: 0.75rem;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    max-width: 212rem;
+}
+
+.admin-panel-table th,
+td {
+    vertical-align: middle;
+    border-bottom-width: 0.1rem !important;
+    white-space: nowrap;
+}
+
+.table-title:hover {
+    color: #21c1cf;
+}
+
+.long-string {
+    width: 14rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center !important;
+}
+
+.long-string:hover {
+    word-break: break-word;
+    white-space: normal;
+}
+.photo-string {
+    width: 9rem;
+}
+
+.add-form {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 2px solid;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    padding: 0.5rem 1rem;
+}
+
+.add-panel:hover h5 {
+    color: #21c1cf;
+}
+
+.add-panel:hover .add-form {
+    border-color: #21c1cf;
+}
+
+.add-form .form-control,
+.edit-form .form-control {
+    height: 2rem;
+}
+
+.add-form .form-select {
+    height: 2.2rem;
+    vertical-align: center;
 }
 
 /* Cart */
@@ -176,7 +369,24 @@ input[type="number"] {
     width: 2.5rem;
 }
 
-/* Buttons */
+/* Footer */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3rem;
+    padding: 0.6rem 3rem 0.1rem 3rem;
+    background-color: #212529;
+    color: #fff;
+    height: 6rem;
+}
+
+/* LinkButtons */
+
+.header-title {
+    color: white;
+    font-size: 1.5rem !important;
+    text-decoration: none;
+}
 
 .navProfile-name {
     color: #fff;
@@ -186,12 +396,6 @@ input[type="number"] {
 .navProfile-name:hover {
     background-color: #212529;
     color: #21c1cf;
-}
-
-.header-title {
-    color: white;
-    font-size: 1.5rem !important;
-    text-decoration: none;
 }
 
 .navlink-btn {
@@ -204,30 +408,36 @@ input[type="number"] {
     color: #fff;
 }
 
-.order-btn {
-    background-color: #212529 !important;
-    border-color: #21c1cf !important;
+.link-in-cart {
+    color: #fff;
+    text-decoration: none;
 }
 
-.submit-btn {
-    background-color: #000000 !important;
-    border-color: #000000 !important;
+.link-title {
+    color: black;
+    text-decoration: none;
 }
 
-.submit-btn:hover,
-.order-btn:hover {
-    background-color: #21c1cf !important;
-    border-color: #21c1cf !important;
-}
-.submit-btn:focus,
-.order-btn:focus {
-    outline: none !important;
-    box-shadow: none !important;
+.link-title:hover,
+.header-title:hover,
+.link-in-cart:hover {
+    color: #21c1cf;
 }
 
-.volume-btn:focus {
-    box-shadow: 0 0 0 0.25rem #21c1cf;
+.page-link {
+    color: #21c1cf;
 }
+
+.page-link:hover {
+    color: black;
+}
+
+.page-item.active .page-link {
+    background-color: black;
+    border-color: black;
+}
+
+/* Buttons */
 
 .action-btn,
 .grey-btn {
@@ -277,173 +487,25 @@ input[type="number"] {
     border-color: #212529;
 }
 
-.search-bar {
-    margin-left: 15rem;
+.order-btn {
+    background-color: #212529 !important;
+    border-color: #21c1cf !important;
 }
 
-.search-input {
-    background: #2c3233 !important;
-    border: none;
-    font-weight: 700;
-    color: #fff !important;
+.submit-btn {
+    background-color: #000000 !important;
+    border-color: #000000 !important;
 }
 
-.search-input:focus {
-    background-color: #ffffff !important;
-    border-radius: 0.25rem;
-    color: #000000 !important;
+.submit-btn:hover,
+.order-btn:hover {
+    background-color: #21c1cf !important;
+    border-color: #21c1cf !important;
 }
-
-.search-btn {
-    border: none;
-    color: #fff;
-}
-
-.search-btn:hover {
-    background-color: #21c1cf;
-    border-color: #21c1cf;
-}
-
-.search-btn:focus {
-    box-shadow: none;
-}
-
-.sort-select {
-    width: 15rem;
-}
-
-.sort-select:focus {
-    box-shadow: none;
-    border-color: #21c1cf;
-}
-
-.link-in-cart {
-    color: #fff;
-    text-decoration: none;
-}
-
-.link-title {
-    color: black;
-    text-decoration: none;
-}
-.link-title:hover,
-.header-title:hover,
-.link-in-cart:hover {
-    color: #21c1cf;
-}
-
-.page-link {
-    color: #21c1cf;
-}
-
-.page-link:hover {
-    color: black;
-}
-
-.page-item.active .page-link {
-    background-color: black;
-    border-color: black;
-}
-
-.list-group-item.active {
-    background-color: #21c1cf;
-    border-color: #21c1cf;
-}
-
-.list-group-item.active:hover {
-    color: #fff;
-}
-
-.list-group-item:hover {
-    color: #21c1cf;
-}
-
-.breadcrumb-item a {
-    text-decoration: none;
-    color: black;
-}
-
-.breadcrumb-item a:hover {
-    color: #21c1cf;
-}
-
-.card {
-    padding: 0;
-    box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
-    transition: box-shadow 0.3s ease-in-out;
-}
-
-.card:hover {
-    box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
-        rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
-        rgba(0, 0, 0, 0.09) 0px 32px 16px;
-}
-
-.user-page-input {
-    margin-bottom: 1.5rem;
-}
-
-/* AdminPanel */
-
-.admin-panel-table {
-    font-size: 0.75rem;
-    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-    max-width: 212rem;
-}
-
-.admin-panel-table th,
-td {
-    vertical-align: middle;
-    border-bottom-width: 0.1rem !important;
-    white-space: nowrap;
-}
-
-.table-title:hover {
-    color: #21c1cf;
-}
-
-.long-string {
-    width: 14rem;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    text-align: center !important;
-}
-
-.long-string:hover {
-    word-break: break-word;
-    white-space: normal;
-}
-.photo-string {
-    width: 9rem;
-}
-
-.add-form {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    border: 2px solid;
-    border-radius: 0.5rem;
-    font-size: 0.9rem;
-    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-    padding: 0.5rem 1rem;
-}
-
-.add-panel:hover h5 {
-    color: #21c1cf;
-}
-
-.add-panel:hover .add-form {
-    border-color: #21c1cf;
-}
-
-.add-form .form-control,
-.edit-form .form-control {
-    height: 2rem;
-}
-
-.add-form .form-select {
-    height: 2.2rem;
-    vertical-align: center;
+.submit-btn:focus,
+.order-btn:focus {
+    outline: none !important;
+    box-shadow: none !important;
 }
 
 @media (max-width: 1386px) {

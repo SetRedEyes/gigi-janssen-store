@@ -10,36 +10,39 @@ import NavBar from "./components/ui/navBar"
 import ProtectedRoute from "./components/common/protectedRoute"
 import AppLoader from "./components/ui/hoc/appLoader"
 import { SHOP_ROUTE } from "./consts"
+import Footer from "./components/ui/footer"
 
 const App = () => {
     return (
-        <div className="app">
+        <>
             <AppLoader>
                 <NavBar />
-
-                <Switch>
-                    {routes.map(({ path, component, isProtectedRoute }) =>
-                        isProtectedRoute ? (
-                            <ProtectedRoute
-                                key={path}
-                                path={path}
-                                component={component}
-                                exact
-                            />
-                        ) : (
-                            <Route
-                                key={path}
-                                path={path}
-                                component={component}
-                                exact
-                            />
-                        )
-                    )}
-                    <Redirect to={SHOP_ROUTE} />
-                </Switch>
+                <div className="content">
+                    <Switch>
+                        {routes.map(({ path, component, isProtectedRoute }) =>
+                            isProtectedRoute ? (
+                                <ProtectedRoute
+                                    key={path}
+                                    path={path}
+                                    component={component}
+                                    exact
+                                />
+                            ) : (
+                                <Route
+                                    key={path}
+                                    path={path}
+                                    component={component}
+                                    exact
+                                />
+                            )
+                        )}
+                        <Redirect to={SHOP_ROUTE} />
+                    </Switch>
+                </div>
+                <Footer />
             </AppLoader>
             <ToastContainer />
-        </div>
+        </>
     )
 }
 export default App

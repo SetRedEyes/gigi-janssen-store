@@ -1,7 +1,12 @@
 import React, { useEffect, useState } from "react"
 import localStorageService from "../../../services/localStorage.service"
 import { useSelector, useDispatch } from "react-redux"
-import { addItemToCart, getCartItems, loadCartList, removeItemFromCart } from "../../../store/cart"
+import {
+    addItemToCart,
+    getCartItems,
+    loadCartList,
+    removeItemFromCart
+} from "../../../store/cart"
 import { calcTotalPrice } from "../../../utils/calcTotalPrice"
 import { calculateItemsQuantity } from "../../../utils/calculateItemsQuantity"
 import { enumerate } from "../../../utils/enumerate"
@@ -66,9 +71,7 @@ const OrderingPage = () => {
                     </h4>
                 </Col>
                 <Col md={2}>
-                    <Button className="submit-btn w-100">
-                        Купить
-                    </Button>
+                    <Button className="submit-btn w-100">Купить</Button>
                 </Col>
             </Row>
         </Container>

@@ -107,12 +107,12 @@ const UserPage = () => {
         <Container>
             <Row>
                 <Col md={{ span: 6, offset: 3 }} className="shadow p-4">
-                    <div className="d-flex justify-content-between ">
+                    <div className="flex-between">
                         <BackHistoryButton />
 
                         <Link
                             to={SHOP_ROUTE + LOGOUT_ROUTE}
-                            className="action-btn btn btn-primary  "
+                            className="action-btn"
                         >
                             Выйти из аккаунта
                         </Link>

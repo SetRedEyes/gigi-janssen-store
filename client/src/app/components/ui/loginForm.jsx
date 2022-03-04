@@ -74,11 +74,7 @@ const LoginForm = () => {
 
             {loginError && <p className="text-danger">{loginError}</p>}
 
-            <Button
-                type="submit"
-                className="w-100 submit-btn"
-                disabled={!isValid}
-            >
+            <Button type="submit" className="w-100 submit-btn" disabled={!isValid}>
                 Войти
             </Button>
         </Form>

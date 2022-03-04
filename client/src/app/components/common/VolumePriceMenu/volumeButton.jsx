@@ -4,12 +4,14 @@ import { Button } from "react-bootstrap"
 
 const volumeButton = ({ product, activeBtn, renderPrice }) => {
     return (
-        <div className="d-flex justify-content-between mt-3">
+        <div className="flex-between mt-3">
             {product.volume.map((item, index) => (
                 <Button
                     key={item}
                     variant="light"
-                    className={`text-nowrap volume-btn ${activeBtn === index ? "enableFocus " : "disableFocus"}`}
+                    className={`volume-btn ${
+                        activeBtn === index ? "enableFocus" : "disableFocus"
+                    }`}
                     onClick={() => renderPrice(index, product)}
                     onMouseEnter={() => renderPrice(index, product)}
                 >

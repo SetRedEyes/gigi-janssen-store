@@ -21,7 +21,7 @@ const PagesPagination = ({ itemsCount, pageSize, onPageChange, currentPage }) =>
         </Pagination.Item>
     ))
 
-    return <Pagination className="d-flex justify-content-center">{items}</Pagination>
+    return <Pagination className="flex-center">{items}</Pagination>
 }
 PagesPagination.propTypes = {
     itemsCount: PropTypes.number.isRequired,

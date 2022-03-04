@@ -4,7 +4,7 @@ import { Card } from "react-bootstrap"
 
 const priceButton = ({ selectedPrice, prices, handleClick, isItemInCart, selectedVolume }) => {
     return (
-        <div className="d-flex align-items-end justify-content-between mt-4">
+        <div className="flex-between mt-4">
             <Card.Title>
                 {!selectedPrice || prices.length === 1
                     ? `${prices[0]} грн`

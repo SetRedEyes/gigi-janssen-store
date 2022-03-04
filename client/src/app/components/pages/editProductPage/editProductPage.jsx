@@ -4,7 +4,10 @@ import { useDispatch, useSelector } from "react-redux"
 import { useParams } from "react-router-dom"
 import { getCompanies, getCompaniesLoadingStatus } from "../../../store/companies"
 import { getProductById, updateProductData } from "../../../store/products"
-import { getCategoriesByCompany, getCategoriesLoadingStatus } from "../../../store/categories"
+import {
+    getCategoriesByCompany,
+    getCategoriesLoadingStatus
+} from "../../../store/categories"
 import { validator } from "../../../utils/validator"
 
 import { Button, Col, Container, Form, Row } from "react-bootstrap"
@@ -131,7 +134,7 @@ const EditProductPage = () => {
         <Container>
             <Row>
                 <Col md={{ span: 6, offset: 3 }} className="shadow p-4">
-                    <div className="d-flex justify-content-between align-items-center">
+                    <div className="flex-between align-items-center">
                         <h5 className="align-self-bottom">Редактирование товара</h5>
                         <BackHistoryButton />
                     </div>
@@ -178,7 +181,8 @@ const EditProductPage = () => {
                                 onChange={handleChange}
                                 error={errors.category}
                                 options={categoriesList}
-                                defaultOption={ categories.length < 1
+                                defaultOption={
+                                    categories.length < 1
                                         ? "Сначала выберите компанию"
                                         : ""
                                 }

@@ -32,7 +32,7 @@ const NavBar = () => {
             </NavLink>
 
             {isIncludes(LOGIN_ROUTE, PROFILE_ROUTE, ADMIN_ROUTE) && <SearchBar />}
-            <div className="d-flex justify-content-between align-items-center  me-5">
+            <div className="flex-between align-items-center  me-5">
                 <CartButton />
 
                 {isloggedIn && currentUser ? (
@@ -63,10 +63,7 @@ const NavBar = () => {
                 ) : (
                     <Nav>
                         <NavLink to={SHOP_ROUTE + LOGIN_ROUTE}>
-                            <Button
-                                variant="outline-light"
-                                className="navlink-btn "
-                            >
+                            <Button variant="outline-light" className="navlink-btn ">
                                 Вход/Регистрация
                             </Button>
                         </NavLink>

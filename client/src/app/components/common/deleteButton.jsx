@@ -1,10 +1,10 @@
 import React from "react"
-import PropTypes from "prop-types"
 import { Button } from "react-bootstrap"
+import PropTypes from "prop-types"
 
 const DeleteButton = ({ ...rest }) => {
     return (
-        <Button className="btn btn-danger" {...rest}>
+        <Button variant="danger" {...rest}>
             <i className="bi bi-x-lg"></i>
         </Button>
     )

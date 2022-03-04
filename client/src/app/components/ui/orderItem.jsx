@@ -50,7 +50,7 @@ const OrderItem = ({ product, onDelete, onQuantityChange }) => {
 
             <Col
                 md={{ span: 2, offset: 1 }}
-                className="d-flex justify-content-between align-items-center"
+                className="flex-between align-items-center"
             >
                 <span className="order-item__price">{product.totalPrice} грн.</span>
                 <DeleteButton size="lg" onClick={() => onDelete(product.volumeId)} />

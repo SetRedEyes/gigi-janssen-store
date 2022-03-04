@@ -4,83 +4,83 @@
     "name": "acnon",
     "fullName": "Acnon - Линия для лечения акне",
     "companyName": "gigi",
-    "photo": "https://images.unsplash.com/photo-1633085650319-b9efc57dcf07?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1887&q=80"
+    "photo": "https://github.com/SetRedEyes/online-store-v2/blob/master/server/assets/1414.jpg"
   },
   {
     "_id": "esterC",
     "name": "esterC",
     "fullName": "Ester C - Серия для осветления кожи",
     "companyName": "gigi",
-    "photo": "https://images.unsplash.com/photo-1633085650319-b9efc57dcf07?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1887&q=80"
+    "photo": "https://gigi-cosmetic.com.ua/img/cat2_logo/4227.jpg"
   },
   {
     "_id": "newAge",
     "name": "newAge",
     "fullName": "New Age - Линия с фитоэстрогенами для возрастной кожи",
     "companyName": "gigi",
-    "photo": "https://images.unsplash.com/photo-1633085650319-b9efc57dcf07?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1887&q=80"
+    "photo": "https://gigi-cosmetic.com.ua/img/cat2_logo/2539.jpg"
   },
   {
     "_id": "oxygenPrime",
     "name": "oxygenPrime",
     "fullName": "Oxygen Prime - Кислородная линия для ревитализации кожи",
     "companyName": "gigi",
-    "photo": "https://images.unsplash.com/photo-1633085650319-b9efc57dcf07?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1887&q=80"
+    "photo": "https://gigi-cosmetic.com.ua/img/cat2_logo/764.jpg"
   },
   {
     "_id": "seaWeed",
     "name": "seaWeed",
     "fullName": "Sea Weed - Морские водоросли для комбинированной и жирной кожи",
     "companyName": "gigi",
-    "photo": "https://images.unsplash.com/photo-1633085650319-b9efc57dcf07?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1887&q=80"
+    "photo": "https://gigi-cosmetic.com.ua/img/cat2_logo/2536.jpg"
   },
   {
     "_id": "recovery",
     "name": "recovery",
     "fullName": "Recovery - Парамедицинская линия на основе растительных стволовых клеток",
     "companyName": "gigi",
-    "photo": "https://images.unsplash.com/photo-1633085650319-b9efc57dcf07?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1887&q=80"
+    "photo": "https://gigi-cosmetic.com.ua/img/cat2_logo/2540.jpg"
   },
   {
     "_id": "matureSkin",
     "name": "matureSkin",
     "fullName": "Mature Skin - Антивозрастная серия с мощными активными компонентами",
     "companyName": "janssen",
-    "photo": "https://images.unsplash.com/photo-1633085650319-b9efc57dcf07?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1887&q=80"
+    "photo": "https://janssen-cosmetic.com.ua/img/cat2_logo/6498.jpg"
   },
   {
     "_id": "platinumCare",
     "name": "platinumCare",
     "fullName": "Platinum Care - Линия на основе пептидов и коллоидной платины",
     "companyName": "janssen",
-    "photo": "https://images.unsplash.com/photo-1633085650319-b9efc57dcf07?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1887&q=80"
+    "photo": "https://janssen-cosmetic.com.ua/img/cat2_logo/5694.jpg"
   },
   {
     "_id": "drySkin",
     "name": "drySkin",
     "fullName": "Dry Skin - Для сухой кожи",
     "companyName": "janssen",
-    "photo": "https://images.unsplash.com/photo-1633085650319-b9efc57dcf07?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1887&q=80"
+    "photo": "https://janssen-cosmetic.com.ua/img/cat2_logo/1414.jpg"
   },
   {
     "_id": "demandingSkin",
     "name": "demandingSkin",
     "fullName": "Demanding Skin - Для требовательной кожи",
     "companyName": "janssen",
-    "photo": "https://images.unsplash.com/photo-1633085650319-b9efc57dcf07?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1887&q=80"
+    "photo": "https://janssen-cosmetic.com.ua/img/cat2_logo/1413.jpg"
   },
   {
     "_id": "combinationSkin",
     "name": "combinationSkin",
     "fullName": "Combination Skin - Для комбинированной кожи",
     "companyName": "janssen",
-    "photo": "https://images.unsplash.com/photo-1633085650319-b9efc57dcf07?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1887&q=80"
+    "photo": "https://janssen-cosmetic.com.ua/img/cat2_logo/1412.jpg"
   },
   {
     "_id": "oilySkin",
     "name": "oilySkin",
     "fullName": "Oily Skin - Для жирной кожи",
     "companyName": "janssen",
-    "photo": "https://images.unsplash.com/photo-1633085650319-b9efc57dcf07?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1887&q=80"
+    "photo": "https://janssen-cosmetic.com.ua/img/cat2_logo/1411.jpg"
   }
 ]

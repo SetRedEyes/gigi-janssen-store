@@ -10,7 +10,11 @@ const TableBody = ({ data, columns }) => {
 
         if (component) {
             if (typeof component === "function") {
-                return <td key={column}>{component(item)}</td>
+                return (
+                    <td className="text-center" key={column}>
+                        {component(item)}
+                    </td>
+                )
             }
         } else {
             return (

@@ -5,6 +5,7 @@ import {
     addItemToCart,
     getCartItems,
     loadCartList,
+    removeAllItems,
     removeItemFromCart
 } from "../../../store/cart"
 import { calcTotalPrice } from "../../../utils/calcTotalPrice"
@@ -14,17 +15,22 @@ import { enumerate } from "../../../utils/enumerate"
 import { Button, Col, Container, Row } from "react-bootstrap"
 import BackHistoryButton from "../../common/backButton"
 import OrderItem from "../../ui/orderItem"
+import OrderModal from "../../ui/orderModal"
 
 const OrderingPage = () => {
     const dispatch = useDispatch()
-    const [state, setState] = useState("")
+    const [cartUpdate, setCartUpdate] = useState("")
+    const [isOpen, setIsOpen] = useState(false)
+
+    const handleClose = () => setIsOpen(false)
+    const handleShow = () => setIsOpen(true)
 
     const items = useSelector(getCartItems())
     const itemsQuantity = calculateItemsQuantity(items)
 
     useEffect(() => {
         dispatch(loadCartList())
-    }, [state])
+    }, [cartUpdate])
 
     const handleDelete = (volumeId) => {
         dispatch(removeItemFromCart(volumeId))
@@ -41,7 +47,12 @@ const OrderingPage = () => {
 
         localStorage.setItem("cart", JSON.stringify(cart))
         dispatch(addItemToCart(...cart))
-        setState({ ...state })
+        setCartUpdate({ ...cartUpdate })
+    }
+
+    const handleCartClear = () => {
+        dispatch(removeAllItems())
+        setCartUpdate({ ...cartUpdate })
     }
 
     if (items.length < 1) {
@@ -71,9 +82,16 @@ const OrderingPage = () => {
                     </h4>
                 </Col>
                 <Col md={2}>
-                    <Button className="submit-btn w-100">Купить</Button>
+                    <Button onClick={handleShow} className="submit-btn w-100">
+                        Оформить заказ
+                    </Button>
                 </Col>
             </Row>
+            <OrderModal
+                isOpen={isOpen}
+                onClose={handleClose}
+                onClear={handleCartClear}
+            />
         </Container>
     )
 }

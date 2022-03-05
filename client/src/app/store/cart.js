@@ -47,6 +47,7 @@ export const {
 
 const addItemRequested = createAction("cart/addItemRequested")
 const removeItemRequested = createAction("cart/removeItem")
+const removeAllItemsRequested = createAction("cart/removeAllItems")
 
 export const loadCartList = () => async (dispatch) => {
     dispatch(itemsRequested())
@@ -88,6 +89,11 @@ export const removeItemFromCart = (itemId) => async (dispatch) => {
     } catch (error) {
         dispatch(itemsRequestFailed(error.message))
     }
+}
+
+export const removeAllItems = () => async (dispatch) => {
+    dispatch(removeAllItemsRequested())
+    localStorage.removeItem("cart")
 }
 
 export const getCartItems = () => (state) => {

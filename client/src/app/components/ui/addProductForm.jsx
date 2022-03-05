@@ -24,7 +24,7 @@ const initialData = {
 const AddProductForm = () => {
     const dispatch = useDispatch()
     const [data, setData] = useState(initialData)
-
+    console.log(data)
     const companies = useSelector(getCompanies())
     const companiesList = companies.map((c) => ({
         label: c.fullName,
@@ -137,28 +137,28 @@ const AddProductForm = () => {
                     <TextField
                         label="Артикул"
                         name="vendorCode"
-                        marginBottom="mt1"
+                        marginBottom="mb-1"
                         value={data.vendorCode}
                         onChange={handleChange}
                     />
                     <TextField
                         label="Английское наименование"
                         name="name"
-                        marginBottom="mt-1"
+                        marginBottom="mb-1"
                         value={data.name}
                         onChange={handleChange}
                     />
                     <TextField
                         label="Русское наименование"
                         name="rusName"
-                        marginBottom="mt-1"
+                        marginBottom="mb-1"
                         value={data.rusName}
                         onChange={handleChange}
                     />
                     <SelectField
                         label="Компания"
                         name="companyName"
-                        marginBottom="mt-1"
+                        marginBottom="mb-1"
                         value={data.companyName}
                         onChange={handleChange}
                         options={companiesList}
@@ -166,30 +166,34 @@ const AddProductForm = () => {
                     <SelectField
                         label="Категория"
                         name="category"
-                        marginBottom="mt-1"
+                        marginBottom="mb-1"
                         value={data.category}
                         onChange={handleChange}
                         options={categoriesList}
-                        defaultOption={categories.length < 1 ? "Сначала выберите компанию" : ""}
+                        defaultOption={
+                            categories.length < 1 ? "Сначала выберите компанию" : ""
+                        }
                     />
                     <TextField
                         label="Цена"
                         name="price"
-                        marginBottom="mt-1"
+                        marginBottom="mb-1"
                         onChange={handleChange}
+                        value={data.price}
                         placeholder="Введите цены через запятую"
                     />
                     <TextField
                         label="Объем"
                         name="volume"
-                        marginBottom="mt-1"
+                        marginBottom="mb-1"
+                        value={data.volume}
                         onChange={handleChange}
                         placeholder="Ведите объемы через запятую"
                     />
                     <TextField
                         label="Фото"
                         name="photo"
-                        marginBottom="mt-1"
+                        marginBottom="mb-3"
                         value={data.photo}
                         onChange={handleChange}
                     />
@@ -201,7 +205,7 @@ const AddProductForm = () => {
                     <Button
                         type="submit"
                         disabled={isValid}
-                        className="btn btn-primary w-100 mx-auto submit-btn mt-1"
+                        className="w-100 submit-btn mt-1"
                     >
                         Добавить
                     </Button>

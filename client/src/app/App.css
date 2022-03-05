@@ -160,14 +160,23 @@ td {
 }
 
 .long-string {
-    width: 14rem;
+    width: 12rem;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     text-align: center !important;
 }
 
-.long-string:hover {
+.short-string {
+    width: 4rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center !important;
+}
+
+.long-string:hover,
+.short-string:hover {
     word-break: break-word;
     white-space: normal;
 }
@@ -510,6 +519,6 @@ input[type="number"] {
 
 @media (max-width: 1386px) {
     .long-string {
-        width: 10rem;
+        width: 9rem;
     }
 }

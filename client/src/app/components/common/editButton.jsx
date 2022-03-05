@@ -9,7 +9,9 @@ const EditButton = ({ ...rest }) => {
         </Button>
     )
 }
+
 EditButton.propTypes = {
     status: PropTypes.string
 }
+
 export default EditButton

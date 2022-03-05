@@ -21,7 +21,7 @@ const ProductsListCard = ({ products, colSize }) => {
                             }
                         >
                             <Image
-                                style={{ width: "18rem", height: "14rem" }}
+                                style={{ width: "18rem", height: "17rem" }}
                                 src={product.photo}
                             />
                         </Link>
@@ -32,7 +32,7 @@ const ProductsListCard = ({ products, colSize }) => {
                                     SHOP_ROUTE + `/${product.companyName}/${product.category}/${product._id}`
                                 }
                             >
-                                <Card.Title style={{ height: "4rem" }}>
+                                <Card.Title style={{ height: "3rem" }}>
                                     {product.name}
                                 </Card.Title>
                             </Link>

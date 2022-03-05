@@ -8,7 +8,7 @@
     "category": "acnon",
     "price": [800, 1500],
     "volume": [50, 250],
-    "photo": "https://images.unsplash.com/photo-1633085650319-b9efc57dcf07?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1887&q=80"
+    "photo": "https://gigilaboratories.com/wp-content/uploads/2020/05/Smoothing-Facial-Cleanser-with-box-27100-300x300.jpg"
   },
   {
     "_id": "2n",
@@ -19,7 +19,7 @@
     "category": "newAge",
     "price": [900],
     "volume": [100],
-    "photo": "https://images.unsplash.com/photo-1633085650319-b9efc57dcf07?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1887&q=80"
+    "photo": "https://gigilaboratories.com/wp-content/uploads/2020/05/Comfort-Day-Cream-spf15-50-ml-ref-20100-300x300.jpg"
   },
   {
     "_id": "3",
@@ -30,18 +30,18 @@
     "category": "esterC",
     "price": [1300, 2000],
     "volume": [120, 200],
-    "photo": "https://images.unsplash.com/photo-1633085650319-b9efc57dcf07?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1887&q=80"
+    "photo": "https://gigilaboratories.com/wp-content/uploads/2020/05/cleanser-200ml-ref-19100.jpg"
   },
   {
     "_id": "4",
     "vendorCode": "1adsfsd",
     "companyName": "gigi",
-    "name": "Oxygen Prime Refreshing Cleansing Gel",
-    "rusName": "Освежающий очищающий гель",
-    "category": "oxygenPrime",
+    "name": "Nutri-Peptide Clearing Cleancer",
+    "rusName": "Очищающий гель",
+    "category": "nutriPiptide",
     "price": [1150],
     "volume": [200],
-    "photo": "https://images.unsplash.com/photo-1633085650319-b9efc57dcf07?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1887&q=80"
+    "photo": "https://gigilaboratories.com/wp-content/uploads/2020/05/Clearing-Cleanser-200ml-ref-11500.jpg"
   },
   {
     "_id": "5",
@@ -52,29 +52,29 @@
     "category": "recovery",
     "price": [850, 1600],
     "volume": [120, 250],
-    "photo": "https://images.unsplash.com/photo-1633085650319-b9efc57dcf07?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1887&q=80"
+    "photo": "https://gigilaboratories.com/wp-content/uploads/2020/05/Skin-Clear-Cleanser-20-ml-ref-20050.jpg"
   },
   {
     "_id": "6",
     "vendorCode": "1sdfa",
     "companyName": "gigi",
-    "name": " Acnon Spotless Skin Refresher",
-    "rusName": "Очищающий тоник",
+    "name": "Acnon Day Control Moisturizer",
+    "rusName": "Дневной увлажняющий крем",
     "category": "acnon",
     "price": [1400],
     "volume": [120],
-    "photo": "https://images.unsplash.com/photo-1633085650319-b9efc57dcf07?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1887&q=80"
+    "photo": "https://gigilaboratories.com/wp-content/uploads/2020/05/Day-Control-Moisturiser-with-box-27110.jpg"
   },
   {
     "_id": "7",
     "vendorCode": "234sf",
     "companyName": "gigi",
-    "name": "Oxygen Prime Advanced Moisturizer SPF-15",
-    "rusName": "Увлажняющий крем SPF-15",
-    "category": "oxygenPrime",
+    "name": "Nutri-Peptide Make Up Remover",
+    "rusName": "Двухфазная жидкость для снятия макияжа",
+    "category": "nutriPeptide",
     "price": [2000],
     "volume": [50],
-    "photo": "https://images.unsplash.com/photo-1633085650319-b9efc57dcf07?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1887&q=80"
+    "photo": "https://gigilaboratories.com/wp-content/uploads/2020/05/Nutri-make-up-remover-1.jpg"
   },
   {
     "_id": "8",
@@ -85,53 +85,63 @@
     "category": "esterC",
     "price": [1000, 2000],
     "volume": [50, 200],
-    "photo": "https://images.unsplash.com/photo-1633085650319-b9efc57dcf07?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1887&q=80"
+    "photo": "https://gigilaboratories.com/wp-content/uploads/2020/05/Moisturizer-spf20-50mlbox-ref-19090.jpg"
   },
   {
     "_id": "9",
     "vendorCode": "sds32",
     "companyName": "gigi",
-    "name": "New Age Active Serum",
-    "rusName": "Активная сыворотка",
+    "name": "New Age Foaming mask",
+    "rusName": "Маска-мусс экспресс лифтинг",
     "category": "newAge",
     "price": [2900],
     "volume": [120],
-    "photo": "https://images.unsplash.com/photo-1633085650319-b9efc57dcf07?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1887&q=80"
+    "photo": "https://gigilaboratories.com/wp-content/uploads/2020/05/Foaming-Mask-140-ml-ref-20119.jpg"
   },
   {
     "_id": "10",
     "vendorCode": "e4fd",
     "companyName": "gigi",
-    "name": "Sea Weed Toner",
-    "rusName": "Тонер",
-    "category": "seaWeed",
+    "name": "Vitamin E Eye Cream",
+    "rusName": "Крем вокруг глаз",
+    "category": "vitaminE",
     "price": [800],
     "volume": [250],
-    "photo": "https://images.unsplash.com/photo-1633085650319-b9efc57dcf07?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1887&q=80"
+    "photo": "https://gigilaboratories.com/wp-content/uploads/2020/05/Eye-Cream-50-ml-ref-47522.jpg"
   },
   {
     "_id": "11",
     "vendorCode": "144wfa",
     "companyName": "gigi",
-    "name": "Sea Weed Soapless Soap",
-    "rusName": "Непенящееся мыло",
-    "category": "seaWeed",
+    "name": "Vitamin E Serum",
+    "rusName": "Серум",
+    "category": "vitaminE",
     "price": [950, 1600],
     "volume": [120, 250],
-    "photo": "https://images.unsplash.com/photo-1633085650319-b9efc57dcf07?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1887&q=80"
+    "photo": "https://gigilaboratories.com/wp-content/uploads/2020/05/Serum-box-30-ml-ref-47509.jpg"
   },
   {
     "_id": "12",
     "vendorCode": "4fd1a",
     "companyName": "gigi",
-    "name": "Recovery Optimizing Serum",
-    "rusName": "Восстанавливающий серум",
+    "name": "Recovery Daily SPF-30",
+    "rusName": "Восстанавливающий солнцезащитный крем SPF-30",
     "category": "recovery",
     "price": [3600],
     "volume": [120],
-    "photo": "https://images.unsplash.com/photo-1633085650319-b9efc57dcf07?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1887&q=80"
+    "photo": "https://gigilaboratories.com/wp-content/uploads/2020/05/Daily-spf-30-50-mlbox-ref-20044.jpg"
   },
-
+  {
+    "_id": "123",
+    "vendorCode": "4fee32d1a",
+    "companyName": "gigi",
+    "name": "RetinA Overnight Cream",
+    "rusName": "Ночной обновляющий крем",
+    "category": "retinA",
+    "price": [3600],
+    "volume": [120],
+    "photo": "https://gigilaboratories.com/wp-content/uploads/2020/05/OVERNIGHT-CREAM-WITH-BOX.jpg"
+  },
   {
     "_id": "14",
     "vendorCode": "dkfsd333",
@@ -141,7 +151,7 @@
     "category": "matureSkin",
     "price": [750],
     "volume": [100],
-    "photo": "https://images.unsplash.com/photo-1633085650319-b9efc57dcf07?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1887&q=80"
+    "photo": "https://www.janssen-cosmetics.com/Uploads/1102/Luxury_Oil_Cleanser_100ml.jpg?width=400&height=390&mode=boxpad&bgcolor=fff"
   },
   {
     "_id": "15",
@@ -152,7 +162,7 @@
     "category": "drySkin",
     "price": [650, 1050],
     "volume": [200, 500],
-    "photo": "https://images.unsplash.com/photo-1633085650319-b9efc57dcf07?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1887&q=80"
+    "photo": "https://www.janssen-cosmetics.com/Uploads/5000/mild_creamy_cleanser_200ml.jpg?width=400&height=390&mode=boxpad&bgcolor=fff"
   },
   {
     "_id": "16",
@@ -163,7 +173,7 @@
     "category": "platinumCare",
     "price": [1900, 2150],
     "volume": [50, 100],
-    "photo": "https://images.unsplash.com/photo-1633085650319-b9efc57dcf07?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1887&q=80"
+    "photo": "https://www.janssen-cosmetics.com/Uploads/1210/Day_Cream_50ml.jpg?width=400&height=390&mode=boxpad&bgcolor=fff"
   },
   {
     "_id": "17",
@@ -174,7 +184,7 @@
     "category": "demandingSkin",
     "price": [650, 1100],
     "volume": [200, 500],
-    "photo": "https://images.unsplash.com/photo-1633085650319-b9efc57dcf07?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1887&q=80"
+    "photo": "https://www.janssen-cosmetics.com/Uploads/0000/brightening_face_cleanser_200ml.jpg?width=400&height=390&mode=boxpad&bgcolor=fff"
   },
   {
     "_id": "18",
@@ -185,7 +195,7 @@
     "category": "combinationSkin",
     "price": [650],
     "volume": [100],
-    "photo": "https://images.unsplash.com/photo-1633085650319-b9efc57dcf07?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1887&q=80"
+    "photo": "https://www.janssen-cosmetics.com/Uploads/6600/Gentle_Cleansing_Powder_100gr.jpg?width=400&height=390&mode=boxpad&bgcolor=fff"
   },
   {
     "_id": "19",
@@ -196,6 +206,17 @@
     "category": "oilySkin",
     "price": [650, 1150],
     "volume": [200, 500],
-    "photo": "https://images.unsplash.com/photo-1633085650319-b9efc57dcf07?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1887&q=80"
+    "photo": "https://www.janssen-cosmetics.com/Uploads/4400/Clariying_Cleansing_Gel_200ml.jpg?width=400&height=390&mode=boxpad&bgcolor=fff"
+  },
+  {
+    "_id": "19qreew",
+    "vendorCode": "q412h353",
+    "companyName": "janssen",
+    "name": "Men Purifying Wash & Shave",
+    "rusName": "Гель для умывания и бритья",
+    "category": "mensCare",
+    "price": [650, 1150],
+    "volume": [200, 500],
+    "photo": "https://www.janssen-cosmetics.com/Uploads/8600/Purifying_Wash_Shave_75ml.jpg?width=400&height=390&mode=boxpad&bgcolor=fff"
   }
 ]

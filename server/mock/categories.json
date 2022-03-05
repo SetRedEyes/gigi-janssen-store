@@ -4,83 +4,97 @@
     "name": "acnon",
     "fullName": "Acnon - Линия для лечения акне",
     "companyName": "gigi",
-    "photo": "https://github.com/SetRedEyes/online-store-v2/blob/master/server/assets/1414.jpg"
+    "photo": "https://qualityshop.com.pl/environment/cache/images/500_500_productGfx_718/ACNON_TREATMENT_SET.jpg"
   },
   {
     "_id": "esterC",
     "name": "esterC",
     "fullName": "Ester C - Серия для осветления кожи",
     "companyName": "gigi",
-    "photo": "https://gigi-cosmetic.com.ua/img/cat2_logo/4227.jpg"
+    "photo": "https://hairs-russia.ru/image/cache/200-250/data/GIGI/xgigi-ester.jpg.pagespeed.ic.7L12b7AgUk.jpg"
   },
   {
     "_id": "newAge",
     "name": "newAge",
     "fullName": "New Age - Линия с фитоэстрогенами для возрастной кожи",
     "companyName": "gigi",
-    "photo": "https://gigi-cosmetic.com.ua/img/cat2_logo/2539.jpg"
+    "photo": "https://cosmeticbrand.ru/image/data/article/NEW-AGE.jpg"
   },
   {
-    "_id": "oxygenPrime",
-    "name": "oxygenPrime",
-    "fullName": "Oxygen Prime - Кислородная линия для ревитализации кожи",
+    "_id": "nutriPeptide",
+    "name": "nutriPeptide",
+    "fullName": "Nutri-Peptide - Линия с пептидами",
     "companyName": "gigi",
-    "photo": "https://gigi-cosmetic.com.ua/img/cat2_logo/764.jpg"
+    "photo": "https://idn-cosmetics.com/2411-thickbox_default/gigi-nutri-peptide-set.jpg"
   },
   {
-    "_id": "seaWeed",
-    "name": "seaWeed",
-    "fullName": "Sea Weed - Морские водоросли для комбинированной и жирной кожи",
+    "_id": "vitaminE",
+    "name": "vitaminE",
+    "fullName": "Vitamin E - Для всех типов кожи",
     "companyName": "gigi",
-    "photo": "https://gigi-cosmetic.com.ua/img/cat2_logo/2536.jpg"
+    "photo": "https://www.gigi.ru/upload/iblock/06e/06e01d16ade38176433b607f6c9eb5c1.jpg"
   },
   {
     "_id": "recovery",
     "name": "recovery",
     "fullName": "Recovery - Парамедицинская линия на основе растительных стволовых клеток",
     "companyName": "gigi",
-    "photo": "https://gigi-cosmetic.com.ua/img/cat2_logo/2540.jpg"
+    "photo": "https://scontent-waw1-1.xx.fbcdn.net/v/t1.6435-9/94691629_115452106799314_1711549806100348928_n.jpg?_nc_cat=108&ccb=1-5&_nc_sid=9267fe&_nc_ohc=6sYW5fj8m9UAX8yiPJy&_nc_ht=scontent-waw1-1.xx&oh=00_AT9W_A2xni2NgaVRKWOwSkAX4HUcF-DX6VODrFzLNvGbjw&oe=624A4052"
+  },
+  {
+    "_id": "retinA",
+    "name": "retinA",
+    "fullName": "RetinA - Мультикислотная линия",
+    "companyName": "gigi",
+    "photo": "https://idn-cosmetics.com/2424-thickbox_default/gigi-retin-a-home-kit.jpg"
   },
   {
     "_id": "matureSkin",
     "name": "matureSkin",
     "fullName": "Mature Skin - Антивозрастная серия с мощными активными компонентами",
     "companyName": "janssen",
-    "photo": "https://janssen-cosmetic.com.ua/img/cat2_logo/6498.jpg"
+    "photo": "https://www.janssen-cosmetics.com/Uploads/_UNTERGRUPPE/1060_Mature_Skin/Picture_Mature_Skin.jpg?width=300&height=300&mode=min&bgcolor=fff&quality=80"
   },
   {
-    "_id": "platinumCare",
-    "name": "platinumCare",
-    "fullName": "Platinum Care - Линия на основе пептидов и коллоидной платины",
+    "_id": "fairSkin",
+    "name": "fairSkin",
+    "fullName": "Fair Skin - Отбеливающая линия",
     "companyName": "janssen",
-    "photo": "https://janssen-cosmetic.com.ua/img/cat2_logo/5694.jpg"
+    "photo": "https://www.janssen-cosmetics.com/Uploads/_UNTERGRUPPE/1071_Fair_Skin/Picture_Fair_Skin.jpg?width=300&height=300&mode=min&bgcolor=fff&quality=80"
   },
   {
     "_id": "drySkin",
     "name": "drySkin",
     "fullName": "Dry Skin - Для сухой кожи",
     "companyName": "janssen",
-    "photo": "https://janssen-cosmetic.com.ua/img/cat2_logo/1414.jpg"
+    "photo": "https://www.janssen-cosmetics.com/Uploads/_UNTERGRUPPE/1010_Dry_Skin/1010_picture_dry_skin.jpg?width=300&height=300&mode=min&bgcolor=fff&quality=80"
   },
   {
     "_id": "demandingSkin",
     "name": "demandingSkin",
     "fullName": "Demanding Skin - Для требовательной кожи",
     "companyName": "janssen",
-    "photo": "https://janssen-cosmetic.com.ua/img/cat2_logo/1413.jpg"
+    "photo": "https://www.janssen-cosmetics.com/Uploads/_UNTERGRUPPE/1051_Demanding_Skin/1051_Picture_Demanding_Skin.jpg?width=300&height=300&mode=min&bgcolor=fff&quality=80"
   },
   {
     "_id": "combinationSkin",
     "name": "combinationSkin",
     "fullName": "Combination Skin - Для комбинированной кожи",
     "companyName": "janssen",
-    "photo": "https://janssen-cosmetic.com.ua/img/cat2_logo/1412.jpg"
+    "photo": "http://www.profelit.ru/pictures/vendor/v41.jpg"
   },
   {
     "_id": "oilySkin",
     "name": "oilySkin",
     "fullName": "Oily Skin - Для жирной кожи",
     "companyName": "janssen",
-    "photo": "https://janssen-cosmetic.com.ua/img/cat2_logo/1411.jpg"
+    "photo": "https://www.janssen-cosmetics.com/Uploads/_UNTERGRUPPE/1031_Oily_Skin/Picture_Oily_Skin.jpg?width=300&height=300&mode=min&bgcolor=fff&quality=80"
+  },
+  {
+    "_id": "mensCare",
+    "name": "mensCare",
+    "fullName": "Mens Care - Линия для мужчин",
+    "companyName": "janssen",
+    "photo": "http://www.profelit.ru/pictures/vendor/v41.jpg"
   }
 ]

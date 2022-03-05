@@ -4,9 +4,10 @@ import { useSelector } from "react-redux"
 import { getCategoriesByCompany } from "../../../store/categories"
 import { getProductById } from "../../../store/products"
 
-import { Col, Container, Row, Spinner, Image } from "react-bootstrap"
+import { Col, Container, Row, Image } from "react-bootstrap"
 import VolumePriceMenu from "../../common/VolumePriceMenu"
 import GroupList from "../../../components/common/groupList"
+import LoadingSpinner from "../../common/loadingSpinner"
 
 const ProductPage = ({ productId, companyName }) => {
     const [selectedCat, setSelectedCat] = useState()
@@ -41,7 +42,7 @@ const ProductPage = ({ productId, companyName }) => {
                                         className="m-4"
                                         src={product.photo}
                                         fluid
-                                        style={{ width: "30rem", height: "26rem" }}
+                                        style={{ width: "20rem", height: "20rem" }}
                                     />
                                 </Col>
                                 <Col md={7} className="mt-4 ms-5">
@@ -134,12 +135,7 @@ const ProductPage = ({ productId, companyName }) => {
             </Container>
         )
     } else {
-        return (
-            <Container className="d-flex justify-content-center mt-4">
-                <Spinner animation="border" variant="primary" />
-                <span className="mt-1 ms-2">Загрузка</span>
-            </Container>
-        )
+        return <LoadingSpinner />
     }
 }
 

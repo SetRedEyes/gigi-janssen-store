@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { getCompanies } from "../../store/companies"
-import { getCategoriesByCompany } from "../../store/categories"
+import { getCompanies, getCompaniesLoadingStatus } from "../../store/companies"
+import {
+    getCategoriesByCompany,
+    getCategoriesLoadingStatus
+} from "../../store/categories"
 import { createProduct } from "../../store/products"
 import { validator } from "../../utils/validator"
 
@@ -24,27 +27,32 @@ const initialData = {
 const AddProductForm = () => {
     const dispatch = useDispatch()
     const [data, setData] = useState(initialData)
-
-    const companies = useSelector(getCompanies())
-    const companiesList = companies.map((c) => ({
-        label: c.fullName,
-        value: c.name
-    }))
-
-    const categories = useSelector(getCategoriesByCompany(data.companyName))
-    const categoriesList = categories.map((c) => ({
-        label: c.fullName.split("-")[0],
-        value: c.name
-    }))
-
     const [isLoading, setIsLoading] = useState(true)
     const [errors, setErrors] = useState({})
 
+    const companies = useSelector(getCompanies())
+    const companiesLoading = useSelector(getCompaniesLoadingStatus())
+    const companiesList =
+        !companiesLoading &&
+        companies.map((c) => ({
+            label: c.fullName,
+            value: c.name
+        }))
+
+    const categories = useSelector(getCategoriesByCompany(data.companyName))
+    const categoriesLoading = useSelector(getCategoriesLoadingStatus())
+    const categoriesList =
+        !categoriesLoading &&
+        categories.map((c) => ({
+            label: c.fullName.split("-")[0],
+            value: c.name
+        }))
+
     useEffect(() => {
-        if (data && isLoading) {
+        if (data && isLoading && !companiesLoading && !categoriesLoading) {
             setIsLoading(false)
         }
-    }, [data])
+    }, [data, companiesLoading, categoriesLoading])
 
     const handleChange = (target) => {
         setData((prevState) => ({

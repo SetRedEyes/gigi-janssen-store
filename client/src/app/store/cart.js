@@ -29,6 +29,9 @@ const cartSlice = createSlice({
                 (item) => item.volumeId !== action.payload
             )
         },
+        allItemsRemoved: (state) => {
+            state.entities = initialState
+        },
         itemsRequestFailed: (state, action) => {
             state.error = action.payload
             state.isLoading = false
@@ -42,7 +45,8 @@ export const {
     itemAdded,
     itemRemoved,
     itemsRequestFailed,
-    itemsRequested
+    itemsRequested,
+    allItemsRemoved
 } = actions
 
 const addItemRequested = createAction("cart/addItemRequested")
@@ -93,6 +97,7 @@ export const removeItemFromCart = (itemId) => async (dispatch) => {
 
 export const removeAllItems = () => async (dispatch) => {
     dispatch(removeAllItemsRequested())
+    dispatch(allItemsRemoved())
     localStorage.removeItem("cart")
 }
 

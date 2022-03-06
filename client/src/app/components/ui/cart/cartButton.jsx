@@ -13,7 +13,7 @@ const CartButton = () => {
     const history = useHistory()
     const dispatch = useDispatch()
     const items = useSelector(getCartItems())
-    const totalPrice = calcTotalPrice(items)
+    const totalPrice = items.length && calcTotalPrice(items)
     const [isOpen, setIsOpen] = useState(false)
 
     useEffect(() => {

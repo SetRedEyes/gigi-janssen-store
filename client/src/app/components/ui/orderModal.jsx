@@ -7,6 +7,9 @@ import { validator } from "../../utils/validator"
 import { Button, Form, Modal } from "react-bootstrap"
 import TextField from "../common/form/textField"
 import LoadingSpinner from "../common/loadingSpinner"
+import { SHOP_ROUTE } from "../../consts"
+import history from "../../utils/history"
+import ConfirmedOrderModal from "./confirmedOrederModal"
 
 const initialData = {
     firstName: "",
@@ -16,8 +19,9 @@ const initialData = {
     postOfficeNumber: ""
 }
 
-const OrderModal = ({ isOpen, onClose, onClear }) => {
+const OrderModal = ({ customerModal, onClose, onClear }) => {
     const currentUser = useSelector(getCurrentUserData())
+    const [isOrderConfirmed, setIsOrderConfirmed] = useState(false)
 
     const [data, setData] = useState()
     const [isLoading, setIsLoading] = useState(true)
@@ -96,13 +100,19 @@ const OrderModal = ({ isOpen, onClose, onClear }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-
-        onClear()
+        onClose()
         console.log(data)
+        setIsOrderConfirmed(true)
+    }
+
+    const handleOrderConfirm = () => {
+        setIsOrderConfirmed(false)
+        history.push(SHOP_ROUTE)
+        onClear()
     }
     return (
         <>
-            <Modal className="mt-5" show={isOpen} onHide={onClose}>
+            <Modal className="mt-5" show={customerModal} onHide={onClose}>
                 <Modal.Header closeButton>
                     <Modal.Title>Данные покупателя</Modal.Title>
                 </Modal.Header>
@@ -152,12 +162,11 @@ const OrderModal = ({ isOpen, onClose, onClear }) => {
                             />
                             <hr />
                             <Button
-                                onClick={onClose}
                                 type="submit"
                                 disabled={isValid}
                                 className="w-100 submit-btn"
                             >
-                                Купить
+                                Подтвердить
                             </Button>
                         </Form>
                     ) : (
@@ -165,12 +174,17 @@ const OrderModal = ({ isOpen, onClose, onClear }) => {
                     )}
                 </Modal.Body>
             </Modal>
+
+            <ConfirmedOrderModal
+                isConfirmed={isOrderConfirmed}
+                onConfirm={handleOrderConfirm}
+            />
         </>
     )
 }
 
 OrderModal.propTypes = {
-    isOpen: PropTypes.bool,
+    customerModal: PropTypes.bool,
     onClose: PropTypes.func,
     onClear: PropTypes.func
 }

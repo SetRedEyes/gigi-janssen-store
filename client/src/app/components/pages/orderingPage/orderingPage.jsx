@@ -20,10 +20,10 @@ import OrderModal from "../../ui/orderModal"
 const OrderingPage = () => {
     const dispatch = useDispatch()
     const [cartUpdate, setCartUpdate] = useState("")
-    const [isOpen, setIsOpen] = useState(false)
+    const [customerModal, setCustomerModal] = useState(false)
 
-    const handleClose = () => setIsOpen(false)
-    const handleShow = () => setIsOpen(true)
+    const handleClose = () => setCustomerModal(false)
+    const handleShow = () => setCustomerModal(true)
 
     const items = useSelector(getCartItems())
     const itemsQuantity = calculateItemsQuantity(items)
@@ -52,7 +52,6 @@ const OrderingPage = () => {
 
     const handleCartClear = () => {
         dispatch(removeAllItems())
-        setCartUpdate({ ...cartUpdate })
     }
 
     if (items.length < 1) {
@@ -88,12 +87,12 @@ const OrderingPage = () => {
                 </Col>
                 <Col md={2}>
                     <Button onClick={handleShow} className="submit-btn w-100">
-                        Оформить заказ
+                        Купить
                     </Button>
                 </Col>
             </Row>
             <OrderModal
-                isOpen={isOpen}
+                customerModal={customerModal}
                 onClose={handleClose}
                 onClear={handleCartClear}
             />

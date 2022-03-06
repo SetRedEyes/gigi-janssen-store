@@ -24,7 +24,7 @@ const initialData = {
 const AddProductForm = () => {
     const dispatch = useDispatch()
     const [data, setData] = useState(initialData)
-    console.log(data)
+
     const companies = useSelector(getCompanies())
     const companiesList = companies.map((c) => ({
         label: c.fullName,

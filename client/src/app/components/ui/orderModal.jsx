@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react"
 import PropTypes from "prop-types"
-import { validator } from "../../utils/validator"
-import { Button, Form, Modal } from "react-bootstrap"
 import { useSelector } from "react-redux"
 import { getCurrentUserData } from "../../store/user"
+import { validator } from "../../utils/validator"
+
+import { Button, Form, Modal } from "react-bootstrap"
 import TextField from "../common/form/textField"
 import LoadingSpinner from "../common/loadingSpinner"
 
@@ -17,7 +18,8 @@ const initialData = {
 
 const OrderModal = ({ isOpen, onClose, onClear }) => {
     const currentUser = useSelector(getCurrentUserData())
-    const [data, setData] = useState(initialData)
+
+    const [data, setData] = useState()
     const [isLoading, setIsLoading] = useState(true)
     const [errors, setErrors] = useState({})
 
@@ -26,11 +28,13 @@ const OrderModal = ({ isOpen, onClose, onClear }) => {
             setData({
                 ...currentUser
             })
+        } else {
+            setData(initialData)
         }
-    }, [currentUser, data])
+    }, [currentUser])
 
     useEffect(() => {
-        if (isLoading) {
+        if (data && isLoading) {
             setIsLoading(false)
         }
     }, [data])

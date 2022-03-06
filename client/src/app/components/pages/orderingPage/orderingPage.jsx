@@ -56,12 +56,17 @@ const OrderingPage = () => {
     }
 
     if (items.length < 1) {
-        return <h1 className="text-center mt-5">Ваша корзина пуста</h1>
+        return (
+            <>
+                <BackHistoryButton margin="m-4" />
+                <h1 className="text-center mt-5">Ваша корзина пуста</h1>
+            </>
+        )
     }
 
     return (
         <Container className="order-page">
-            <BackHistoryButton mb="mb-4" />
+            <BackHistoryButton margin="mb-4" />
             {items.map((product) => (
                 <OrderItem
                     onQuantityChange={handleQuantityChange}

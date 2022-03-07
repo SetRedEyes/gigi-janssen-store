@@ -34,21 +34,20 @@ const BreadCrumbs = ({ productId }) => {
         }
     }
 
-    if (pathname === "/gigi-janssen-store" || pathname === "/gigi-janssen-store/") {
+    if (pathname === SHOP_ROUTE) {
         return null
     }
 
     return (
         <Breadcrumb className="ms-3 mt-2">
-            <Breadcrumb.Item
-                linkAs={Link}
-                linkProps={{ to: SHOP_ROUTE }}
-            >
+            <Breadcrumb.Item linkAs={Link} linkProps={{ to: SHOP_ROUTE }}>
                 Главная
             </Breadcrumb.Item>
             {pathnames.map((name, index) => {
                 const isLast = index === pathnames.length - 1
-                const routeTo = `${SHOP_ROUTE}/${pathnames.slice(0, index + 1).join("/")}`
+                const routeTo = `${SHOP_ROUTE}/${pathnames
+                    .slice(0, index + 1)
+                    .join("/")}`
                 return (
                     <Breadcrumb.Item
                         linkAs={Link}

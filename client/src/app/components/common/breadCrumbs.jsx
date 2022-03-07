@@ -28,8 +28,8 @@ const BreadCrumbs = ({ productId }) => {
         } else if (name === "search") {
             return "Поиск"
         } else if (product && product._id === name) {
-            return `${product.name} - ${product.rusName}`
-        } else if (categories && isNaN(name)) {
+            return `${product.name}`
+        } else if (categories) {
             return categories.find((cat) => cat.name === name)?.fullName
         }
     }

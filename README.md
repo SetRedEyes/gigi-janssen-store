@@ -1,6 +1,6 @@
 # Gigi & Janssen Store
 Fullstack online store
-Builded with React, React-Bootstrap, Redux Toolkit, NodeJS, Docker.
+Builded with React, React-Bootstrap, Redux Toolkit, NodeJS, Docker  
 
 
 ## Api Endpoints

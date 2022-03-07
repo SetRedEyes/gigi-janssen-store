@@ -1,16 +1,20 @@
 import { React } from "react"
 import { useSelector } from "react-redux"
-import { getCurrentUserData, getIsLoggedIn } from "../../store/user"
-import { ADMIN_ROUTE, LOGIN_ROUTE, PROFILE_ROUTE, SHOP_ROUTE } from "../../consts"
+import { getCurrentUserData, getIsAdmin, getIsLoggedIn } from "../../store/user"
+import { ADMIN_ROUTE, LOGIN_ROUTE, SHOP_ROUTE } from "../../consts"
 
 import { Link, NavLink } from "react-router-dom"
 import { Button, Nav, Navbar } from "react-bootstrap"
 import CartButton from "./cart/cartButton"
 import SearchBar from "./searchBar"
+import NavProfile from "./navProfile"
 
 const NavBar = () => {
     const currentUser = useSelector(getCurrentUserData())
+    const isAdmin = useSelector(getIsAdmin())
     const isloggedIn = useSelector(getIsLoggedIn())
+
+    console.log(isAdmin)
 
     return (
         <Navbar
@@ -30,7 +34,7 @@ const NavBar = () => {
             <div className="flex-between align-items-center  me-5">
                 <CartButton />
 
-                {isloggedIn && currentUser ? (
+                {isAdmin ? (
                     <>
                         <Link
                             to={SHOP_ROUTE + ADMIN_ROUTE}
@@ -43,18 +47,9 @@ const NavBar = () => {
                                 Админ панель
                             </Button>
                         </Link>
-
-                        <Link
-                            to={SHOP_ROUTE + PROFILE_ROUTE}
-                            className="navProfile-name"
-                        >
-                            {currentUser.firstName}
-                            <i
-                                style={{ color: "white" }}
-                                className="bi bi-person-circle ms-2"
-                            ></i>
-                        </Link>
                     </>
+                ) : isloggedIn && currentUser ? (
+                    <NavProfile currentUser={currentUser} />
                 ) : (
                     <Nav>
                         <NavLink to={SHOP_ROUTE + LOGIN_ROUTE}>

@@ -133,6 +133,10 @@ export const updateUser = (payload) => async (dispatch) => {
 
 export const getIsLoggedIn = () => (state) => state.user.isLoggedIn
 
+export const getIsAdmin = () => (state) => {
+    return state.user.entities ? state.user.entities.isAdmin : null
+}
+
 export const getCurrentUserData = () => (state) => {
     return state.user.entities ? state.user.entities : null
 }

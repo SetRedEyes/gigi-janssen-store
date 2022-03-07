@@ -21,6 +21,9 @@ const schema = new Schema(
     },
     postOfficeNumber: {
       type: String
+    },
+    isAdmin:{
+      type: Boolean
     }
   },
   { timestamps: true }

@@ -2,15 +2,15 @@ import React from "react"
 import { Switch, Route, Redirect } from "react-router-dom"
 import "./App.css"
 import "../normalize.css"
-import { ToastContainer } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
-
 import { routes } from "./routes"
+
+import { ToastContainer } from "react-toastify"
 import NavBar from "./components/ui/navBar"
 import ProtectedRoute from "./components/common/protectedRoute"
 import AppLoader from "./components/ui/hoc/appLoader"
-import { SHOP_ROUTE } from "./consts"
 import Footer from "./components/ui/footer"
+import { SHOP_ROUTE } from "./consts"
 
 const App = () => {
     return (

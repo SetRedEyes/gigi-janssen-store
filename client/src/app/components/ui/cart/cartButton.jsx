@@ -29,7 +29,7 @@ const CartButton = () => {
         setIsOpen(false)
     })
     return (
-        <div className="cart-block me-5" ref={domNode}>
+        <div className="cart-block" ref={domNode}>
             {items.length > 0 && <div className="items-in-cart">{items.length}</div>}
             <Button
                 variant={"outline-light"}

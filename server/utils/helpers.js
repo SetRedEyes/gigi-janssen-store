@@ -2,7 +2,8 @@ function generateUserData() {
   return {
     phone: '',
     city: '',
-    postOfficeNumber: ''
+    postOfficeNumber: '',
+    isAdmin: false
   }
 }
 

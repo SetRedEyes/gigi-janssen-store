@@ -37,7 +37,7 @@ const BreadCrumbs = ({ productId }) => {
         }
     }
 
-    if (pathname === SHOP_ROUTE || pathname === `${SHOP_ROUTE}/a`) {
+    if (pathname === SHOP_ROUTE) {
         return null
     }
 

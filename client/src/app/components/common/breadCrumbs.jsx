@@ -19,18 +19,21 @@ const BreadCrumbs = ({ productId }) => {
         .filter((x) => x)
 
     const renderCrumbName = (name) => {
-        if (name === "profile") {
-            return "Профиль"
-        } else if (name === "gigi") {
-            return "Каталог GIGI"
-        } else if (name === "janssen") {
-            return "Каталог Janssen"
-        } else if (name === "search") {
-            return "Поиск"
-        } else if (product && product._id === name) {
-            return `${product.name}`
-        } else if (categories) {
-            return categories.find((cat) => cat.name === name)?.fullName
+        switch (name) {
+            case "gigi":
+                return "Каталог GiGi"
+
+            case "janssen":
+                return "Каталог Janssen"
+
+            case "search":
+                return "Поиск"
+
+            case product && product._id:
+                return product.name
+
+            default:
+                return categories.find((cat) => cat.name === name)?.fullName
         }
     }
 

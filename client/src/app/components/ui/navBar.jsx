@@ -15,7 +15,7 @@ const NavBar = () => {
     const isloggedIn = useSelector(getIsLoggedIn())
 
     return (
-        <Navbar bg="dark" expand="lg" sticky="top">
+        <Navbar bg="dark" expand="lg">
             <Container fluid>
                 <NavLink
                     className="header-title text-decoration-none ms-5"

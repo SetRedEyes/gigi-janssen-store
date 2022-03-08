@@ -158,6 +158,7 @@ const UserPage = () => {
                                 value={data.postOfficeNumber}
                                 onChange={handleChange}
                                 error={errors.postOfficeNumber}
+                                marginBottom="mb-4"
                             />
                             <Button
                                 type="submit"

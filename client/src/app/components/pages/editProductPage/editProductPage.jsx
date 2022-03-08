@@ -134,7 +134,7 @@ const EditProductPage = () => {
         <Container>
             <Row>
                 <Col md={{ span: 6, offset: 3 }} className="shadow p-4">
-                    <div className="flex-between align-items-center">
+                    <div className="flex-between align-items-center mb-3">
                         <h5 className="align-self-bottom">Редактирование товара</h5>
                         <BackHistoryButton />
                     </div>
@@ -143,7 +143,7 @@ const EditProductPage = () => {
                             <TextField
                                 label="Артикул"
                                 name="vendorCode"
-                                marginBottom="mt-3"
+                                marginBottom="mb-2"
                                 value={data.vendorCode}
                                 onChange={handleChange}
                                 error={errors.vendorCode}
@@ -151,7 +151,7 @@ const EditProductPage = () => {
                             <TextField
                                 label="Английское наименование"
                                 name="name"
-                                marginBottom="mt-1"
+                                marginBottom="mb-2"
                                 value={data.name}
                                 onChange={handleChange}
                                 error={errors.name}
@@ -159,7 +159,7 @@ const EditProductPage = () => {
                             <TextField
                                 label="Русское наименование"
                                 name="rusName"
-                                marginBottom="mt-1"
+                                marginBottom="mb-2"
                                 value={data.rusName}
                                 onChange={handleChange}
                                 error={errors.rusName}
@@ -167,7 +167,7 @@ const EditProductPage = () => {
                             <SelectField
                                 label="Компания"
                                 name="companyName"
-                                marginBottom="mt-1"
+                                marginBottom="mb-2"
                                 value={data.companyName}
                                 onChange={handleChange}
                                 error={errors.companyName}
@@ -176,7 +176,7 @@ const EditProductPage = () => {
                             <SelectField
                                 label="Категория"
                                 name="category"
-                                marginBottom="mt-1"
+                                marginBottom="mb-2"
                                 value={data.category}
                                 onChange={handleChange}
                                 error={errors.category}
@@ -190,7 +190,7 @@ const EditProductPage = () => {
                             <TextField
                                 label="Цена"
                                 name="price"
-                                marginBottom="mt-1"
+                                marginBottom="mb-2"
                                 value={data.price}
                                 onChange={handleChange}
                                 error={errors.price}
@@ -199,7 +199,7 @@ const EditProductPage = () => {
                             <TextField
                                 label="Объем"
                                 name="volume"
-                                marginBottom="mt-1"
+                                marginBottom="mb-2"
                                 value={data.volume}
                                 onChange={handleChange}
                                 error={errors.volume}
@@ -208,7 +208,7 @@ const EditProductPage = () => {
                             <TextField
                                 label="Фото"
                                 name="photo"
-                                marginBottom="mt-1"
+                                marginBottom="mb-2"
                                 value={data.photo}
                                 onChange={handleChange}
                                 error={errors.photo}

@@ -59,7 +59,7 @@ const BreadCrumbs = ({ productId }) => {
             })}
             <Link
                 to={pathname.includes("gigi") ? "/janssen" : "/gigi"}
-                className="ms-auto  me-5"
+                className="ms-auto me-5 link-title"
             >
                 Перейти в каталог {pathname.includes("gigi") ? "Janssen" : "GiGi"}
             </Link>

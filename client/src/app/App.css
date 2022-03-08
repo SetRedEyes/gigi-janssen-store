@@ -19,7 +19,7 @@ html {
     justify-content: center;
 }
 
-/* CardShadow */
+/* Cards */
 
 .card {
     padding: 0;
@@ -31,6 +31,21 @@ html {
     box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
         rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
         rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+.product-card {
+    border: none;
+}
+
+.product-card__subtitle {
+    text-align: center;
+    color: rgb(128, 128, 128);
+    min-height: 2.3rem;
+}
+
+.product-card__img {
+    width: 17rem;
+    height: 17rem;
 }
 
 /* SearchBar */
@@ -101,10 +116,6 @@ html {
 
 .breadcrumb-item a:hover {
     color: #21c1cf;
-}
-
-.user-page-input {
-    margin-bottom: 1.5rem;
 }
 
 /* CompanyPage */
@@ -219,7 +230,7 @@ td {
     align-items: center;
     position: relative;
     width: 6rem;
-    margin-right:5rem;
+    margin-right: 5rem;
 }
 
 .total-price {
@@ -401,6 +412,7 @@ input[type="number"] {
 .navProfile-name {
     color: #fff;
     text-decoration: none;
+  
 }
 
 .navProfile-name:hover {

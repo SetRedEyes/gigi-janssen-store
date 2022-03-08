@@ -45,9 +45,7 @@ const BreadCrumbs = ({ productId }) => {
             </Breadcrumb.Item>
             {pathnames.map((name, index) => {
                 const isLast = index === pathnames.length - 1
-                const routeTo = `${SHOP_ROUTE}/${pathnames
-                    .slice(0, index + 1)
-                    .join("/")}`
+                const routeTo = `/${pathnames.slice(0, index + 1).join("/")}`
                 return (
                     <Breadcrumb.Item
                         linkAs={Link}
@@ -59,6 +57,12 @@ const BreadCrumbs = ({ productId }) => {
                     </Breadcrumb.Item>
                 )
             })}
+            <Link
+                to={pathname.includes("gigi") ? "/janssen" : "/gigi"}
+                className="ms-auto  me-5"
+            >
+                Перейти в каталог {pathname.includes("gigi") ? "Janssen" : "GiGi"}
+            </Link>
         </Breadcrumb>
     )
 }

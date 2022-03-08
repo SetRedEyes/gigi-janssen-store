@@ -143,7 +143,7 @@ const EditProductPage = () => {
                             <TextField
                                 label="Артикул"
                                 name="vendorCode"
-                                marginBottom="mt1"
+                                marginBottom="mt-3"
                                 value={data.vendorCode}
                                 onChange={handleChange}
                                 error={errors.vendorCode}

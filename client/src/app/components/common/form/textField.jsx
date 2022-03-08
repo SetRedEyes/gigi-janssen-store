@@ -28,7 +28,7 @@ const TextField = ({
     }
     return (
         <Form.Group className={marginBottom}>
-            <Form.Label>{label}</Form.Label>
+            <Form.Label className="text-muted">{label}</Form.Label>
             <InputGroup>
                 <Form.Control
                     type={showPassword ? "text" : type}
@@ -62,7 +62,7 @@ const TextField = ({
     )
 }
 
-TextField.defaultProps = { type: "text", marginBottom: "mb-4" }
+TextField.defaultProps = { type: "text", marginBottom: "mb-2" }
 
 TextField.propTypes = {
     label: PropTypes.string,

@@ -10,15 +10,15 @@ const ProductsListCard = ({ products, colSize }) => {
         <>
             {products.map((product) => (
                 <Col key={product._id} md={colSize} className="mb-5">
-                    <Card style={{ width: "18rem", border: "none" }}>
-                        <Card.Subtitle className="text-muted pt-2 mb-1 text-center">
+                    <Card className="product-card">
+                        <Card.Subtitle className="product-card__subtitle">
                             {product.rusName}
                         </Card.Subtitle>
                         <Link
                             to={`/${product.companyName}/${product.category}/${product._id}`}
                         >
                             <Image
-                                style={{ width: "18rem", height: "17rem" }}
+                                className="product-card__img"
                                 src={product.photo}
                             />
                         </Link>

@@ -28,7 +28,7 @@ const NavBar = () => {
                 <CartButton />
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="me-auto">
+                    <Nav className="me-auto align-items-center ">
                         {isAdmin ? (
                             <>
                                 <Link to={ADMIN_ROUTE} className="navProfile-name ">
@@ -39,6 +39,7 @@ const NavBar = () => {
                                         Админ панель
                                     </Button>
                                 </Link>
+                                <NavProfile currentUser={currentUser} />
                             </>
                         ) : isloggedIn && currentUser ? (
                             <NavProfile currentUser={currentUser} />

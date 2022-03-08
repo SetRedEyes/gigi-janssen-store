@@ -21,7 +21,7 @@ const SelectField = ({ name, label, value, options, defaultOption, onChange, err
 
     return (
         <Form.Group className={marginBottom}>
-            <Form.Label>{label}</Form.Label>
+            <Form.Label className="text-muted">{label}</Form.Label>
             <Form.Select
                 className={getInputClasses()}
                 id="validationCustom04"

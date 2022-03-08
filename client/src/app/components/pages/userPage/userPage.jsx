@@ -106,7 +106,7 @@ const UserPage = () => {
     return (
         <Container>
             <Row>
-                <Col md={{ span: 6, offset: 3 }} className="shadow p-4">
+                <Col md={{ span: 6, offset: 3 }} className="shadow p-5 ">
                     <div className="flex-between">
                         <BackHistoryButton />
 
@@ -115,7 +115,7 @@ const UserPage = () => {
                         </Link>
                     </div>
                     {!isLoading && Object.keys(currentUser).length > 0 ? (
-                        <Form className="mt-2" onSubmit={handleSubmit}>
+                        <Form className="mt-4" onSubmit={handleSubmit}>
                             <TextField
                                 label="Электронная почта"
                                 name="email"

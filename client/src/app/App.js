@@ -11,6 +11,7 @@ import ProtectedRoute from "./components/common/protectedRoute"
 import AppLoader from "./components/ui/hoc/appLoader"
 import Footer from "./components/ui/footer"
 import { SHOP_ROUTE } from "./consts"
+import ScrollToTop from "./components/ui/hoc/scrollToTop"
 
 const App = () => {
     return (
@@ -18,26 +19,28 @@ const App = () => {
             <AppLoader>
                 <NavBar />
                 <div className="content">
-                    <Switch>
-                        {routes.map(({ path, component, isProtectedRoute }) =>
-                            isProtectedRoute ? (
-                                <ProtectedRoute
-                                    key={path}
-                                    path={path}
-                                    component={component}
-                                    exact
-                                />
-                            ) : (
-                                <Route
-                                    key={path}
-                                    path={path}
-                                    component={component}
-                                    exact
-                                />
-                            )
-                        )}
-                        <Redirect to={SHOP_ROUTE} />
-                    </Switch>
+                    <ScrollToTop className="content">
+                        <Switch>
+                            {routes.map(({ path, component, isProtectedRoute }) =>
+                                isProtectedRoute ? (
+                                    <ProtectedRoute
+                                        key={path}
+                                        path={path}
+                                        component={component}
+                                        exact
+                                    />
+                                ) : (
+                                    <Route
+                                        key={path}
+                                        path={path}
+                                        component={component}
+                                        exact
+                                    />
+                                )
+                            )}
+                            <Redirect to={SHOP_ROUTE} />
+                        </Switch>
+                    </ScrollToTop>
                 </div>
                 <Footer />
             </AppLoader>

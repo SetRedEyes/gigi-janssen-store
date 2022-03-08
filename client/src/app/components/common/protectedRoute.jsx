@@ -13,7 +13,7 @@ const ProtectedRoute = ({ component: Component, children, ...rest }) => {
         <Route
             {...rest}
             render={(props) => {
-                if (!isLoggedIn && isAdmin) {
+                if (!isLoggedIn) {
                     return (
                         <Redirect
                             to={{
@@ -24,7 +24,7 @@ const ProtectedRoute = ({ component: Component, children, ...rest }) => {
                             }}
                         />
                     )
-                } else if (!isAdmin) {
+                } else if (isAdmin) {
                     return (
                         <Redirect
                             to={{

@@ -4,13 +4,6 @@ import { NavLink } from "react-router-dom"
 import { SHOP_ROUTE } from "../../consts"
 
 const Footer = () => {
-    const scrollTop = () => {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        })
-    }
-
     return (
         <Navbar bg="dark" variant="dark" sticky="top" className="footer ">
             <ul className="list-unstyled">
@@ -25,7 +18,7 @@ const Footer = () => {
                     </a>
                 </li>
             </ul>{" "}
-            <NavLink className="header-title" to={SHOP_ROUTE} onClick={scrollTop}>
+            <NavLink className="header-title" to={SHOP_ROUTE}>
                 GIGI & JANSSEN
             </NavLink>
             <ul className="list-unstyled">

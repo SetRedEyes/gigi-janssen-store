@@ -4,7 +4,7 @@ import { getProducts, removeProduct } from "../../../store/products"
 import { paginate } from "../../../utils/paginate"
 import history from "../../../utils/history"
 import _ from "lodash"
-import { ADMIN_ROUTE, SHOP_ROUTE } from "../../../consts"
+import { ADMIN_ROUTE } from "../../../consts"
 
 import { Col, Container, FormControl, InputGroup, Row } from "react-bootstrap"
 import AddProductForm from "../../ui/addProductForm"
@@ -26,7 +26,7 @@ const adminPage = () => {
     }, [searchQuery])
 
     const handleEditProduct = (productId) => {
-        history.push(SHOP_ROUTE + ADMIN_ROUTE + productId)
+        history.push(ADMIN_ROUTE + productId)
     }
 
     const handleRemoveProduct = (productId) => {
@@ -60,7 +60,11 @@ const adminPage = () => {
             : products
 
         const count = filteredProducts.length
-        const sortedProducts = _.orderBy(filteredProducts, [sortBy.path], [sortBy.order])
+        const sortedProducts = _.orderBy(
+            filteredProducts,
+            [sortBy.path],
+            [sortBy.order]
+        )
         const productsCrop = paginate(sortedProducts, currentPage, pageSize)
 
         return (

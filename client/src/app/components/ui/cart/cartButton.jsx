@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux"
 import { getCartItems, loadCartList } from "../../../store/cart"
 import { calcTotalPrice } from "../../../utils/calcTotalPrice"
-import { ORDER_ROUTE, SHOP_ROUTE } from "../../../consts"
+import { ORDER_ROUTE } from "../../../consts"
 
 import { Button } from "react-bootstrap"
 import CartMenu from "./cartMenu"
@@ -22,7 +22,7 @@ const CartButton = () => {
 
     const goToOrder = () => {
         setIsOpen(false)
-        history.push(SHOP_ROUTE + ORDER_ROUTE)
+        history.push(ORDER_ROUTE)
     }
 
     const domNode = useClickOutside(() => {

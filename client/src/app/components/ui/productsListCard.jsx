@@ -1,6 +1,5 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { SHOP_ROUTE } from "../../consts"
 
 import { Link } from "react-router-dom"
 import { Card, Col, Image } from "react-bootstrap"
@@ -16,9 +15,7 @@ const ProductsListCard = ({ products, colSize }) => {
                             {product.rusName}
                         </Card.Subtitle>
                         <Link
-                            to={
-                                SHOP_ROUTE + `/${product.companyName}/${product.category}/${product._id}`
-                            }
+                            to={`/${product.companyName}/${product.category}/${product._id}`}
                         >
                             <Image
                                 style={{ width: "18rem", height: "17rem" }}
@@ -28,9 +25,7 @@ const ProductsListCard = ({ products, colSize }) => {
                         <Card.Body>
                             <Link
                                 className="link-title text-center"
-                                to={
-                                    SHOP_ROUTE + `/${product.companyName}/${product.category}/${product._id}`
-                                }
+                                to={`/${product.companyName}/${product.category}/${product._id}`}
                             >
                                 <Card.Title style={{ height: "3rem" }}>
                                     {product.name}

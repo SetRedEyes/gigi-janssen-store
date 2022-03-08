@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import history from "../../utils/history"
-import { ADMIN_ROUTE, SHOP_ROUTE } from "../../consts"
+import { ADMIN_ROUTE } from "../../consts"
 
 import EditButton from "../common/editButton"
 import DeleteButton from "../common/deleteButton"
@@ -28,9 +28,7 @@ const ProductsTable = ({ products, onSort, selectedSort, onRemove }) => {
             name: "Редактировать",
             component: (product) => (
                 <EditButton
-                    onClick={() =>
-                        history.push(SHOP_ROUTE + ADMIN_ROUTE + `/${product._id}`)
-                    }
+                    onClick={() => history.push(ADMIN_ROUTE + `/${product._id}`)}
                 />
             )
         },

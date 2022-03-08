@@ -3,7 +3,6 @@ import PropTypes from "prop-types"
 import { useDispatch } from "react-redux"
 import { removeItemFromCart } from "../../../store/cart"
 import { capitalizeFirstLetter } from "../../../utils/capitalizeFirstLetter"
-import { SHOP_ROUTE } from "../../../consts"
 
 import { Link } from "react-router-dom"
 import DeleteButton from "../../common/deleteButton"
@@ -19,10 +18,7 @@ const CartItem = ({ product, volumeId }) => {
         <div className="cart-item">
             <Link
                 className="d-flex flex-column link-in-cart"
-                to={
-                    SHOP_ROUTE +
-                    `/${product.companyName}/${product.category}/${product._id}`
-                }
+                to={`/${product.companyName}/${product.category}/${product._id}`}
             >
                 <span>
                     {`${capitalizeFirstLetter(product.companyName)} ${

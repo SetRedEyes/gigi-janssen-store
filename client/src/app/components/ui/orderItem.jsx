@@ -1,7 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { capitalizeFirstLetter } from "../../utils/capitalizeFirstLetter"
-import { SHOP_ROUTE } from "../../consts"
 
 import { Link } from "react-router-dom"
 import { Col, Image, Row } from "react-bootstrap"
@@ -12,9 +11,7 @@ const OrderItem = ({ product, onDelete, onQuantityChange }) => {
         <Row className="cart-item">
             <Col md={1}>
                 <Link
-                    to={
-                        SHOP_ROUTE + `/${product.companyName}/${product.category}/${product._id}`
-                    }
+                    to={`/${product.companyName}/${product.category}/${product._id}`}
                 >
                     <Image className="order-item_image" src={product.photo} />
                 </Link>
@@ -23,12 +20,12 @@ const OrderItem = ({ product, onDelete, onQuantityChange }) => {
             <Col md={7}>
                 <Link
                     className="d-flex flex-column link-title"
-                    to={
-                        SHOP_ROUTE + `/${product.companyName}/${product.category}/${product._id}`
-                    }
+                    to={`/${product.companyName}/${product.category}/${product._id}`}
                 >
                     <span className="order-item__title ">
-                        {`${capitalizeFirstLetter(product.companyName)} ${product.name} - ${product.rusName} `}
+                        {`${capitalizeFirstLetter(product.companyName)} ${
+                            product.name
+                        } - ${product.rusName} `}
                     </span>
                 </Link>
 

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { getCurrentUserData, updateUser } from "../../../store/user"
 import { validator } from "../../../utils/validator"
-import { LOGOUT_ROUTE, SHOP_ROUTE } from "../../../consts"
+import { LOGOUT_ROUTE } from "../../../consts"
 
 import { Link } from "react-router-dom"
 import { Button, Col, Container, Form, Row } from "react-bootstrap"
@@ -110,10 +110,7 @@ const UserPage = () => {
                     <div className="flex-between">
                         <BackHistoryButton />
 
-                        <Link
-                            to={SHOP_ROUTE + LOGOUT_ROUTE}
-                            className="action-btn"
-                        >
+                        <Link to={LOGOUT_ROUTE} className="action-btn">
                             Выйти из аккаунта
                         </Link>
                     </div>

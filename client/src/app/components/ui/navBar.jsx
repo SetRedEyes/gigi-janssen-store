@@ -17,43 +17,43 @@ const NavBar = () => {
     return (
         <Navbar bg="dark" expand="lg" sticky="top">
             <Container fluid>
-            <NavLink
-                className="header-title text-decoration-none ms-5"
-                to={SHOP_ROUTE}
-            >
-                GIGI & JANSSEN
-            </NavLink>
+                <NavLink
+                    className="header-title text-decoration-none ms-5"
+                    to={SHOP_ROUTE}
+                >
+                    GIGI & JANSSEN
+                </NavLink>
 
-            <SearchBar />
-            <CartButton />
-            <Navbar.Toggle aria-controls="basic-navbar-nav" />
-            <Navbar.Collapse id="basic-navbar-nav">
-                <Nav className="me-auto">
-                    {isAdmin ? (
-                        <>
-                            <Link
-                                to={SHOP_ROUTE + ADMIN_ROUTE}
-                                className="navProfile-name "
-                            >
+                <SearchBar />
+                <CartButton />
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav">
+                    <Nav className="me-auto">
+                        {isAdmin ? (
+                            <>
+                                <Link to={ADMIN_ROUTE} className="navProfile-name ">
+                                    <Button
+                                        variant={"outline-light"}
+                                        className="navlink-btn me-5"
+                                    >
+                                        Админ панель
+                                    </Button>
+                                </Link>
+                            </>
+                        ) : isloggedIn && currentUser ? (
+                            <NavProfile currentUser={currentUser} />
+                        ) : (
+                            <NavLink to={LOGIN_ROUTE}>
                                 <Button
-                                    variant={"outline-light"}
-                                    className="navlink-btn me-5"
+                                    variant="outline-light"
+                                    className="navlink-btn "
                                 >
-                                    Админ панель
+                                    Вход/Регистрация
                                 </Button>
-                            </Link>
-                        </>
-                    ) : isloggedIn && currentUser ? (
-                        <NavProfile currentUser={currentUser} />
-                    ) : (
-                        <NavLink to={SHOP_ROUTE + LOGIN_ROUTE}>
-                            <Button variant="outline-light" className="navlink-btn ">
-                                Вход/Регистрация
-                            </Button>
-                        </NavLink>
-                    )}
-                </Nav>
-            </Navbar.Collapse>
+                            </NavLink>
+                        )}
+                    </Nav>
+                </Navbar.Collapse>
             </Container>
         </Navbar>
     )

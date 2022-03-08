@@ -18,17 +18,14 @@ const ProtectedRoute = ({ component: Component, children, ...rest }) => {
                     return (
                         <Redirect
                             to={{
-                                pathname: SHOP_ROUTE + LOGIN_ROUTE,
+                                pathname: LOGIN_ROUTE,
                                 state: {
                                     from: props.location
                                 }
                             }}
                         />
                     )
-                } else if (
-                    props.location.pathname === SHOP_ROUTE + ADMIN_ROUTE &&
-                    !isAdmin
-                ) {
+                } else if (props.location.pathname === ADMIN_ROUTE && !isAdmin) {
                     return (
                         <Redirect
                             to={{

@@ -1,12 +1,12 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { PROFILE_ROUTE, SHOP_ROUTE } from "../../consts"
+import { PROFILE_ROUTE } from "../../consts"
 
 import { Link } from "react-router-dom"
 
 const NavProfile = ({ currentUser }) => {
     return (
-        <Link to={SHOP_ROUTE + PROFILE_ROUTE} className="navProfile-name">
+        <Link to={PROFILE_ROUTE} className="navProfile-name">
             {currentUser.firstName}
             <i className="bi bi-person-circle ms-2"></i>
         </Link>

@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react"
 import { useHistory } from "react-router-dom"
-import { SEARCH_ROUTE, SHOP_ROUTE } from "../../consts"
+import { SEARCH_ROUTE } from "../../consts"
 import { Button, Form, FormControl, InputGroup } from "react-bootstrap"
 
 const SearchBar = () => {
@@ -15,7 +15,7 @@ const SearchBar = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        history.push(SHOP_ROUTE + SEARCH_ROUTE + `?search=${search}`)
+        history.push(SEARCH_ROUTE + `?search=${search}`)
         searchRef.current.reset()
     }
 

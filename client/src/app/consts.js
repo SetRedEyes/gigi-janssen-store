@@ -1,4 +1,4 @@
-export const SHOP_ROUTE = "/gigi-janssen-store"
+export const SHOP_ROUTE = "/"
 export const LOGIN_ROUTE = "/login"
 export const ADMIN_ROUTE = "/admin"
 export const PROFILE_ROUTE = "/profile"

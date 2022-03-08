@@ -1,6 +1,5 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { SHOP_ROUTE } from "../../consts"
 
 import { Link } from "react-router-dom"
 import { Card } from "react-bootstrap"
@@ -10,7 +9,7 @@ const CategoryCard = ({ fullName, photo, companyName, categoryName, catObj }) =>
         <Link
             className="link-title "
             to={{
-                pathname: SHOP_ROUTE + `/${companyName}/${categoryName}`,
+                pathname: `/${companyName}/${categoryName}`,
                 state: {
                     selectedCatProp: catObj
                 }

@@ -13,10 +13,7 @@ const BreadCrumbs = ({ productId }) => {
     const categories = useSelector(getCategories())
     const { pathname } = useLocation()
 
-    const pathnames = pathname
-        .slice(20)
-        .split("/")
-        .filter((x) => x)
+    const pathnames = pathname.split("/").filter((x) => x)
 
     const renderCrumbName = (name) => {
         switch (name) {

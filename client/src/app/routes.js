@@ -21,24 +21,24 @@ export const routes = [
         component: Main
     },
     {
-        path: SHOP_ROUTE + LOGIN_ROUTE + "/:type?",
+        path: LOGIN_ROUTE + "/:type?",
         component: Login
     },
     {
-        path: SHOP_ROUTE + PROFILE_ROUTE,
+        path: PROFILE_ROUTE,
         component: UserPage,
         isProtectedRoute: true
     },
     {
-        path: SHOP_ROUTE + ADMIN_ROUTE + "/:productId?",
+        path: ADMIN_ROUTE + "/:productId?",
         component: AdminPanel,
         isProtectedRoute: true
     },
-    { path: SHOP_ROUTE + SEARCH_ROUTE, component: SearchPage },
-    { path: SHOP_ROUTE + ORDER_ROUTE, component: Cart },
-    { path: SHOP_ROUTE + LOGOUT_ROUTE, component: LogOut },
+    { path: SEARCH_ROUTE, component: SearchPage },
+    { path: ORDER_ROUTE, component: Cart },
+    { path: LOGOUT_ROUTE, component: LogOut },
     {
-        path: SHOP_ROUTE + "/:companyName?/:categoryName?/:productId?",
+        path: "/:companyName?/:categoryName?/:productId?",
         component: Main
     }
 ]

@@ -2,7 +2,7 @@ import { createAction, createSlice } from "@reduxjs/toolkit"
 import productService from "../services/product.service"
 import isOutdated from "../utils/isOutDated"
 import history from "../utils/history"
-import { ADMIN_ROUTE, SHOP_ROUTE } from "../consts"
+import { ADMIN_ROUTE } from "../consts"
 
 const productsSlice = createSlice({
     name: "products",
@@ -101,7 +101,7 @@ export const updateProductData = (payload) => async (dispatch) => {
         const { content } = await productService.updateProduct(payload)
         dispatch(productUpdated(content))
         dispatch(loadProductsList())
-        history.push(SHOP_ROUTE + ADMIN_ROUTE)
+        history.push(ADMIN_ROUTE)
     } catch (error) {
         dispatch(productUpdateFailed(error.message))
     }

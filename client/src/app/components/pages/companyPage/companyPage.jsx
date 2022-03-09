@@ -26,12 +26,11 @@ const CompanyPage = () => {
         <Container fluid>
             <Row>
                 <Col md={3} className="mt-1">
-                    <h1 className="text-center">GIGI</h1>
-
                     <GroupList
                         selectedItem={selectedCat}
                         items={{ ...gigiCats }}
                         onItemSelect={handleCategorySelect}
+                        companyName="GIGI"
                     />
                 </Col>
 
@@ -53,11 +52,11 @@ const CompanyPage = () => {
                 </Col>
 
                 <Col md={3} className="mt-1">
-                    <h1 className="text-center">Janssen</h1>
                     <GroupList
                         items={{ ...janssenCats }}
                         onItemSelect={handleCategorySelect}
                         selectedItem={selectedCat}
+                        companyName="JANSSEN"
                     />
                 </Col>
             </Row>

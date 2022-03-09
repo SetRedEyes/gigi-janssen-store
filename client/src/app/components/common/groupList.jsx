@@ -10,11 +10,14 @@ const GroupList = ({
     contentProperty,
     onItemSelect,
     selectedItem,
-    pathProperty
+    pathProperty,
+    companyName
 }) => {
+    console.log(companyName)
     if (!Array.isArray(items)) {
         return (
             <ListGroup>
+                <h1 className="text-center ">{companyName}</h1>
                 {Object.keys(items).map((item) => (
                     <Link
                         className="text-decoration-none"
@@ -44,6 +47,8 @@ const GroupList = ({
 
     return (
         <ListGroup>
+            <h1 className="text-center mt-0 mb-1">{companyName.toUpperCase()}</h1>
+
             {items.map((item) => (
                 <Link
                     className="text-decoration-none"
@@ -78,6 +83,7 @@ GroupList.propTypes = {
     contentProperty: PropTypes.string.isRequired,
     pathProperty: PropTypes.string.isRequired,
     onItemSelect: PropTypes.func,
-    selectedItem: PropTypes.object
+    selectedItem: PropTypes.object,
+    companyName: PropTypes.string
 }
 export default GroupList

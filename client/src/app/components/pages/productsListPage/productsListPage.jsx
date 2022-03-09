@@ -73,24 +73,21 @@ const ProductsListPage = ({ companyName }) => {
             [sortBy.order]
         )
         const productCrop = paginate(sortedProducts, currentPage, pageSize)
-
         return (
             <Container fluid>
                 <SortSelect onSort={handleSort} />
                 {categories && (
                     <Row>
                         <Col md={3}>
-                            <h1 className="text-center m-0 mb-1">
-                                {companyName === "gigi" ? "GIGI" : "JANSSEN"}
-                            </h1>
                             <GroupList
                                 selectedItem={selectedCat}
                                 items={categories}
                                 onItemSelect={handleCategorySelect}
+                                companyName={companyName}
                             />
                         </Col>
 
-                        <Col md={8} className="ms-5 mt-3">
+                        <Col md={8} className="ms-5 mt-5">
                             <Row>
                                 <ProductsListCard products={productCrop} />
                             </Row>

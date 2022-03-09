@@ -27,15 +27,13 @@ const ProductPage = ({ productId, companyName }) => {
         return (
             <Container fluid>
                 {categories && (
-                    <Row className="me-5">
-                        <Col md={3} className="mt-3">
-                            <h1 className="text-center m-0 mb-1">
-                                {companyName === "gigi" ? "GIGI" : "JANSSEN"}
-                            </h1>
+                    <Row className="mt-5">
+                        <Col md={3} className="mt-1">
                             <GroupList
                                 selectedItem={selectedCat}
                                 items={categories}
                                 onItemSelect={handleCategorySelect}
+                                companyName={companyName}
                             />
                         </Col>
                         <Col>

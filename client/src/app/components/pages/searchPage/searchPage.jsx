@@ -9,7 +9,7 @@ import _ from "lodash"
 
 import { Col, Container, Row } from "react-bootstrap"
 import BreadCrumbs from "../../common/breadCrumbs"
-import ProductsListCard from "../../ui/productsListCard"
+import ProductsListCard from "../../ui/card/productsListCard"
 import GroupList from "../../common/groupList"
 import SortSelect from "../../common/sortSelect"
 import PagesPagination from "../../common/pagination"

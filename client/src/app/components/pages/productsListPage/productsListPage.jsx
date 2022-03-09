@@ -8,7 +8,7 @@ import { paginate } from "../../../utils/paginate"
 import _ from "lodash"
 
 import { Row, Col, Container } from "react-bootstrap"
-import ProductsListCard from "../../ui/productsListCard"
+import ProductsListCard from "../../ui/card/productsListCard"
 import GroupList from "../../../components/common/groupList"
 import SortSelect from "../../common/sortSelect"
 import PagesPagination from "../../../components/common/pagination"
@@ -67,7 +67,11 @@ const ProductsListPage = ({ companyName }) => {
             : products
         const count = filteredProducts.length
 
-        const sortedProducts = _.orderBy(filteredProducts, [sortBy.iter], [sortBy.order])
+        const sortedProducts = _.orderBy(
+            filteredProducts,
+            [sortBy.iter],
+            [sortBy.order]
+        )
         const productCrop = paginate(sortedProducts, currentPage, pageSize)
 
         return (

@@ -33,19 +33,21 @@ html {
         rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
 
-.product-card {
+.productList-card {
     border: none;
 }
 
-.product-card__subtitle {
+.productList-card__subtitle {
     text-align: center;
     color: rgb(128, 128, 128);
     min-height: 2.3rem;
 }
 
-.product-card__img {
-    width: 17rem;
-    height: 17rem;
+.productList-card__img {
+    max-width: 80%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* SearchBar */
@@ -412,7 +414,6 @@ input[type="number"] {
 .navProfile-name {
     color: #fff;
     text-decoration: none;
-  
 }
 
 .navProfile-name:hover {

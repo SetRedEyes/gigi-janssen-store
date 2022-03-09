@@ -28,7 +28,10 @@ const ProductPage = ({ productId, companyName }) => {
             <Container fluid>
                 {categories && (
                     <Row className="me-5">
-                        <Col md={3} className="mt-4">
+                        <Col md={3} className="mt-3">
+                            <h1 className="text-center m-0 mb-1">
+                                {companyName === "gigi" ? "GIGI" : "JANSSEN"}
+                            </h1>
                             <GroupList
                                 selectedItem={selectedCat}
                                 items={categories}
@@ -45,7 +48,7 @@ const ProductPage = ({ productId, companyName }) => {
                                         style={{ width: "20rem", height: "20rem" }}
                                     />
                                 </Col>
-                                <Col md={7} className="mt-4 ms-5">
+                                <Col md={7} className="mt-5 ms-5">
                                     <h5>
                                         <strong>
                                             {" "}
@@ -85,7 +88,7 @@ const ProductPage = ({ productId, companyName }) => {
                                         </span>
                                     </Row>
                                     <Row className="justify-content-center">
-                                        <Col md={6} className="mt-5 mb-5">
+                                        <Col md={6} className="mt-3 mb-5">
                                             <VolumePriceMenu product={product} />
                                         </Col>
                                     </Row>
@@ -93,8 +96,8 @@ const ProductPage = ({ productId, companyName }) => {
                             </Row>
                             <Row>
                                 <hr />
-                                <Col className="mt-3">
-                                    <h3 className="ms-5 ">Описание товара</h3>
+                                <Col>
+                                    <h3 className="ms-5 mt-2 ">Описание товара</h3>
                                     <p
                                         className="text-left"
                                         style={{ textIndent: "2rem" }}

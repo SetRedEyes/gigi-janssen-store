@@ -15,7 +15,7 @@ import { enumerate } from "../../../utils/enumerate"
 import { Button, Col, Container, Row } from "react-bootstrap"
 import BackHistoryButton from "../../common/backButton"
 import OrderItem from "../../ui/orderItem"
-import OrderModal from "../../ui/orderModal"
+import OrderModal from "../../ui/modal/orderModal"
 
 const OrderingPage = () => {
     const dispatch = useDispatch()

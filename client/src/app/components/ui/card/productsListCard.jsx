@@ -3,22 +3,22 @@ import PropTypes from "prop-types"
 
 import { Link } from "react-router-dom"
 import { Card, Col, Image } from "react-bootstrap"
-import VolumePriceMenu from "../common/VolumePriceMenu"
+import VolumePriceMenu from "../../common/VolumePriceMenu"
 
 const ProductsListCard = ({ products, colSize }) => {
     return (
         <>
             {products.map((product) => (
                 <Col key={product._id} md={colSize} className="mb-5">
-                    <Card className="product-card">
-                        <Card.Subtitle className="product-card__subtitle">
+                    <Card className="productList-card">
+                        <Card.Subtitle className="productList-card__subtitle">
                             {product.rusName}
                         </Card.Subtitle>
                         <Link
                             to={`/${product.companyName}/${product.category}/${product._id}`}
                         >
                             <Image
-                                className="product-card__img"
+                                className="productList-card__img"
                                 src={product.photo}
                             />
                         </Link>

@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react"
 import PropTypes from "prop-types"
 import { useSelector } from "react-redux"
-import { getCurrentUserData } from "../../store/user"
-import { validator } from "../../utils/validator"
+import { getCurrentUserData } from "../../../store/user"
+import { validator } from "../../../utils/validator"
 
 import { Button, Form, Modal } from "react-bootstrap"
-import TextField from "../common/form/textField"
-import LoadingSpinner from "../common/loadingSpinner"
-import { SHOP_ROUTE } from "../../consts"
-import history from "../../utils/history"
+import TextField from "../../common/form/textField"
+import LoadingSpinner from "../../common/loadingSpinner"
+import { SHOP_ROUTE } from "../../../consts"
+import history from "../../../utils/history"
 import ConfirmedOrderModal from "./confirmedOrederModal"
 
 const initialData = {

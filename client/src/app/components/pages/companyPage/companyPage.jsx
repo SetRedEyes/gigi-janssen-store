@@ -4,7 +4,7 @@ import { getCategoriesByCompany } from "../../../store/categories"
 import { getCompanies, getCompaniesLoadingStatus } from "../../../store/companies"
 
 import { Col, Container, Row } from "react-bootstrap"
-import CompanyCard from "../../ui/companyCard"
+import CompanyCard from "../../ui/card/companyCard"
 import GroupList from "../../../components/common/groupList"
 import LoadingSpinner from "../../common/loadingSpinner"
 import CompaniesDescription from "../../ui/companiesDescription"

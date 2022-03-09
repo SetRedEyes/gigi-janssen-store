@@ -2,9 +2,15 @@ import React from "react"
 import PropTypes from "prop-types"
 import { Card } from "react-bootstrap"
 
-const priceButton = ({ selectedPrice, prices, handleClick, isItemInCart, selectedVolume }) => {
+const priceButton = ({
+    selectedPrice,
+    prices,
+    handleClick,
+    isItemInCart,
+    selectedVolume
+}) => {
     return (
-        <div className="flex-between mt-4">
+        <div className="flex-between align-items-center mt-4">
             <Card.Title>
                 {!selectedPrice || prices.length === 1
                     ? `${prices[0]} грн`
@@ -13,7 +19,9 @@ const priceButton = ({ selectedPrice, prices, handleClick, isItemInCart, selecte
             <div
                 role="button"
                 onClick={handleClick}
-                className={isItemInCart && selectedVolume ? "grey-btn" : "action-btn"}
+                className={
+                    isItemInCart && selectedVolume ? "grey-btn" : "action-btn"
+                }
             >
                 {isItemInCart && selectedVolume ? "Убрать из корзины" : "В Корзину"}
             </div>

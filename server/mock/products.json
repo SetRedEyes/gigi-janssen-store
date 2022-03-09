@@ -218,5 +218,16 @@
     "price": [650, 1150],
     "volume": [200, 500],
     "photo": "https://www.janssen-cosmetics.com/Uploads/8600/Purifying_Wash_Shave_75ml.jpg?width=400&height=390&mode=boxpad&bgcolor=fff"
+  },
+  {
+    "_id": "167qr3ew",
+    "vendorCode": "q412h353",
+    "companyName": "janssen",
+    "name": "Melafadin Cleansing Powder",
+    "rusName": "Осветляющая очищающая пудра",
+    "category": "fairSkin",
+    "price": [650, 1150],
+    "volume": [200, 500],
+    "photo": "https://www.janssen-cosmetics.com/Uploads/3300/Melafadin%20Cleansing%20Powder_60g.jpg?width=400&height=390&mode=boxpad&bgcolor=fff"
   }
 ]

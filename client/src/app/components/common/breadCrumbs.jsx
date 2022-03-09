@@ -30,7 +30,7 @@ const BreadCrumbs = ({ productId }) => {
                 return product.name
 
             default:
-                return categories && categories.find((cat) => cat.name === name)?.fullName
+                return categories && categories.find((cat) => cat.name === name).fullName
         }
     }
 

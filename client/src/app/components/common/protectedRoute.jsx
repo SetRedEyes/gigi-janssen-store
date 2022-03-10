@@ -8,8 +8,7 @@ import { Route, Redirect } from "react-router-dom"
 const ProtectedRoute = ({ component: Component, children, ...rest }) => {
     const isLoggedIn = useSelector(getIsLoggedIn())
     const isAdmin = useSelector(getIsAdmin())
-    console.log(rest.location.pathname === SHOP_ROUTE + ADMIN_ROUTE)
-    console.log(isAdmin)
+
     return (
         <Route
             {...rest}

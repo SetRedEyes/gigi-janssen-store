@@ -1,15 +1,15 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { PROFILE_ROUTE } from "../../consts"
+import { PROFILE_ROUTE } from "../../../consts"
 
-import { Link } from "react-router-dom"
+import { Nav } from "react-bootstrap"
 
 const NavProfile = ({ currentUser }) => {
     return (
-        <Link to={PROFILE_ROUTE} className="navProfile-name">
+        <Nav.Link href={PROFILE_ROUTE} className="navProfile-name">
             {currentUser.firstName}
-            <i className="bi bi-person-circle ms-2"></i>
-        </Link>
+            <i className="bi bi-person-circle align-items-center ms-2"></i>
+        </Nav.Link>
     )
 }
 

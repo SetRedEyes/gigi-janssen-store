@@ -13,7 +13,6 @@ const GroupList = ({
     pathProperty,
     companyName
 }) => {
-    console.log(companyName)
     if (!Array.isArray(items)) {
         return (
             <ListGroup>

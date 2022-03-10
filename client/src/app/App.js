@@ -6,7 +6,7 @@ import "react-toastify/dist/ReactToastify.css"
 import { routes } from "./routes"
 
 import { ToastContainer } from "react-toastify"
-import NavBar from "./components/ui/navBar"
+import NavBar from "./components/ui/navBar/navBar"
 import ProtectedRoute from "./components/common/protectedRoute"
 import AppLoader from "./components/ui/hoc/appLoader"
 import Footer from "./components/ui/footer"

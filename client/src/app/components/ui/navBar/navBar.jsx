@@ -15,14 +15,14 @@ const NavBar = () => {
     const isAdmin = useSelector(getIsAdmin())
     const isloggedIn = useSelector(getIsLoggedIn())
     return (
-        <Navbar bg="dark" expand="xl" className="navbar-dark">
-            <Container fluid className="">
+        <Navbar bg="dark" expand="md" className="navbar-dark ">
+            <Container fluid>
                 <NavbarTitle />
 
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav
-                        className="flex-center ms-auto my-2 my-lg-0 "
+                        className="flex-center ms-auto my-2 my-md-0 "
                         style={{ maxHeight: "11rem" }}
                     >
                         <SearchBar />
@@ -30,17 +30,17 @@ const NavBar = () => {
                         {isloggedIn && currentUser ? (
                             isAdmin ? (
                                 <>
-                                    <div className="profile-cart__wrapper">
+                                    <div className="navbar-items__wrapper">
                                         <CartButton />
                                         <NavProfile currentUser={currentUser} />
                                     </div>
                                     <AdminButton />
                                 </>
                             ) : (
-                                <>
+                                <div className="navbar-items__wrapper">
                                     <CartButton />
                                     <NavProfile currentUser={currentUser} />
-                                </>
+                                </div>
                             )
                         ) : (
                             <>

@@ -5,7 +5,7 @@ const CompaniesDescription = () => {
     return (
         <Accordion flush>
             <Accordion.Item eventKey="0">
-                <Accordion.Header>О GiGi</Accordion.Header>
+                <Accordion.Header>о GiGi</Accordion.Header>
                 <Accordion.Body>
                     Лаборатории <strong>GIGI</strong> были основаны в 1957 году
                     Элиэзером Ландау, которого, к сожалению, сегодня уже нет с нами.

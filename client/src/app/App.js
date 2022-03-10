@@ -6,12 +6,12 @@ import "react-toastify/dist/ReactToastify.css"
 import { routes } from "./routes"
 
 import { ToastContainer } from "react-toastify"
-import NavBar from "./components/ui/navBar/navBar"
 import ProtectedRoute from "./components/common/protectedRoute"
 import AppLoader from "./components/ui/hoc/appLoader"
 import Footer from "./components/ui/footer"
 import { SHOP_ROUTE } from "./consts"
 import ScrollToTop from "./components/ui/hoc/scrollToTop"
+import NavBar from "./components/ui/navBar"
 
 const App = () => {
     return (

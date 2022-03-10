@@ -39,12 +39,12 @@ html {
 
 .header-title {
     color: white;
-    font-size: 1.5rem !important;
+    font-size: 1.5rem;
     text-decoration: none;
     margin-left: 3rem;
 }
 
-.profile-cart__wrapper {
+.navbar-items__wrapper {
     display: flex;
     flex-direction: row;
 }
@@ -52,11 +52,12 @@ html {
 .navProfile-name {
     display: flex;
     align-items: center;
-    color: #fff !important;
+    color: #fff;
+    text-decoration: none;
 }
 
 .navProfile-name:hover {
-    color: #21c1cf !important;
+    color: #21c1cf;
 }
 
 .link-in-cart {
@@ -76,7 +77,7 @@ html {
 }
 
 .admin-btn {
-    margin-left: 1.5rem;
+    margin-left: 2rem;
 }
 
 /* SearchBar */
@@ -89,7 +90,7 @@ html {
 }
 
 .search-input {
-    background: #2c3233 !important;
+    background: #2c3233;
     border: none;
     font-weight: 700;
     color: #fff !important;
@@ -99,7 +100,7 @@ html {
 .search-input:focus {
     background-color: #ffffff !important;
     border-radius: 0.25rem;
-    color: #000000 !important;
+    color: #000000;
 }
 
 .search-btn {
@@ -587,10 +588,18 @@ input[type="number"] {
     }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 992px) {
     .header-title {
-        margin-left: 9.5rem;
+        white-space: nowrap;
     }
+
+    .navbar-toggle {
+        position: absolute;
+        top: 10%;
+        right: 5%;
+        transform: translateX(5%);
+    }
+
     .search-bar {
         margin: 1rem 0 1rem 4rem;
         position: relative;
@@ -602,7 +611,7 @@ input[type="number"] {
     }
 
     .admin-btn {
-        margin-top: 1rem;
         margin-left: 5rem;
+        white-space: nowrap;
     }
 }

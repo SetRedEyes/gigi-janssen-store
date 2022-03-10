@@ -42,6 +42,7 @@ const App = () => {
                         </Switch>
                     </ScrollToTop>
                 </div>
+
                 <Footer />
             </AppLoader>
             <ToastContainer />

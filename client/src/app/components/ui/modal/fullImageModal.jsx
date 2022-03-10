@@ -1,15 +1,23 @@
 import React from "react"
-import { Modal } from "react-bootstrap"
+import PropTypes from "prop-types"
 
-const FullImageModal = () => {
+import { Image, Modal } from "react-bootstrap"
+
+const FullImageModal = ({ fullImgModal, onClose, photo }) => {
     return (
-        <Modal>
+        <Modal show={fullImgModal} onHide={onClose} className="product-modal">
             <Modal.Header closeButton />
-
-            <Modal.Body>Woohoo, e reading this text in a modal!</Modal.Body>
-            <Modal.Footer></Modal.Footer>
+            <Modal.Body>
+                <Image src={photo} className="product-modal__img" />
+            </Modal.Body>
         </Modal>
     )
+}
+
+FullImageModal.propTypes = {
+    fullImgModal: PropTypes.bool,
+    onClose: PropTypes.func,
+    photo: PropTypes.string
 }
 
 export default FullImageModal

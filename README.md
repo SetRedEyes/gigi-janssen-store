@@ -82,7 +82,6 @@ Builded with React, React-Bootstrap, Redux Toolkit, NodeJS, Docker
 	phone: string
 	city: string
 	postOfficeNumber: string
-	isAdmin:boolean
 	
 }
 ```

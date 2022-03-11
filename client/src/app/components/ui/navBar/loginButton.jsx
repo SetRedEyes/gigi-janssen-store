@@ -1,15 +1,16 @@
 import React from "react"
 import { LOGIN_ROUTE } from "../../../consts"
 
-import { Button, Nav } from "react-bootstrap"
+import { Button } from "react-bootstrap"
+import { NavLink } from "react-router-dom"
 
 const LoginButton = () => {
     return (
-        <Nav.Link href={LOGIN_ROUTE}>
-            <Button variant="outline-light" className="navlink-btn me-5">
+        <NavLink to={LOGIN_ROUTE} className="login-btn">
+            <Button variant="outline-light" className="navlink-btn">
                 Вход/Регистрация
             </Button>
-        </Nav.Link>
+        </NavLink>
     )
 }
 

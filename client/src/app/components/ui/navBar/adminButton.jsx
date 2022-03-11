@@ -6,7 +6,7 @@ import { ADMIN_ROUTE } from "../../../consts"
 const AdminButton = () => {
     return (
         <NavLink to={ADMIN_ROUTE} className="admin-btn">
-            <Button variant={"outline-light"} className="navlink-btn me-5">
+            <Button variant={"outline-light"} className="navlink-btn">
                 Админ панель
             </Button>
         </NavLink>

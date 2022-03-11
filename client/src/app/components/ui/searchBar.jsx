@@ -5,6 +5,7 @@ import { Button, Form, FormControl, InputGroup } from "react-bootstrap"
 
 const SearchBar = () => {
     const history = useHistory()
+    const [activeState, setActiveState] = useState(false)
     const [search, setSearch] = useState("")
 
     const searchRef = useRef()
@@ -15,12 +16,20 @@ const SearchBar = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        history.push(SEARCH_ROUTE + `?search=${search}`)
+        setActiveState((prev) => !prev)
+        console.log(searchRef)
+        if (search !== "") {
+            return history.push(SEARCH_ROUTE + `?search=${search}`)
+        }
         searchRef.current.reset()
     }
 
     return (
-        <Form onSubmit={handleSubmit} ref={searchRef} className="search-bar">
+        <Form
+            onSubmit={handleSubmit}
+            ref={searchRef}
+            className={`search-bar ${activeState ? "active" : ""}`}
+        >
             <InputGroup>
                 <FormControl
                     placeholder="Поиск"

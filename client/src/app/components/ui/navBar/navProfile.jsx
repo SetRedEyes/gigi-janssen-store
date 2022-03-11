@@ -8,7 +8,7 @@ const NavProfile = ({ currentUser }) => {
     return (
         <NavLink to={PROFILE_ROUTE} className="navProfile-name">
             {currentUser.firstName}
-            <i className="bi bi-person-circle  ms-2"></i>
+            <i className="bi bi-person-circle ms-2"></i>
         </NavLink>
     )
 }

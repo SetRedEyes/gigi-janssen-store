@@ -16,10 +16,10 @@ const NavBar = () => {
     const isloggedIn = useSelector(getIsLoggedIn())
     return (
         <Navbar bg="dark" expand="md" className="navbar-dark ">
-            <Container fluid>
+            <Container fluid className="d-flex justify-content-center  me-5">
                 <NavbarTitle />
 
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Toggle aria-controls="basic-navbar-nav " />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav
                         className="flex-center ms-auto my-2 my-md-0 "

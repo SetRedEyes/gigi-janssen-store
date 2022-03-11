@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom"
 
 const NavbarTitle = () => {
     return (
-        <NavLink className="header-title " to={SHOP_ROUTE}>
+        <NavLink className="header-title" to={SHOP_ROUTE}>
             GIGI & JANSSEN
         </NavLink>
     )

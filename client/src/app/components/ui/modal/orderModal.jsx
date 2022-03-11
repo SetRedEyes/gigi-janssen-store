@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import PropTypes from "prop-types"
-import { useSelector } from "react-redux"
-import { getCurrentUserData } from "../../../store/user"
+import { useDispatch, useSelector } from "react-redux"
+import { getCurrentUserData, updateUser } from "../../../store/user"
 import { validator } from "../../../utils/validator"
 
 import { Button, Form, Modal } from "react-bootstrap"
@@ -20,6 +20,7 @@ const initialData = {
 }
 
 const OrderModal = ({ customerModal, onClose, onClear }) => {
+    const dispatch = useDispatch()
     const currentUser = useSelector(getCurrentUserData())
     const [isOrderConfirmed, setIsOrderConfirmed] = useState(false)
 
@@ -101,6 +102,11 @@ const OrderModal = ({ customerModal, onClose, onClear }) => {
     const handleSubmit = (e) => {
         e.preventDefault()
         onClose()
+        dispatch(
+            updateUser({
+                ...data
+            })
+        )
         console.log(data)
         setIsOrderConfirmed(true)
     }

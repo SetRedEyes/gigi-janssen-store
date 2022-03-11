@@ -17,7 +17,6 @@ const SearchBar = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
         setActiveState((prev) => !prev)
-        console.log(searchRef)
         if (search !== "") {
             return history.push(SEARCH_ROUTE + `?search=${search}`)
         }

@@ -15,14 +15,14 @@ const NavBar = () => {
     const isAdmin = useSelector(getIsAdmin())
     const isloggedIn = useSelector(getIsLoggedIn())
     return (
-        <Navbar bg="dark" expand="md" className="navbar-dark ">
+        <Navbar bg="dark" expand="lg" className="navbar-dark ">
             <Container fluid className="d-flex justify-content-center  me-5">
                 <NavbarTitle />
 
                 <Navbar.Toggle aria-controls="basic-navbar-nav " />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav
-                        className="flex-center ms-auto my-2 my-md-0 "
+                        className="flex-center ms-auto my-2 my-lg-0 "
                         style={{ maxHeight: "11rem" }}
                     >
                         <SearchBar />

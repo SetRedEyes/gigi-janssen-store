@@ -1,4 +1,4 @@
 {
-    "apiEndpoint": "http://31.131.27.65/api",
+    "apiEndpoint": "https://gigi-janssen-store.herokuapp.com/api",
     "isFireBase": false
 }

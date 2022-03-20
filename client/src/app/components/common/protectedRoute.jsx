@@ -1,8 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useSelector } from "react-redux"
-import {  getIsLoggedIn } from "../../store/user"
-import {  LOGIN_ROUTE} from "../../consts"
+import { getIsLoggedIn } from "../../store/user"
+import { LOGIN_ROUTE } from "../../consts"
 import { Route, Redirect } from "react-router-dom"
 
 const ProtectedRoute = ({ component: Component, children, ...rest }) => {
@@ -24,7 +24,8 @@ const ProtectedRoute = ({ component: Component, children, ...rest }) => {
                             }}
                         />
                     )
-                // } else if (props.location.pathname === ADMIN_ROUTE && !isAdmin) {
+                }
+                // else if (props.location.pathname === ADMIN_ROUTE && !isAdmin) {
                 //     return (
                 //         <Redirect
                 //             to={{

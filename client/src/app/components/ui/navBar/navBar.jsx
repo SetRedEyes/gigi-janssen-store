@@ -37,10 +37,13 @@ const NavBar = () => {
                                     <AdminButton />
                                 </>
                             ) : (
-                                <div className="navbar-items__wrapper">
-                                    <CartButton />
-                                    <NavProfile currentUser={currentUser} />
-                                </div>
+                                <>
+                                    <div className="navbar-items__wrapper">
+                                        <CartButton />
+                                        <NavProfile currentUser={currentUser} />
+                                    </div>
+                                    <AdminButton />
+                                </>
                             )
                         ) : (
                             <>

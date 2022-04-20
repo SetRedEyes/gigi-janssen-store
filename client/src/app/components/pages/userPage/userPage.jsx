@@ -16,6 +16,7 @@ const UserPage = () => {
     const [data, setData] = useState()
     const [isLoading, setIsLoading] = useState(true)
     const [errors, setErrors] = useState({})
+    const [isSubmit, setIsSubmit] = useState(false)
 
     useEffect(() => {
         if (currentUser && !data) {
@@ -101,12 +102,13 @@ const UserPage = () => {
                 ...data
             })
         )
+        setIsSubmit(true)
     }
 
     return (
         <Container>
             <Row>
-                <Col md={{ span: 6, offset: 3 }} className="shadow p-5 ">
+                <Col md={{ span: 6, offset: 3 }} className="shadow pt-5 pb-3 ">
                     <div className="flex-between">
                         <BackHistoryButton />
 
@@ -167,6 +169,11 @@ const UserPage = () => {
                             >
                                 Отправить данные
                             </Button>
+                            {isSubmit && (
+                                <p className="text-center m-0 mt-2 ">
+                                    Данные успешно отправлены!
+                                </p>
+                            )}
                         </Form>
                     ) : (
                         <LoadingSpinner />

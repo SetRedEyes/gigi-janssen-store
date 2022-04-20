@@ -164,8 +164,6 @@ html {
 }
 
 .company-card_img {
-    width: 18.5rem;
-    height: 18.5rem;
     border-top-left-radius: 1rem !important;
     border-top-right-radius: 1rem !important;
 }

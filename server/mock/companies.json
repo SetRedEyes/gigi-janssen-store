@@ -3,12 +3,12 @@
     "_id": "gigi",
     "name": "gigi",
     "fullName": "GIGI Сosmetic Laboratories",
-    "photo": "https://github.com/SetRedEyes/gigi-janssen-store/blob/master/images/gigi.jpg"
+    "photo": "https://github.com/SetRedEyes/gigi-janssen-store/blob/master/images/gigi.jpg?raw=true"
   },
   {
     "_id": "janssen",
     "name": "janssen",
     "fullName": "JANSSEN Cosmetics",
-    "photo": "https://github.com/SetRedEyes/gigi-janssen-store/blob/master/images/janssen.jpg"
+    "photo": "https://github.com/SetRedEyes/gigi-janssen-store/blob/master/images/janssen.jpg?raw=true"
   }
 ]

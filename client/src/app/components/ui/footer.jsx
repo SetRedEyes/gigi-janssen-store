@@ -5,7 +5,7 @@ import { SHOP_ROUTE } from "../../consts"
 
 const Footer = () => {
     return (
-        <Navbar bg="dark" variant="dark" sticky="top" className="footer ">
+        <Navbar bg="dark" variant="dark" sticky="top" className="footer">
             <ul className="list-unstyled">
                 <li>Все права защищены</li>
                 <li>gigi-janssen-store © 2022</li>

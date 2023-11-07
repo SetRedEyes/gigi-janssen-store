@@ -1,11 +1,11 @@
 html {
-    max-width: 1920px;
+    /* max-width: 1920px; */
     overflow-y: scroll;
     overflow-x: hidden;
 }
 
 .content {
-    min-height: calc(100vh - 6rem);
+    min-height: calc(91vh - 6rem);
 }
 
 /* Position */
@@ -479,10 +479,10 @@ input[type="number"] {
     display: flex;
     justify-content: space-between;
     margin-top: 3rem;
-    padding: 0.6rem 3rem 0.1rem 3rem;
+    padding: 0.1rem 3rem 0.1rem 3rem;
     background-color: #212529;
     color: #fff;
-    height: 6rem;
+    height: 6.3rem;
 }
 
 /* LinkButtons */

@@ -13,13 +13,16 @@ const ProductPageImage = ({ photo }) => {
 
     return (
         <>
-            <Image
-                className="m-4 product-page__img"
-                src={photo}
-                fluid
-                onClick={handleShow}
-                role="button"
-            />
+            <div className="product-page__img-container">
+                <Image
+                    className="m-4 product-page__img"
+                    src={photo}
+                    fluid
+                    onClick={handleShow}
+                    role="button"
+                />
+            </div>
+
             <FullImageModal
                 fullImgModal={fullImgModal}
                 handleClose={handleClose}

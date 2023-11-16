@@ -24,7 +24,7 @@ const CompanyPage = () => {
 
     return (
         <Container fluid>
-            <Row>
+            <Row className="mt-2">
                 <Col md={3} className="mt-1">
                     <GroupList
                         selectedItem={selectedCat}
@@ -35,7 +35,7 @@ const CompanyPage = () => {
                 </Col>
 
                 <Col xl={6}>
-                    <Row className="mt-3 flex-between">
+                    <Row className="mt-3 me-2 ms-2 flex-between">
                         {!companiesLoading ? (
                             companies.map((c) => (
                                 <CompanyCard

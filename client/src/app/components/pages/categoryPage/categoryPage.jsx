@@ -20,7 +20,7 @@ const CategoryPage = ({ companyName }) => {
         <Container className="d-flex">
             <Row className="mt-2">
                 {Object.keys(categories).map((cat) => (
-                    <Col md={3} key={categories[cat]._id}>
+                    <Col xs={6} md={3} key={categories[cat]._id}>
                         <CategoryCard
                             fullName={categories[cat].fullName}
                             categoryName={categories[cat].name}

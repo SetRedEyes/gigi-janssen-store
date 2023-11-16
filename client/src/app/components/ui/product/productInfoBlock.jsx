@@ -9,10 +9,10 @@ const ProductInfoBlock = ({ product }) => {
     return (
         <>
             <Row>
-                <Col md={4}>
+                <Col md={3}>
                     <ProductPageImage photo={product.photo} />
                 </Col>
-                <Col md={7} className="mt-5 ms-5">
+                <Col md={7} className="mt-5 marg">
                     <h5>
                         <strong>
                             {" "}
@@ -58,9 +58,9 @@ const ProductInfoBlock = ({ product }) => {
                 </Col>
             </Row>
             <Row>
-                <hr />
+                <hr style={{ maxWidth: "95%" }} />
                 <Col>
-                    <h3 className="ms-5 mt-2 ">Описание товара</h3>
+                    <h3 className="mt-2 ms-5">Описание товара</h3>
                     <p className="text-left" style={{ textIndent: "2rem" }}>
                         Мыло содержит активный комплекс ингредиентов, действующих на
                         все симптомы и проявления акне. Экстракт канадского кипрея
@@ -80,7 +80,7 @@ const ProductInfoBlock = ({ product }) => {
                         применение с одного раза в день и постепенно увеличьте до
                         двух раз в день. В случаях повышенной сухости использование
                         следует уменьшить до одного раза в день. Активные
-                        ингредиенты: RET complex, NMF(sodium PCA), sorbitol.{" "}
+                        ингредиенты: RET complex, NMF(sodium PCA), sorbitol.
                     </p>
                 </Col>
             </Row>

@@ -87,7 +87,7 @@ const ProductsListPage = ({ companyName }) => {
                             />
                         </Col>
 
-                        <Col md={8} className="ms-5 mt-5">
+                        <Col md={8} className="marg">
                             <Row>
                                 <ProductsListCard products={productCrop} />
                             </Row>

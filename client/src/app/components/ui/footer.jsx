@@ -7,14 +7,14 @@ const Footer = () => {
     return (
         <Navbar bg="dark" variant="dark" sticky="top" className="footer">
             <ul className="list-unstyled">
-                <li>Все права защищены</li>
-                <li>gigi-janssen-store © 2022</li>
+                {/* <li>Все права защищены</li> */}
+                {/* <li>gigi-janssen-store © 2022</li> */}
                 <li>
                     <a
                         className="navProfile-name"
                         href={"https://github.com/SetRedEyes"}
                     >
-                        Разработчик сайта
+                        Разработчик
                     </a>
                 </li>
             </ul>{" "}
@@ -22,8 +22,6 @@ const Footer = () => {
                 GIGI & JANSSEN
             </NavLink>
             <ul className="list-unstyled">
-                <li>+380942387498234</li>
-                <li>+380957538478934</li>
                 <li>
                     <a
                         className="navProfile-name"
